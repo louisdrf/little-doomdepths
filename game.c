@@ -11,7 +11,6 @@
 #include "defines.h"
 #include "player.h"
 #include "init_monster.h"
-#include "display.h"
 
 #define DEBUG false
 
@@ -35,9 +34,8 @@ Game *game;
     for(int i = 0; i < game->nbMonsters + 1; i++) {
         first_monster = create_monster(first_monster, i);
     }
+    game->monsters = first_monster;
     ////////////////////////////////////
-
-    display_monsters_alive(first_monster);
 
 
 #if DEBUG

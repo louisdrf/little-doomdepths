@@ -29,8 +29,10 @@ Player *init_player() {
 
         player->isAlive = true;
         player->turn = true; // the player attack first
-        player->lifepoints = 100;
-        player->mana = 100;
+        player->lifepoints_max = 100;
+        player->lifepoints = player->lifepoints_max;
+        player->mana_max = 100;
+        player->mana = player->mana_max;
         player->defense = 10;
         player->attacks_by_turn = 1;
         player->min_strength = 10;

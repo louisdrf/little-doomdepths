@@ -8,8 +8,10 @@
 
 typedef struct {
 
-    unsigned short      lifepoints;
-    unsigned short      mana;
+    unsigned short      lifepoints;         // pv restants
+    unsigned short      lifepoints_max;     // pv max
+    unsigned short      mana;               // mana restant
+    unsigned short      mana_max;           // mana max
     unsigned short      min_strength;
     unsigned short      max_strength;
     short               defense;
@@ -30,7 +32,7 @@ struct Monster {
     int                 id;
     int                 monster_type;       //  type de monstre
     int                 lifepoints;         // pv restants
-    int                 lifepoints_max;     // pv initiaux
+    int                 lifepoints_max;     // pv max
     int                 min_strength;       // attaque min
     int                 max_strength;       // attaque max
     int                 defense;

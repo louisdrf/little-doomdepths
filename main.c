@@ -17,6 +17,8 @@ int main() {
 
     display_player_ath(player);
     display_player(player);
+    display_monsters_alive(game->monsters);
+
 
 
     free_player(player);
