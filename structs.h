@@ -22,26 +22,32 @@ typedef struct {
 
 
 
+
+typedef struct Monster Monster;
+
+struct Monster {
+
+    int                 id;
+    int                 monster_type;       //  type de monstre
+    int                 lifepoints;
+    int                 min_strength;       // attaque min
+    int                 max_strength;       // attaque max
+    int                 defense;
+    int                 attacks_by_turn;    // nombre d'attaques par tour de jeu
+    bool                turn;               // indique si cest au tour du monstre de jouer
+    bool                isAlive;            // indique si le monstre a été tué ou non
+    char *              draw;               // chaine de caractère de dessin du monstre
+    struct Monster*     next;
+
+};
+
+
+
 typedef struct {
 
-    char        *picture; // chaine de caractère de dessin du monstre
-    int         lifepoints;
-    int         min_strength; // attaque min
-    int         max_strength; // attaque max
-    int         defense;
-    int         attacks_by_turn; // nombre d'attaques par tour de jeu
-    bool        turn; // indique si cest au tour du monstre de jouer
-    char *      draw;
-
-} Monster;
-
-
-
-typedef struct {
-
-    int         nbMonsters; // nb de monstres de la partie
-    Monster    **monsters; // tableau de pointeurs vers les monstres
-    bool        isRunning; // bool d'état de la partie
+    int         nbMonsters;         // nb de monstres de la partie
+    Monster    *monsters;           // liste chainée de monstres
+    bool        isRunning;          // bool d'état de la partie
 
 } Game;
 

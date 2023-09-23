@@ -29,16 +29,16 @@ void display_player_health(Player *player) {
     int i = 0;
 
     printf("Health:   ");
-    while(i < player->lifepoints) {
-        printf("#");
+    while(i < (player->lifepoints)/2) {
+        printf(RED "#");
         i++;
     }
-    while(i < 100) {
+    while(i < 50) {
         printf("-");
         i++;
     }
 
-    printf( "  %d/100", player->lifepoints);
+    printf( RESET "  %d/100", player->lifepoints);
     printf("\n");
 
 }
@@ -50,16 +50,16 @@ void display_player_mana(Player *player) {
 
     printf("Mana:     ");
 
-        while(i < player->mana) {
-            printf("#");
+        while(i < (player->mana)/2) {
+            printf(BLUE "#");
             i++;
         }
-        while(i < 100) {
+        while(i < 50) {
                 printf("-");
                 i++;
         }
 
 
-    printf( "  %d/100", player->mana);
-    printf("\n");
+    printf( RESET "  %d/100", player->mana);
+    printf("\n\n\n");
 }

@@ -10,11 +10,13 @@
 #include "structs.h"
 #include "defines.h"
 #include "player.h"
-
+#include "init_monster.h"
 #define DEBUG false
 
 
 Game *init_game() {
+
+    srand(time(NULL));
 
 Game *game;
 
@@ -22,6 +24,13 @@ Game *game;
     if(game == NULL) {
         printf("Allocating memory for game failed.\n");
         exit(1);
+    }
+
+    Monster *first_monster = NULL;
+
+    game->nbMonsters = rand() % NBMONSTERS_MAX + NBMONSTERS_MIN;
+    for(int i = 0; i < game->nbMonsters + 1; i++) {
+        first_monster = create_monster(first_monster, i);
     }
 
 
