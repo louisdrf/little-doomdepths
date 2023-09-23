@@ -29,7 +29,8 @@ struct Monster {
 
     int                 id;
     int                 monster_type;       //  type de monstre
-    int                 lifepoints;
+    int                 lifepoints;         // pv restants
+    int                 lifepoints_max;     // pv initiaux
     int                 min_strength;       // attaque min
     int                 max_strength;       // attaque max
     int                 defense;

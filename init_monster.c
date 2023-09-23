@@ -26,9 +26,10 @@ Monster *create_monster(Monster *head, int index) {
 
     new->id = index;
 
-    new->lifepoints = rand() % MONSTER_MAX_PV + MONSTER_MIN_PV;
-    while(new->lifepoints % 2 != 0) new->lifepoints = rand() % MONSTER_MAX_PV + MONSTER_MIN_PV;
+    new->lifepoints_max = rand() % MONSTER_MAX_PV + MONSTER_MIN_PV;
+    while(new->lifepoints_max % 2 != 0) new->lifepoints_max = rand() % MONSTER_MAX_PV + MONSTER_MIN_PV;
 
+    new->lifepoints = new->lifepoints_max;
     new->defense = rand() % MONSTER_MAX_DEFENSE + MONSTER_MIN_DEFENSE;
     new->min_strength = 10;
     new->max_strength = 20;

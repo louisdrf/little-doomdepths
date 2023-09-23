@@ -63,3 +63,16 @@ void display_player_mana(Player *player) {
     printf( RESET "  %d/100", player->mana);
     printf("\n\n\n");
 }
+
+
+void display_monsters_alive(Monster *head) {
+
+    Monster *current = head;
+
+    while (current != NULL) {
+        if(current->isAlive){
+            printf("%d - type : %d (%d/%d)\n", current->id, current->monster_type, current->lifepoints, current->lifepoints_max);
+        }
+        current = current->next;
+    }
+};

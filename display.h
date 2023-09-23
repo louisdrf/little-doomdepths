@@ -12,5 +12,6 @@ void display_player(Player *player);
 void display_player_ath(Player *player);
 void display_player_health(Player *player);
 void display_player_mana(Player *player);
+void display_monsters_alive(Monster *head);
 
 #endif //DOOM_DISPLAY_H
