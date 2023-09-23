@@ -26,12 +26,14 @@ Game *game;
         exit(1);
     }
 
+    // init the linked list of monsters
     Monster *first_monster = NULL;
 
     game->nbMonsters = rand() % NBMONSTERS_MAX + NBMONSTERS_MIN;
     for(int i = 0; i < game->nbMonsters + 1; i++) {
         first_monster = create_monster(first_monster, i);
     }
+    ////////////////////////////////////
 
 
 #if DEBUG

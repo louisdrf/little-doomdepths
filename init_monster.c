@@ -8,13 +8,13 @@
 #include "structs.h"
 #include "defines.h"
 
-#define DEBUG true
+#define DEBUG false
+
+
 /**
  * create a Monster * and add it to the linked list of Monster
  */
 Monster *create_monster(Monster *head, int index) {
-
-    srand(time(NULL));
 
     Monster *new = malloc(sizeof(Monster));
     if(new == NULL) {
@@ -25,7 +25,10 @@ Monster *create_monster(Monster *head, int index) {
     }
 
     new->id = index;
+
     new->lifepoints = rand() % MONSTER_MAX_PV + MONSTER_MIN_PV;
+    while(new->lifepoints % 2 != 0) new->lifepoints = rand() % MONSTER_MAX_PV + MONSTER_MIN_PV;
+
     new->defense = rand() % MONSTER_MAX_DEFENSE + MONSTER_MIN_DEFENSE;
     new->min_strength = 10;
     new->max_strength = 20;
@@ -44,7 +47,10 @@ Monster *create_monster(Monster *head, int index) {
 
 }
 
-
+/**
+ * free all the list of monster
+ * @param head
+ */
 void free_monster(Monster *head)
 {
     if (head != NULL)
