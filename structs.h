@@ -14,8 +14,8 @@ typedef struct {
     unsigned short      mana_max;           // mana max
     unsigned short      min_strength;
     unsigned short      max_strength;
-    short               defense;
-    unsigned int        attacks_by_turn;
+    unsigned short               defense;
+    unsigned short      attacks_by_turn;
     bool                isAlive;
     bool                turn; // indique si cest au tour du joueur de jouer
     char *              draw;
@@ -29,14 +29,14 @@ typedef struct Monster Monster;
 
 struct Monster {
 
-    int                 id;
-    int                 monster_type;       //  type de monstre
-    int                 lifepoints;         // pv restants
-    int                 lifepoints_max;     // pv max
-    int                 min_strength;       // attaque min
-    int                 max_strength;       // attaque max
-    int                 defense;
-    int                 attacks_by_turn;    // nombre d'attaques par tour de jeu
+    unsigned short                 id;
+    unsigned short                 monster_type;       //  type de monstre
+    unsigned short                 lifepoints;         // pv restants
+    unsigned short                 lifepoints_max;     // pv max
+    unsigned short                 min_strength;       // attaque min
+    unsigned short                 max_strength;       // attaque max
+    unsigned short                 defense;
+    unsigned short                 attacks_by_turn;    // nombre d'attaques par tour de jeu
     bool                turn;               // indique si cest au tour du monstre de jouer
     bool                isAlive;            // indique si le monstre a été tué ou non
     char *              draw;               // chaine de caractère de dessin du monstre
@@ -48,9 +48,9 @@ struct Monster {
 
 typedef struct {
 
-    int         nbMonsters;         // nb de monstres de la partie
-    Monster    *monsters;           // liste chainée de monstres
-    bool        isRunning;          // bool d'état de la partie
+    unsigned short         nbMonsters;         // nb de monstres de la partie
+    Monster                *monsters;           // liste chainée de monstres
+    bool                   isRunning;          // bool d'état de la partie
 
 } Game;
 
