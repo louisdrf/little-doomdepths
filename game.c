@@ -11,7 +11,7 @@
 #include "defines.h"
 #include "player.h"
 
-#define DEBUG true
+#define DEBUG false
 
 
 Game *init_game() {

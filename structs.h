@@ -40,6 +40,7 @@ typedef struct {
 typedef struct {
 
     int         nbMonsters; // nb de monstres de la partie
+    Monster    **monsters; // tableau de pointeurs vers les monstres
     bool        isRunning; // bool d'état de la partie
 
 } Game;

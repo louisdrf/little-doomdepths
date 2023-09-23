@@ -10,12 +10,13 @@ int main() {
     Game        *game;
     Player      *player;
 
-        display_init_menu();
+    display_init_menu();
 
-        game = init_game();
-        player = init_player();
+    game = init_game();
+    player = init_player();
 
-        display_player(player);
+    display_player_ath(player);
+    display_player(player);
 
 
     free_player(player);

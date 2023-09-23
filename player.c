@@ -9,7 +9,7 @@
 #include "player.h"
 #include "structs.h"
 
-#define DEBUG true
+#define DEBUG false
 
 /**
  * init the player
