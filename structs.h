@@ -14,8 +14,10 @@ typedef struct {
     unsigned short      mana_max;           // mana max
     unsigned short      min_strength;
     unsigned short      max_strength;
-    unsigned short               defense;
+    unsigned short      defense;
     unsigned short      attacks_by_turn;
+    unsigned short      attacks_left;
+    unsigned short      gold;
     bool                isAlive;
     bool                turn; // indique si cest au tour du joueur de jouer
     char *              draw;

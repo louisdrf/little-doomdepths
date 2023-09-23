@@ -15,13 +15,16 @@ void display_init_menu() {
 }
 
 void display_player(Player *player) {
-    printf("%s", player->draw);
+    printf("%s\n", player->draw);
 }
 
 void display_player_ath(Player *player) {
 
     display_player_health(player);
     display_player_mana(player);
+    printf("Attacks left this turn:   %d", player->attacks_left);
+    printf("\n\n\n");
+
 }
 
 void display_player_health(Player *player) {
@@ -61,7 +64,7 @@ void display_player_mana(Player *player) {
 
 
     printf( RESET "  %d/100", player->mana);
-    printf("\n\n\n");
+        printf("\n");
 }
 
 

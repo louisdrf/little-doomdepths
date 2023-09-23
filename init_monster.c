@@ -18,10 +18,10 @@ Monster *create_monster(Monster *head, int index) {
 
     Monster *new = malloc(sizeof(Monster));
     if(new == NULL) {
-#if DEBUG
-        printf("Error while allocating memory for monster.\n");
-        exit(1);
-#endif
+        #if DEBUG
+                printf("Error while allocating memory for monster.\n");
+                exit(1);
+        #endif
     }
 
     new->id = index;

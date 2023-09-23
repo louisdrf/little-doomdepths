@@ -35,6 +35,7 @@ Player *init_player() {
         player->mana = player->mana_max;
         player->defense = 10;
         player->attacks_by_turn = 1;
+        player->attacks_left = player->attacks_by_turn;
         player->min_strength = 10;
         player->max_strength = 25;
 
