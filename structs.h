@@ -6,6 +6,14 @@
 #define DOOM_STRUCTS_H
 #include <stdbool.h>
 
+enum rarity {
+
+    COMMON,
+    RARE,
+    EPIC,
+    LEGENDARY
+};
+
 typedef struct {
 
     unsigned int        defense;
