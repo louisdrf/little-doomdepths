@@ -15,7 +15,7 @@
  * init the player
  * return a *Player
  */
-Player *init_player() {
+Player *init_player(Level *level) {
 
         Player *player;
 
@@ -40,6 +40,7 @@ Player *init_player() {
         player->min_strength = 10;
         player->max_strength = 25;
 
+        player->current_level = level;
         init_player_draw(player);
 
     #if DEBUG
@@ -77,6 +78,7 @@ void print_player_stats(Player *player) {
 
 
 void free_player(Player *player) {
+    free(player->draw);
     free(player);
 
 #if DEBUG

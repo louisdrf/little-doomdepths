@@ -24,11 +24,11 @@ int main() {
 
         case '2': // new game
             printf("Launching new game...\n\n");
-            game = init_game();
-            player = init_player();
+            game = init_game();                             // init la partie et les niveaux
+            player = init_player(game->levelList[0]);       // passer le niveau 0 en argument au joueur
             display_player_ath(player);
             display_player(player);
-            display_monsters_alive(game->monsters);
+            display_monsters_alive(player->current_level->monsters);
             free_player(player);
             free_game(game);
             break;

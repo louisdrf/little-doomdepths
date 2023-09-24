@@ -33,30 +33,6 @@ typedef struct {
 
 } Weapon;
 
-
-typedef struct {
-
-    unsigned short      lifepoints;         // pv restants
-    unsigned short      lifepoints_max;     // pv max
-    unsigned short      mana;               // mana restant
-    unsigned short      mana_max;           // mana max
-    unsigned short      min_strength;
-    unsigned short      max_strength;
-    unsigned short      defense;
-    unsigned short      attacks_by_turn;
-    unsigned short      attacks_left;
-    unsigned short      gold;
-    bool                isAlive;
-    bool                turn; // indique si cest au tour du joueur de jouer
-    char *              draw;
-    Weapon*             current_weapon; // arme équipée
-    Armor*              current_armor;  // armure équipée
-
-} Player;
-
-
-
-
 typedef struct Monster Monster;
 
 struct Monster {
@@ -73,16 +49,54 @@ struct Monster {
     bool                           isAlive;            // indique si le monstre a été tué ou non
     char *                         draw;               // chaine de caractère de dessin du monstre
     struct Monster*                next;
+    struct Weapon*                 loot_weapon;        // arme lootable sur le monstre
+    struct Armor*                  loot_armor;         // armure lootable sur le monstre
+    unsigned int                   loot_gold;          // gold lootable sur le monstre
 
 };
+
+
+typedef struct {
+
+    Monster*                 monsters;           // liste chainée de monstres
+    unsigned short           id;                  // niveau 1, 2, 3...
+    unsigned short           nbMonsters;          // nb de monstres de la partie
+    struct Weapon*           loot_weapon;        // arme lootable sur le niveau
+    struct Armor*            loot_armor;         // armure lootable sur le niveau
+    unsigned int             loot_gold;          // gold lootable sur le niveau
+
+} Level;
 
 
 
 typedef struct {
 
-    unsigned short         nbMonsters;         // nb de monstres de la partie
-    Monster                *monsters;           // liste chainée de monstres
-    bool                   isRunning;          // bool d'état de la partie
+    unsigned short      lifepoints;         // pv restants
+    unsigned short      lifepoints_max;     // pv max
+    unsigned short      mana;               // mana restant
+    unsigned short      mana_max;           // mana max
+    unsigned short      min_strength;
+    unsigned short      max_strength;
+    unsigned short      defense;
+    unsigned short      attacks_by_turn;
+    unsigned short      attacks_left;
+    unsigned short      gold;
+    bool                isAlive;
+    bool                turn;               // indique si cest au tour du joueur de jouer
+    char*               draw;
+    Weapon*             current_weapon;     // arme équipée
+    Armor*              current_armor;      // armure équipée
+    Level*              current_level;      // niveau actuel dans lequel se situe le joueur
+
+} Player;
+
+
+
+
+typedef struct {
+
+    Level**                 levelList;           // tableaux des niveaux de la partie
+    bool                    isRunning;           // bool d'état de la partie
 
 } Game;
 

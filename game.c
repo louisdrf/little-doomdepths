@@ -11,9 +11,9 @@
 #include "defines.h"
 #include "player.h"
 #include "init_monster.h"
+#include "init_level.h"
 
-#define DEBUG false
-
+#define DEBUG true
 
 Game *init_game() {
 
@@ -27,16 +27,15 @@ Game *game;
         exit(1);
     }
 
-    // init the linked list of monsters
-    Monster *first_monster = NULL;
+// INIT THE GAME LEVELS
 
-    game->nbMonsters = rand() % NBMONSTERS_MAX + NBMONSTERS_MIN;
-    for(int i = 0; i < game->nbMonsters + 1; i++) {
-        first_monster = create_monster(first_monster, i);
+    for(int i = 0; i < NBLEVELS; i++)
+    {
+        Level *level = init_level(i);
+        game->levelList[i] = level; // ajoute le niveau à la partie
     }
-    game->monsters = first_monster;
-    ////////////////////////////////////
 
+    ////////////////////////////////////
 
 #if DEBUG
         printf("\n\nGame initialized.\n");
@@ -47,12 +46,15 @@ Game *game;
 
 
 void free_game(Game *game) {
-    free(game->monsters);
+    free(game->levelList);
     free(game);
 
 #if DEBUG
     if(game == NULL) printf("\nGame correctly free.\n");
 #endif
 }
+
+
+
 
 

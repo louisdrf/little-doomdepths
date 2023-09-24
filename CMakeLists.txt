@@ -14,4 +14,6 @@ add_executable(doom main.c
         player.h
         colors.h
         init_monster.c
-        init_monster.h)
+        init_monster.h
+        init_level.c
+        init_level.h)

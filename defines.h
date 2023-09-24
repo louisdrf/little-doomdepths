@@ -13,4 +13,6 @@
 #define MONSTER_MAX_DEFENSE 10
 #define MONSTER_MIN_DEFENSE 4
 
+#define NBLEVELS 2
+
 #endif //DOOM_DEFINES_H
