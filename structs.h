@@ -5,6 +5,7 @@
 #ifndef DOOM_STRUCTS_H
 #define DOOM_STRUCTS_H
 #include <stdbool.h>
+#include "defines.h"
 
 enum rarity {
 
@@ -95,8 +96,8 @@ typedef struct {
 
 typedef struct {
 
-    Level**                 levelList;           // tableaux des niveaux de la partie
-    bool                    isRunning;           // bool d'état de la partie
+    Level*                  levelList[NBLEVELS];           // tableaux des niveaux de la partie
+    bool                    isRunning;                     // bool d'état de la partie
 
 } Game;
 

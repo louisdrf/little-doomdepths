@@ -9,11 +9,9 @@
 #include "game.h"
 #include "structs.h"
 #include "defines.h"
-#include "player.h"
-#include "init_monster.h"
 #include "init_level.h"
 
-#define DEBUG true
+#define DEBUG false
 
 Game *init_game() {
 
@@ -31,8 +29,14 @@ Game *game;
 
     for(int i = 0; i < NBLEVELS; i++)
     {
-        Level *level = init_level(i);
-        game->levelList[i] = level; // ajoute le niveau à la partie
+        game->levelList[i] = init_level(i);; // ajoute le niveau à la partie
+        if(game->levelList[i] == NULL) {
+            printf("Adding level %d in game failed.\n", i);
+            exit(1);
+        }
+        #if DEBUG
+                printf("\n\nLevel %d correctly added to the game.\n", i);
+        #endif
     }
 
     ////////////////////////////////////

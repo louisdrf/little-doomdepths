@@ -7,7 +7,7 @@
 
 #include "structs.h"
 
-Player *init_player();
+Player *init_player(Level *level);
 void free_player(Player *player);
 
 void init_player_draw(Player *player);

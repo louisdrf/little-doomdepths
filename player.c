@@ -47,6 +47,12 @@ Player *init_player(Level *level) {
         print_player_stats(player);
     #endif
 
+    if(player == NULL) {
+        #if DEBUG
+                printf("Error while creating player.\n");
+        #endif
+        exit(1);
+    }
         return player;
 }
 

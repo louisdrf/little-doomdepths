@@ -9,7 +9,7 @@
 #include "structs.h"
 #include "defines.h"
 
-#define DEBUG true
+#define DEBUG false
 
 /**
  * create a level with its own monsters list
@@ -33,6 +33,9 @@ Level *init_level(int id) {
 
     for(int j = 0; j < level->nbMonsters + 1; j++) {
         first_monster = create_monster(first_monster, j);
+        #if DEBUG
+                printf("Monster %d in level %d correctly added.\n", j, level->id);
+        #endif
     }
 
     level->monsters = first_monster; // ajoute la tete de liste de monstres au niveau
