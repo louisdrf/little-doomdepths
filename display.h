@@ -8,6 +8,8 @@
 #include "player.h"
 
 void display_init_menu();
+void display_all(Player *player);
+
 void display_player(Player *player);
 void display_player_ath(Player *player);
 void display_player_health(Player *player);

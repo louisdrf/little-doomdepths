@@ -85,6 +85,24 @@ build CMakeFiles/doom.dir/init_level.c.obj: C_COMPILER__doom_unscanned_Debug C$:
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir
 
+build CMakeFiles/doom.dir/loop.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/loop.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\loop.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir
+
+build CMakeFiles/doom.dir/player_attack.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/player_attack.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\player_attack.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir
+
+build CMakeFiles/doom.dir/monster.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/monster.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\monster.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target doom
@@ -93,7 +111,7 @@ build CMakeFiles/doom.dir/init_level.c.obj: C_COMPILER__doom_unscanned_Debug C$:
 #############################################
 # Link the executable doom.exe
 
-build doom.exe: C_EXECUTABLE_LINKER__doom_Debug CMakeFiles/doom.dir/main.c.obj CMakeFiles/doom.dir/game.c.obj CMakeFiles/doom.dir/display.c.obj CMakeFiles/doom.dir/player.c.obj CMakeFiles/doom.dir/init_monster.c.obj CMakeFiles/doom.dir/init_level.c.obj
+build doom.exe: C_EXECUTABLE_LINKER__doom_Debug CMakeFiles/doom.dir/main.c.obj CMakeFiles/doom.dir/game.c.obj CMakeFiles/doom.dir/display.c.obj CMakeFiles/doom.dir/player.c.obj CMakeFiles/doom.dir/init_monster.c.obj CMakeFiles/doom.dir/init_level.c.obj CMakeFiles/doom.dir/loop.c.obj CMakeFiles/doom.dir/player_attack.c.obj CMakeFiles/doom.dir/monster.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\doom.dir

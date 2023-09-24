@@ -32,6 +32,13 @@ void display_init_menu() {
     printf("Exit                (3)\n\n");
 }
 
+void display_all(Player *player) {
+    display_player_ath(player);
+    display_player(player);
+    display_monsters_alive(player->current_level->monsters);
+    printf("\nexit (q)\n");
+}
+
 void display_player(Player *player) {
     printf("%s\n", player->draw);
 }
@@ -100,3 +107,4 @@ void display_monsters_alive(Monster *head) {
         current = current->next;
     }
 };
+

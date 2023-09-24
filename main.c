@@ -5,9 +5,10 @@
 #include "structs.h"
 #include "display.h"
 #include "player.h"
+#include "loop.h"
+
 
 int main() {
-
 
     Game        *game;
     Player      *player;
@@ -27,10 +28,7 @@ int main() {
             game = init_game();                             // init la partie et les niveaux
             player = init_player(game->levelList[0]);       // passer le niveau 0 en argument au joueur
 
-            if(player == NULL) printf("player null\n");
-            display_player_ath(player);
-            display_player(player);
-            display_monsters_alive(player->current_level->monsters);
+            launch_loop(game, player);
 
             free_player(player);
             free_game(game);
