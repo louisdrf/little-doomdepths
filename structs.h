@@ -8,6 +8,26 @@
 
 typedef struct {
 
+    unsigned int        defense;
+    char*               name;
+    unsigned short      rarity;
+
+} Armor;
+
+
+typedef struct {
+
+    char*                   name;
+    unsigned short          min_strength;
+    unsigned short          max_strength;
+    unsigned short          attacks_by_turn; // nombre d'attaques par tour que confère l'arme
+    char*                   draw;
+
+} Weapon;
+
+
+typedef struct {
+
     unsigned short      lifepoints;         // pv restants
     unsigned short      lifepoints_max;     // pv max
     unsigned short      mana;               // mana restant
@@ -21,6 +41,8 @@ typedef struct {
     bool                isAlive;
     bool                turn; // indique si cest au tour du joueur de jouer
     char *              draw;
+    Weapon*             current_weapon; // arme équipée
+    Armor*              current_armor;  // armure équipée
 
 } Player;
 
@@ -39,10 +61,10 @@ struct Monster {
     unsigned short                 max_strength;       // attaque max
     unsigned short                 defense;
     unsigned short                 attacks_by_turn;    // nombre d'attaques par tour de jeu
-    bool                turn;               // indique si cest au tour du monstre de jouer
-    bool                isAlive;            // indique si le monstre a été tué ou non
-    char *              draw;               // chaine de caractère de dessin du monstre
-    struct Monster*     next;
+    bool                           turn;               // indique si cest au tour du monstre de jouer
+    bool                           isAlive;            // indique si le monstre a été tué ou non
+    char *                         draw;               // chaine de caractère de dessin du monstre
+    struct Monster*                next;
 
 };
 
@@ -55,5 +77,7 @@ typedef struct {
     bool                   isRunning;          // bool d'état de la partie
 
 } Game;
+
+
 
 #endif //DOOM_STRUCTS_H
