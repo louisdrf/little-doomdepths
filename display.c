@@ -8,7 +8,25 @@
 
 
 void display_init_menu() {
-    printf("----Doomdepths----\n");
+    printf("                     ----Doomdepths----\n\n");
+    printf("                            ,-.                               \n"
+           "       ___,---.__          /'|`\\          __,---,___          \n"
+           "    ,-'    \\`    `-.____,-'  |  `-.____,-'    //    `-.       \n"
+           "  ,'        |           ~'\\     /`~           |        `.      \n"
+           " /      ___//              `. ,'          ,  , \\___      \\    \n"
+           "|    ,-'   `-.__   _         |        ,    __,-'   `-.    |    \n"
+           "|   /          /\\_  `   .    |    ,      _/\\          \\   |   \n"
+           "\\  |           \\ \\`-.___ \\   |   / ___,-'/ /           |  /  \n"
+           " \\  \\           | `._   `\\\\  |  //'   _,' |           /  /      \n"
+           "  `-.\\         /'  _ `---'' , . ``---' _  `\\         /,-'     \n"
+           "     ``       /     \\    ,='/ \\`=.    /     \\       ''          \n"
+           "             |__   /|\\_,--.,-.--,--._/|\\   __|                  \n"
+           "             /  `./  \\\\`\\ |  |  | /,//' \\,'  \\                  \n"
+           "            /   /     ||--+--|--+-/-|     \\   \\                 \n"
+           "           |   |     /'\\_\\_\\ | /_/_/`\\     |   |                \n"
+           "            \\   \\__, \\_     `~'     _/ .__/   /            \n"
+           "             `-._,-'   `-._______,-'   `-._,-'");
+    printf("\n\n");
     printf("Play from last save (1)\n");
     printf("New game            (2)\n");
     printf("Exit                (3)\n\n");
@@ -22,6 +40,8 @@ void display_player_ath(Player *player) {
 
     display_player_health(player);
     display_player_mana(player);
+    printf("Gold:    " );
+    printf(YELLOW "%d\n" RESET, player->gold);
     printf("Attacks left this turn:   %d", player->attacks_left);
     printf("\n\n\n");
 

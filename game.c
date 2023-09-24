@@ -47,6 +47,7 @@ Game *game;
 
 
 void free_game(Game *game) {
+    free(game->monsters);
     free(game);
 
 #if DEBUG

@@ -33,6 +33,7 @@ Player *init_player() {
         player->lifepoints = player->lifepoints_max;
         player->mana_max = 100;
         player->mana = player->mana_max;
+        player->gold = 0;
         player->defense = 10;
         player->attacks_by_turn = 1;
         player->attacks_left = player->attacks_by_turn;
