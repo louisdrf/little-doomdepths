@@ -2,6 +2,8 @@
 // Created by louis on 24/09/2023.
 //
 
+#include <stdlib.h>
+#include <stdio.h>
 #include "monster.h"
 #include "structs.h"
 
@@ -20,4 +22,39 @@ Monster *getTargetMonster(Player *player, int id) {
     }
 
     return current;
+}
+
+
+int monsters_attack(Player *player) {
+
+    Monster *current = player->current_level->monsters;
+    int damages = 0;
+
+    while(current != NULL) { // tous les monstres attaquent le joueur
+
+        if(current->isAlive)
+        {
+                printf("monstre %d attaque.\n", current->id);
+
+                while(current->attacks_left > 0)                                                // tant que le monstre peut jouer il attaque
+                {
+                    damages = rand() % current->max_strength + current->min_strength;           // degats du monstre au joueur
+
+                    if( (player->lifepoints - damages) > 0) player->lifepoints -= damages;      // si l'attaque ne tue pas le joueur, elle se fait
+                    else
+                    {
+                        player->isAlive = false;
+                        return 1;
+                    }
+                    current->attacks_left--;
+                }
+                current->turn = false;                                                          // fin du tour du monstre
+                current->attacks_left = current->attacks_by_turn;
+                current = current->next;
+        }
+        else current = current->next;
+    }
+    player->turn = true;                                                                        // le joueur peut rejouer ensuite
+    player->attacks_left = player->attacks_by_turn;
+    return 0;
 }

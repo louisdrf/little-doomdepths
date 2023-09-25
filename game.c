@@ -49,9 +49,18 @@ Game *game;
 }
 
 
+int end_game(Game *game) {
+    free_game(game);
+    printf("\nFin de partie.\n");
+    exit(0);
+}
+
+
 void free_game(Game *game) {
-    free(game->levelList);
-    free(game);
+    if(game != NULL) {
+        free(game->levelList);
+        free(game);
+    }
 
 #if DEBUG
     if(game == NULL) printf("\nGame correctly free.\n");

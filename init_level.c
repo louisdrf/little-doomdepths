@@ -31,7 +31,7 @@ Level *init_level(int id) {
     Monster *first_monster = NULL;
     level->nbMonsters = rand() % NBMONSTERS_MAX + NBMONSTERS_MIN; // nombre de monstres pour le niveau
 
-    for(int j = 0; j < level->nbMonsters + 1; j++) {
+    for(int j = 1; j < level->nbMonsters + 1; j++) {
         first_monster = create_monster(first_monster, j);
         #if DEBUG
                 printf("Monster %d in level %d correctly added.\n", j, level->id);

@@ -47,6 +47,7 @@ struct Monster {
     unsigned short                 max_strength;       // attaque max
     unsigned short                 defense;
     unsigned short                 attacks_by_turn;    // nombre d'attaques par tour de jeu
+    unsigned short                 attacks_left;       // nombre d'attaques restantes pour le tour
     bool                           turn;               // indique si cest au tour du monstre de jouer
     bool                           isAlive;            // indique si le monstre a été tué ou non
     char *                         draw;               // chaine de caractère de dessin du monstre

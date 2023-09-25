@@ -31,9 +31,10 @@ Monster *create_monster(Monster *head, int index) {
 
     new->lifepoints = new->lifepoints_max;
     new->defense = rand() % MONSTER_MAX_DEFENSE + MONSTER_MIN_DEFENSE;
-    new->min_strength = 10;
-    new->max_strength = 20;
+    new->min_strength = 2;
+    new->max_strength = 6;
     new->attacks_by_turn = 1;
+    new->attacks_left = new->attacks_by_turn;
     new->turn = false;
     new->draw = NULL;
     new->monster_type = rand() % 3 + 1;

@@ -7,6 +7,7 @@
 #include "structs.h"
 
 Game *init_game();
+int end_game(Game *game);
 void free_game(Game *game);
 
 #endif //DOOM_GAME_H

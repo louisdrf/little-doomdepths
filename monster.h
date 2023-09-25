@@ -7,5 +7,6 @@
 #include "structs.h"
 
 Monster *getTargetMonster(Player *player, int id);
+int monsters_attack(Player *player);
 
 #endif //DOOM_MONSTER_H
