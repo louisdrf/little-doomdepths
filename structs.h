@@ -29,11 +29,13 @@ typedef struct {
     char*                   name;
     unsigned short          min_strength;
     unsigned short          max_strength;
-    unsigned short          attacks_by_turn; // nombre d'attaques par tour que confère l'arme
+    unsigned short          attacks_by_turn;   // nombre d'attaques par tour que confère l'arme
     char*                   draw;
-    int                     mana_cost;       // cout en mana d'une attaque
+    int                     mana_cost;         // cout en mana d'une attaque
+    unsigned short          rarity;            // rareté de l'arme
 
 } Weapon;
+
 
 typedef struct Monster Monster;
 
@@ -71,6 +73,13 @@ typedef struct {
 } Level;
 
 
+typedef struct {
+
+    int                     limObjects;                   // limite d'objets que le joueur peut transporter
+    Weapon**                weaponList;                   // tableaux de ses armes
+    Armor**                 armorList;                    // tableaux de ses Armures
+
+} Inventory;
 
 typedef struct {
 
@@ -90,6 +99,7 @@ typedef struct {
     Weapon*             current_weapon;     // arme équipée
     Armor*              current_armor;      // armure équipée
     Level*              current_level;      // niveau actuel dans lequel se situe le joueur
+    Inventory*          inventory;          // inventaire du joueur
 
 } Player;
 

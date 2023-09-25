@@ -15,4 +15,6 @@
 
 #define NBLEVELS 2
 
+#define NBOBJECTS_MAX 10
+
 #endif //DOOM_DEFINES_H

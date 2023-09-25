@@ -8,6 +8,7 @@
 #include <string.h>
 #include "player.h"
 #include "structs.h"
+#include "init_inventory.h"
 
 #define DEBUG false
 
@@ -42,6 +43,7 @@ Player *init_player(Level *level) {
 
         player->current_level = level;
         init_player_draw(player);
+        init_inventory(player);
 
     #if DEBUG
         print_player_stats(player);
