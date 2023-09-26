@@ -4,7 +4,7 @@
 
 #ifndef DOOM_INIT_INVENTORY_H
 #define DOOM_INIT_INVENTORY_H
-#include "structs.h"
+#include "../includes/structs.h"
 
 void init_inventory(Player *player);
 

@@ -4,7 +4,7 @@
 
 #ifndef DOOM_PLAYER_ATTACK_H
 #define DOOM_PLAYER_ATTACK_H
-#include "structs.h"
+#include "../includes/structs.h"
 
 void player_attack(Player *player, int idMonster);
 

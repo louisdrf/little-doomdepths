@@ -4,14 +4,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
-#include "structs.h"
-#include "defines.h"
-#include "loop.h"
-#include "game.h"
-#include "display.h"
-#include "player_attack.h"
-#include "monster.h"
-#include "init_level.h"
+#include "../headers/includes/structs.h"
+#include "../headers/includes/defines.h"
+#include "../headers/loop.h"
+#include "../headers/game.h"
+#include "../headers/display.h"
+#include "../headers/player/player_attack.h"
+#include "../headers/monsters/monster.h"
+#include "../headers/init/init_level.h"
 
 /**
  * manages the game loop
@@ -41,13 +41,15 @@ void launch_loop(Game *game, Player *player) {
 
                     if(are_all_monsters_dead(player) == 1)              // retourne 1 si tous les monstres du niveau sont morts et passe le joueur au niveau supérieur
                     {
-                        next_level(game, player);
+                        if(display_next_level_menu() == 1) next_level(game, player);
+                        else return;
                     }
             }
             else {
-                if(monsters_attack(player) == 1) break;                     // retourne 1 si le joueur se fait tuer
+                if(monsters_attack(player) == 1) {                      // retourne 1 si le joueur se fait tuer
+                    display_lose();
+                    break;
+                }
             }
     }
-
-    exit(0);
 }

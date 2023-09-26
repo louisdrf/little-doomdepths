@@ -4,9 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "init_monster.h"
-#include "structs.h"
-#include "defines.h"
+#include "../../headers/init/init_monster.h"
+#include "../../headers/includes/structs.h"
+#include "../../headers/includes/defines.h"
 
 #define DEBUG false
 

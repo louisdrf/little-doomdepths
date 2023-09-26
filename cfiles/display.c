@@ -3,9 +3,9 @@
 //
 #include <stdio.h>
 #include <conio.h>
-#include "display.h"
-#include "player.h"
-#include "colors.h"
+#include "../headers/display.h"
+#include "../headers/player/player.h"
+#include "../headers/includes/colors.h"
 
 
 void display_init_menu() {
@@ -41,7 +41,7 @@ void display_all(Player *player) {
 }
 
 void display_player(Player *player) {
-    printf("%s\n", player->draw);
+    printf(RED"%s\n"RESET, player->draw);
 }
 
 void display_player_ath(Player *player) {
@@ -115,21 +115,32 @@ int display_next_level_menu() {
     int playerEntry;
 
     printf("\n\n");
-    printf("___  _ ____  _       _      ____  _        _ \n"
-           "\\  \\///  _ \\/ \\ /\\  / \\  /|/  _ \\/ \\  /|  / \\\n"
-           " \\  / | / \\|| | ||  | |  ||| / \\|| |\\ ||  | |\n"
-           " / /  | \\_/|| \\_/|  | |/\\||| \\_/|| | \\||  \\_/\n"
-           "/_/   \\____/\\____/  \\_/  \\|\\____/\\_/  \\|  (_)\n"
-           "                                             ");
+    printf(GREEN"                                        __ \n"
+           " __ __ _____ _____    _ _ _ _____ _____  |  |\n"
+           "|  |  |     |  |  |  | | | |     |   |   |  |\n"
+           "|_   _|  |  |  |  |  | | | |  |  | | |   |__|\n"
+           "  |_| |_____|_____|  |_____|_____|_|___  |__|\n"
+           "                                           "RESET);
     printf("\n\n");
     printf("Niveau suivant (1)        Quitter (0)\n\n-->  ");
     playerEntry = getch();
     playerEntry -= 48;                                  // décalage ASCII de la saisie pour obtenir la valeur numérique
-    if(playerEntry != 1 || playerEntry != 0) {
+    while(playerEntry != 1 && playerEntry != 0) {
         playerEntry = getch();
         playerEntry -= 48;
     }
 
     return playerEntry;
+}
+
+void display_lose() {
+
+    printf("\n\n");
+    printf(RED"                                                 __ \n"
+           " __ __ _____ _____    __    _____ _____ _____    |  |\n"
+           "|  |  |     |  |  |  |  |  |     |   __|   __|   |  |\n"
+           "|_   _|  |  |  |  |  |  |__|  |  |__   |   __|   |__|\n"
+           "  |_| |_____|_____|  |_____|_____|_____|_____|   |__|\n"
+           "                                                    "RESET);
 }
 

@@ -5,7 +5,7 @@
 #ifndef DOOM_INIT_LEVEL_H
 #define DOOM_INIT_LEVEL_H
 
-#include "structs.h"
+#include "../includes/structs.h"
 
 Level *init_level(int id);
 void next_level(Game *game, Player *player);

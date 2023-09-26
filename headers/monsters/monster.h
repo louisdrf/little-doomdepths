@@ -4,7 +4,7 @@
 
 #ifndef DOOM_MONSTER_H
 #define DOOM_MONSTER_H
-#include "structs.h"
+#include "../includes/structs.h"
 
 int are_all_monsters_dead(Player *player);
 Monster *getTargetMonster(Player *player, int id);

@@ -3,9 +3,9 @@
 //
 #include <stdlib.h>
 #include <stdio.h>
-#include "init_inventory.h"
-#include "structs.h"
-#include "defines.h"
+#include "../../headers/init/init_inventory.h"
+#include "../../headers/includes/structs.h"
+#include "../../headers/includes/defines.h"
 
 #define DEBUG true
 

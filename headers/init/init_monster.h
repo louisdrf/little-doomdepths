@@ -4,7 +4,7 @@
 
 #ifndef DOOM_INIT_MONSTER_H
 #define DOOM_INIT_MONSTER_H
-#include "structs.h"
+#include "../includes/structs.h"
 
 Monster *create_monster(Monster *head, int index);
 

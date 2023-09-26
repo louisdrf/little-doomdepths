@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
-#include "game.h"
-#include "structs.h"
-#include "display.h"
-#include "player.h"
-#include "loop.h"
+#include "../headers/game.h"
+#include "../headers/includes/structs.h"
+#include "../headers/display.h"
+#include "../headers/player/player.h"
+#include "../headers/loop.h"
 
 
 int main() {

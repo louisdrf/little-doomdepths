@@ -49,65 +49,65 @@ cmake_ninja_workdir = C$:/Users/louis/CLionProjects/doom/cmake-build-debug/
 
 build cmake_object_order_depends_target_doom: phony || CMakeFiles/doom.dir
 
-build CMakeFiles/doom.dir/main.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/main.c || cmake_object_order_depends_target_doom
-  DEP_FILE = CMakeFiles\doom.dir\main.c.obj.d
+build CMakeFiles/doom.dir/cfiles/main.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/main.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\cfiles\main.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
-  OBJECT_FILE_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles
 
-build CMakeFiles/doom.dir/game.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/game.c || cmake_object_order_depends_target_doom
-  DEP_FILE = CMakeFiles\doom.dir\game.c.obj.d
+build CMakeFiles/doom.dir/cfiles/game.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/game.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\cfiles\game.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
-  OBJECT_FILE_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles
 
-build CMakeFiles/doom.dir/display.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/display.c || cmake_object_order_depends_target_doom
-  DEP_FILE = CMakeFiles\doom.dir\display.c.obj.d
+build CMakeFiles/doom.dir/cfiles/display.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/display.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\cfiles\display.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
-  OBJECT_FILE_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles
 
-build CMakeFiles/doom.dir/player.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/player.c || cmake_object_order_depends_target_doom
-  DEP_FILE = CMakeFiles\doom.dir\player.c.obj.d
+build CMakeFiles/doom.dir/cfiles/player/player.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/player/player.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\cfiles\player\player.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
-  OBJECT_FILE_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\player
 
-build CMakeFiles/doom.dir/init_monster.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/init_monster.c || cmake_object_order_depends_target_doom
-  DEP_FILE = CMakeFiles\doom.dir\init_monster.c.obj.d
+build CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/init/init_monster.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\cfiles\init\init_monster.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
-  OBJECT_FILE_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\init
 
-build CMakeFiles/doom.dir/init_inventory.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/init_inventory.c || cmake_object_order_depends_target_doom
-  DEP_FILE = CMakeFiles\doom.dir\init_inventory.c.obj.d
+build CMakeFiles/doom.dir/cfiles/init/init_inventory.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/init/init_inventory.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\cfiles\init\init_inventory.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
-  OBJECT_FILE_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\init
 
-build CMakeFiles/doom.dir/init_level.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/init_level.c || cmake_object_order_depends_target_doom
-  DEP_FILE = CMakeFiles\doom.dir\init_level.c.obj.d
+build CMakeFiles/doom.dir/cfiles/init/init_level.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/init/init_level.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\cfiles\init\init_level.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
-  OBJECT_FILE_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\init
 
-build CMakeFiles/doom.dir/loop.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/loop.c || cmake_object_order_depends_target_doom
-  DEP_FILE = CMakeFiles\doom.dir\loop.c.obj.d
+build CMakeFiles/doom.dir/cfiles/loop.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/loop.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\cfiles\loop.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
-  OBJECT_FILE_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles
 
-build CMakeFiles/doom.dir/player_attack.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/player_attack.c || cmake_object_order_depends_target_doom
-  DEP_FILE = CMakeFiles\doom.dir\player_attack.c.obj.d
+build CMakeFiles/doom.dir/cfiles/player/player_attack.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/player/player_attack.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\cfiles\player\player_attack.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
-  OBJECT_FILE_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\player
 
-build CMakeFiles/doom.dir/monster.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/monster.c || cmake_object_order_depends_target_doom
-  DEP_FILE = CMakeFiles\doom.dir\monster.c.obj.d
+build CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/monsters/monster.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\cfiles\monsters\monster.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
-  OBJECT_FILE_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\monsters
 
 
 # =============================================================================
@@ -117,7 +117,7 @@ build CMakeFiles/doom.dir/monster.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Us
 #############################################
 # Link the executable doom.exe
 
-build doom.exe: C_EXECUTABLE_LINKER__doom_Debug CMakeFiles/doom.dir/main.c.obj CMakeFiles/doom.dir/game.c.obj CMakeFiles/doom.dir/display.c.obj CMakeFiles/doom.dir/player.c.obj CMakeFiles/doom.dir/init_monster.c.obj CMakeFiles/doom.dir/init_inventory.c.obj CMakeFiles/doom.dir/init_level.c.obj CMakeFiles/doom.dir/loop.c.obj CMakeFiles/doom.dir/player_attack.c.obj CMakeFiles/doom.dir/monster.c.obj
+build doom.exe: C_EXECUTABLE_LINKER__doom_Debug CMakeFiles/doom.dir/cfiles/main.c.obj CMakeFiles/doom.dir/cfiles/game.c.obj CMakeFiles/doom.dir/cfiles/display.c.obj CMakeFiles/doom.dir/cfiles/player/player.c.obj CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj CMakeFiles/doom.dir/cfiles/init/init_inventory.c.obj CMakeFiles/doom.dir/cfiles/init/init_level.c.obj CMakeFiles/doom.dir/cfiles/loop.c.obj CMakeFiles/doom.dir/cfiles/player/player_attack.c.obj CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\doom.dir

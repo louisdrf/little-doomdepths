@@ -5,7 +5,7 @@
 #ifndef DOOM_PLAYER_H
 #define DOOM_PLAYER_H
 
-#include "structs.h"
+#include "../includes/structs.h"
 
 Player *init_player(Level *level);
 void free_player(Player *player);

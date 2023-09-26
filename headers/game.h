@@ -4,7 +4,7 @@
 
 #ifndef DOOM_GAME_H
 #define DOOM_GAME_H
-#include "structs.h"
+#include "includes/structs.h"
 
 Game *init_game();
 int end_game(Game *game);

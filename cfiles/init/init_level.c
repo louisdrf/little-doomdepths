@@ -4,11 +4,11 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "init_level.h"
-#include "init_monster.h"
-#include "structs.h"
-#include "defines.h"
-#include "display.h"
+#include "../../headers/init/init_level.h"
+#include "../../headers/init/init_monster.h"
+#include "../../headers/includes/structs.h"
+#include "../../headers/includes/defines.h"
+#include "../../headers/display.h"
 
 #define DEBUG false
 

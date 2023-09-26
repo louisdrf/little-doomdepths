@@ -6,10 +6,10 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "game.h"
-#include "structs.h"
-#include "defines.h"
-#include "init_level.h"
+#include "../headers/game.h"
+#include "../headers/includes/structs.h"
+#include "../headers/includes/defines.h"
+#include "../headers/init/init_level.h"
 
 #define DEBUG false
 

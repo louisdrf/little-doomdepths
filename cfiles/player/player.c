@@ -6,9 +6,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include "player.h"
-#include "structs.h"
-#include "init_inventory.h"
+#include "../../headers/player/player.h"
+#include "../../headers/includes/structs.h"
+#include "../../headers/init/init_inventory.h"
 
 
 #define DEBUG false
@@ -63,26 +63,26 @@ Player *init_player(Level *level) {
 
 void init_player_draw(Player *player) {
 
-    char *draw = "       .---.\n"
-                 "  ___ /_____\\\n"
-                 " /\\.-`( '.' )\n"
-                 "/ /    \\_-_/_\n"
-                 "\\ `-.-\"`'V'//-.\n"
-                 " `.__,   |// , \\\n"
-                 "     |Ll //Ll|\\ \\\n"
-                 "     |__//   | \\_\\\n"
-                 "    /---|[]==| / /\n"
-                 "    \\__/ |   \\/\\/\n"
-                 "    /_   | Ll_\\|\n"
-                 "     |`^\"\"\"^`|\n"
-                 "     |   |   |\n"
-                 "     |   |   |\n"
-                 "     |   |   |\n"
-                 "     |   |   |\n"
-                 "     L___l___J\n"
-                 "      |_ | _|\n"
-                 "     (___|___)\n"
-                 "      ^^^ ^^^";
+    char *draw = "      _,.\n"
+                 "    ,` -.)\n"
+                 "   ( _/-\\\\-._\n"
+                 "  /,|`--._,-^|            ,\n"
+                 "  \\_| |`-._/||          ,'|\n"
+                 "    |  `-, / |         /  /\n"
+                 "    |     || |        /  /\n"
+                 "     `r-._||/   __   /  /\n"
+                 " __,-<_     )`-/  `./  /\n"
+                 "'  \\   `---'   \\   /  /\n"
+                 "    |           |./  /\n"
+                 "    /           //  /\n"
+                 "\\_/' \\         |/  /\n"
+                 " |    |   _,^-'/  /\n"
+                 " |    , ``  (\\/  /_\n"
+                 "  \\,.->._    \\X-=/^\n"
+                 "  (  /   `-._//^`\n"
+                 "   `Y-.____(__}\n"
+                 "    |     {__)\n"
+                 "          ()";
 
     player->draw = malloc(sizeof(draw) + 1);
     strcpy(player->draw, draw);

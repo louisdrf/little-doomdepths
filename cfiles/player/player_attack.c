@@ -5,9 +5,9 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "player_attack.h"
-#include "monster.h"
-#include "structs.h"
+#include "../../headers/player/player_attack.h"
+#include "../../headers/monsters/monster.h"
+#include "../../headers/includes/structs.h"
 
 
 void player_attack(Player *player, int idMonster) {

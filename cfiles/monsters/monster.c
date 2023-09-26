@@ -4,8 +4,8 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "monster.h"
-#include "structs.h"
+#include "../../headers/monsters/monster.h"
+#include "../../headers/includes/structs.h"
 
 /**
  * return 1 if all monsters are dead, else return 0
