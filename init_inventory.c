@@ -2,10 +2,12 @@
 // Created by mokrane on 25/09/2023.
 //
 #include <stdlib.h>
+#include <stdio.h>
 #include "init_inventory.h"
 #include "structs.h"
+#include "defines.h"
 
-#define DEBUG false
+#define DEBUG true
 
 void init_inventory(Player *player)
 {

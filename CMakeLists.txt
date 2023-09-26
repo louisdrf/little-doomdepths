@@ -15,6 +15,8 @@ add_executable(doom main.c
         colors.h
         init_monster.c
         init_monster.h
+        init_inventory.c
+        init_inventory.h
         init_level.c
         init_level.h
         loop.c

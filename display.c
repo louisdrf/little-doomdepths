@@ -2,13 +2,14 @@
 // Created by louis on 22/09/2023.
 //
 #include <stdio.h>
+#include <conio.h>
 #include "display.h"
 #include "player.h"
 #include "colors.h"
 
 
 void display_init_menu() {
-    printf("                     ----Doomdepths----\n\n");
+    printf(RED"                     ----Doomdepths----\n\n");
     printf("                            ,-.                               \n"
            "       ___,---.__          /'|`\\          __,---,___          \n"
            "    ,-'    \\`    `-.____,-'  |  `-.____,-'    //    `-.       \n"
@@ -26,7 +27,7 @@ void display_init_menu() {
            "           |   |     /'\\_\\_\\ | /_/_/`\\     |   |                \n"
            "            \\   \\__, \\_     `~'     _/ .__/   /            \n"
            "             `-._,-'   `-._______,-'   `-._,-'");
-    printf("\n\n");
+    printf("\n\n"RESET);
     printf("Play from last save (1)\n");
     printf("New game            (2)\n");
     printf("Exit                (3)\n\n");
@@ -101,10 +102,34 @@ void display_monsters_alive(Monster *head) {
     Monster *current = head;
 
     while (current != NULL) {
-        if(current->isAlive){
-            printf("%d - type : %d (%d/%d)\n", current->id, current->monster_type, current->lifepoints, current->lifepoints_max);
+        if(current->isAlive) {
+            printf("monstre %d - type : %d (%d/%d)\n", current->id, current->monster_type, current->lifepoints, current->lifepoints_max);
         }
         current = current->next;
     }
 };
+
+
+int display_next_level_menu() {
+
+    int playerEntry;
+
+    printf("\n\n");
+    printf("___  _ ____  _       _      ____  _        _ \n"
+           "\\  \\///  _ \\/ \\ /\\  / \\  /|/  _ \\/ \\  /|  / \\\n"
+           " \\  / | / \\|| | ||  | |  ||| / \\|| |\\ ||  | |\n"
+           " / /  | \\_/|| \\_/|  | |/\\||| \\_/|| | \\||  \\_/\n"
+           "/_/   \\____/\\____/  \\_/  \\|\\____/\\_/  \\|  (_)\n"
+           "                                             ");
+    printf("\n\n");
+    printf("Niveau suivant (1)        Quitter (0)\n\n-->  ");
+    playerEntry = getch();
+    playerEntry -= 48;                                  // décalage ASCII de la saisie pour obtenir la valeur numérique
+    if(playerEntry != 1 || playerEntry != 0) {
+        playerEntry = getch();
+        playerEntry -= 48;
+    }
+
+    return playerEntry;
+}
 

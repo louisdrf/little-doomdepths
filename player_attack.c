@@ -9,6 +9,7 @@
 #include "monster.h"
 #include "structs.h"
 
+
 void player_attack(Player *player, int idMonster) {
 
     srand(time(NULL));

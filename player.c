@@ -10,6 +10,7 @@
 #include "structs.h"
 #include "init_inventory.h"
 
+
 #define DEBUG false
 
 /**
@@ -43,7 +44,7 @@ Player *init_player(Level *level) {
 
         player->current_level = level;
         init_player_draw(player);
-        init_inventory(player);
+        //init_inventory(player);
 
     #if DEBUG
         print_player_stats(player);
@@ -62,7 +63,26 @@ Player *init_player(Level *level) {
 
 void init_player_draw(Player *player) {
 
-    char *draw = "   ^_^   \n  /   \\  \n /     \\ \n|       |\n|   |   |\n|___|___|\n";
+    char *draw = "       .---.\n"
+                 "  ___ /_____\\\n"
+                 " /\\.-`( '.' )\n"
+                 "/ /    \\_-_/_\n"
+                 "\\ `-.-\"`'V'//-.\n"
+                 " `.__,   |// , \\\n"
+                 "     |Ll //Ll|\\ \\\n"
+                 "     |__//   | \\_\\\n"
+                 "    /---|[]==| / /\n"
+                 "    \\__/ |   \\/\\/\n"
+                 "    /_   | Ll_\\|\n"
+                 "     |`^\"\"\"^`|\n"
+                 "     |   |   |\n"
+                 "     |   |   |\n"
+                 "     |   |   |\n"
+                 "     |   |   |\n"
+                 "     L___l___J\n"
+                 "      |_ | _|\n"
+                 "     (___|___)\n"
+                 "      ^^^ ^^^";
 
     player->draw = malloc(sizeof(draw) + 1);
     strcpy(player->draw, draw);

@@ -8,6 +8,7 @@
 #include "init_monster.h"
 #include "structs.h"
 #include "defines.h"
+#include "display.h"
 
 #define DEBUG false
 
@@ -45,4 +46,20 @@ printf("Level %d correctly initialized.\n", level->id);
 #endif
 
     return level;
+}
+
+
+void next_level(Game *game, Player *player) {
+
+    int next_level = (player->current_level->id) + 1;
+
+    player->current_level = game->levelList[next_level];
+    printf("\nVous passez au niveau %d !\n", next_level);
+
+    player->turn = true;
+    player->attacks_left = player->attacks_by_turn;
+    player->lifepoints = player->lifepoints_max;
+
+    //if(display_next_level_menu() == 1) return;
+    //else game->isRunning = false;
 }

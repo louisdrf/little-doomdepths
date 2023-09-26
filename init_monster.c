@@ -38,7 +38,7 @@ Monster *create_monster(Monster *head, int index) {
     new->turn = false;
     new->draw = NULL;
     new->monster_type = rand() % 3 + 1;
-
+    new->isAlive = true;
     new->next = head;
 
 #if DEBUG
