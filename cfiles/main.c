@@ -17,13 +17,15 @@ int main() {
     display_init_menu();
 
     choice = getch();
+    choice -= 48;
+
 
     switch(choice) {
-        case '1': // play from last save
+        case 1: // play from last save
             printf("Load last game ?\n");
             break;
 
-        case '2': // new game
+        case 2: // new game
             printf("Launching new game...\n\n");
             game = init_game();                             // init la partie et les niveaux
             player = init_player(game->levelList[0]);       // passer le niveau 0 en argument au joueur
@@ -34,9 +36,9 @@ int main() {
             free_game(game);
             break;
 
-        case '3': // exit
+        case 3: // exit
             printf("End.");
-            exit(0);
+            break;
 
         default:
             break;

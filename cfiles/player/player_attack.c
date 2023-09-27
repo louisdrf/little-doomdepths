@@ -26,6 +26,7 @@ void player_attack(Player *player, int idMonster) {
     if((target->lifepoints) - current_attack_strength <= 0) {
         target->lifepoints = 0;
         target->isAlive = false;
+        player->gold += target->loot_gold;
     }
     else target->lifepoints -= current_attack_strength;
 

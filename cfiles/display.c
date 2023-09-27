@@ -48,7 +48,7 @@ void display_player_ath(Player *player) {
 
     display_player_health(player);
     display_player_mana(player);
-    printf("Gold:    " );
+    printf("Gold:     ");
     printf(YELLOW "%d\n" RESET, player->gold);
     printf("Attacks left this turn:   %d\n\n", player->attacks_left);
     printf("Current level:            %d", player->current_level->id);
@@ -115,12 +115,13 @@ int display_next_level_menu() {
     int playerEntry;
 
     printf("\n\n");
-    printf(GREEN"                                        __ \n"
-           " __ __ _____ _____    _ _ _ _____ _____  |  |\n"
-           "|  |  |     |  |  |  | | | |     |   |   |  |\n"
-           "|_   _|  |  |  |  |  | | | |  |  | | |   |__|\n"
-           "  |_| |_____|_____|  |_____|_____|_|___  |__|\n"
-           "                                           "RESET);
+    printf(GREEN"____    ____  ______    __    __     ____    __    ____  ______   .__   __.     __  \n"
+           "\\   \\  /   / /  __  \\  |  |  |  |    \\   \\  /  \\  /   / /  __  \\  |  \\ |  |    |  | \n"
+           " \\   \\/   / |  |  |  | |  |  |  |     \\   \\/    \\/   / |  |  |  | |   \\|  |    |  | \n"
+           "  \\_    _/  |  |  |  | |  |  |  |      \\            /  |  |  |  | |  . `  |    |  | \n"
+           "    |  |    |  `--'  | |  `--'  |       \\    /\\    /   |  `--'  | |  |\\   |    |__| \n"
+           "    |__|     \\______/   \\______/         \\__/  \\__/     \\______/  |__| \\__|    (__) \n"
+           "                                                                                    "RESET);
     printf("\n\n");
     printf("Niveau suivant (1)        Quitter (0)\n\n-->  ");
     playerEntry = getch();
@@ -136,11 +137,12 @@ int display_next_level_menu() {
 void display_lose() {
 
     printf("\n\n");
-    printf(RED"                                                 __ \n"
-           " __ __ _____ _____    __    _____ _____ _____    |  |\n"
-           "|  |  |     |  |  |  |  |  |     |   __|   __|   |  |\n"
-           "|_   _|  |  |  |  |  |  |__|  |  |__   |   __|   |__|\n"
-           "  |_| |_____|_____|  |_____|_____|_____|_____|   |__|\n"
-           "                                                    "RESET);
+    printf(RED"____    ____  ______    __    __      __        ______        _______. _______     __  \n"
+           "\\   \\  /   / /  __  \\  |  |  |  |    |  |      /  __  \\      /       ||   ____|   |  | \n"
+           " \\   \\/   / |  |  |  | |  |  |  |    |  |     |  |  |  |    |   (----`|  |__      |  | \n"
+           "  \\_    _/  |  |  |  | |  |  |  |    |  |     |  |  |  |     \\   \\    |   __|     |  | \n"
+           "    |  |    |  `--'  | |  `--'  |    |  `----.|  `--'  | .----)   |   |  |____    |__| \n"
+           "    |__|     \\______/   \\______/     |_______| \\______/  |_______/    |_______|   (__) \n"
+           "                                                                                       "RESET);
 }
 

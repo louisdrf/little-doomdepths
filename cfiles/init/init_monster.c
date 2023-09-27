@@ -39,6 +39,7 @@ Monster *create_monster(Monster *head, int index) {
     new->draw = NULL;
     new->monster_type = rand() % 3 + 1;
     new->isAlive = true;
+    new->loot_gold = rand() % MAX_GOLD_LOOT + MIN_GOLD_LOOT;
     new->next = head;
 
 #if DEBUG

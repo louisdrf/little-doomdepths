@@ -52,7 +52,7 @@ Game *game;
 int end_game(Game *game) {
     free_game(game);
     printf("\nFin de partie.\n");
-    exit(0);
+    return 0;
 }
 
 

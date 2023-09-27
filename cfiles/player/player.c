@@ -20,6 +20,8 @@
 Player *init_player(Level *level) {
 
         Player *player;
+        Inventory *inventory = NULL;
+        inventory = init_inventory();
 
         player = malloc(sizeof(Player));
         if(player == NULL) {
@@ -44,7 +46,7 @@ Player *init_player(Level *level) {
 
         player->current_level = level;
         init_player_draw(player);
-        //init_inventory(player);
+        player->inventory = inventory;
 
     #if DEBUG
         print_player_stats(player);
@@ -84,7 +86,7 @@ void init_player_draw(Player *player) {
                  "    |     {__)\n"
                  "          ()";
 
-    player->draw = malloc(sizeof(draw) + 1);
+    player->draw = malloc(sizeof(strlen(draw)) + 1);
     strcpy(player->draw, draw);
 
     if(strlen(player->draw) == 0) {
@@ -105,7 +107,16 @@ void print_player_stats(Player *player) {
 }
 
 
+/**
+ * free inventory, draw and player itself
+ * @param player
+ */
 void free_player(Player *player) {
+
+    for(int i = 0; i < NBOBJECTS_MAX; i++) {
+        free(player->inventory->armorList[i]);
+        free(player->inventory->weaponList[i]);
+    }
     free(player->draw);
     free(player);
 

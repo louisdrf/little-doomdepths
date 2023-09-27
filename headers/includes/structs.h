@@ -63,12 +63,12 @@ struct Monster {
 
 typedef struct {
 
-    Monster*                 monsters;           // liste chainée de monstres
+    Monster*                 monsters;            // liste chainée de monstres
     unsigned short           id;                  // niveau 1, 2, 3...
     unsigned short           nbMonsters;          // nb de monstres de la partie
-    struct Weapon*           loot_weapon;        // arme lootable sur le niveau
-    struct Armor*            loot_armor;         // armure lootable sur le niveau
-    unsigned int             loot_gold;          // gold lootable sur le niveau
+    struct Weapon*           loot_weapon;         // arme lootable sur le niveau
+    struct Armor*            loot_armor;          // armure lootable sur le niveau
+    unsigned int             loot_gold;           // gold lootable sur le niveau
 
 } Level;
 
@@ -82,9 +82,9 @@ typedef struct {
 
 typedef struct {
 
-    int                     limObjects;                   // limite d'objets que le joueur peut transporter
-    Weapon**                weaponList;                   // tableaux de ses armes
-    Armor**                 armorList;                    // tableaux de ses Armures
+    int                    limObjects;                                  // limite d'objets que le joueur peut transporter
+    Weapon*                weaponList[NBOBJECTS_MAX];                   // tableaux de ses armes
+    Armor*                 armorList[NBOBJECTS_MAX];                    // tableaux de ses Armures
 
 } Inventory;
 
@@ -106,7 +106,7 @@ typedef struct {
     Weapon*             current_weapon;     // arme équipée
     Armor*              current_armor;      // armure équipée
     Level*              current_level;      // niveau actuel dans lequel se situe le joueur
-    Inventory*          inventory;          // inventaire du joueur
+    Inventory*           inventory;         // inventaire du joueur
 
 } Player;
 

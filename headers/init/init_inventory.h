@@ -6,6 +6,6 @@
 #define DOOM_INIT_INVENTORY_H
 #include "../includes/structs.h"
 
-void init_inventory(Player *player);
+Inventory *init_inventory();
 
 #endif //DOOM_INIT_INVENTORY_H

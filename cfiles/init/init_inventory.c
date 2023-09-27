@@ -9,13 +9,11 @@
 
 #define DEBUG true
 
-void init_inventory(Player *player)
+Inventory *init_inventory()
 {
-    player->inventory = malloc(sizeof (Inventory) + (NBOBJECTS_MAX * sizeof(Armor)) + (NBOBJECTS_MAX * sizeof(Weapon)));
-    player->inventory->armorList = malloc((NBOBJECTS_MAX * sizeof(Armor)));
-    player->inventory->weaponList = malloc((NBOBJECTS_MAX * sizeof(Weapon)));
+    Inventory *inventory = malloc( sizeof(Inventory));
 
-    if(player->inventory == NULL || player->inventory->armorList == NULL || player->inventory->weaponList == NULL)
+    if(inventory == NULL)
     {
         #if DEBUG
                 printf("Allocating memory for inventory failed.\n");
@@ -23,10 +21,11 @@ void init_inventory(Player *player)
         exit(1);
     }
 
-    player->inventory->limObjects = NBOBJECTS_MAX;
+    inventory->limObjects = NBOBJECTS_MAX;
 
 #if DEBUG
     printf("Inventory correctly initialized.\n");
 #endif
 
+    return inventory;
 }
