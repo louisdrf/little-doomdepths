@@ -12,6 +12,10 @@
 Inventory *init_inventory()
 {
     Inventory *inventory = malloc( sizeof(Inventory));
+    for(int i = 0; i < NBOBJECTS_MAX; i++) {
+        inventory->weaponList[i] = NULL;
+        inventory->armorList[i] = NULL;
+    }
 
     if(inventory == NULL)
     {

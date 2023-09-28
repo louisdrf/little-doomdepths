@@ -9,6 +9,7 @@
 #include "../../headers/player/player.h"
 #include "../../headers/includes/structs.h"
 #include "../../headers/init/init_inventory.h"
+#include "../../headers/inventory/inventory.h"
 #include "../../headers/weapon/init_weapon.h"
 
 
