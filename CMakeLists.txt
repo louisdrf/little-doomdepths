@@ -26,4 +26,6 @@ add_executable(doom cfiles/main.c
         cfiles/monsters/monster.c
         headers/monsters/monster.h
         cfiles/inventory/inventory.c
-        headers/inventory/inventory.h)
+        headers/inventory/inventory.h
+        cfiles/weapon/init_weapon.c
+        headers/weapon/init_weapon.h)

@@ -17,7 +17,7 @@ void add_item(Player *player, Weapon *weapon, Armor *armor) {
     int index;
     int place_in_weaponBag = get_first_weapon_free_space(player);       // nombre de case utilisées dans le tableau d'armes
     int place_in_armorBag = get_first_armor_free_space(player);         // nombre de case utilisées dans le tableau d'armures
-    int inventory_size = 0;                                                 // taille totale de l'inventaire
+    int inventory_size = 0;                                             // taille totale de l'inventaire
 
     inventory_size = place_in_weaponBag + place_in_armorBag;
 

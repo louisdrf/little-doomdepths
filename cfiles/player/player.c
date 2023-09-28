@@ -9,9 +9,10 @@
 #include "../../headers/player/player.h"
 #include "../../headers/includes/structs.h"
 #include "../../headers/init/init_inventory.h"
+#include "../../headers/weapon/init_weapon.h"
 
 
-#define DEBUG false
+#define DEBUG true
 
 /**
  * init the player
@@ -58,7 +59,12 @@ Player *init_player(Level *level) {
         #endif
         exit(1);
     }
-        return player;
+    if(player != NULL) return player;
+    else {
+        puts("\nInitializing player failed.");
+        return NULL;
+    }
+
 }
 
 
@@ -118,6 +124,7 @@ void free_player(Player *player) {
         free(player->inventory->weaponList[i]);
     }
     free(player->draw);
+    if(player->current_weapon != NULL) free(player->current_weapon);
     free(player);
 
 #if DEBUG
