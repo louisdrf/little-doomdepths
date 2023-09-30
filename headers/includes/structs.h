@@ -14,7 +14,16 @@ enum rarity {
     EPIC,
     LEGENDARY
 };
+enum monster_type {
 
+    LICHT,
+    CENTAUR,
+    SKELETON,
+    NORN
+};
+static const char *monster_string[] = {
+        "LICHT", "CENTAUR", "SKELETON", "NORN",
+};
 typedef struct {
 
     unsigned int        defense;

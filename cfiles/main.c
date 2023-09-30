@@ -6,7 +6,7 @@
 #include "../headers/display.h"
 #include "../headers/player/player.h"
 #include "../headers/loop.h"
-
+#include "../headers/monsters/monster_sprite.h"
 
 int main() {
 
@@ -18,7 +18,7 @@ int main() {
 
     choice = getch();
     choice -= 48;
-
+    show_monster_player(player_sprite(), monster_sprite_random(0), monster_sprite_random(0), monster_sprite_random(0));
 
     switch(choice) {
         case 1: // play from last save

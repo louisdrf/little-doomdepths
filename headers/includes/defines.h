@@ -6,7 +6,7 @@
 #ifndef DOOM_DEFINES_H
 #define DOOM_DEFINES_H
 
-#define NBMONSTERS_MAX 4
+#define NBMONSTERS_MAX 3
 #define NBMONSTERS_MIN 2
 #define MONSTER_MAX_PV 80
 #define MONSTER_MIN_PV 40

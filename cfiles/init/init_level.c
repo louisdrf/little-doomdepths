@@ -30,7 +30,7 @@ Level *init_level(int id) {
 
     // init the linked list of monsters for the level
     Monster *first_monster = NULL;
-    level->nbMonsters = rand() % NBMONSTERS_MAX + NBMONSTERS_MIN; // nombre de monstres pour le niveau
+    level->nbMonsters = rand() % NBMONSTERS_MAX ; // nombre de monstres pour le niveau
 
     for(int j = 1; j < level->nbMonsters + 1; j++) {
         first_monster = create_monster(first_monster, j);

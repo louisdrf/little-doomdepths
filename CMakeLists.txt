@@ -25,6 +25,8 @@ add_executable(doom cfiles/main.c
         headers/player/player_attack.h
         cfiles/monsters/monster.c
         headers/monsters/monster.h
+        cfiles/monsters/monster_sprite.c
+        headers/monsters/monster_sprite.h
         cfiles/inventory/inventory.c
         headers/inventory/inventory.h
         cfiles/weapon/init_weapon.c
