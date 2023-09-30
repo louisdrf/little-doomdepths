@@ -50,7 +50,7 @@ Player *init_player(Level *level) {
         player->max_strength = 25;
 
         player->current_level = level;
-        init_player_draw(player);
+
         player->inventory = inventory;
 
 
@@ -71,8 +71,6 @@ Player *init_player(Level *level) {
     }
 
 }
-
-
 
 void init_player_draw(Player *player) {
 
@@ -106,7 +104,32 @@ void init_player_draw(Player *player) {
     }
 }
 
+char** player_sprite(){
+    char **sprite=malloc(sizeof(char *)*20*14);
 
+    sprite[0]="      _,.                   ";
+    sprite[1]="    ,` -.)                  ";
+    sprite[2]="   ( _/-\\\\-._               ";
+    sprite[3]="  /,|`--._,-^|            , ";
+    sprite[4]="  \\_| |`-._/||          ,'| ";
+    sprite[5]="    |  `-, / |         /  / ";
+    sprite[6]="    |     || |        /  /  ";
+    sprite[7]="     `r-._||/   __   /  /   ";
+    sprite[8]=" __,-<_     )`-/  `./  /    ";
+    sprite[9]="'  \\   `---'   \\   /  /     ";
+    sprite[10]="    |           |./  /      ";
+    sprite[11]="    /           //  /       ";
+    sprite[12]="\\_/' \\         |/  /        ";
+    sprite[13]=" |    |   _,^-'/  /         ";
+    sprite[14]=" |    , ``  (\\/  /_         ";
+    sprite[15]="  \\,.->._    \\X-=/^         ";
+    sprite[16]="  (  /   `-._//^`           ";
+    sprite[17]="   `Y-.____(__}             ";
+    sprite[18]="    |     {__)              ";
+    sprite[19]="          ()                ";
+
+    return sprite;
+}
 
 void print_player_stats(Player *player) {
 
