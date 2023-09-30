@@ -33,8 +33,8 @@ void show_monster_player(char **sprite_player,char **sprite_monster1,char **spri
 };
 char** monster_sprite_random(int type){//La methode prend le type de monstre en parametre et renvoie le sprite correspondant
 
-    char ***sprite= malloc(sizeof(char)*4*400);
-    sprite[0]= malloc(sizeof(char)*400);
+    char ***sprite= malloc(sizeof(char)*4*405);
+    sprite[0]= malloc(sizeof(char)*405);
     sprite[0][0]="                 /\\      ";
     sprite[0][1]="                 ||      ";
     sprite[0][2]="   ____ (((+))) _||_     ";
@@ -51,7 +51,7 @@ char** monster_sprite_random(int type){//La methode prend le type de monstre en 
     sprite[0][13]="        |_____|          ";
     sprite[0][14]="        |_____|          ";
 
-    sprite[1]= malloc(sizeof(char)*400);
+    sprite[1]= malloc(sizeof(char)*405);
     sprite[1][0]="                         ";
     sprite[1][1]="                         ";
     sprite[1][2]="                         ";
@@ -68,7 +68,7 @@ char** monster_sprite_random(int type){//La methode prend le type de monstre en 
     sprite[1][13]="       \\\\, ||    \\|      ";
     sprite[1][14]="        \\/ ||    ||      ";
 
-    sprite[2]= malloc(sizeof(char)*400);
+    sprite[2]= malloc(sizeof(char)*405);
     sprite[2][0]="                         ";
     sprite[2][1]="          .-.            ";
     sprite[2][2]="         (o.o)           ";
@@ -85,7 +85,7 @@ char** monster_sprite_random(int type){//La methode prend le type de monstre en 
     sprite[2][13]="         || ||           ";
     sprite[2][14]="        ==' '==           ";
 
-    sprite[3]= malloc(sizeof(char)*400);
+    sprite[3]= malloc(sizeof(char)*405);
     sprite[3][0]="                         ";
     sprite[3][1]="                         ";
     sprite[3][2]="                         ";

@@ -18,7 +18,6 @@ int main() {
 
     choice = getch();
     choice -= 48;
-    show_monster_player(player_sprite(), monster_sprite_random(0), monster_sprite_random(0), monster_sprite_random(0));
 
     switch(choice) {
         case 1: // play from last save

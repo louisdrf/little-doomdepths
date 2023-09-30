@@ -47,7 +47,7 @@ Player *init_player(Level *level) {
         player->max_strength = 25;
 
         player->current_level = level;
-        init_player_draw(player);
+
         player->inventory = inventory;
 
     #if DEBUG
