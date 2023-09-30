@@ -28,4 +28,6 @@ add_executable(doom cfiles/main.c
         cfiles/inventory/inventory.c
         headers/inventory/inventory.h
         cfiles/weapon/init_weapon.c
-        headers/weapon/init_weapon.h)
+        headers/weapon/init_weapon.h
+        cfiles/inventory/potion.c
+        headers/inventory/potion.h)

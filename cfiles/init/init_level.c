@@ -6,9 +6,9 @@
 #include <stdio.h>
 #include "../../headers/init/init_level.h"
 #include "../../headers/init/init_monster.h"
-#include "../../headers/includes/structs.h"
-#include "../../headers/includes/defines.h"
-#include "../../headers/display.h"
+#include "../../headers/inventory/potion.h"
+
+
 
 #define DEBUG false
 
@@ -20,7 +20,7 @@
 Level *init_level(int id) {
 
     // create a level
-    Level *level = malloc(sizeof(Game));
+    Level *level = malloc(sizeof(Level));
     if(level == NULL) {
         printf("Allocating memory for level failed.\n");
         exit(1);
@@ -59,7 +59,6 @@ void next_level(Game *game, Player *player) {
     player->turn = true;
     player->attacks_left = player->attacks_by_turn;
     player->lifepoints = player->lifepoints_max;
-
-    //if(display_next_level_menu() == 1) return;
-    //else game->isRunning = false;
 }
+
+

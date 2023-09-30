@@ -12,6 +12,7 @@
 #include "../headers/player/player_attack.h"
 #include "../headers/monsters/monster.h"
 #include "../headers/init/init_level.h"
+#include "../headers/inventory/potion.h"
 
 /**
  * manages the game loop
@@ -41,7 +42,10 @@ void launch_loop(Game *game, Player *player) {
 
                     if(are_all_monsters_dead(player) == 1)              // retourne 1 si tous les monstres du niveau sont morts et passe le joueur au niveau supérieur
                     {
-                        if(display_next_level_menu() == 1) next_level(game, player);
+                        if(display_next_level_menu() == 1) {
+                            getPotion(player);
+                            next_level(game, player);
+                        }
                         else return;
                     }
             }

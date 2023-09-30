@@ -11,6 +11,7 @@
 #include "../../headers/init/init_inventory.h"
 #include "../../headers/inventory/inventory.h"
 #include "../../headers/weapon/init_weapon.h"
+#include "../../headers/inventory/potion.h"
 
 
 #define DEBUG true
@@ -20,6 +21,8 @@
  * return a *Player
  */
 Player *init_player(Level *level) {
+
+
 
         Player *player;
         Inventory *inventory = NULL;
@@ -49,6 +52,7 @@ Player *init_player(Level *level) {
         player->current_level = level;
         init_player_draw(player);
         player->inventory = inventory;
+
 
     #if DEBUG
         print_player_stats(player);
@@ -93,7 +97,7 @@ void init_player_draw(Player *player) {
                  "    |     {__)\n"
                  "          ()";
 
-    player->draw = malloc(sizeof(strlen(draw)) + 1);
+    player->draw = malloc(strlen(draw) + 1);
     strcpy(player->draw, draw);
 
     if(strlen(player->draw) == 0) {

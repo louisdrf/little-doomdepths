@@ -76,7 +76,9 @@ typedef struct {
 typedef struct {
     int                 manaValue;
     int                 healthValue;
+    char*               name;
     char*               sprite;
+
 } Potion;
 
 
@@ -85,6 +87,8 @@ typedef struct {
     int                    limObjects;                                  // limite d'objets que le joueur peut transporter
     Weapon*                weaponList[NBOBJECTS_MAX];                   // tableaux de ses armes
     Armor*                 armorList[NBOBJECTS_MAX];                    // tableaux de ses Armures
+    Potion*                healthPotion;
+    Potion*                manaPotion;
 
 } Inventory;
 
@@ -106,7 +110,7 @@ typedef struct {
     Weapon*             current_weapon;     // arme équipée
     Armor*              current_armor;      // armure équipée
     Level*              current_level;      // niveau actuel dans lequel se situe le joueur
-    Inventory*           inventory;         // inventaire du joueur
+    Inventory*          inventory;         // inventaire du joueur
 
 } Player;
 

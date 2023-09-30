@@ -19,7 +19,6 @@ int main() {
     choice = getch();
     choice -= 48;
 
-
     switch(choice) {
         case 1: // play from last save
             printf("Load last game ?\n");

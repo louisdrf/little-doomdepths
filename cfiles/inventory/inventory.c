@@ -48,9 +48,7 @@ void add_item(Player *player, Weapon *weapon, Armor *armor) {
 
 
 void display_inventory_content(Player *player) {
-    for(int i = 0; i < NBOBJECTS_MAX; i++) {
-        printf("arme mana %d\n" , player->inventory->weaponList[i]->mana_cost);
-    }
+
 }
 
 /**
