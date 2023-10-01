@@ -12,7 +12,7 @@
 #include "../../headers/inventory/inventory.h"
 #include "../../headers/weapon/init_weapon.h"
 #include "../../headers/inventory/potion.h"
-#include "../monsters/monster_spritev2.h"
+#include "../../headers/monsters/monster_spritev2.h"
 
 
 #define DEBUG true

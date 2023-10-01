@@ -7,7 +7,7 @@
 #include "../headers/player/player.h"
 #include "../headers/includes/colors.h"
 #include "../headers/monsters/monster_sprite.h"
-#include "monsters/monster_spritev2.h"
+#include "../headers/monsters/monster_spritev2.h"
 
 void display_init_menu() {
     printf(RED"                     ----Doomdepths----\n\n");
