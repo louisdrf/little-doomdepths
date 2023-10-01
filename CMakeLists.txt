@@ -32,4 +32,6 @@ add_executable(doom cfiles/main.c
         cfiles/weapon/init_weapon.c
         headers/weapon/init_weapon.h
         cfiles/inventory/potion.c
-        headers/inventory/potion.h)
+        headers/inventory/potion.h
+        cfiles/monsters/monster_spritev2.c
+        cfiles/monsters/monster_spritev2.h)

@@ -13,6 +13,7 @@
 #include "../headers/monsters/monster.h"
 #include "../headers/init/init_level.h"
 #include "../headers/inventory/potion.h"
+#include "monsters/monster_spritev2.h"
 
 /**
  * manages the game loop
@@ -30,12 +31,13 @@ void launch_loop(Game *game, Player *player) {
             if(player->turn)
             {
                     playerEntry = getch();
-                    if(playerEntry == 'q') {
+                    playerEntry -= 48;                                  // décalage ASCII de la saisie pour obtenir la valeur numérique
+                    if(playerEntry == 9) {
                         printf("\nFin de partie.\n");
                         game->isRunning = false;                        // cas de fin de partie
                         break;
                     }
-                    playerEntry -= 48;                                  // décalage ASCII de la saisie pour obtenir la valeur numérique
+
                     if(playerEntry > 9 || playerEntry < 1) continue;
 
                     player_attack(player, playerEntry);        // le joueur attaque le monstre dont l'id est passé en argument

@@ -14,16 +14,14 @@ enum rarity {
     EPIC,
     LEGENDARY
 };
-enum monster_type {
 
-    LICHT,
-    CENTAUR,
+enum monster_type {
+    GRIM,
     SKELETON,
-    NORN
+    GHOST,
+    DRAGON
 };
-static const char *monster_string[] = {
-        "LICHT", "CENTAUR", "SKELETON", "NORN",
-};
+
 typedef struct {
 
     unsigned int        defense;
@@ -62,6 +60,7 @@ struct Monster {
     bool                           turn;               // indique si cest au tour du monstre de jouer
     bool                           isAlive;            // indique si le monstre a été tué ou non
     char *                         draw;               // chaine de caractère de dessin du monstre
+    int                            drawIndex;          // index utilisé pour dessiner le monstre
     struct Monster*                next;
     struct Weapon*                 loot_weapon;        // arme lootable sur le monstre
     struct Armor*                  loot_armor;         // armure lootable sur le monstre

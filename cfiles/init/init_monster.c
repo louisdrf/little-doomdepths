@@ -4,9 +4,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 #include "../../headers/init/init_monster.h"
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/defines.h"
+#include "../monsters/monster_spritev2.h"
 
 #define DEBUG false
 
@@ -36,11 +38,16 @@ Monster *create_monster(Monster *head, int index) {
     new->attacks_by_turn = 1;
     new->attacks_left = new->attacks_by_turn;
     new->turn = false;
-    new->draw = NULL;
-    new->monster_type = rand() % 3 + 1;
+    new->monster_type = rand() % NB_MONSTER_TYPE;
     new->isAlive = true;
     new->loot_gold = rand() % MAX_GOLD_LOOT + MIN_GOLD_LOOT;
     new->next = head;
+    new->drawIndex = 0;
+
+    char *sprite = return_monster_sprite(new->monster_type);
+    new->draw = malloc(strlen(sprite) + 1);
+    strcpy(new->draw, sprite);
+
 
 #if DEBUG
     printf("Monster %d initialized.\n", new->id);
@@ -58,6 +65,7 @@ void free_monster(Monster *head)
 {
     if (head != NULL)
     {
+        free(head->draw);
         free_monster(head->next);
         free(head);
     }

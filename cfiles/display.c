@@ -7,6 +7,7 @@
 #include "../headers/player/player.h"
 #include "../headers/includes/colors.h"
 #include "../headers/monsters/monster_sprite.h"
+#include "monsters/monster_spritev2.h"
 
 void display_init_menu() {
     printf(RED"                     ----Doomdepths----\n\n");
@@ -35,18 +36,7 @@ void display_init_menu() {
 
 void display_all(Player *player) {
     display_player_ath(player);
-    if(player->current_level->monsters->next==0 ){
-        show_monster_player(player_sprite(), monster_sprite_random(player->current_level->monsters->monster_type), NULL, NULL);
-
-    }
-    else if(player->current_level->monsters->next->next==0 ){
-        show_monster_player(player_sprite(), (player->current_level->monsters->lifepoints>0)? monster_sprite_random(player->current_level->monsters->monster_type):NULL, (player->current_level->monsters->next->lifepoints>0)? monster_sprite_random(player->current_level->monsters->next->monster_type):NULL, NULL);
-
-    }
-    else{
-        show_monster_player(player_sprite(),  (player->current_level->monsters->lifepoints>0)? monster_sprite_random(player->current_level->monsters->monster_type):NULL, (player->current_level->monsters->next->lifepoints>0)? monster_sprite_random(player->current_level->monsters->next->monster_type):NULL, (player->current_level->monsters->next->next->lifepoints>0)? monster_sprite_random(player->current_level->monsters->next->next->monster_type):NULL);
-
-    }
+    print_monsters(player);
     display_monsters_alive(player->current_level->monsters);
     printf("\nexit (q)\n");
 }
@@ -108,17 +98,19 @@ void display_player_mana(Player *player) {
 }
 
 
+
 void display_monsters_alive(Monster *head) {
 
     Monster *current = head;
 
     while (current != NULL) {
         if(current->isAlive) {
-            printf("monstre %d - type : %s (%d/%d)\n", current->id, monster_string[current->monster_type], current->lifepoints, current->lifepoints_max);
+            printf("monstre %d - type : %d (%d/%d)\n", current->id, current->monster_type, current->lifepoints, current->lifepoints_max);
         }
         current = current->next;
     }
-};
+}
+
 
 
 int display_next_level_menu() {
