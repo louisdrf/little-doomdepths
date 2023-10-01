@@ -118,7 +118,7 @@ typedef struct {
     Weapon*             current_weapon;     // arme équipée
     Armor*              current_armor;      // armure équipée
     Level*              current_level;      // niveau actuel dans lequel se situe le joueur
-    Inventory*          inventory;         // inventaire du joueur
+    Inventory*          inventory;          // inventaire du joueur
 
 } Player;
 

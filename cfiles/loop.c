@@ -26,11 +26,11 @@ void launch_loop(Game *game, Player *player) {
 
     while(game->isRunning)
     {
-        display_all(player); // affichage
-
             if(player->turn)
             {
-                    playerEntry = getch();
+                display_all(player); // affichage
+
+                playerEntry = getch();
                     playerEntry -= 48;                                  // décalage ASCII de la saisie pour obtenir la valeur numérique
                     if(playerEntry == 9) {
                         printf("\nFin de partie.\n");

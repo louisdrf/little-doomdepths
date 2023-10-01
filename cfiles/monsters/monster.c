@@ -58,8 +58,6 @@ int monsters_attack(Player *player) {
 
         if(current->isAlive)
         {
-                printf("monstre %d attaque.\n", current->id);
-
                 while(current->attacks_left > 0)                                                // tant que le monstre peut jouer il attaque
                 {
                     damages = rand() % current->max_strength + current->min_strength;           // degats du monstre au joueur
