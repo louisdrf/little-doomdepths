@@ -2,8 +2,10 @@
 // Created by louis on 27/09/2023.
 //
 
+#include <conio.h>
 #include "../../headers/inventory/inventory.h"
 #include "../../headers/includes/structs.h"
+#include "../../headers/inventory/inventory_sections.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -46,10 +48,6 @@ void add_item(Player *player, Weapon *weapon, Armor *armor) {
 
 }
 
-
-void display_inventory_content(Player *player) {
-
-}
 
 /**
  * get the index of the first free space in the weapon inventory to add the item

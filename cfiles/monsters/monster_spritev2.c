@@ -13,7 +13,7 @@
 
 
 void print_monsters(Player *player) {
-    int entityWidth = 40; // Une entité prendra 50 caractères de largeur
+    int entityWidth = 45; // Une entité prendra 50 caractères de largeur
 
     Monster *current = player->current_level->monsters;
     int playerIndex = 0;
@@ -41,14 +41,17 @@ void print_monsters(Player *player) {
                 if (current->isAlive == true) {
 
                     while (current->draw[current->drawIndex] != '\n' && current->draw[current->drawIndex] != '\0') {
-                        printf( RED"%c"RESET, current->draw[current->drawIndex]);
+                        printf( "%c", current->draw[current->drawIndex]);
                         current->drawIndex++;
                         printIndex++;
                     }
 
-                    if (current->draw[current->drawIndex] == '\n') {
+                    if (current->draw[current->drawIndex] == '\n')
+                    {
                         current->drawIndex++; // Passer à la ligne suivante
-                    } else if (current->draw[current->drawIndex] == '\0') {
+                    }
+                    else if (current->draw[current->drawIndex] == '\0')
+                    {
                         while (printIndex < entityWidth) {
                             printf(" "); // Ajouter des espaces jusqu'à la largeur de l'entité
                             printIndex++;

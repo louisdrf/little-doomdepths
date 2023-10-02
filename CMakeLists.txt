@@ -34,4 +34,7 @@ add_executable(doom cfiles/main.c
         cfiles/inventory/potion.c
         headers/inventory/potion.h
         cfiles/monsters/monster_spritev2.c
-        headers/monsters/monster_spritev2.h)
+        headers/monsters/monster_spritev2.h
+        cfiles/inventory/display_inventory.c
+        headers/inventory/display_inventory.h
+)
