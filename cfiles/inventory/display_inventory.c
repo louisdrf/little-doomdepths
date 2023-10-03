@@ -139,6 +139,80 @@ void display_player_weapons(Player *player) {
 
 void display_player_armors(Player *player) {
 
+    int i = 0;
+    int inventoryWidth = 0;
+    int choice;
+
+    while(player->inventory->armorList[i] != NULL)
+    {
+
+        inventoryWidth = 30 + (int)strlen(player->inventory->armorList[i]->name);
+
+        printf("+");
+        for(int j = 0; j < inventoryWidth; j++) {                                               // affichage de la ligne du haut
+            printf("-");
+        }
+        printf("+\n");
+
+        printf("| id : %d |  ", i);                                                      // affiche le numero de l'armure pour choisir celle à équiper
+
+        switch(player->inventory->armorList[i]->rarity) {
+            case COMMON:
+                printf(GREEN"%s  "RESET, player->inventory->armorList[i]->name);
+                break;
+                // affiche le nom de l'armure avec la couleur selon sa rareté
+            case RARE:
+                printf(BLUE"%s  "RESET, player->inventory->armorList[i]->name);
+                break;
+
+            case EPIC:
+                printf(MAGENTA"%s  "RESET, player->inventory->armorList[i]->name);
+                break;
+
+            case LEGENDARY:
+                printf(YELLOW"%s  "RESET, player->inventory->armorList[i]->name);
+                break;
+        }
+        printf("|  ");
+
+
+        printf("defense : ");                                                                                                           // affiche la defense de l'armure
+        printf(BLUE"%d"RESET, player->inventory->armorList[i]->defense);
+
+        printf("\n");
+        i++;
+    }
+
+    printf("+");
+    for(int j = 0; j < inventoryWidth; j++) {                                                                                                   // affiche la ligne du bas
+        printf("-");
+    }
+    printf("+\n");
+
+
+    printf("\n");
+    printf("Equiper une armure (1)     Fermer l'inventaire (2)\n");
+    choice = getch();
+    choice -= 48;           // décalage ascii
+
+    switch(choice) {
+
+        case 1:                                                 // equipe l'armure choisie
+            printf("Id de l'armure a equiper : ");
+            choice = getch();
+            choice -= 48;
+            player->current_armor = player->inventory->armorList[choice];
+            printf("\n\n");
+            printf("armure equipee : %s | %d \n\n", player->current_armor->name, player->current_armor->defense);
+            break;
+
+        case 2:
+            return;
+            break;
+
+        default:
+            break;
+    }
 }
 
 void display_player_potions(Player *player) {
