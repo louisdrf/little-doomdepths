@@ -8,7 +8,7 @@
 #include "../../headers/init/init_monster.h"
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/defines.h"
-#include "../../headers/monsters/monster_spritev2.h"
+#include "../../headers/monsters/monster_sprite.h"
 
 #define DEBUG false
 

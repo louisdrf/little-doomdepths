@@ -13,7 +13,7 @@
 #include "../headers/monsters/monster.h"
 #include "../headers/init/init_level.h"
 #include "../headers/inventory/potion.h"
-#include "../headers/monsters/monster_spritev2.h"
+#include "../headers/monsters/monster_sprite.h"
 #include "../headers/inventory/display_inventory.h"
 
 /**

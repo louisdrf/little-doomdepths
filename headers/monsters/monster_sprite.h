@@ -1,11 +1,16 @@
 //
-// Created by Benzekki Talal on 25/09/2023.
+// Created by louis on 01/10/2023.
 //
 
 #ifndef DOOM_MONSTER_SPRITE_H
 #define DOOM_MONSTER_SPRITE_H
+
 #include "../includes/structs.h"
-void show_monster_player(char **sprite_player,char **sprite_monster1,char **sprite_monster2,char **sprite_monster3);
-char** monster_sprite_random(int type);
-void free_sprite(char **sprite);
+
+char **init_monster_sprites();
+char *return_monster_sprite(int type);
+void print_monsters(Player *player);
+
+void monster_indexes_to_zero(Player *player);
+
 #endif //DOOM_MONSTER_SPRITE_H

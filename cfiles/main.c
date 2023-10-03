@@ -6,7 +6,6 @@
 #include "../headers/display.h"
 #include "../headers/player/player.h"
 #include "../headers/loop.h"
-#include "../headers/monsters/monster_sprite.h"
 
 int main() {
 
