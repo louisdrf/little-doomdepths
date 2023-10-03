@@ -109,12 +109,6 @@ build CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj: C_COMPILER__doom_unscan
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\monsters
 
-build CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/monsters/monster_sprite.c || cmake_object_order_depends_target_doom
-  DEP_FILE = CMakeFiles\doom.dir\cfiles\monsters\monster_sprite.c.obj.d
-  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\doom.dir
-  OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\monsters
-
 build CMakeFiles/doom.dir/cfiles/inventory/inventory.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/inventory/inventory.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\inventory\inventory.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
@@ -133,8 +127,8 @@ build CMakeFiles/doom.dir/cfiles/inventory/potion.c.obj: C_COMPILER__doom_unscan
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\inventory
 
-build CMakeFiles/doom.dir/cfiles/monsters/monster_spritev2.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/monsters/monster_spritev2.c || cmake_object_order_depends_target_doom
-  DEP_FILE = CMakeFiles\doom.dir\cfiles\monsters\monster_spritev2.c.obj.d
+build CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/monsters/monster_sprite.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\cfiles\monsters\monster_sprite.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\monsters
@@ -159,7 +153,7 @@ build CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj: C_COMPILER__doom_unscan
 #############################################
 # Link the executable doom.exe
 
-build doom.exe: C_EXECUTABLE_LINKER__doom_Debug CMakeFiles/doom.dir/cfiles/main.c.obj CMakeFiles/doom.dir/cfiles/game.c.obj CMakeFiles/doom.dir/cfiles/display.c.obj CMakeFiles/doom.dir/cfiles/player/player.c.obj CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj CMakeFiles/doom.dir/cfiles/init/init_inventory.c.obj CMakeFiles/doom.dir/cfiles/init/init_level.c.obj CMakeFiles/doom.dir/cfiles/loop.c.obj CMakeFiles/doom.dir/cfiles/player/player_attack.c.obj CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj CMakeFiles/doom.dir/cfiles/inventory/inventory.c.obj CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj CMakeFiles/doom.dir/cfiles/inventory/potion.c.obj CMakeFiles/doom.dir/cfiles/monsters/monster_spritev2.c.obj CMakeFiles/doom.dir/cfiles/inventory/display_inventory.c.obj CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj
+build doom.exe: C_EXECUTABLE_LINKER__doom_Debug CMakeFiles/doom.dir/cfiles/main.c.obj CMakeFiles/doom.dir/cfiles/game.c.obj CMakeFiles/doom.dir/cfiles/display.c.obj CMakeFiles/doom.dir/cfiles/player/player.c.obj CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj CMakeFiles/doom.dir/cfiles/init/init_inventory.c.obj CMakeFiles/doom.dir/cfiles/init/init_level.c.obj CMakeFiles/doom.dir/cfiles/loop.c.obj CMakeFiles/doom.dir/cfiles/player/player_attack.c.obj CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj CMakeFiles/doom.dir/cfiles/inventory/inventory.c.obj CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj CMakeFiles/doom.dir/cfiles/inventory/potion.c.obj CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj CMakeFiles/doom.dir/cfiles/inventory/display_inventory.c.obj CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\doom.dir
