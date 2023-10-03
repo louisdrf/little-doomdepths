@@ -5,7 +5,6 @@
 #include <conio.h>
 #include "../../headers/inventory/inventory.h"
 #include "../../headers/includes/structs.h"
-#include "../../headers/inventory/inventory_sections.h"
 #include <stdlib.h>
 #include <stdio.h>
 

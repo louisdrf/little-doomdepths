@@ -52,6 +52,13 @@ Player *init_player(Level *level) {
         player->current_level = level;
         player->inventory = inventory;
 
+        Weapon *weapon1 = init_weapon("epee1", 2, 8, 18, 4, RARE);
+    Weapon *weapon2 = init_weapon("epee2", 2, 12, 24, 6, EPIC);
+    Weapon *weapon3 = init_weapon("epee3", 3, 16, 24, 4, LEGENDARY);
+
+    add_item(player, weapon1, NULL);
+    add_item(player, weapon2, NULL);
+    add_item(player, weapon3, NULL);
 
     #if DEBUG
         print_player_stats(player);

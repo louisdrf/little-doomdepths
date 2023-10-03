@@ -14,6 +14,7 @@
 #include "../headers/init/init_level.h"
 #include "../headers/inventory/potion.h"
 #include "../headers/monsters/monster_spritev2.h"
+#include "../headers/inventory/display_inventory.h"
 
 /**
  * manages the game loop
@@ -26,6 +27,9 @@ void launch_loop(Game *game, Player *player) {
 
     while(game->isRunning)
     {
+
+        display_player_weapons(player);
+
             if(player->turn)
             {
                 display_all(player); // affichage

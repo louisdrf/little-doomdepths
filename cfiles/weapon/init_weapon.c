@@ -10,7 +10,7 @@
 
 #define DEBUG true
 
-Weapon *init_weapon() {
+Weapon *init_weapon(char *name, int att_by_turn, int min_strength, int max_strength, int mana_cost, int rarity) {
 
     Weapon *weapon;
     weapon= malloc(sizeof(Weapon));
@@ -22,14 +22,14 @@ Weapon *init_weapon() {
             exit(1);
     }
 
-    setWeaponName(weapon, "epee1");
+    setWeaponName(weapon, name);
 
-    weapon->min_strength=10;
-    weapon->max_strength=20;
-    weapon->attacks_by_turn=2;
-    weapon->mana_cost=5;
+    weapon->min_strength = min_strength;
+    weapon->max_strength = max_strength;
+    weapon->attacks_by_turn = att_by_turn;
+    weapon->mana_cost = mana_cost;
+    weapon->rarity= rarity;
     init_weapon_draw(weapon);
-    weapon->rarity= COMMON;
 
     if(weapon == NULL) {
 #if DEBUG
