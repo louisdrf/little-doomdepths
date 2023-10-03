@@ -75,6 +75,7 @@ void init_weapon_draw(Weapon *weapon) {
 void free_weapon(Weapon *weapon) {
     if(weapon != NULL) {
         free(weapon->draw);
+        free(weapon->name);
         free(weapon);
     }
 

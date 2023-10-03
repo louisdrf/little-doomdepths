@@ -13,6 +13,7 @@
 #include "../../headers/weapon/init_weapon.h"
 #include "../../headers/inventory/potion.h"
 #include "../../headers/monsters/monster_spritev2.h"
+#include "../../headers/armor/init_armor.h"
 
 
 #define DEBUG false
@@ -59,6 +60,26 @@ Player *init_player(Level *level) {
     add_item(player, weapon1, NULL);
     add_item(player, weapon2, NULL);
     add_item(player, weapon3, NULL);
+
+    free_weapon(weapon1);
+    free_weapon(weapon2);
+    free_weapon(weapon3);
+
+
+
+    Armor *armor1 = init_armor("armure1", 10, RARE);
+    Armor *armor2 = init_armor("armure2", 15, EPIC);
+    Armor *armor3 = init_armor("armure3", 20, LEGENDARY);
+
+    add_item(player, NULL, armor1);
+    add_item(player, NULL, armor2);
+    add_item(player, NULL, armor3);
+
+    free_armor(armor1);
+    free_armor(armor2);
+    free_armor(armor3);
+
+
 
     #if DEBUG
         print_player_stats(player);

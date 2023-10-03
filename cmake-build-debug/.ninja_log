@@ -1,9 +1,9 @@
 # ninja log v5
-185	341	7180689008997345	doom.exe	b3ba2a9fed1c755d
+100	225	7180690205032806	doom.exe	b3ba2a9fed1c755d
 2	89	7174591721483205	CMakeFiles/doom.dir/display.c.obj	62f2d3e5817ac39a
 2	217	7174587588533764	CMakeFiles/doom.dir/main.c.obj	6ab9ad0d64cbbe25
 3	94	7174596816745556	CMakeFiles/doom.dir/player.c.obj	d9f44a43b823f43a
-3	223	7180546741865332	build.ninja	1c0d9a92d8a84135
+3	223	7180694144241887	build.ninja	1c0d9a92d8a84135
 19	267	7174587588738321	CMakeFiles/doom.dir/game.c.obj	b2a88e155e129914
 25	133	7171777322069487	CMakeFiles/doom.dir/colors.c.obj	953370270c9c8b19
 38	280	7174587588907865	CMakeFiles/doom.dir/init_monster.c.obj	59f847c524927463
@@ -19,7 +19,7 @@
 39	255	7174630048961496	CMakeFiles/doom.dir/cfiles/init_inventory.c.obj	83dc14d09ab8595a
 208	411	7174630050876369	CMakeFiles/doom.dir/cfiles/init_monster.c.obj	1e034551c5084db8
 1	185	7178982660469553	CMakeFiles/doom.dir/cfiles/main.c.obj	d0995440ae458e26
-25	185	7180689007446328	CMakeFiles/doom.dir/cfiles/loop.c.obj	bcf47ea57414fce5
+4	100	7180690203830874	CMakeFiles/doom.dir/cfiles/loop.c.obj	bcf47ea57414fce5
 313	477	7178982663636542	CMakeFiles/doom.dir/cfiles/init/init_level.c.obj	10e6784b4bb8ee6e
 53	271	7174630049021332	CMakeFiles/doom.dir/cfiles/init_level.c.obj	39ceec44a326f5b9
 228	398	7174630050726772	CMakeFiles/doom.dir/cfiles/monster.c.obj	406789cfadcefc2
@@ -35,5 +35,3 @@
 203	412	7178982662978264	CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj	5cd918d7a28ba230
 4	116	7178997670855247	CMakeFiles/doom.dir/cfiles/monsters/monster_spritev2.c.obj	ba01762c1ddf96f
 20	111	7179676419210285	CMakeFiles/doom.dir/cfiles/inventory/inventory_sections.c.obj	96c856d57db4a8a7
-4	100	7180690203830874	CMakeFiles/doom.dir/cfiles/loop.c.obj	bcf47ea57414fce5
-100	225	7180690205032806	doom.exe	b3ba2a9fed1c755d
