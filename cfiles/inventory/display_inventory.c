@@ -15,8 +15,10 @@
  */
 void display_inventory_choice_sections(Player *player) {
     int choice;
-    printf("Inventaire\n");
-    printf("Armes (1)      Armures (2)       Potions (3)\n");
+    printf("\n\n    Inventaire\n\n");
+    printf("Armes          (1)\n");
+    printf("Armures        (2)\n");
+    printf("Potions        (3)\n");
     choice = getch();
     choice -= 48;
 
@@ -57,23 +59,24 @@ void display_player_weapons(Player *player) {
     int inventoryWidth = 0;
     int choice;
 
-    while(player->inventory->weaponList[i] != NULL) {
+    while(player->inventory->weaponList[i] != NULL)
+    {
 
         inventoryWidth = 40 + (int)strlen(player->inventory->weaponList[i]->name);
 
         printf("+");
-        for(int j = 0; j < inventoryWidth; j++) {
+        for(int j = 0; j < inventoryWidth; j++) {                                               // affichage de la ligne du haut
             printf("-");
         }
         printf("+\n");
 
-        printf("| id : %d |  ", i);
+        printf("| id : %d |  ", i);                                                      // affiche le numero de l'arme pour choisir celle à équiper
 
         switch(player->inventory->weaponList[i]->rarity) {
             case COMMON:
                 printf(GREEN"%s  "RESET, player->inventory->weaponList[i]->name);
                 break;
-
+                                                                                                // affiche le nom de l'arme avec la couleur selon sa rareté
             case RARE:
                 printf(BLUE"%s  "RESET, player->inventory->weaponList[i]->name);
                 break;
@@ -89,22 +92,23 @@ void display_player_weapons(Player *player) {
         printf("|  ");
 
 
-        printf("att : ");
+        printf("att : ");                                                                                                           // affiche l'attaque min et max de l'attaque
         printf(RED"%d-%d "RESET, player->inventory->weaponList[i]->min_strength, player->inventory->weaponList[i]->max_strength);
         printf("|  ");
 
         printf("mana : ");
-        printf(BLUE "%d "RESET, player->inventory->weaponList[i]->mana_cost);
+        printf(BLUE "%d "RESET, player->inventory->weaponList[i]->mana_cost);                                                        // affiche le cout en mana de l'arme
 
         printf("\n");
         i++;
     }
 
     printf("+");
-    for(int j = 0; j < inventoryWidth; j++) {
+    for(int j = 0; j < inventoryWidth; j++) {                                                                                               // affiche la ligne du bas
         printf("-");
     }
     printf("+\n");
+
 
     printf("\n");
     printf("Equiper une arme (1)     Fermer l'inventaire (2)\n");
@@ -113,11 +117,12 @@ void display_player_weapons(Player *player) {
 
     switch(choice) {
 
-        case 1:
+        case 1:                                                 // equipe l'arme choisie
             printf("Id de l'arme a equiper : ");
             choice = getch();
             choice -= 48;
             player->current_weapon = player->inventory->weaponList[choice];
+            player->attacks_by_turn = player->inventory->weaponList[choice]->attacks_by_turn;
             printf("\n\n");
             printf("arme equipee : %s | %d-%d | %d \n\n", player->current_weapon->name, player->current_weapon->min_strength, player->current_weapon->max_strength, player->current_weapon->mana_cost);
             break;

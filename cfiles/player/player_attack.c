@@ -14,14 +14,21 @@ void player_attack(Player *player, int idMonster) {
 
     srand(time(NULL));
 
-    int current_attack_strength = rand() % (player->max_strength) + (player->min_strength); // dégats aléatoires
+    int current_attack_strength = 0;
+
+    if(player->current_weapon != NULL && (player->mana - player->current_weapon->mana_cost) >= 0) {
+        current_attack_strength = rand() % (player->current_weapon->max_strength) + (player->current_weapon->min_strength);     // si le joueur a une arme équipée et suffisamment de mana pour attaquer
+    }
+    else {
+        current_attack_strength = rand() % (player->max_strength) + (player->min_strength);                                     // sinon le joueur attaque à mains nues
+    }
+
 
     Monster *target = getTargetMonster(player, idMonster);
     if(target == NULL) {
         printf("Monster targeting failed.\n");
         exit(1);
     }
-    // calculate_damages();
 
     if((target->lifepoints) - current_attack_strength <= 0) {
         target->lifepoints = 0;
@@ -30,6 +37,10 @@ void player_attack(Player *player, int idMonster) {
     }
     else target->lifepoints -= current_attack_strength;
 
+
     player->attacks_left--;
+
+    if(player->current_weapon != NULL)  player->mana -= player->current_weapon->mana_cost;
+
     if(player->attacks_left == 0) player->turn = false;
 }

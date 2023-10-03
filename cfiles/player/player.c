@@ -15,7 +15,7 @@
 #include "../../headers/monsters/monster_spritev2.h"
 
 
-#define DEBUG true
+#define DEBUG false
 
 /**
  * init the player
@@ -46,15 +46,15 @@ Player *init_player(Level *level) {
         player->attacks_by_turn = 2;
         player->attacks_left = player->attacks_by_turn;
         player->min_strength = 10;
-        player->max_strength = 25;
+        player->max_strength = 16;
 
         init_player_draw(player);
         player->current_level = level;
         player->inventory = inventory;
 
         Weapon *weapon1 = init_weapon("epee1", 2, 8, 18, 4, RARE);
-    Weapon *weapon2 = init_weapon("epee2", 2, 12, 24, 6, EPIC);
-    Weapon *weapon3 = init_weapon("epee3", 3, 16, 24, 4, LEGENDARY);
+        Weapon *weapon2 = init_weapon("epee2", 2, 12, 24, 6, EPIC);
+        Weapon *weapon3 = init_weapon("epee3", 3, 16, 24, 4, LEGENDARY);
 
     add_item(player, weapon1, NULL);
     add_item(player, weapon2, NULL);

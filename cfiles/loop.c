@@ -27,20 +27,24 @@ void launch_loop(Game *game, Player *player) {
 
     while(game->isRunning)
     {
-
-        display_player_weapons(player);
-
             if(player->turn)
             {
                 display_all(player); // affichage
 
                 playerEntry = getch();
-                    playerEntry -= 48;                                  // décalage ASCII de la saisie pour obtenir la valeur numérique
-                    if(playerEntry == 9) {
+
+                switch(playerEntry) {
+                    case 'q':
                         printf("\nFin de partie.\n");
                         game->isRunning = false;                        // cas de fin de partie
                         break;
-                    }
+
+                    case 'i':
+                        display_inventory_choice_sections(player);
+                        break;
+                }
+
+                playerEntry -= 48;
 
                     if(playerEntry > 9 || playerEntry < 1) continue;
 
