@@ -19,6 +19,8 @@ void display_inventory_choice_sections(Player *player) {
     printf("Armes          (1)\n");
     printf("Armures        (2)\n");
     printf("Potions        (3)\n");
+    printf("\n");
+    printf("Quitter        (q)\n");
     choice = getch();
     choice -= 48;
 
@@ -46,6 +48,9 @@ void display_inventory_section(Player *player, int choice) {
         case 3:
             display_player_potions(player);
             break;
+
+        case 'q':
+            return;
 
         default:
             break;
@@ -111,7 +116,7 @@ void display_player_weapons(Player *player) {
 
 
     printf("\n");
-    printf("Equiper une arme (1)     Fermer l'inventaire (2)\n");
+    printf("Equiper une arme (1)    Retour (2)     Fermer l'inventaire (3)\n");
     choice = getch();
     choice -= 48;           // décalage ascii
 
@@ -125,13 +130,18 @@ void display_player_weapons(Player *player) {
             player->attacks_by_turn = player->inventory->weaponList[choice]->attacks_by_turn;
             printf("\n\n");
             printf("arme equipee : %s | %d-%d | %d \n\n", player->current_weapon->name, player->current_weapon->min_strength, player->current_weapon->max_strength, player->current_weapon->mana_cost);
+            display_inventory_choice_sections(player);
             break;
 
         case 2:
-            return;
+            display_inventory_choice_sections(player);
             break;
 
+        case 3:
+            return;
+
         default:
+            display_player_weapons(player);
             break;
     }
 }
@@ -191,7 +201,7 @@ void display_player_armors(Player *player) {
 
 
     printf("\n");
-    printf("Equiper une armure (1)     Fermer l'inventaire (2)\n");
+    printf("Equiper une armure (1)    Retour (2)    Fermer l'inventaire (2)\n");
     choice = getch();
     choice -= 48;           // décalage ascii
 
@@ -204,13 +214,18 @@ void display_player_armors(Player *player) {
             player->current_armor = player->inventory->armorList[choice];
             printf("\n\n");
             printf("armure equipee : %s | %d \n\n", player->current_armor->name, player->current_armor->defense);
+            display_inventory_choice_sections(player);
             break;
 
         case 2:
-            return;
+            display_inventory_choice_sections(player);
             break;
 
+        case 3:
+            return;
+
         default:
+            display_player_armors(player);
             break;
     }
 }

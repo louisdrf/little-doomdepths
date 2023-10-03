@@ -49,3 +49,10 @@
 116	247	7180704101718473	doom.exe	510d3b715d48dade
 6	120	7180704500481836	CMakeFiles/doom.dir/cfiles/inventory/display_inventory.c.obj	5925d3d48ece1b5a
 121	251	7180704501733671	doom.exe	510d3b715d48dade
+13	109	7180710041636410	CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj	70c564f15ebe5b80
+3	110	7180710041646381	CMakeFiles/doom.dir/cfiles/player/player.c.obj	98a48f816ba24173
+110	240	7180710042908474	doom.exe	510d3b715d48dade
+4	108	7180712554686050	CMakeFiles/doom.dir/cfiles/inventory/display_inventory.c.obj	5925d3d48ece1b5a
+108	246	7180712556007686	doom.exe	510d3b715d48dade
+3	102	7180713718307861	CMakeFiles/doom.dir/cfiles/inventory/display_inventory.c.obj	5925d3d48ece1b5a
+103	234	7180713719560367	doom.exe	510d3b715d48dade
