@@ -37,4 +37,10 @@ add_executable(doom cfiles/main.c
         headers/inventory/display_inventory.h
         cfiles/armor/init_armor.c
         headers/armor/init_armor.h
+        cfiles/inventory/display_inventory_potions.c
+        headers/inventory/display_inventory_potions.h
+        cfiles/inventory/display_inventory_armors.c
+        headers/inventory/display_inventory_armors.h
+        cfiles/inventory/display_inventory_weapons.c
+        headers/inventory/display_inventory_weapons.h
 )

@@ -88,12 +88,14 @@ void use_potion(Player *player, unsigned short potionType) {
     switch(potionType)      // potion de mana
     {
         case 1: // potion de mana
-            player->mana += 30;
+        if((player->mana + 30) >= player->mana_max) player->mana = 100;
+        else player->mana += 30;
             printf("\nVous recuperez 30 points de mana.\n");
             break;
 
         case 2: // potion de vie
-            player->lifepoints += 30;
+            if((player->lifepoints + 30) >= player->lifepoints_max) player->lifepoints = 100;
+            else player->lifepoints += 30;
             printf("\nVous recuperez 30 points de vie.\n");
             break;
     }

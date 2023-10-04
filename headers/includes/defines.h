@@ -7,7 +7,7 @@
 #define DOOM_DEFINES_H
 
 #define NB_MONSTER_TYPE 4
-#define NBMONSTERS_MAX 6
+#define NBMONSTERS_MAX 3
 #define NBMONSTERS_MIN 2
 #define MONSTER_MAX_PV 80
 #define MONSTER_MIN_PV 40
