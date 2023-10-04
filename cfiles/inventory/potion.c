@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <string.h>
+#include <time.h>
 #include "../../headers/inventory/potion.h"
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
@@ -14,21 +15,22 @@
 
 void getPotion(Player *player) {
 
-    int choice;
+    srand(time(NULL));
 
-    choice = display_potion_choice();
+    unsigned short choice;
+
+    unsigned short potionType = rand() % 2 + 1;
+
+    choice = display_potion_choice(potionType);
 
     switch(choice) {
-        case 1:
-            printf("ajout dune potion de mana");
-            give_player_potion(player, "mana");
-            printf("\nVous recuperez une potion de mana. (+30)\n");
+        case 1:     // utiliser la potion
+            use_potion(player, potionType);
             break;
 
-        case 2:
-            printf("ajout dune potion de vie");
-            give_player_potion(player, "health");
-            printf("\nVous recuperez une potion de vie. (+30)\n");
+        case 2:     // stocker la potion en inventaire
+            give_player_potion(player, potionType);
+            printf("\nPotion ajoutee a l'inventaire. (+30)\n");
             break;
 
         default:
@@ -36,23 +38,43 @@ void getPotion(Player *player) {
     }
 }
 
+/**
+ * chose to keep it in inventory or using it immediatly
+ * @param potionType
+ * @return
+ */
+int display_potion_choice(unsigned short potionType) {
 
-int display_potion_choice() {
+    unsigned short playerEntry;
 
-    int playerEntry;
+    switch(potionType) {
 
-    printf("\n\n");
-    printf(BLUE" mmm     "RESET RED" mmm\n");
-    printf(BLUE" )-(     "RESET RED" )-(");
-    printf("\n");
-    printf(BLUE"(   )    "RESET RED"(   )\n");
-    printf(BLUE"|   |    "RESET RED"|   |\n");
-    printf(BLUE"|   |    "RESET RED"|   |\n");
-    printf(BLUE"|___|    "RESET RED"|___|\n");
-    printf(RESET"\n\n");
-    printf("Potion de mana (1)        Potion de vie (2)\n\n-->  ");
+        case 1:  // potion de mana
+            printf("\n\n");
+            printf(BLUE" mmm\n");
+            printf(BLUE" |-|\n");
+            printf(BLUE"(   )\n");
+            printf(BLUE"|   |\n");
+            printf(BLUE"|   |\n");
+            printf(BLUE"|___|\n");
+            printf(RESET"\n\n");
+            break;
+
+        case 2: // potion de vie
+            printf("\n\n");
+            printf(RED" mmm\n");
+            printf(RED" |-|\n");
+            printf(RED"(   )\n");
+            printf(RED"|   |\n");
+            printf(RED"|   |\n");
+            printf(RED"|___|\n");
+            printf(RESET"\n\n");
+        break;
+    }
+
+    printf("Utiliser (1)       Garder dans l'inventaire (2)\n\n-->  ");
     playerEntry = getch();
-    playerEntry -= 48;                                  // décalage ASCII de la saisie pour obtenir la valeur numérique
+    playerEntry -= 48;
     while(playerEntry != 1 && playerEntry != 2) {
         playerEntry = getch();
         playerEntry -= 48;
@@ -61,39 +83,61 @@ int display_potion_choice() {
     return playerEntry;
 }
 
+void use_potion(Player *player, unsigned short potionType) {
 
-void give_player_potion(Player *player, char* type) {
+    switch(potionType)      // potion de mana
+    {
+        case 1: // potion de mana
+            player->mana += 30;
+            printf("\nVous recuperez 30 points de mana.\n");
+            break;
+
+        case 2: // potion de vie
+            player->lifepoints += 30;
+            printf("\nVous recuperez 30 points de vie.\n");
+            break;
+    }
+}
+
+void give_player_potion(Player *player, unsigned short type) {
 
     char* sprite = " mmm\n"
-                   " )-(\n"
+                   " |-|\n"
                    "(   )\n"
                    "|   |\n"
                    "|   |\n"
                    "|___|";
 
-    if (strcmp(type, "mana") == 0)
+    if (type == 1)      // potion de mana
     {
         Potion *manaPotion = createPotion("Potion de mana", sprite, 0, 30);
         if (manaPotion != NULL)
         {
             player->inventory->manaPotion = manaPotion;
         }
-        else
+        else {
+            #if DEBUG
+            printf("Erreur lors de la création de la potion de mana.\n");
+            #endif
+        }
+    }
+    else                // potion de vie
         {
             Potion *healthPotion = createPotion("Potion de vie", sprite, 30, 0);
             if (healthPotion != NULL)
             {
-                player->inventory->manaPotion = healthPotion;
+                player->inventory->healthPotion = healthPotion;
+            }
+            else {
+                #if DEBUG
+                printf("Erreur lors de la création de la potion de vie.\n");
+                #endif
             }
 
-            #if DEBUG
-                        printf("Erreur lors de la création de la potion de mana.\n");
-            #endif
         }
-    }
 }
 
-Potion *createPotion(const char* name, const char* sprite, int healthValue, int manaValue) {
+Potion *createPotion(const char* name, const char* sprite, unsigned short healthValue, unsigned short manaValue) {
 
     Potion *potion = malloc( sizeof(Potion));
     if(potion == NULL) {

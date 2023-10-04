@@ -82,10 +82,10 @@ typedef struct {
 
 
 typedef struct {
-    int                 manaValue;
-    int                 healthValue;
-    char*               name;
-    char*               sprite;
+    unsigned short                 manaValue;
+    unsigned short                 healthValue;
+    char*                          name;
+    char*                          sprite;
 
 } Potion;
 
