@@ -35,37 +35,37 @@ void display_player_potions(Player *player)
 }
 
 void display_both_potions() {
-    printf("+-------------------------------+\n");
+    printf("+-------------------------------------------+\n");
     printf("| ");
     printf(RED"potion de vie    (1)  "RESET);
     printf("| ");
-    printf(BLUE"potion de mana  (2)  |\n"RESET);
-    printf("+-------------------------------+\n");
+    printf(BLUE"potion de mana  (2)  \n"RESET);
+    printf("+-------------------------------------------+\n");
 
     printf("\n");
-    printf("Quitter (q)\n");
+    printf("Quitter (4)\n");
 }
 
 void display_mana_potion() {
-    printf("+-------------------------------+\n");
+    printf("+-----------------------------+\n");
     printf("| ");
-    printf(BLUE"potion de mana      (1)      \n"RESET);
+    printf(BLUE"potion de mana      (1)  \n"RESET);
     printf("|");
-    printf("+-------------------------------+\n");
+    printf("+-----------------------------+\n");
 
     printf("\n");
-    printf("Quitter (q)\n");
+    printf("Quitter (4)\n");
 }
 
 void display_health_potion() {
-    printf("+-------------------------------+\n");
+    printf("+-----------------------------+\n");
     printf("| ");
-    printf(RED"potion de vie        (1)      \n"RESET);
+    printf(RED"potion de vie        (1)  \n"RESET);
     printf("|");
-    printf("+-------------------------------+\n");
+    printf("+-----------------------------+\n");
 
     printf("\n");
-    printf("Quitter (q)\n");
+    printf("Quitter (4)\n");
 }
 
 void both_potions_in_inventory(Player *player) {
@@ -75,13 +75,15 @@ void both_potions_in_inventory(Player *player) {
     choice -= 48;
     switch(choice) {
         case 1:                                             // pour la potion de vie
-            printf("utiliser ? (1)     retour (2)\n->");
+            printf("utiliser ? (1)     retour (2)\n");
+            printf("->");
             choice = getch();
             choice -= 48;
             switch(choice)
             {
                 case 1: // utiliser la potion
                     use_potion(player, 2);
+                    player->inventory->healthPotion = NULL;
                     return;
 
                 case 2: // retour
@@ -90,13 +92,15 @@ void both_potions_in_inventory(Player *player) {
             break;
 
         case 2:                                             // pour la potion de mana
-            printf("utiliser ? (1)     retour (2)\n->");
+            printf("utiliser ? (1)     retour (2)\n");
+            printf("->");
             choice = getch();
             choice -= 48;
             switch(choice)
             {
                 case 1: // utiliser la potion
                     use_potion(player, 1);
+                    player->inventory->manaPotion = NULL;
                     return;
 
                 case 2: // retour
@@ -104,7 +108,7 @@ void both_potions_in_inventory(Player *player) {
             }
             break;
 
-        case 'q':
+        case 4:
             return;
 
         default:
@@ -119,13 +123,15 @@ void inventory_only_health_potion(Player *player) {
     choice -= 48;
     switch(choice) {
         case 1:
-            printf("utiliser ? (1)     retour (2)");
+            printf("utiliser ? (1)     retour (2)\n");
+            printf("->");
             choice = getch();
             choice -= 48;
             switch(choice)
             {
                 case 1: // utiliser la potion
                     use_potion(player, 2);
+                    player->inventory->healthPotion = NULL;
                     return;
 
                 case 2: // retour
@@ -136,7 +142,7 @@ void inventory_only_health_potion(Player *player) {
             }
             break;
 
-        case 'q':
+        case 4:
             return;
 
         default:
@@ -151,7 +157,8 @@ void inventory_only_mana_potion(Player *player) {
     choice -= 48;
     switch(choice) {
         case 1:
-            printf("utiliser ? (1)     retour (2)");
+            printf("utiliser ? (1)     retour (2)\n");
+            printf("->");
             choice = getch();
             choice -= 48;
             switch(choice)
@@ -168,7 +175,7 @@ void inventory_only_mana_potion(Player *player) {
             }
             break;
 
-        case 'q':
+        case 4:
             return;
 
         default:

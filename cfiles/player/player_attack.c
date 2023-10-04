@@ -20,6 +20,7 @@ void player_attack(Player *player, int idMonster) {
         current_attack_strength = rand() % (player->current_weapon->max_strength) + (player->current_weapon->min_strength);     // si le joueur a une arme équipée et suffisamment de mana pour attaquer
     }
     else {
+        printf("\nattaque a mains nue ! \n");
         current_attack_strength = rand() % (player->max_strength) + (player->min_strength);                                     // sinon le joueur attaque à mains nues
     }
 
@@ -40,7 +41,12 @@ void player_attack(Player *player, int idMonster) {
 
     player->attacks_left--;
 
-    if(player->current_weapon != NULL)  player->mana -= player->current_weapon->mana_cost;
+    if(player->current_weapon != NULL)  {
+        if(player->mana - player->current_weapon->mana_cost >= 0) player->mana -= player->current_weapon->mana_cost;
+        else player->mana = 0;
+    }
+
+    printf("mana : %d\n", player->mana);
 
     if(player->attacks_left == 0) player->turn = false;
 }

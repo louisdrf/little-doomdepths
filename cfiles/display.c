@@ -80,6 +80,15 @@ void display_player_mana(Player *player) {
     int i = 0;
 
     printf("Mana:     ");
+    if(player->mana == 0) {
+        while(i < 50) {
+            printf("-");
+            i++;
+        }
+        printf( RESET "  %d/100", player->mana);
+        printf("\n");
+        return;
+    }
 
         while(i < (player->mana)/2) {
             printf(BLUE "#");
