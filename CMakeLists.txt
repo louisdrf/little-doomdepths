@@ -43,4 +43,9 @@ add_executable(doom cfiles/main.c
         headers/inventory/display_inventory_armors.h
         cfiles/inventory/display_inventory_weapons.c
         headers/inventory/display_inventory_weapons.h
+        headers/zones/define_zones.h
+        cfiles/zones/init_zone.c
+        headers/zones/init_zone.h
+        cfiles/zones/generate_random_map.c
+        headers/zones/generate_random_map.h
 )

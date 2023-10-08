@@ -77,6 +77,7 @@ typedef struct {
     struct Weapon*           loot_weapon;         // arme lootable sur le niveau
     struct Armor*            loot_armor;          // armure lootable sur le niveau
     unsigned int             loot_gold;           // gold lootable sur le niveau
+    bool                     finished;            // true si le niveau a été fini
 
 } Level;
 
@@ -129,6 +130,18 @@ typedef struct {
     bool                    isRunning;                     // bool d'état de la partie
 
 } Game;
+
+
+typedef struct {
+
+    char*                   name;                                   // nom de la zone
+    double                  multiplicator;                          // multiplicateur de la zone (xp, gold, monstres...)
+    unsigned short          nbLevels;                               // nombre de niveaux/étages de la zone
+    Level***                levelList;                             // tableaux à deux dimensions des niveaux de la zone
+    bool                    finished;                               // true si tous les niveaux de la zone ont été terminés
+    unsigned short          difficulty;                             // indicateur du niveau de difficulté de la zone (EASY, MODERATE, HARD)
+
+} Zone;
 
 
 

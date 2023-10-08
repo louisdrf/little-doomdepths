@@ -6,8 +6,11 @@
 #include "../headers/display.h"
 #include "../headers/player/player.h"
 #include "../headers/loop.h"
+#include "../headers/zones/generate_random_map.h"
 
 int main() {
+
+    init_random_map_dimensions();
 
     Game        *game;
     Player      *player;
