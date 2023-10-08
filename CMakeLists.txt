@@ -48,4 +48,6 @@ add_executable(doom cfiles/main.c
         headers/zones/init_zone.h
         cfiles/zones/generate_random_map.c
         headers/zones/generate_random_map.h
+        cfiles/zones/create_map_from_tab.c
+        headers/zones/create_map_from_tab.h
 )

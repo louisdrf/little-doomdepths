@@ -7,13 +7,14 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "../../headers/zones/generate_random_map.h"
+#include "../../headers/zones/create_map_from_tab.h"
 #include "../../headers/zones/define_zones.h"
 
 
 /**
  * return a random dimensions tab full of 0
  */
-int **init_random_map_dimensions() {
+void init_random_map_dimensions() {
     srand(time(NULL));
 
     int height = rand() % (NBLEVELX_MAX - NBLEVELX_MIN + 1) + NBLEVELX_MIN;
@@ -21,25 +22,13 @@ int **init_random_map_dimensions() {
 
     int path_length = (int)((height * width) * 0.7);
 
-    printf("longueur de chemin : %d\n", path_length);
-
     int **tab = calloc(height, sizeof(int *));
     for (int i = 0; i < height; i++) {
         tab[i] = calloc(width, sizeof(int));
     }
 
-    for (int i = 0; i < height; i++) {
-        for (int j = 0; j < width; j++) {
-            printf("%d ", tab[i][j]);
-        }
-        printf("\n");
-    }
-
     int x = 0;
     int y = 0;
-
-    printf("start x : %d , start y : %d\n", x, y);
-
     tab[x][y] = 1;
     int k = 1;
 
@@ -93,16 +82,14 @@ int **init_random_map_dimensions() {
 
     } while (k != path_length);
 
-    for (int i = 0; i < height; i++) {
-        for (int j = 0; j < width; j++) {
+
+    for(int i = 0; i < height; i++) {
+        for(int j = 0; j < width; j++) {
             printf("%d ", tab[i][j]);
         }
         printf("\n");
     }
 
-    printf("\n\nx : %d    y : %d     k : %d     path len : %d\n", x, y, k, path_length);
 
-
-
-    return tab;
+    create_map_from_tab(tab, height, width);       // on cree une map à partir du tableau
 }
