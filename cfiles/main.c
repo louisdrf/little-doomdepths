@@ -6,7 +6,7 @@
 #include "../headers/display.h"
 #include "../headers/player/player.h"
 #include "../headers/loop.h"
-
+#include "../headers/player/player_spell.h"
 int main() {
 
     Game        *game;

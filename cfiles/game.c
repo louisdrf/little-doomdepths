@@ -38,7 +38,7 @@ Game *game;
                 printf("\n\nLevel %d correctly added to the game.\n", i);
         #endif
     }
-
+    game->isRunning=true;
     ////////////////////////////////////
 
 #if DEBUG

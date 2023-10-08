@@ -15,7 +15,7 @@
 #include "../headers/inventory/potion.h"
 #include "../headers/monsters/monster_sprite.h"
 #include "../headers/inventory/display_inventory.h"
-
+#include "../headers/player/player_spell.h"
 /**
  * manages the game loop
  * @param game
@@ -42,10 +42,16 @@ void launch_loop(Game *game, Player *player) {
                     case 'i':
                         display_inventory_choice_sections(player);
                         break;
+
+                    case 's':
+                        display_spell_choice_sections(player);
+                        break;
                 }
 
                 playerEntry -= 48;
-
+                    if(playerEntry==0){
+                        printf("test");
+                    }
                     if(playerEntry > 9 || playerEntry < 1) continue;
 
                     player_attack(player, playerEntry);        // le joueur attaque le monstre dont l'id est passé en argument
@@ -55,6 +61,7 @@ void launch_loop(Game *game, Player *player) {
                         if(display_next_level_menu() == 1) {
                             getPotion(player);
                             next_level(game, player);
+                            player->shield=0;
                         }
                         else return;
                     }

@@ -14,14 +14,22 @@ enum rarity {
     EPIC,
     LEGENDARY
 };
-
+enum spell_type {
+    HEAL,
+    DAMAGE,
+    SHIELD,
+    AOE,
+    BUFF_SPEED,
+};
 enum monster_type {
     GRIM,
     SKELETON,
     GHOST,
     DRAGON
 };
-
+static const char *monster_string[] = {
+        "GRIM", "SKELETON", "GHOST", "DRAGON",
+};
 typedef struct {
 
     unsigned int        defense;
@@ -100,10 +108,29 @@ typedef struct {
 
 } Inventory;
 
+typedef struct Spell Spell;
+struct Spell{
+
+    int                    id;
+    char*                  name;                            // nom du sort
+    int                    value;                          // puissance du sort
+    int                    mana_cost;                       // cout du sort
+    unsigned short         spell_type;                      //  type de sort
+    struct Spell*          next;
+
+} ;
+typedef struct {
+
+    Spell*                 spell_equipped[NBSPELL_MAX];                            // liste des sort équipé
+    Spell*                 spell_stock;                                // liste chainé de sort
+
+
+} Book;
 typedef struct {
 
     unsigned short      lifepoints;         // pv restants
     unsigned short      lifepoints_max;     // pv max
+    unsigned short      shield;
     unsigned short      mana;               // mana restant
     unsigned short      mana_max;           // mana max
     unsigned short      min_strength;
@@ -119,6 +146,7 @@ typedef struct {
     Armor*              current_armor;      // armure équipée
     Level*              current_level;      // niveau actuel dans lequel se situe le joueur
     Inventory*          inventory;          // inventaire du joueur
+    Book *             book;
 
 } Player;
 

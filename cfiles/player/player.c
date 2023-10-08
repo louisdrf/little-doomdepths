@@ -9,12 +9,13 @@
 #include "../../headers/player/player.h"
 #include "../../headers/includes/structs.h"
 #include "../../headers/init/init_inventory.h"
+#include "../../headers/init/init_spell.h"
 #include "../../headers/inventory/inventory.h"
 #include "../../headers/weapon/init_weapon.h"
 #include "../../headers/inventory/potion.h"
 #include "../../headers/monsters/monster_sprite.h"
 #include "../../headers/armor/init_armor.h"
-
+#include "../../headers/player/player_spell.h"
 
 #define DEBUG false
 
@@ -27,6 +28,19 @@ Player *init_player(Level *level) {
         Player *player;
         Inventory *inventory = NULL;
         inventory = init_inventory();
+        Book *book= NULL;
+        book=init_book();
+        Spell *first_spell = NULL;
+
+
+    for(int j = 0; j < 2 ; j++) {
+        first_spell = create_spell(first_spell, j);
+#if DEBUG
+        printf("Monster %d in level %d correctly added.\n", j, level->id);
+#endif
+    }
+    book->spell_stock = first_spell;
+
 
         player = malloc(sizeof(Player));
         if(player == NULL) {
@@ -40,6 +54,7 @@ Player *init_player(Level *level) {
         player->turn = true; // the player attack first
         player->lifepoints_max = 100;
         player->lifepoints = player->lifepoints_max;
+        player->shield=0;
         player->mana_max = 100;
         player->mana = player->mana_max;
         player->gold = 0;
@@ -48,10 +63,13 @@ Player *init_player(Level *level) {
         player->attacks_left = player->attacks_by_turn;
         player->min_strength = 10;
         player->max_strength = 16;
-
+        player->book=book;
         init_player_draw(player);
         player->current_level = level;
         player->inventory = inventory;
+
+
+
 
         Weapon *weapon1 = init_weapon("epee1", 2, 8, 18, 4, RARE);
         Weapon *weapon2 = init_weapon("epee2", 2, 12, 24, 6, EPIC);
