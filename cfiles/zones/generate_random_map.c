@@ -7,29 +7,32 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "../../headers/zones/generate_random_map.h"
-#include "../../headers/zones/create_map_from_tab.h"
+#include "../../headers/zones/create_zone.h"
 #include "../../headers/zones/define_zones.h"
 
 
 /**
  * return a random dimensions tab full of 0
  */
-void init_random_map_dimensions() {
+Map *init_random_map_dimensions() {
+
+    Map *map = malloc(sizeof(Map));
+
     srand(time(NULL));
 
-    int height = rand() % (NBLEVELX_MAX - NBLEVELX_MIN + 1) + NBLEVELX_MIN;
-    int width = rand() % (NBLEVELX_MAX - NBLEVELX_MIN + 1) + NBLEVELX_MIN;
+    map->height = rand() % (NBLEVELX_MAX - NBLEVELX_MIN + 1) + NBLEVELX_MIN;
+    map->width = rand() % (NBLEVELX_MAX - NBLEVELX_MIN + 1) + NBLEVELX_MIN;
 
-    int path_length = (int)((height * width) * 0.7);
+    int path_length = (int)((map->height * map->width) * 0.7);
 
-    int **tab = calloc(height, sizeof(int *));
-    for (int i = 0; i < height; i++) {
-        tab[i] = calloc(width, sizeof(int));
+    int **tab = calloc(map->height, sizeof(int *));
+    for (int i = 0; i < map->height; i++) {
+        tab[i] = calloc(map->width, sizeof(int));
     }
 
     int x = 0;
     int y = 0;
-    tab[x][y] = 1;
+    map->map[x][y] = 1;
     int k = 1;
 
     int attempts = 0;
@@ -42,29 +45,29 @@ void init_random_map_dimensions() {
 
         if (direction == 0 && y > 0) {
             y--;
-            if(tab[x][y] == 0) {
-                tab[x][y] = 1;
+            if(map->map[x][y] == 0) {
+                map->map[x][y] = 1;
                 k++;
             }
         }
-        else if (direction == 1 && y < (width - 1)) {
+        else if (direction == 1 && y < (map->width - 1)) {
             y++;
-            if(tab[x][y] == 0) {
-                tab[x][y] = 1;
+            if(map->map[x][y] == 0) {
+                map->map[x][y] = 1;
                 k++;
             }
         }
         else if (direction == 2 && x > 0) {
             x--;
-            if(tab[x][y] == 0) {
-                tab[x][y] = 1;
+            if(map->map[x][y] == 0) {
+                map->map[x][y] = 1;
                 k++;
             }
         }
-        else if (direction == 3 && x < (height - 1)) {
+        else if (direction == 3 && x < (map->height - 1)) {
             x++;
-            if(tab[x][y] == 0) {
-                tab[x][y] = 1;
+            if(map->map[x][y] == 0) {
+                map->map[x][y] = 1;
                 k++;
             }
         }
@@ -82,14 +85,5 @@ void init_random_map_dimensions() {
 
     } while (k != path_length);
 
-
-    for(int i = 0; i < height; i++) {
-        for(int j = 0; j < width; j++) {
-            printf("%d ", tab[i][j]);
-        }
-        printf("\n");
-    }
-
-
-    create_map_from_tab(tab, height, width);       // on cree une map à partir du tableau
+    return map;
 }

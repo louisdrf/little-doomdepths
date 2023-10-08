@@ -6,6 +6,7 @@
 #define DOOM_STRUCTS_H
 #include <stdbool.h>
 #include "defines.h"
+#include "../zones/define_zones.h"
 
 enum rarity {
 
@@ -126,23 +127,32 @@ typedef struct {
 
 typedef struct {
 
-    Level*                  levelList[NBLEVELS];           // tableaux des niveaux de la partie
-    bool                    isRunning;                     // bool d'état de la partie
-
-} Game;
-
-
-typedef struct {
-
+    int                     id;
     char*                   name;                                   // nom de la zone
     double                  multiplicator;                          // multiplicateur de la zone (xp, gold, monstres...)
     unsigned short          nbLevels;                               // nombre de niveaux/étages de la zone
-    Level***                levelList;                             // tableaux à deux dimensions des niveaux de la zone
+    Level***                levelList;                              // tableau des niveaux de la zone
     bool                    finished;                               // true si tous les niveaux de la zone ont été terminés
     unsigned short          difficulty;                             // indicateur du niveau de difficulté de la zone (EASY, MODERATE, HARD)
 
 } Zone;
 
+
+typedef struct {
+
+    int**           map;
+    int             height;
+    int             width;
+
+} Map;
+
+
+typedef struct {
+
+    Zone*                  zoneList[NBZONES];               // tableaux des zones de la partie
+    bool                    isRunning;                      // bool d'état de la partie
+
+} Game;
 
 
 #endif //DOOM_STRUCTS_H
