@@ -42,17 +42,9 @@ void create_map_from_tab(int **binary_map, int height, int width) {
         }
     }
 
-
-    for(int i = 0; i < height; i++) {
-        for(int j = 0; j < width; j++) {
-
-            if(levelList[i][j] == NULL) {
-                printf("null ");
-            }
-            else {
-                printf("niveau ");
-            }
-        }
-        printf("\n");
+    for (int i = 0; i < height; i++) {
+        free(binary_map[i]);
     }
+    free(binary_map);
+
 }
