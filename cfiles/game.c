@@ -10,8 +10,9 @@
 #include "../headers/includes/structs.h"
 #include "../headers/includes/defines.h"
 #include "../headers/init/init_level.h"
+#include "../headers/zones/init_zones.h"
 
-#define DEBUG false
+#define DEBUG true
 
 Game *init_game() {
 
@@ -25,19 +26,12 @@ Game *game;
         exit(1);
     }
 
-// INIT THE GAME LEVELS
+// INIT THE GAME ZONES
 
-    for(int i = 0; i < NBLEVELS; i++)
-    {
-        game->levelList[i] = init_level(i);; // ajoute le niveau à la partie
-        if(game->levelList[i] == NULL) {
-            printf("Adding level %d in game failed.\n", i);
-            exit(1);
-        }
-        #if DEBUG
-                printf("\n\nLevel %d correctly added to the game.\n", i);
-        #endif
-    }
+   init_zones(game);
+#if DEBUG
+    if(game->zoneList[0] == NULL) printf("Error while creating zone in game.");
+#endif
 
     ////////////////////////////////////
 
@@ -58,7 +52,7 @@ int end_game(Game *game) {
 
 void free_game(Game *game) {
     if(game != NULL) {
-        free(game->levelList);
+        free(game->zoneList);
         free(game);
     }
 

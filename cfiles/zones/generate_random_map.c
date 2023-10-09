@@ -18,16 +18,14 @@ Map *init_random_map_dimensions() {
 
     Map *map = malloc(sizeof(Map));
 
-    srand(time(NULL));
-
     map->height = rand() % (NBLEVELX_MAX - NBLEVELX_MIN + 1) + NBLEVELX_MIN;
     map->width = rand() % (NBLEVELX_MAX - NBLEVELX_MIN + 1) + NBLEVELX_MIN;
 
     int path_length = (int)((map->height * map->width) * 0.7);
 
-    int **tab = calloc(map->height, sizeof(int *));
+    map->map = calloc(map->height, sizeof(int*));
     for (int i = 0; i < map->height; i++) {
-        tab[i] = calloc(map->width, sizeof(int));
+        map->map[i] = calloc(map->width, sizeof(int*));
     }
 
     int x = 0;
@@ -85,5 +83,19 @@ Map *init_random_map_dimensions() {
 
     } while (k != path_length);
 
-    return map;
+
+    for(int i = 0; i < map->height; i++) {
+        for(int j = 0; j < map->width; j++) {
+            printf("%d ", map->map[i][j]);
+        }
+        printf("\n");
+    }
+
+
+    if(map != NULL) return map;
+    else {
+        printf("Map null");
+        return NULL;
+    }
+
 }

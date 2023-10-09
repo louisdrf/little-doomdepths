@@ -10,8 +10,6 @@
 
 int main() {
 
-    init_random_map_dimensions();
-
     Game        *game;
     Player      *player;
     int choice;
@@ -29,7 +27,7 @@ int main() {
         case 2: // new game
             printf("Launching new game...\n\n");
             game = init_game();                             // init la partie et les niveaux
-            player = init_player(game->levelList[0]);       // passer le niveau 0 en argument au joueur
+            player = init_player(game->zoneList[0]);       // passer le niveau 0 en argument au joueur
 
             launch_loop(game, player);
 

@@ -84,6 +84,28 @@ typedef struct {
 
 
 typedef struct {
+
+    int                     id;
+    char*                   name;                                   // nom de la zone
+    double                  multiplicator;                          // multiplicateur de la zone (xp, gold, monstres...)
+    unsigned short          nbLevels;                               // nombre de niveaux/étages de la zone
+    Level***                levelList;                              // tableau des niveaux de la zone
+    bool                    finished;                               // true si tous les niveaux de la zone ont été terminés
+    unsigned short          difficulty;                             // indicateur du niveau de difficulté de la zone (EASY, MODERATE, HARD)
+
+} Zone;
+
+
+typedef struct {
+
+    int**           map;
+    int             height;
+    int             width;
+
+} Map;
+
+
+typedef struct {
     unsigned short                 manaValue;
     unsigned short                 healthValue;
     char*                          name;
@@ -120,6 +142,7 @@ typedef struct {
     Weapon*             current_weapon;     // arme équipée
     Armor*              current_armor;      // armure équipée
     Level*              current_level;      // niveau actuel dans lequel se situe le joueur
+    Zone*               current_zone;       // zone dans laquelle se situe le joueur
     Inventory*          inventory;          // inventaire du joueur
 
 } Player;
@@ -127,29 +150,7 @@ typedef struct {
 
 typedef struct {
 
-    int                     id;
-    char*                   name;                                   // nom de la zone
-    double                  multiplicator;                          // multiplicateur de la zone (xp, gold, monstres...)
-    unsigned short          nbLevels;                               // nombre de niveaux/étages de la zone
-    Level***                levelList;                              // tableau des niveaux de la zone
-    bool                    finished;                               // true si tous les niveaux de la zone ont été terminés
-    unsigned short          difficulty;                             // indicateur du niveau de difficulté de la zone (EASY, MODERATE, HARD)
-
-} Zone;
-
-
-typedef struct {
-
-    int**           map;
-    int             height;
-    int             width;
-
-} Map;
-
-
-typedef struct {
-
-    Zone*                  zoneList[NBZONES];               // tableaux des zones de la partie
+    Zone*                   zoneList[NBZONES];              // tableaux des zones de la partie
     bool                    isRunning;                      // bool d'état de la partie
 
 } Game;

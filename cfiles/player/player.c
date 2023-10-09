@@ -16,13 +16,13 @@
 #include "../../headers/armor/init_armor.h"
 
 
-#define DEBUG false
+#define DEBUG true
 
 /**
  * init the player
  * return a *Player
  */
-Player *init_player(Level *level) {
+Player *init_player(Zone *zone) {
 
         Player *player;
         Inventory *inventory = NULL;
@@ -50,7 +50,8 @@ Player *init_player(Level *level) {
         player->max_strength = 16;
 
         init_player_draw(player);
-        player->current_level = level;
+        player->current_zone = zone;
+        player->current_level = zone->levelList[0][0];      // joueur initialisé au premier niveau de la premiere zone
         player->inventory = inventory;
 
         Weapon *weapon1 = init_weapon("epee1", 2, 8, 18, 4, RARE);
