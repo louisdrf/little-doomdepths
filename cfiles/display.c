@@ -50,7 +50,8 @@ void display_player_ath(Player *player) {
     printf("Gold:     ");
     printf(YELLOW "%d\n" RESET, player->gold);
     printf("Attacks left this turn:   %d\n\n", player->attacks_left);
-    printf("Current level:            %d", player->current_level->id);
+    printf("Current level:            %d\n", player->current_level->id);
+    printf("Current zone:             %d", player->current_zone->id);
     printf("\n\n\n");
 
 }

@@ -16,11 +16,7 @@
  */
 Map *init_random_map_dimensions() {
 
-    printf("Call init_random_map_dimensions\n");
-
     Map *map = malloc(sizeof(Map));
-
-    printf("Map allocated\n");
 
     map->height = rand() % (NBLEVELX_MAX - NBLEVELX_MIN + 1) + NBLEVELX_MIN;
     map->width = rand() % (NBLEVELX_MAX - NBLEVELX_MIN + 1) + NBLEVELX_MIN;
@@ -87,16 +83,6 @@ Map *init_random_map_dimensions() {
         }
 
     } while (k != path_length);
-
-    printf("Map created.\n");
-
-
-    for(int i = 0; i < map->height; i++) {
-        for(int j = 0; j < map->width; j++) {
-            printf("%d ", map->map[i][j]);
-        }
-        printf("\n");
-    }
 
 
     if(map != NULL) return map;

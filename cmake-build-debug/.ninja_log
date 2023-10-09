@@ -58,3 +58,11 @@
 102	247	7185884890666411	doom.exe	ba84a17254d546b
 4	97	7185886341925267	CMakeFiles/doom.dir/cfiles/zones/init_zones.c.obj	97882845aff3b1e1
 98	239	7185886343281635	doom.exe	ba84a17254d546b
+3	102	7185888808291555	CMakeFiles/doom.dir/cfiles/display.c.obj	bd9a8766fd1c7864
+102	271	7185888809867323	doom.exe	ba84a17254d546b
+41	141	7185889503628878	CMakeFiles/doom.dir/cfiles/zones/create_zone.c.obj	b999a40c3dd307c9
+3	143	7185889503648819	CMakeFiles/doom.dir/cfiles/zones/generate_random_map.c.obj	dec1dceef5358954
+49	144	7185889503648819	CMakeFiles/doom.dir/cfiles/zones/init_zones.c.obj	97882845aff3b1e1
+144	284	7185889505005182	doom.exe	ba84a17254d546b
+4	96	7185889948494358	CMakeFiles/doom.dir/cfiles/zones/create_zone.c.obj	b999a40c3dd307c9
+97	223	7185889949701124	doom.exe	ba84a17254d546b

@@ -9,7 +9,7 @@
 #include "../../headers/zones/generate_random_map.h"
 #include "../../headers/includes/structs.h"
 
-#define DEBUG true
+#define DEBUG false
 
 
 void init_zones(Game *game) {
@@ -22,7 +22,9 @@ void init_zones(Game *game) {
         }
         game->zoneList[i]->levelList = create_zone();
         game->zoneList[i]->id = i;
-        printf("zone %d cree\n", i);
+        #if DEBUG
+                printf("zone %d cree\n", i);
+        #endif
     }
 
 }
