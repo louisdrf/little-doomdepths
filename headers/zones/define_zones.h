@@ -5,7 +5,7 @@
 #ifndef DOOM_DEFINE_ZONES_H
 #define DOOM_DEFINE_ZONES_H
 
-#define NBZONES  3
+#define NBZONES 5
 #define NBLEVELX_MAX 5
 #define NBLEVELX_MIN 5
 

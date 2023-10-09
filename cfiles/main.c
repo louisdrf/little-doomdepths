@@ -2,11 +2,9 @@
 #include <stdlib.h>
 #include <conio.h>
 #include "../headers/game.h"
-#include "../headers/includes/structs.h"
 #include "../headers/display.h"
-#include "../headers/player/player.h"
 #include "../headers/loop.h"
-#include "../headers/zones/generate_random_map.h"
+
 
 int main() {
 
