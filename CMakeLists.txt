@@ -50,4 +50,6 @@ add_executable(doom cfiles/main.c
         headers/zones/create_zone.h
         cfiles/zones/init_zones.c
         headers/zones/init_zones.h
+        cfiles/zones/display_zone.c
+        headers/zones/display_zone.h
 )

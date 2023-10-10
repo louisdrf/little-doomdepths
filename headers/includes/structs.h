@@ -86,6 +86,8 @@ typedef struct {
 typedef struct {
 
     int                     id;
+    unsigned short          height;
+    unsigned short          width;
     char*                   name;                                   // nom de la zone
     double                  multiplicator;                          // multiplicateur de la zone (xp, gold, monstres...)
     unsigned short          nbLevels;                               // nombre de niveaux/étages de la zone

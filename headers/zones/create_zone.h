@@ -7,6 +7,6 @@
 
 #include "../includes/structs.h"
 
-Level ***create_zone();
+Zone *create_zone(Game *game);
 
 #endif //DOOM_CREATE_ZONE_H

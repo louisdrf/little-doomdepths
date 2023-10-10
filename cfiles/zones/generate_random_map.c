@@ -5,10 +5,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdbool.h>
 #include "../../headers/zones/generate_random_map.h"
-#include "../../headers/zones/create_zone.h"
-#include "../../headers/zones/define_zones.h"
 
 
 /**
