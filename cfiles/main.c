@@ -4,6 +4,7 @@
 #include "../headers/game.h"
 #include "../headers/display.h"
 #include "../headers/loop.h"
+#include "../headers/zones/display_zone.h"
 
 
 int main() {
@@ -26,6 +27,8 @@ int main() {
             printf("Launching new game...\n\n");
             game = init_game();                             // init la partie et les niveaux
             player = init_player(game->zoneList[0]);       // passer le niveau 0 en argument au joueur
+
+            display_player_zone(player);
 
             launch_loop(game, player);
 

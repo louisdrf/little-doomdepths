@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include "../../headers/zones/generate_random_map.h"
 
+#define DEBUG true
 
 /**
  * return a random dimensions tab full of 0
@@ -80,6 +81,18 @@ Map *init_random_map_dimensions() {
         }
 
     } while (k != path_length);
+
+
+#if DEBUG
+    for(int i = 0; i < map->height; i++) {
+        for(int j = 0; j < map->width; j++) {
+            printf("%d ", map->map[i][j]);
+        }
+        printf("\n");
+    }
+#endif
+
+    printf("\n\n");
 
 
     if(map != NULL) return map;
