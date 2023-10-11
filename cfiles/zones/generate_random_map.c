@@ -90,9 +90,8 @@ Map *init_random_map_dimensions() {
         }
         printf("\n");
     }
-#endif
-
     printf("\n\n");
+#endif
 
 
     if(map != NULL) return map;
