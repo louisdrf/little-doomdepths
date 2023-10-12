@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+
+#include <conio.h>
 #include "../../headers/player/player.h"
 #include "../../headers/includes/structs.h"
 #include "../../headers/init/init_inventory.h"
@@ -48,6 +50,8 @@ Player *init_player(Zone *zone) {
         player->attacks_left = player->attacks_by_turn;
         player->min_strength = 10;
         player->max_strength = 16;
+        player->currentX=0;
+        player->currentY=0;
 
         init_player_draw(player);
         player->current_zone = zone;
@@ -136,6 +140,58 @@ void print_player_stats(Player *player) {
  * free inventory, draw and player itself
  * @param player
  */
+void updateMovement(Zone* zone,Player *player, char command){
+    switch (command) {
+        case 'z':
+            if(player->currentX - 1 < 0){
+                printf("1");
+                command=getch();
+                updateMovement(zone,player,command);
+            }else if(zone->levelList[player->currentX - 1][player->currentY]!=NULL){
+                player->currentX--;
+            }
+            break;
+        case 'q':
+            if(player->currentY - 1 < 0){
+                printf("2");
+                command=getch();
+                updateMovement(zone,player,command);
+            }else if(zone->levelList[player->currentX][player->currentY - 1]!=NULL ){
+                player->currentY--;
+            }
+            break;
+        case 's':
+            if(player->currentX + 1 >= zone->height){
+                printf("3");
+                command=getch();
+                updateMovement(zone,player,command);
+            }else if(zone->levelList[player->currentX + 1][player->currentY]!=NULL ) {
+                player->currentX++;
+            }
+            break;
+        case'd':
+            if(player->currentY + 1 >= zone->width){
+                printf("4");
+                command=getch();
+                updateMovement(zone,player,command);
+            }else if(zone->levelList[player->currentX][player->currentY + 1]!=NULL ){
+                player->currentY++;
+            }
+            break;
+        default:
+            break;
+    }
+
+
+    if(zone->levelList[player->currentX][player->currentY]!=NULL  ){
+        player->current_level=zone->levelList[player->currentX][player->currentY];
+    } else{
+        command=getch();
+        updateMovement(zone,player,command);
+    }
+
+
+}
 void free_player(Player *player) {
 
     for(int i = 0; i < NBOBJECTS_MAX; i++) {

@@ -30,7 +30,23 @@ int are_all_monsters_dead(Player *player) {
     return 0;
 }
 
+int are_all_monsters_zone_dead(Player *player) {
 
+    int count = 0;
+    Monster *current = player->current_level->monsters;
+
+    while(current != NULL) {
+
+        if(current->isAlive == false) {
+            count++;
+        }
+        current = current->next;
+    }
+
+    if(count == player->current_level->nbMonsters) return 1;
+
+    return 0;
+}
 /**
  * find the targeted monster through the actual player level monsters list
  * @param player
