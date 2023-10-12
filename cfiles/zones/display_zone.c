@@ -13,13 +13,13 @@
 void display_player_zone(Player *player) {
 
     char *void_cell[7] = {
-            "                  ",
-            "                  ",
-            "                  ",
-            "                  ",
-            "                  ",
-            "                  ",
-            "                  "
+            "                   ",
+            "                   ",
+            "                   ",
+            "                   ",
+            "                   ",
+            "                   ",
+            "                   "
     };
 
     char *level_cell[7] = {
@@ -31,6 +31,18 @@ void display_player_zone(Player *player) {
             "|     \\\\|//      |",
             "*----------------*"
     };
+
+    char *player_cell[7] = {
+            "*-----------------*",
+            "|  ('_/-\\\\-._     |",
+            "| /,|`--._,-^ |   |",
+            "| \\_| |     | |   |",
+            "|   |  `\\ /   |   |",
+            "|    \\__| |__/    |",
+            "*-----------------*"
+    };
+
+
 
 
 
@@ -44,9 +56,9 @@ void display_player_zone(Player *player) {
                 if (player->current_zone->levelList[i][j] != NULL) {
 
                         if(player->current_zone->levelList[i][j] == player->current_level) {        // afficher en rouge le niveau où se situe le joueur
-                            printf(RED"%s"RESET, level_cell[line]);
+                            printf(BLUE"%s"RESET, player_cell[line]);
                         }
-                        else printf("%s", level_cell[line]);
+                        else printf(RED"%s"RESET, level_cell[line]);
 
                 } else {
                     printf("%s", void_cell[line]);
