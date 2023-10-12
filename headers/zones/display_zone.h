@@ -7,6 +7,8 @@
 
 #include "../includes/structs.h"
 
-void display_player_zone(Player *player);
+void display_player_zone(Player *player, Game *game);
+void display_all_zones(Player *player, Game *game);
+void display_zone(Zone *zone);
 
 #endif //DOOM_DISPLAY_ZONE_H

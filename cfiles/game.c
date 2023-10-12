@@ -26,6 +26,8 @@ Game *game;
         exit(1);
     }
 
+    game->display_zones_index = 0;
+
 // INIT THE GAME ZONES
 
    init_zones(game);

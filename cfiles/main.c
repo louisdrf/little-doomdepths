@@ -28,7 +28,7 @@ int main() {
             game = init_game();                             // init la partie et les niveaux
             player = init_player(game->zoneList[0]);       // passer le niveau 0 en argument au joueur
 
-            display_player_zone(player);
+            display_player_zone(player, game);
 
             launch_loop(game, player);
 
