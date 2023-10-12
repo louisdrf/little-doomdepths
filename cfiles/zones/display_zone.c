@@ -39,7 +39,7 @@ void display_player_zone(Player *player) {
 
     for (i = 0; i < player->current_zone->height; i++) {
 
-        for (int line = 0; line < 7; line++) { // 4 lignes dans level_cell ou void_cell
+        for (int line = 0; line < 7; line++) { // 7 lignes dans level_cell ou void_cell
             for (j = 0; j < player->current_zone->width; j++) {
                 if (player->current_zone->levelList[i][j] != NULL) {
 
