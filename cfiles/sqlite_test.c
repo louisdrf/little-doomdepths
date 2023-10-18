@@ -16,7 +16,7 @@ void init_connexion() {
     int rec_count = 0;
     const char *tail;
 
-    int rc = sqlite3_open("identifier.sqlite", &conn);
+    int rc = sqlite3_open("../identifier.sqlite", &conn);
 
     if (rc != SQLITE_OK) {
 
@@ -28,24 +28,22 @@ void init_connexion() {
 
 
 
-    error = sqlite3_prepare_v2(conn,
-                               "select * from user",1000, &res, &tail);
-         if (error != SQLITE_OK) {
-        puts("We did not get any data!");
-        exit(0);
-        }
+    const char *sql_query = "SELECT id, nom, prenom, mail FROM user";
+    error = sqlite3_prepare_v2(conn, sql_query, -1, &res, &tail);
+    if (error != SQLITE_OK) {
+        fprintf(stderr, "Failed to execute SQL query: %s\n", sqlite3_errmsg(conn));
+        sqlite3_close(conn);
+        return;
+    }
 
     while (sqlite3_step(res) == SQLITE_ROW) {
-                          printf("%d|", sqlite3_column_int(res, 0));
-                          printf("%s|", sqlite3_column_text(res, 1));
-                          printf("%s|", sqlite3_column_text(res, 2));
-                         printf("%s\n", sqlite3_column_text(res, 3));
-
-                         rec_count++;
-                 }
-
-    puts("==========================");
-    printf("We received %d records.\n", rec_count);
+        int id = sqlite3_column_int(res, 0);
+        const unsigned char *nom = sqlite3_column_text(res, 1);
+        const unsigned char *prenom = sqlite3_column_text(res, 2);
+        const unsigned char *mail = sqlite3_column_text(res, 3);
+        printf("Id: %d, nom: %s, prenom: %s, Mail: %s\n", id, nom, prenom, mail);
+        rec_count++;
+    }
 
     sqlite3_finalize(res);
     sqlite3_close(conn);
