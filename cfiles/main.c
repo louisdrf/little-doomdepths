@@ -9,7 +9,7 @@
 
 int main() {
 
-    //init_connexion();
+    init_connexion();
 
     Game        *game;
     Player      *player;
