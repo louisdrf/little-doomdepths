@@ -10,10 +10,11 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
 
+#define NBLINES 7
 
 void display_player_zone(Player *player, Game *game) {
 
-    char *void_cell[7] = {
+    char *void_cell[NBLINES] = {
             "                  ",
             "                  ",
             "                  ",
@@ -23,7 +24,7 @@ void display_player_zone(Player *player, Game *game) {
             "                  "
     };
 
-    char *level_cell[7] = {
+    char *level_cell[NBLINES] = {
             "*----------------*",
             "|    .-\"\"\"-.     |",
             "|   /       \\    |",
@@ -33,7 +34,7 @@ void display_player_zone(Player *player, Game *game) {
             "*----------------*"
     };
 
-    char *player_cell[7] = {
+    char *player_cell[NBLINES] = {
             "*-----------------*",
             "|  ('_/-\\\\-._     |",
             "| /,|`--._,-^ |   |",
@@ -52,7 +53,7 @@ void display_player_zone(Player *player, Game *game) {
 
     for (i = 0; i < player->current_zone->height; i++) {
 
-        for (int line = 0; line < 7; line++) { // 7 lignes dans level_cell ou void_cell
+        for (int line = 0; line < NBLINES; line++) { // 7 lignes dans level_cell ou void_cell
             for (j = 0; j < player->current_zone->width; j++) {
                 if (player->current_zone->levelList[i][j] != NULL) {
 
@@ -90,6 +91,8 @@ void display_player_zone(Player *player, Game *game) {
 
 
 void display_all_zones(Player *player, Game *game) {
+
+    system("cls");
 
     int playerEntry;
 
@@ -133,7 +136,7 @@ void display_all_zones(Player *player, Game *game) {
 
 void display_zone(Zone *zone) {
 
-    char *void_cell[7] = {
+    char *void_cell[NBLINES] = {
             "                  ",
             "                  ",
             "                  ",
@@ -143,7 +146,7 @@ void display_zone(Zone *zone) {
             "                  "
     };
 
-    char *level_cell[7] = {
+    char *level_cell[NBLINES] = {
             "*----------------*",
             "|    .-\"\"\"-.     |",
             "|   /       \\    |",
@@ -162,7 +165,7 @@ void display_zone(Zone *zone) {
 
     for (i = 0; i < zone->height; i++) {
 
-        for (int line = 0; line < 7; line++) { // 7 lignes dans level_cell ou void_cell
+        for (int line = 0; line < NBLINES; line++) { // 7 lignes dans level_cell ou void_cell
             for (j = 0; j < zone->width; j++) {
                 if (zone->levelList[i][j] != NULL)
                 {

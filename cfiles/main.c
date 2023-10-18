@@ -5,9 +5,11 @@
 #include "../headers/display.h"
 #include "../headers/loop.h"
 #include "../headers/zones/display_zone.h"
-
+#include "sqlite_test.h"
 
 int main() {
+
+    //init_connexion();
 
     Game        *game;
     Player      *player;
@@ -28,8 +30,6 @@ int main() {
             game = init_game();                             // init la partie et les niveaux
             player = init_player(game->zoneList[0]);       // passer le niveau 0 en argument au joueur
 
-            display_player_zone(player, game);
-
             launch_loop(game, player);
 
             free_player(player);
@@ -41,7 +41,7 @@ int main() {
             break;
 
         default:
-            break;
+            display_init_menu();
     }
 
     return EXIT_SUCCESS;

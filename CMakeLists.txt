@@ -3,6 +3,7 @@ project(doom C)
 
 set(CMAKE_C_STANDARD 11)
 
+
 add_executable(doom cfiles/main.c
         headers/includes/structs.h
         headers/includes/defines.h
@@ -52,4 +53,9 @@ add_executable(doom cfiles/main.c
         headers/zones/init_zones.h
         cfiles/zones/display_zone.c
         headers/zones/display_zone.h
+        cfiles/sqlite_test.c
+        sqlite3/sqlite3.c
+        cfiles/sqlite_test.h
+        sqlite3/sqlite3.h
 )
+

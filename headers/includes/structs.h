@@ -118,7 +118,7 @@ typedef struct {
 
 typedef struct {
 
-    int                    limObjects;                                  // limite d'objets que le joueur peut transporter
+    int                    limObjects;                                  // limite d'armes ou d'armures que le joueur peut transporter
     Weapon*                weaponList[NBOBJECTS_MAX];                   // tableaux de ses armes
     Armor*                 armorList[NBOBJECTS_MAX];                    // tableaux de ses Armures
     Potion*                healthPotion;

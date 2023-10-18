@@ -41,12 +41,10 @@ void player_attack(Player *player, int idMonster) {
 
     player->attacks_left--;
 
-    if(player->current_weapon != NULL)  {
+    if(player->current_weapon != NULL) {
         if(player->mana - player->current_weapon->mana_cost >= 0) player->mana -= player->current_weapon->mana_cost;
         else player->mana = 0;
     }
-
-    printf("mana : %d\n", player->mana);
 
     if(player->attacks_left == 0) player->turn = false;
 }

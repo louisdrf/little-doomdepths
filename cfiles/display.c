@@ -36,7 +36,7 @@ void display_all(Player *player) {
     display_player_ath(player);
     print_monsters(player);
     display_monsters_alive(player->current_level->monsters);
-    printf("\nexit (q)      inventory (i)\n");
+    printf("\nexit (q)      inventory (i)      map (m)\n");
 }
 
 void display_player(Player *player) {

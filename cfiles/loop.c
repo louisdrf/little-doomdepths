@@ -15,6 +15,7 @@
 #include "../headers/inventory/potion.h"
 #include "../headers/monsters/monster_sprite.h"
 #include "../headers/inventory/display_inventory.h"
+#include "../headers/zones/display_zone.h"
 
 /**
  * manages the game loop
@@ -29,6 +30,7 @@ void launch_loop(Game *game, Player *player) {
     {
             if(player->turn)
             {
+                system("cls");
                 display_all(player); // affichage
 
                 playerEntry = getch();
@@ -42,6 +44,9 @@ void launch_loop(Game *game, Player *player) {
                     case 'i':
                         display_inventory_choice_sections(player);
                         break;
+
+                    case 'm':
+                        display_player_zone(player, game);
                 }
 
                 playerEntry -= 48;
