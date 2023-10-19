@@ -25,15 +25,17 @@ enum monster_type {
 
 typedef struct {
 
-    unsigned int        defense;
-    char*               name;
-    unsigned short      rarity;
+    unsigned short          id;
+    unsigned int            defense;
+    char*                   name;
+    unsigned short          rarity;
 
 } Armor;
 
 
 typedef struct {
 
+    unsigned short          id;
     char*                   name;
     unsigned short          min_strength;
     unsigned short          max_strength;
@@ -72,8 +74,8 @@ struct Monster {
 
 typedef struct {
 
-    Monster*                 monsters;            // liste chainée de monstres
     unsigned short           id;                  // niveau 1, 2, 3...
+    Monster*                 monsters;            // liste chainée de monstres
     unsigned short           nbMonsters;          // nb de monstres de la partie
     struct Weapon*           loot_weapon;         // arme lootable sur le niveau
     struct Armor*            loot_armor;          // armure lootable sur le niveau
@@ -153,6 +155,7 @@ typedef struct {
 
 typedef struct {
 
+    unsigned short          player_id;                      // id du joueur
     Zone*                   zoneList[NBZONES];              // tableaux des zones de la partie
     bool                    isRunning;                      // bool d'état de la partie
     int                     display_zones_index;            // id de la zone actuelle en affichage
