@@ -120,6 +120,18 @@ void print_player_stats(Player *player) {
 
 void get_player_name(Player *player) {
 
+    char name[40];
+
+    printf("\nVotre nom de joueur : ");
+    fgets(name, sizeof(name), stdin);
+
+    if(strchr(name, '\n') != NULL && strlen(name) == 1) {
+        printf("\nVeuillez saisir un nom valide.\n");
+        get_player_name(player);
+    }
+
+    player->name = malloc(sizeof(name) + 1);
+    strcpy(player->name, name);
 }
 
 
