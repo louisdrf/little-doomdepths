@@ -11,9 +11,38 @@
 
 #define NBMAX_MONSTER_PRINT 3
 
+Monster* little_print_monster(Monster* current){
+    int entityWidth = 40;
+    int printIndex = 0;
+    if (current->isAlive == true) {
 
+        while (current->draw[current->drawIndex] != '\n' && current->draw[current->drawIndex] != '\0') {
+            printf( RED"%c"RESET, current->draw[current->drawIndex]);
+            current->drawIndex++;
+            printIndex++;
+        }
+
+        if (current->draw[current->drawIndex] == '\n') {
+            current->drawIndex++; // Passer à la ligne suivante
+        } else if (current->draw[current->drawIndex] == '\0') {
+            while (printIndex < entityWidth) {
+                printf(" "); // Ajouter des espaces jusqu'à la largeur de l'entité
+                printIndex++;
+            }
+        }
+
+
+        while (printIndex < entityWidth) {
+            printf(" ");
+            printIndex++;
+        }
+
+        printIndex = 0;
+        return  current->next;
+    } else little_print_monster( current->next);
+}
 void print_monsters(Player *player) {
-    int entityWidth = 45; // Une entité prendra 50 caractères de largeur
+    int entityWidth = 40; // Une entité prendra 50 caractères de largeur
 
     Monster *current = player->current_level->monsters;
     int playerIndex = 0;
@@ -41,17 +70,14 @@ void print_monsters(Player *player) {
                 if (current->isAlive == true) {
 
                     while (current->draw[current->drawIndex] != '\n' && current->draw[current->drawIndex] != '\0') {
-                        printf( "%c", current->draw[current->drawIndex]);
+                        printf( RED"%c"RESET, current->draw[current->drawIndex]);
                         current->drawIndex++;
                         printIndex++;
                     }
 
-                    if (current->draw[current->drawIndex] == '\n')
-                    {
+                    if (current->draw[current->drawIndex] == '\n') {
                         current->drawIndex++; // Passer à la ligne suivante
-                    }
-                    else if (current->draw[current->drawIndex] == '\0')
-                    {
+                    } else if (current->draw[current->drawIndex] == '\0') {
                         while (printIndex < entityWidth) {
                             printf(" "); // Ajouter des espaces jusqu'à la largeur de l'entité
                             printIndex++;
@@ -65,7 +91,7 @@ void print_monsters(Player *player) {
                     }
                     printIndex = 0;
                 }
-                else current = current->next;
+                else current =little_print_monster( current->next);
             }
         }
 
@@ -171,8 +197,8 @@ char **init_monster_sprites()
 
 
 
-    monster_sprites_list[GRIM] = malloc(strlen(dragon) + 1);
-    strcpy(monster_sprites_list[GRIM], dragon);
+    monster_sprites_list[GRIM] = malloc(strlen(grim) + 1);
+    strcpy(monster_sprites_list[GRIM], grim);
 
     monster_sprites_list[SKELETON] = malloc(strlen(skeleton) + 1);
     strcpy(monster_sprites_list[SKELETON], skeleton);
@@ -180,8 +206,8 @@ char **init_monster_sprites()
     monster_sprites_list[GHOST] = malloc(strlen(ghost) + 1);
     strcpy(monster_sprites_list[GHOST], ghost);
 
-    monster_sprites_list[DRAGON] = malloc(strlen(grim) + 1);
-    strcpy(monster_sprites_list[DRAGON], grim);
+    monster_sprites_list[DRAGON] = malloc(strlen(dragon) + 1);
+    strcpy(monster_sprites_list[DRAGON], dragon);
 
 
     return monster_sprites_list;

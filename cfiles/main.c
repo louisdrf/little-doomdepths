@@ -2,14 +2,15 @@
 #include <stdlib.h>
 #include <conio.h>
 #include "../headers/game.h"
+#include "../headers/includes/structs.h"
 #include "../headers/display.h"
+#include "../headers/player/player.h"
 #include "../headers/loop.h"
 #include "../headers/zones/display_zone.h"
 #include "sqlite_test.h"
+#include "../headers/player/player_spell.h"
 
 int main() {
-
-    init_connexion();
 
     Game        *game;
     Player      *player;

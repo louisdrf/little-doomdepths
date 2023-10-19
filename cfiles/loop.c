@@ -15,6 +15,7 @@
 #include "../headers/inventory/potion.h"
 #include "../headers/monsters/monster_sprite.h"
 #include "../headers/inventory/display_inventory.h"
+#include "../headers/player/player_spell.h"
 #include "../headers/zones/display_zone.h"
 
 /**
@@ -30,7 +31,6 @@ void launch_loop(Game *game, Player *player) {
     {
             if(player->turn)
             {
-                system("cls");
                 display_all(player); // affichage
 
                 playerEntry = getch();
@@ -47,6 +47,10 @@ void launch_loop(Game *game, Player *player) {
 
                     case 'm':
                         display_player_zone(player, game);
+
+                    case 's':
+                        display_spell_choice_sections(player);
+                        break;
                 }
 
                 playerEntry -= 48;
@@ -60,6 +64,7 @@ void launch_loop(Game *game, Player *player) {
                         if(display_next_level_menu() == 1) {
                             getPotion(player);
                             next_level(game, player);
+                            player->shield = 0;
                         }
                         else return;
                     }

@@ -36,7 +36,7 @@ void display_all(Player *player) {
     display_player_ath(player);
     print_monsters(player);
     display_monsters_alive(player->current_level->monsters);
-    printf("\nexit (q)      inventory (i)      map (m)\n");
+    printf("\nexit (q)      inventory (i)      map (m)      spell(s)\n");
 }
 
 void display_player(Player *player) {
@@ -50,8 +50,7 @@ void display_player_ath(Player *player) {
     printf("Gold:     ");
     printf(YELLOW "%d\n" RESET, player->gold);
     printf("Attacks left this turn:   %d\n\n", player->attacks_left);
-    printf("Current level:            %d\n", player->current_level->id);
-    printf("Current zone:             %d", player->current_zone->id);
+    printf("Current level:            %d", player->current_level->id);
     printf("\n\n\n");
 
 }
@@ -59,6 +58,7 @@ void display_player_ath(Player *player) {
 void display_player_health(Player *player) {
 
     int i = 0;
+    int j = 0;
 
     printf("Health:   ");
     while(i < (player->lifepoints)/2) {
@@ -69,8 +69,14 @@ void display_player_health(Player *player) {
         printf("-");
         i++;
     }
-
+    while(j < (player->shield)/2) {
+        printf(YELLOW "#");
+        j++;
+    }
     printf( RESET "  %d/100", player->lifepoints);
+    if(player->shield>0){
+        printf( YELLOW "  + %d "RESET, player->shield);
+    }
     printf("\n");
 
 }
@@ -113,7 +119,7 @@ void display_monsters_alive(Monster *head) {
 
     while (current != NULL) {
         if(current->isAlive) {
-            printf("monstre %d - type : %d (%d/%d)\n", current->id, current->monster_type, current->lifepoints, current->lifepoints_max);
+            printf("monstre %d - type : %s (%d/%d)\n", current->id, monster_string[current->monster_type], current->lifepoints, current->lifepoints_max);
         }
         current = current->next;
     }
