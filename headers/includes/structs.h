@@ -128,6 +128,7 @@ typedef struct {
 
 typedef struct {
 
+    char*               name;               // nom du joueur
     unsigned short      lifepoints;         // pv restants
     unsigned short      lifepoints_max;     // pv max
     unsigned short      mana;               // mana restant

@@ -50,25 +50,11 @@ Player *init_player(Zone *zone) {
         player->max_strength = 16;
 
         init_player_draw(player);
+        get_player_name(player);
         player->current_zone = zone;
         player->current_level = zone->levelList[0][0];      // joueur initialisé au premier niveau de la premiere zone
         player->inventory = inventory;
 
-        Weapon *weapon1 = init_weapon("epee1", 2, 8, 18, 4, RARE);
-        Weapon *weapon2 = init_weapon("epee2", 2, 12, 24, 6, EPIC);
-        Weapon *weapon3 = init_weapon("epee3", 3, 16, 24, 4, LEGENDARY);
-
-    add_item(player, weapon1, NULL);
-    add_item(player, weapon2, NULL);
-    add_item(player, weapon3, NULL);
-
-    Armor *armor1 = init_armor("armure1", 10, RARE);
-    Armor *armor2 = init_armor("armure2", 15, EPIC);
-    Armor *armor3 = init_armor("armure3", 20, LEGENDARY);
-
-    add_item(player, NULL, armor1);
-    add_item(player, NULL, armor2);
-    add_item(player, NULL, armor3);
 
 
     #if DEBUG
@@ -129,6 +115,11 @@ void print_player_stats(Player *player) {
            "pv : %d\n"
            "mana : %d\n"
            "defense : %d\n", player->lifepoints, player->mana, player->defense);
+}
+
+
+void get_player_name(Player *player) {
+
 }
 
 

@@ -10,8 +10,7 @@
 void init_connexion() {
 
     sqlite3 *conn;
-    sqlite3_stmt    *res;
-    char *err_msg = 0;
+    sqlite3_stmt *res;
     int error = 0;
     int rec_count = 0;
     const char *tail;

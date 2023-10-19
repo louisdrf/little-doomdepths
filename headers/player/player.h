@@ -9,7 +9,7 @@
 
 Player *init_player(Zone *zone);
 void free_player(Player *player);
-char** player_sprite();
+void get_player_name(Player *player);
 void init_player_draw(Player *player);
 void print_player_stats(Player *player);
 
