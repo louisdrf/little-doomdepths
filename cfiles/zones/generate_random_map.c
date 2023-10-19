@@ -82,7 +82,6 @@ Map *init_random_map_dimensions() {
     } while (k != path_length);
 
 
-
     if(map != NULL) return map;
     else {
         printf("Map null");
