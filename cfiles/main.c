@@ -22,13 +22,13 @@ int main() {
 
     switch(choice) {
         case 1: // play from last save
-            printf("Load last game ?\n");
+            printf("Load last save ?\n");
             break;
 
         case 2: // new game
             printf("Launching new game...\n\n");
-            game = init_game();                             // init la partie et les niveaux
-            player = init_player(game->zoneList[0]);       // passer le niveau 0 en argument au joueur
+            game = init_game();                                 // init la partie et les niveaux
+            player = init_player(game);       // passer le niveau 0 en argument au joueur
 
             launch_loop(game, player);
 

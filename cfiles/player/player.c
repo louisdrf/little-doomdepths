@@ -22,7 +22,7 @@
  * init the player
  * return a *Player
  */
-Player *init_player(Zone *zone) {
+Player *init_player(Game *game) {
 
         Player *player;
         Inventory *inventory = NULL;
@@ -51,9 +51,11 @@ Player *init_player(Zone *zone) {
 
         init_player_draw(player);
         get_player_name(player);
-        player->current_zone = zone;
-        player->current_level = zone->levelList[0][0];      // joueur initialisé au premier niveau de la premiere zone
+        player->current_zone = game->zoneList[0];
+        player->current_level = game->zoneList[0]->levelList[0][0];      // joueur initialisé au premier niveau de la premiere zone
         player->inventory = inventory;
+
+        add_player_name_to_game(game, player);
 
 
 
@@ -74,6 +76,11 @@ Player *init_player(Zone *zone) {
     }
 
 }
+
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+
 
 void init_player_draw(Player *player) {
 
@@ -107,6 +114,10 @@ void init_player_draw(Player *player) {
     }
 }
 
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+
 
 void print_player_stats(Player *player) {
 
@@ -117,6 +128,10 @@ void print_player_stats(Player *player) {
            "defense : %d\n", player->lifepoints, player->mana, player->defense);
 }
 
+
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
 
 void get_player_name(Player *player) {
 
@@ -130,9 +145,28 @@ void get_player_name(Player *player) {
         get_player_name(player);
     }
 
-    player->name = malloc(sizeof(name) + 1);
+    player->name = malloc(strlen(name) + 1);
     strcpy(player->name, name);
+
+    //printf("Nom du joueur : %s\n", player->name);
 }
+
+
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+
+void add_player_name_to_game(Game *game, Player *player) {
+
+    game->player_name = malloc(strlen(player->name) + 1);
+    strcpy(game->player_name, player->name);
+
+    //printf("Nom de la sauvegarde : %s\n", game->player_name);
+}
+
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
 
 
 /**
