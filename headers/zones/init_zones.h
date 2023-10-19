@@ -8,5 +8,6 @@
 #include "../includes/structs.h"
 
 void init_zones(Game *game);
+void free_zones(Game *game);
 
 #endif //DOOM_INIT_ZONES_H

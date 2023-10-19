@@ -19,9 +19,9 @@ Spell *create_spell(Spell *head, int index) {
     }
 
     new->id=index;
-    new->value=rand() %VALUE_SPELL_MAX+1;
-    new->mana_cost=rand() %SPELL_COST_MAX+1;
-    new->spell_type=rand() %NB_SPELL_TYPE;
+    new->value=rand() % VALUE_SPELL_MAX + 1;
+    new->mana_cost=rand() % SPELL_COST_MAX + 1;
+    new->spell_type=rand() % NB_SPELL_TYPE;
     new->name= name_spell(new->spell_type);
     new->next= head;
 

@@ -147,13 +147,17 @@ struct Spell{
     struct Spell*          next;
 
 } ;
+
+
 typedef struct {
 
     Spell*                 spell_equipped[NBSPELL_MAX];                            // liste des sort équipé
-    Spell*                 spell_stock;                                // liste chainé de sort
+    Spell*                 spell_stock;                                            // liste chainé de sort
 
 
 } Book;
+
+
 typedef struct {
 
     char*               name;               // nom du joueur
@@ -176,7 +180,7 @@ typedef struct {
     Level*              current_level;      // niveau actuel dans lequel se situe le joueur
     Zone*               current_zone;       // zone dans laquelle se situe le joueur
     Inventory*          inventory;          // inventaire du joueur
-    Book *             book;
+    Book*               book;               // livre de sorts du joueur
 
 } Player;
 

@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <string.h>
 
-Spell *get_spell_stocked(Player *player,int choice){
+Spell *get_spell_stocked(Player *player,int choice) {
 
     printf("\n");
     Spell *current = player->book->spell_stock;
@@ -24,7 +24,7 @@ Spell *get_spell_stocked(Player *player,int choice){
     if(result!=NULL){
         return result;
     } else{
-        printf("Ce spell n'exite pas");
+        printf("Ce spell n'existe pas");
         return NULL;
     }
 }
@@ -59,16 +59,16 @@ int get_first_spell_free_space(Player *player) {
 void spell_damage(Player *player,int idMonster,Spell *spell){
     Monster *target = getTargetMonster(player, idMonster);
     target->lifepoints-=spell->value*5;
-    printf("\nVous infligé %d points de dégat.\n",spell->value*5);
+    printf("\nVous infligez %d points de degats.\n",spell->value*5);
     player->mana-=spell->mana_cost;
 }
 void spell_aoe(Player *player,Spell *spell){
     Monster *current = player->current_level->monsters;
-    int i=0;
+    int i = 0;
     while (current != NULL && i<NBMONSTERS_MAX) {
         if(current->isAlive) {
             current->lifepoints-=spell->value*3;
-            printf("Vous infligé %d points de dégat a %s (%d/%d)\n", spell->value*5, monster_string[current->monster_type], current->lifepoints, current->lifepoints_max);
+            printf("Vous infligez %d points de degats a %s (%d/%d)\n", spell->value*5, monster_string[current->monster_type], current->lifepoints, current->lifepoints_max);
             i++;
         }
         current = current->next;
@@ -86,7 +86,7 @@ void spell_shield(Player *player,Spell *spell){
         printf("\nVous ne pouvez pas posseder un  bouclier plus puissant avec ce sort.\n");
     } else{
         player->shield=spell->value*3;
-        printf("\nVous aver creer un bouclier de %d points de protection.\n",spell->value*3);
+        printf("\nVous aver cree un bouclier de %d points de protection.\n",spell->value*3);
     }
 
     player->mana-=spell->mana_cost;

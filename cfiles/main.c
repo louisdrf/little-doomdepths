@@ -29,7 +29,7 @@ int main() {
         case 2: // new game
             printf("Launching new game...\n\n");
             game = init_game();                                 // init la partie et les niveaux
-            player = init_player(game);       // passer le niveau 0 en argument au joueur
+            player = init_player(game);
 
             launch_loop(game, player);
 
@@ -42,6 +42,7 @@ int main() {
             break;
 
         default:
+            system("cls");
             display_init_menu();
     }
 

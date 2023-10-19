@@ -157,9 +157,7 @@ void display_zone(Zone *zone) {
     };
 
 
-    int playerEntry;
-    int j = 0;
-    int i = 0;
+    int i , j;
 
     printf("\n");
 

@@ -25,6 +25,8 @@ void player_attack(Player *player, int idMonster) {
     }
 
 
+
+
     Monster *target = getTargetMonster(player, idMonster);
     if(target == NULL) {
         printf("Monster targeting failed.\n");
@@ -37,6 +39,8 @@ void player_attack(Player *player, int idMonster) {
         player->gold += target->loot_gold;
     }
     else target->lifepoints -= current_attack_strength;
+
+
 
 
     player->attacks_left--;

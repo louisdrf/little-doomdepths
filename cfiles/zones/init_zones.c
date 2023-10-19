@@ -21,3 +21,13 @@ void init_zones(Game *game) {
     }
 
 }
+
+
+void free_zones(Game *game) {
+    for(int i = 0; i < NBZONES; i++) {
+        free(game->zoneList[i]);
+#if DEBUG
+        printf("zone %d correctly free\n", i);
+#endif
+    }
+}

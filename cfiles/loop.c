@@ -17,6 +17,7 @@
 #include "../headers/inventory/display_inventory.h"
 #include "../headers/player/player_spell.h"
 #include "../headers/zones/display_zone.h"
+#include "../headers/spell/display_spell.h"
 
 /**
  * manages the game loop
@@ -61,6 +62,7 @@ void launch_loop(Game *game, Player *player) {
 
                     if(are_all_monsters_dead(player) == 1)              // retourne 1 si tous les monstres du niveau sont morts et passe le joueur au niveau supérieur
                     {
+                        printf("all monsters dead");
                         if(display_next_level_menu() == 1) {
                             getPotion(player);
                             next_level(game, player);

@@ -10,8 +10,11 @@
 #include <stdio.h>
 
 char* name_spell(int spell_type){
-    static const char *spell[][4] = {
-            {"Regen","Heal"},{"Magic missile","Thunderbolt"}, {"Proctection","Blue Shield"}, {"Earthquake","Fireball"}
+    static char *spell[][4] = {
+            {"Regen","Heal"},
+            {"Magic missile","Thunderbolt"},
+            {"Protection","Blue Shield"},
+            {"Earthquake","Fireball"}
     };
     return spell[spell_type][rand()%2];
 }
@@ -21,14 +24,17 @@ char* name_spell(int spell_type){
 void print_spell_equipped(Player *player){
     printf("\n");
     if(player->book->spell_equipped[0] ==NULL){
-        printf("Aucun sort equipee\n");
+        printf("Aucun sort equipe\n");
     }
     for (int i = 0; player->book->spell_equipped[i] !=NULL ; ++i) {
-        printf("id:%d , %s, power:%d, cost:%d\n",i,player->book->spell_equipped[i]->name,player->book->spell_equipped[i]->value,player->book->spell_equipped[i]->mana_cost);
+        printf("id:%d , %s, power:%d, cost:%d\n", i,
+               player->book->spell_equipped[i]->name,
+               player->book->spell_equipped[i]->value,
+               player->book->spell_equipped[i]->mana_cost);
     }
 }
 
-void print_spell_stocked(Player *player){
+void print_spell_stocked(Player *player) {
     printf("\n");
     Spell *current = player->book->spell_stock;
 
@@ -43,7 +49,7 @@ void print_spell_stocked(Player *player){
 void display_spell_choice_sections(Player *player) {
     int choice;
     printf("\n\n    Spell\n\n");
-    printf("Utiliser         (1)\n");
+    printf("Utiliser       (1)\n");
     printf("Equiper        (2)\n");
     printf("\n");
     printf("Quitter        (0)\n");
@@ -52,6 +58,8 @@ void display_spell_choice_sections(Player *player) {
 
     display_spell_section(player, choice);
 }
+
+
 void display_spell_use(Player *player, Spell *spell){
     int choice;
     switch(spell->spell_type) {

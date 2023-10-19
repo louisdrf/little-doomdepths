@@ -17,7 +17,7 @@
 #include "../../headers/armor/init_armor.h"
 #include "../../headers/player/player_spell.h"
 
-#define DEBUG false
+#define DEBUG true
 
 /**
  * init the player
@@ -29,18 +29,14 @@ Player *init_player(Game *game) {
         Inventory *inventory = NULL;
         inventory = init_inventory();
         Book *book= NULL;
-        book=init_book();
+        book = init_book();
         Spell *first_spell = NULL;
 
 
     for(int j = 0; j < 2 ; j++) {
         first_spell = create_spell(first_spell, j);
-#if DEBUG
-        printf("Monster %d in level %d correctly added.\n", j, level->id);
-#endif
+        book->spell_stock = first_spell;
     }
-    book->spell_stock = first_spell;
-
 
         player = malloc(sizeof(Player));
         if(player == NULL) {
@@ -63,12 +59,14 @@ Player *init_player(Game *game) {
         player->attacks_left = player->attacks_by_turn;
         player->min_strength = 10;
         player->max_strength = 16;
-        player->book=book;
+        player->book = book;
         init_player_draw(player);
         get_player_name(player);
         player->current_zone = game->zoneList[0];
         player->current_level = game->zoneList[0]->levelList[0][0];      // joueur initialisé au premier niveau de la premiere zone
         player->inventory = inventory;
+        player->current_weapon = NULL;
+        player->current_armor = NULL;
 
         add_player_name_to_game(game, player);
 
@@ -194,7 +192,9 @@ void free_player(Player *player) {
         free(player->inventory->weaponList[i]);
     }
     free(player->draw);
+    free(player->name);
     if(player->current_weapon != NULL) free(player->current_weapon);
+    if(player->current_armor != NULL) free(player->current_armor);
     free(player);
 
 #if DEBUG

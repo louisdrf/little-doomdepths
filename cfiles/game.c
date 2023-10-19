@@ -57,7 +57,8 @@ int end_game(Game *game) {
 
 void free_game(Game *game) {
     if(game != NULL) {
-        free(game->zoneList);
+        free_zones(game);
+        free(game->player_name);
         free(game);
     }
 

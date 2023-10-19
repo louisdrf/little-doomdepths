@@ -11,7 +11,8 @@
 
 #define NBMAX_MONSTER_PRINT 3
 
-Monster* little_print_monster(Monster* current){
+Monster* little_print_monster(Monster* current) {
+    printf("call little print");
     int entityWidth = 40;
     int printIndex = 0;
     if (current->isAlive == true) {
@@ -41,6 +42,8 @@ Monster* little_print_monster(Monster* current){
         return  current->next;
     } else little_print_monster( current->next);
 }
+
+
 void print_monsters(Player *player) {
     int entityWidth = 40; // Une entité prendra 50 caractères de largeur
 
