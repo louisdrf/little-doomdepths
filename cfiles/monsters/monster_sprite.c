@@ -12,9 +12,10 @@
 #define NBMAX_MONSTER_PRINT 3
 
 Monster* little_print_monster(Monster* current) {
-    printf("call little print");
+
     int entityWidth = 40;
     int printIndex = 0;
+    if (current != NULL) {
     if (current->isAlive == true) {
 
         while (current->draw[current->drawIndex] != '\n' && current->draw[current->drawIndex] != '\0') {
@@ -41,6 +42,7 @@ Monster* little_print_monster(Monster* current) {
         printIndex = 0;
         return  current->next;
     } else little_print_monster( current->next);
+}
 }
 
 
