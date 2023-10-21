@@ -915,11 +915,14 @@ CMakeFiles/doom.dir/cfiles/zones/display_zone.c.obj: C:/Users/mokra/OneDrive/Doc
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/stddef.h \
   C:/mingw64/x86_64-w64-mingw32/include/stddef.h \
   C:/mingw64/x86_64-w64-mingw32/include/sec_api/conio_s.h \
-  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/zones/display_zone.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/display.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/player/player.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/stdbool.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/defines.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/zones/define_zones.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/zones/display_zone.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/colors.h
 

@@ -48,19 +48,18 @@ Level *init_level(int id) {
 
     Weapon *weapon1 = init_weapon("Level_Loot_epee1", 2, 8, 18, 4, RARE);
     Armor *armor1 = init_armor("Level_Loot_armure1", 10, RARE);
-    Weapon *weapon2 = init_weapon("Level_Loot_epee1", 2, 8, 18, 4, RARE);
-    Armor *armor2 = init_armor("Level_Loot_armure1", 10, RARE);
+    Weapon *weapon2 = init_weapon("Level_Loot_epee2", 2, 8, 18, 4, RARE);
+    Armor *armor2 = init_armor("Level_Loot_armure2", 10, RARE);
+
     for(int i =0; i<MAX_LEVEL_LOOT_ITEM;i++){
         level->loot_weapon[i] = NULL;
         level->loot_armor[i] = NULL;
     }
 
-    //level->loot_armor[id] = armor1;
-
     add_loot_item(level, weapon1, NULL);
     add_loot_item(level, weapon2, NULL);
     add_loot_item(level, NULL, armor1);
-    add_loot_item(level, NULL, armor1);
+    add_loot_item(level, NULL, armor2);
 
 
 #if DEBUG

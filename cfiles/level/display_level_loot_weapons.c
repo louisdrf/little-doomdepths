@@ -13,23 +13,21 @@
 
 void display_level_loot_weapons(Level *level,Player *player) {
 
-    //int i = 0;
     int k=0;
     int levelLootWidth = 0;
     int choice;
-    //printf("avant le while\n");   //test
 
-    //printf("i = %d\n", i);
     //printf("level->loot_weapon[i] = %p\n", (void*)level->loot_weapon[i]);
 
-    for(int i =0 ;i<MAX_LEVEL_LOOT_ITEM;i++){
+    for(int i =0 ;i<MAX_LEVEL_LOOT_ITEM;i++){              // check si il y a du loot dans le level*
         if(level->loot_weapon[i]!= NULL ){
             k++;
         }
     }
 
     if( k == 0 ){
-        printf(RED"\nAucune arme  \n\n"RESET);
+        printf(RED"\nAucune arme a looter\n\n"RESET);
+        // Affiche les armes lootable
 
     }else{
         for(int w =0; w<k ; w++){
