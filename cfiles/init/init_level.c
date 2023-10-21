@@ -57,9 +57,10 @@ Level *init_level(int id) {
 
     //level->loot_armor[id] = armor1;
 
-    add_loot_item(level, weapon1, armor1);
-    add_loot_item(level, weapon2, armor2);
-    //add_loot_item(level, NULL, armor1);
+    add_loot_item(level, weapon1, NULL);
+    add_loot_item(level, weapon2, NULL);
+    add_loot_item(level, NULL, armor1);
+    add_loot_item(level, NULL, armor1);
 
 
 #if DEBUG

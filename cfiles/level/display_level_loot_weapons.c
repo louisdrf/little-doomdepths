@@ -13,7 +13,8 @@
 
 void display_level_loot_weapons(Level *level,Player *player) {
 
-    int i = 0;
+    //int i = 0;
+    int k=0;
     int levelLootWidth = 0;
     int choice;
     //printf("avant le while\n");   //test
@@ -21,55 +22,63 @@ void display_level_loot_weapons(Level *level,Player *player) {
     //printf("i = %d\n", i);
     //printf("level->loot_weapon[i] = %p\n", (void*)level->loot_weapon[i]);
 
+    for(int i =0 ;i<MAX_LEVEL_LOOT_ITEM;i++){
+        if(level->loot_weapon[i]!= NULL ){
+            k++;
+        }
+    }
 
-
-    if(level->loot_weapon[i]== NULL ){
-        printf("weapon loot NULL\n"); //test
+    if( k == 0 ){
+        printf(RED"\nAucune arme  \n\n"RESET);
 
     }else{
-        while(level->loot_weapon[i] != NULL)
-        {
-            //printf("apres le while");
-            levelLootWidth = 40 + (int)strlen(level->loot_weapon[i]->name);
+        for(int w =0; w<k ; w++){
+            if(level->loot_weapon[w]!= NULL){
+                //printf("apres le while");
+                levelLootWidth = 40 + (int)strlen(level->loot_weapon[w]->name);
 
-            printf("+");
-            for(int j = 0; j < levelLootWidth; j++) {                                               // affichage de la ligne du haut
-                printf("-");
+                printf("+");
+                for(int j = 0; j < levelLootWidth; j++) {                                               // affichage de la ligne du haut
+                    printf("-");
+                }
+                printf("+\n");
+
+                printf("| id : %d |  ", w);                                                      // affiche le numero de l'arme pour choisir celle à équiper
+
+                switch(level->loot_weapon[w]->rarity) {
+                    case COMMON:
+                        printf(GREEN"%s  "RESET, level->loot_weapon[w]->name);
+                        break;
+                        // affiche le nom de l'arme avec la couleur selon sa rareté
+                    case RARE:
+                        printf(BLUE"%s  "RESET, level->loot_weapon[w]->name);
+                        break;
+
+                    case EPIC:
+                        printf(MAGENTA"%s  "RESET, level->loot_weapon[w]->name);
+                        break;
+
+                    case LEGENDARY:
+                        printf(YELLOW"%s  "RESET, level->loot_weapon[w]->name);
+                        break;
+                }
+                printf("|  ");
+
+
+                printf("att : ");                                                                                                           // affiche l'attaque min et max de l'attaque
+                printf(RED"%d-%d "RESET, level->loot_weapon[w]->min_strength, level->loot_weapon[w]->max_strength);
+                printf("|  ");
+
+                printf("mana : ");
+                printf(BLUE "%d "RESET, level->loot_weapon[w]->mana_cost);                                                        // affiche le cout en mana de l'arme
+
+                printf("\n");
+            }else{
+                k++;
             }
-            printf("+\n");
 
-            printf("| id : %d |  ", i);                                                      // affiche le numero de l'arme pour choisir celle à équiper
-
-            switch(level->loot_weapon[i]->rarity) {
-                case COMMON:
-                    printf(GREEN"%s  "RESET, level->loot_weapon[i]->name);
-                    break;
-                    // affiche le nom de l'arme avec la couleur selon sa rareté
-                case RARE:
-                    printf(BLUE"%s  "RESET, level->loot_weapon[i]->name);
-                    break;
-
-                case EPIC:
-                    printf(MAGENTA"%s  "RESET, level->loot_weapon[i]->name);
-                    break;
-
-                case LEGENDARY:
-                    printf(YELLOW"%s  "RESET, level->loot_weapon[i]->name);
-                    break;
             }
-            printf("|  ");
 
-
-            printf("att : ");                                                                                                           // affiche l'attaque min et max de l'attaque
-            printf(RED"%d-%d "RESET, level->loot_weapon[i]->min_strength, level->loot_weapon[i]->max_strength);
-            printf("|  ");
-
-            printf("mana : ");
-            printf(BLUE "%d "RESET, level->loot_weapon[i]->mana_cost);                                                        // affiche le cout en mana de l'arme
-
-            printf("\n");
-            i++;
-        }
 
         printf("+");
         for(int j = 0; j < levelLootWidth; j++) {                                                                                               // affiche la ligne du bas

@@ -25,10 +25,13 @@ CMakeFiles/doom.dir/cfiles/zones/display_zone.c.obj: \
  c\:\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\stddef.h \
  c\:\mingw64\x86_64-w64-mingw32\include\stddef.h \
  c\:\mingw64\x86_64-w64-mingw32\include\sec_api\conio_s.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\zones\display_zone.h \
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\display.h \
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\player/player.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h \
  c\:\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\stdbool.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\defines.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\zones\define_zones.h \
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\zones\display_zone.h \
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\colors.h
