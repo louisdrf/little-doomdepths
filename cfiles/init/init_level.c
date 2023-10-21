@@ -7,6 +7,8 @@
 #include "../../headers/init/init_level.h"
 #include "../../headers/init/init_monster.h"
 #include "../../headers/inventory/potion.h"
+#include "../../headers/weapon/init_weapon.h"
+#include "../../headers/armor/init_armor.h"
 
 
 
@@ -40,6 +42,25 @@ Level *init_level(int id) {
     }
 
     level->monsters = first_monster; // ajoute la tete de liste de monstres au niveau
+
+
+    // Initialise le tableau loot_weapon avec des pointeurs NULL
+
+    Weapon *weapon1 = init_weapon("Level_Loot_epee1", 2, 8, 18, 4, RARE);
+    Armor *armor1 = init_armor("Level_Loot_armure1", 10, RARE);
+    Weapon *weapon2 = init_weapon("Level_Loot_epee1", 2, 8, 18, 4, RARE);
+    Armor *armor2 = init_armor("Level_Loot_armure1", 10, RARE);
+    for(int i =0; i<MAX_LEVEL_LOOT_ITEM;i++){
+        level->loot_weapon[i] = NULL;
+        level->loot_armor[i] = NULL;
+    }
+
+    //level->loot_armor[id] = armor1;
+
+    add_loot_item(level, weapon1, armor1);
+    add_loot_item(level, weapon2, armor2);
+    //add_loot_item(level, NULL, armor1);
+
 
 #if DEBUG
 printf("Level %d correctly initialized.\n", level->id);

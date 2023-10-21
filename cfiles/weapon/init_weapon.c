@@ -84,3 +84,67 @@ void free_weapon(Weapon *weapon) {
 #endif
 
 }
+
+void add_loot_item(Level *level, Weapon *weapon, Armor *armor) {
+
+    int index = 0;
+    int place_in_weaponloot = MAX_LEVEL_LOOT_ITEM - get_first_level_loot_weapon_free_space(level);       // nombre de case libres dans le tableau d'armes
+    int place_in_armorloot = MAX_LEVEL_LOOT_ITEM - get_first_level_loot_armor_free_space(level);         // nombre de case libres dans le tableau d'armures
+    int inventory_left_size = 0;                                        // taille totale de l'inventaire
+
+    inventory_left_size = (place_in_weaponloot + place_in_armorloot);
+
+    if(weapon != NULL) {
+        index = get_first_level_loot_weapon_free_space(level);
+
+        if(inventory_left_size > MAX_LEVEL_LOOT_ITEM)
+        {
+            level->loot_weapon[index] = weapon;          // on stocke l'arme dans la case libre si il y a de la place dans le level loot
+        }
+        else {
+            printf("pas de place pour une arme de plus !\n");
+        }
+    }
+    else if(armor != NULL)
+    {
+        index = get_first_level_loot_armor_free_space(level);
+        if(inventory_left_size > MAX_LEVEL_LOOT_ITEM)
+        {
+            level->loot_armor[index] = armor;          // on stocke l'armure dans la case libre si il y a de la place dans le level loot
+        }
+        else {
+            printf("pas de place pour une armure de plus !\n");
+        }
+    }
+
+}
+
+
+/**
+ * get the index of the first free space in the weapon level loot to add the item
+ * @param level
+ * @return
+ */
+int get_first_level_loot_weapon_free_space(Level *level) {
+
+    int i = 0;
+    while(level->loot_weapon[i] != NULL) {
+        i++;
+    }
+    return i; // on retourne la case suivante
+}
+
+/**
+ * get the index of the first free space in the weapon level loot to add the item
+ * @param level
+ * @return
+ */
+int get_first_level_loot_armor_free_space(Level *level) {
+
+    int i = 0;
+    while(level->loot_armor[i] != NULL) {
+        i++;
+    }
+
+    return i; // on retourne la case suivante
+}
