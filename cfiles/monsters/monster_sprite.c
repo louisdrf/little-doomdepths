@@ -13,7 +13,7 @@
 
 Monster* little_print_monster(Monster* current) {
 
-    int entityWidth = 40;
+    int entityWidth = 50;
     int printIndex = 0;
     if (current != NULL) {
     if (current->isAlive == true) {
