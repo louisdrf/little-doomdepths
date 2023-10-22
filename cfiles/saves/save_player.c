@@ -13,7 +13,7 @@ void save_player(Player *player, sqlite3** conn) {
     int error = 0;
     const char *tail;
 
-    char query[100];
+    char query[500];
     sprintf(query, "insert into Player(id, name, lifepoints, shield, mana, attacks_left, gold, turn, current_weapon_id, current_armor_id, current_level_id, current_zone_id, inventory_id, book_id)  values (%d, %s, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d);",
             player->id, player->name, player->lifepoints, player->shield, player->mana, player->attacks_left, player->gold, player->turn,
             player->current_weapon->id, player->current_armor->id, player->current_level->id, player->current_zone->id,

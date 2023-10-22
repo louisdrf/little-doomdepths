@@ -16,7 +16,7 @@ void save_inventory(Player *player, sqlite3** conn) {
     bool healthPotion = (player->inventory->healthPotion == NULL) ? false : true;       // est ce que le joueur a une potion en inventaire
     bool manaPotion = (player->inventory->manaPotion == NULL) ? false : true;
 
-    char query[100];
+    char query[500];
     sprintf(query, "insert into Inventory(id, player_id, healthPotion, manaPotion)  values (%d, %d, %d, %d);", player->inventory->id, player->id, healthPotion, manaPotion);
 
     error = sqlite3_prepare_v2(*conn, query, -1, &res, &tail);
