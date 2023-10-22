@@ -63,5 +63,9 @@ add_executable(doom cfiles/main.c
         headers/init/init_spell.h
         cfiles/player/player_spell.c
         headers/player/player_spell.h
+        cfiles/saves/create_save.c
+        cfiles/saves/create_save.h
+        cfiles/saves/save_inventory.c
+        cfiles/saves/save_inventory.h
 )
 

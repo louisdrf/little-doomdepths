@@ -128,6 +128,7 @@ typedef struct {
 
 typedef struct {
 
+    int                    id;
     int                    limObjects;                                  // limite d'armes ou d'armures que le joueur peut transporter
     Weapon*                weaponList[NBOBJECTS_MAX];                   // tableaux de ses armes
     Armor*                 armorList[NBOBJECTS_MAX];                    // tableaux de ses Armures
@@ -159,7 +160,7 @@ typedef struct {
 
 
 typedef struct {
-
+    int                 id;
     char*               name;               // nom du joueur
     unsigned short      lifepoints;         // pv restants
     unsigned short      lifepoints_max;     // pv max

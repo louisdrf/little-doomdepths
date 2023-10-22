@@ -1,12 +1,12 @@
 # ninja log v5
 758	7705	7194458236945674	CMakeFiles/doom.dir/sqlite3/sqlite3.c.obj	58f9b2d15eb3cca3
-1280	1663	7196822805598333	doom.exe	ccca133deb90d1
+130	391	7196825244070322	doom.exe	ccca133deb90d1
 2	89	7174591721483205	CMakeFiles/doom.dir/display.c.obj	62f2d3e5817ac39a
 2	217	7174587588533764	CMakeFiles/doom.dir/main.c.obj	6ab9ad0d64cbbe25
 19	267	7174587588738321	CMakeFiles/doom.dir/game.c.obj	b2a88e155e129914
 1113	1280	7196822801818450	CMakeFiles/doom.dir/cfiles/init/init_spell.c.obj	a4ec550eff964a10
 840	1015	7194458170137701	CMakeFiles/doom.dir/cfiles/sqlite_test.c.obj	ecb11939cc39ec78
-1	170	7194477912691840	build.ninja	1c0d9a92d8a84135
+1	170	7196845187921454	build.ninja	1c0d9a92d8a84135
 3	94	7174596816745556	CMakeFiles/doom.dir/player.c.obj	d9f44a43b823f43a
 25	133	7171777322069487	CMakeFiles/doom.dir/colors.c.obj	953370270c9c8b19
 38	280	7174587588907865	CMakeFiles/doom.dir/init_monster.c.obj	59f847c524927463
@@ -41,11 +41,9 @@
 607	870	7196822797091101	CMakeFiles/doom.dir/cfiles/inventory/display_inventory.c.obj	5925d3d48ece1b5a
 375	595	7196822794827156	CMakeFiles/doom.dir/cfiles/inventory/inventory.c.obj	cfcd6ce51a5af8dd
 483	681	7196822795744703	CMakeFiles/doom.dir/cfiles/inventory/potion.c.obj	bdc8c73cfe7bfae5
-627	916	7196822797799199	CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj	5cd918d7a28ba230
+4	129	7196825241567020	CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj	5cd918d7a28ba230
 388	523	7178982664160243	CMakeFiles/doom.dir/cfiles/monsters/monster_spritev2.c.obj	ba01762c1ddf96f
 595	784	7196822796781926	CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj	1c75fed269756b2d
 870	1113	7196822799933495	CMakeFiles/doom.dir/cfiles/zones/generate_random_map.c.obj	dec1dceef5358954
 917	1141	7196822800412213	CMakeFiles/doom.dir/cfiles/spell/display_spell.c.obj	9afc417720a18f83
 948	1184	7196822800761285	CMakeFiles/doom.dir/cfiles/player/player_spell.c.obj	39aec7344db970d5
-4	129	7196825241567020	CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj	5cd918d7a28ba230
-130	391	7196825244070322	doom.exe	ccca133deb90d1
