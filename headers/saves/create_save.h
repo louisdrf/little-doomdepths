@@ -5,7 +5,7 @@
 #ifndef DOOM_CREATE_SAVE_H
 #define DOOM_CREATE_SAVE_H
 
-#include "../../headers/includes/structs.h"
+#include "../includes/structs.h"
 
 void create_save(Game *game, Player *player);
 

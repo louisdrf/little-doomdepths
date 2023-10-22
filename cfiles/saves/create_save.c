@@ -3,10 +3,11 @@
 //
 
 #include <stdio.h>
-#include "create_save.h"
+#include "../../headers/saves/create_save.h"
 #include "../../headers/includes/structs.h"
 #include "../../sqlite3/sqlite3.h"
-#include "save_inventory.h"
+#include "../../headers/saves/save_inventory.h"
+#include "../../headers/saves/save_player.h"
 
 void create_save(Game *game, Player *player) {
 
@@ -25,7 +26,7 @@ void create_save(Game *game, Player *player) {
 
     save_inventory(player, &conn);
     save_player(player, &conn);
-    save_player_spells(player);
+    save_player_spells(player, &conn);
     save_zones(game);           // sauvegarde zones + leurs niveaux
     save_game(game);
 }

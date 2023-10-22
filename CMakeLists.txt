@@ -64,10 +64,12 @@ add_executable(doom cfiles/main.c
         cfiles/player/player_spell.c
         headers/player/player_spell.h
         cfiles/saves/create_save.c
-        cfiles/saves/create_save.h
+        headers/saves/create_save.h
         cfiles/saves/save_inventory.c
-        cfiles/saves/save_inventory.h
+        headers/saves/save_inventory.h
         cfiles/saves/save_player.c
-        cfiles/saves/save_player.h
+        headers/saves/save_player.h
+        cfiles/saves/save_player_spells.c
+        headers/saves/save_player_spells.h
 )
 

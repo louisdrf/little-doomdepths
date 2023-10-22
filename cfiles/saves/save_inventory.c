@@ -3,7 +3,7 @@
 //
 
 #include <stdio.h>
-#include "save_inventory.h"
+#include "../../headers/saves/save_inventory.h"
 #include "../../headers/includes/structs.h"
 #include "../../sqlite3/sqlite3.h"
 

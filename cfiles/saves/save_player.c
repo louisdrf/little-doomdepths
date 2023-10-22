@@ -3,7 +3,7 @@
 //
 
 #include <stdio.h>
-#include "save_player.h"
+#include "../../headers/saves/save_player.h"
 #include "../../sqlite3/sqlite3.h"
 #include "../../headers/includes/structs.h"
 
@@ -14,7 +14,8 @@ void save_player(Player *player, sqlite3** conn) {
     const char *tail;
 
     char query[500];
-    sprintf(query, "insert into Player(id, name, lifepoints, shield, mana, attacks_left, gold, turn, current_weapon_id, current_armor_id, current_level_id, current_zone_id, inventory_id, book_id)  values (%d, %s, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d);",
+    sprintf(query, "insert into Player(id, name, lifepoints, shield, mana, attacks_left, gold, turn, current_weapon_id, current_armor_id, current_level_id, current_zone_id, inventory_id, book_id)  "
+                   "values (%d, %s, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d);",
             player->id, player->name, player->lifepoints, player->shield, player->mana, player->attacks_left, player->gold, player->turn,
             player->current_weapon->id, player->current_armor->id, player->current_level->id, player->current_zone->id,
             player->inventory->id, player->book->id);
