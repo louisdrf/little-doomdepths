@@ -152,6 +152,7 @@ struct Spell{
 
 typedef struct {
 
+    int                    id;
     Spell*                 spell_equipped[NBSPELL_MAX];                            // liste des sort équipé
     Spell*                 spell_stock;                                            // liste chainé de sort
 

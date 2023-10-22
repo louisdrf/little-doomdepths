@@ -24,7 +24,7 @@ void create_save(Game *game, Player *player) {
     fprintf(stdout, "Database opened successfully\n");
 
     save_inventory(player, &conn);
-    save_player(player);
+    save_player(player, &conn);
     save_player_spells(player);
     save_zones(game);           // sauvegarde zones + leurs niveaux
     save_game(game);

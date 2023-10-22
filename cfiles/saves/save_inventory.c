@@ -3,7 +3,6 @@
 //
 
 #include <stdio.h>
-#include <stdlib.h>
 #include "save_inventory.h"
 #include "../../headers/includes/structs.h"
 #include "../../sqlite3/sqlite3.h"
@@ -12,7 +11,6 @@ void save_inventory(Player *player, sqlite3** conn) {
 
     sqlite3_stmt *res;
     int error = 0;
-    int rec_count = 0;
     const char *tail;
 
     bool healthPotion = (player->inventory->healthPotion == NULL) ? false : true;       // est ce que le joueur a une potion en inventaire

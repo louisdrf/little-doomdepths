@@ -67,5 +67,7 @@ add_executable(doom cfiles/main.c
         cfiles/saves/create_save.h
         cfiles/saves/save_inventory.c
         cfiles/saves/save_inventory.h
+        cfiles/saves/save_player.c
+        cfiles/saves/save_player.h
 )
 
