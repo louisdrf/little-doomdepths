@@ -146,7 +146,7 @@ struct Spell{
     unsigned short         spell_type;                      //  type de sort
     struct Spell*          next;
 
-} ;
+};
 
 
 typedef struct {

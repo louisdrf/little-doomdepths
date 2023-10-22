@@ -32,6 +32,7 @@ void launch_loop(Game *game, Player *player) {
     {
             if(player->turn)
             {
+                system("cls");
                 display_all(player); // affichage
 
                 playerEntry = getch();
@@ -48,6 +49,7 @@ void launch_loop(Game *game, Player *player) {
 
                     case 'm':
                         display_player_zone(player, game);
+                        break;
 
                     case 's':
                         display_spell_choice_sections(player);

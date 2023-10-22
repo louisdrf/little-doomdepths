@@ -41,13 +41,16 @@ Monster* little_print_monster(Monster* current) {
 
         printIndex = 0;
         return  current->next;
-    } else little_print_monster( current->next);
+    } else {
+        little_print_monster(current->next);
+    }
+
 }
 }
 
 
 void print_monsters(Player *player) {
-    int entityWidth = 40; // Une entité prendra 50 caractères de largeur
+    int entityWidth = 50; // Une entité prendra 50 caractères de largeur
 
     Monster *current = player->current_level->monsters;
     int playerIndex = 0;
@@ -96,7 +99,7 @@ void print_monsters(Player *player) {
                     }
                     printIndex = 0;
                 }
-                else current =little_print_monster( current->next);
+                else current = little_print_monster( current->next);
             }
         }
 
