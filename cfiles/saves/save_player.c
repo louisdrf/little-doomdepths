@@ -22,7 +22,7 @@ void save_player(Player *player, sqlite3** conn) {
 
     error = sqlite3_prepare_v2(*conn, query, -1, &res, &tail);
     if (error != SQLITE_OK) {
-        fprintf(stderr, "Failed to execute SQL query to insert player: %s\n", sqlite3_errmsg(*conn));
+        fprintf(stderr, "Failed to execute SQL query to insert player data: %s\n", sqlite3_errmsg(*conn));
         sqlite3_close(*conn);
         return;
     }
