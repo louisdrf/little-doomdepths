@@ -157,6 +157,12 @@ void get_player_name(Player *player) {
         printf("\nVeuillez saisir un nom valide.\n");
         get_player_name(player);
     }
+    else if(strlen(name) >= 38) {
+        printf("\nVotre nom doit contenir 40 lettres au maximum.\n");
+        get_player_name(player);
+    }
+
+    name[strlen(name) - 1] = '\0';
 
     player->name = malloc(strlen(name) + 1);
     strcpy(player->name, name);
