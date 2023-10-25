@@ -128,7 +128,6 @@ typedef struct {
 
 typedef struct {
 
-    int                    id;
     int                    limObjects;                                  // limite d'armes ou d'armures que le joueur peut transporter
     Weapon*                weaponList[NBOBJECTS_MAX];                   // tableaux de ses armes
     Armor*                 armorList[NBOBJECTS_MAX];                    // tableaux de ses Armures
@@ -152,7 +151,6 @@ struct Spell{
 
 typedef struct {
 
-    int                    id;
     Spell*                 spell_equipped[NBSPELL_MAX];                            // liste des sort équipé
     Spell*                 spell_stock;                                            // liste chainé de sort
 
@@ -161,7 +159,7 @@ typedef struct {
 
 
 typedef struct {
-    int                 id;
+
     char*               name;               // nom du joueur
     unsigned short      lifepoints;         // pv restants
     unsigned short      lifepoints_max;     // pv max
@@ -189,7 +187,7 @@ typedef struct {
 
 typedef struct {
 
-    unsigned short          id;                             // id de la partie
+    int                     id;
     char*                   player_name;                    // nom du joueur
     Zone*                   zoneList[NBZONES];              // tableaux des zones de la partie
     bool                    isRunning;                      // bool d'état de la partie

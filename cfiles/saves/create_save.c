@@ -8,25 +8,16 @@
 #include "../../sqlite3/sqlite3.h"
 #include "../../headers/saves/save_inventory.h"
 #include "../../headers/saves/save_player.h"
+#include "../../headers/saves/save_player_spells.h"
+#include "../../headers/db_connexion.h"
 
 void create_save(Game *game, Player *player) {
 
-    sqlite3 *conn;
+    sqlite3 *conn = connect_to_db();
 
-
-    int rc = sqlite3_open("../identifier.sqlite", &conn);
-
-    if (rc != SQLITE_OK) {
-
-        fprintf(stderr, "Cannot open database: %s\n", sqlite3_errmsg(conn));
-        sqlite3_close(conn);
-    }
-
-    fprintf(stdout, "Database opened successfully\n");
-
-    save_inventory(player, &conn);
     save_player(player, &conn);
-    //save_player_spells(player, &conn);
+    save_inventory(player, &conn);
+    save_player_spells(player, &conn);
     //save_zones(game);           // sauvegarde zones + leurs niveaux
     //save_game(game);
 }

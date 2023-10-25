@@ -9,12 +9,14 @@
 #include "../headers/zones/display_zone.h"
 #include "sqlite_test.h"
 #include "../headers/player/player_spell.h"
+#include "../headers/player/has_player_a_save.h"
 
 int main() {
 
     Game        *game;
     Player      *player;
     int choice;
+    int save_choice;        // choix de la sauvegarde
 
     display_init_menu();
 
@@ -22,13 +24,13 @@ int main() {
     choice -= 48;
 
     switch(choice) {
-        case 1: // play from last save
-            printf("Load last save ?\n");
-            break;
 
-        case 2: // new game
-            printf("Launching new game...\n\n");
-            game = init_game();                                 // init la partie et les niveaux
+        case 1: // new game
+            save_choice = display_save_choice();
+            if(has_player_a_save(save_choice) == 0) printf("\nAucune sauvegarde pour cette partie, lancement d'une nouvelle partie...\n.");
+            else printf("\nChargement de la partie...\n");
+
+            game = init_game(save_choice);                                 // init la partie et les niveaux
             player = init_player(game);
 
             launch_loop(game, player);
@@ -37,7 +39,7 @@ int main() {
             free_game(game);
             break;
 
-        case 3: // exit
+        case 2: // exit
             printf("End.");
             break;
 

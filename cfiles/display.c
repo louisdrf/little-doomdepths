@@ -27,21 +27,44 @@ void display_init_menu() {
            "            \\   \\__, \\_     `~'     _/ .__/   /            \n"
            "             `-._,-'   `-._______,-'   `-._,-'");
     printf("\n\n"RESET);
-    printf("Play from last save (1)\n");
-    printf("New game            (2)\n");
-    printf("Exit                (3)\n\n");
+    printf("Play    (1)\n");
+    printf("Exit    (2)\n\n");
 }
+
+/*
+ * player choose the save to play in
+ * return the game id
+ */
+int display_save_choice() {
+
+    int choice;
+    printf(MAGENTA"-----Choix de la sauvegarde-----\n\n"RESET);
+    printf("SAUVEGARDE 1\n");
+    printf("SAUVEGARDE 2\n");
+    printf("SAUVEGARDE 3\n\n");
+    printf("votre choix -> ");
+    choice = getch() - 48;
+
+    if(choice == 1 || choice == 2 || choice == 3) return choice;
+    else display_save_choice();
+}
+
+
 
 void display_all(Player *player) {
     display_player_ath(player);
     print_monsters(player);
     display_monsters_alive(player->current_level->monsters);
-    printf("\nexit (q)      inventory (i)      map (m)      spell(s)\n");
+    printf("\nexit (q)      inventory (i)      map (m)      spell(s)      save(x)\n");
 }
+
+
 
 void display_player(Player *player) {
     printf(RED"%s\n"RESET, player->draw);
 }
+
+
 
 void display_player_ath(Player *player) {
 
@@ -54,6 +77,8 @@ void display_player_ath(Player *player) {
     printf("\n");
 
 }
+
+
 
 void display_player_health(Player *player) {
 
@@ -82,6 +107,7 @@ void display_player_health(Player *player) {
 }
 
 
+
 void display_player_mana(Player *player) {
 
     int i = 0;
@@ -106,10 +132,10 @@ void display_player_mana(Player *player) {
                 i++;
         }
 
-
     printf( RESET "  %d/100", player->mana);
         printf("\n");
 }
+
 
 
 

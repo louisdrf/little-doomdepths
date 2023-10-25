@@ -14,19 +14,18 @@
 
 #define DEBUG true
 
-Game *init_game() {
+Game *init_game(int save_id) {
 
     srand(time(NULL));
+
     Game *game;
-
-
     game = malloc(sizeof(Game));
+
     if(game == NULL) {
         printf("Allocating memory for game failed.\n");
         exit(1);
     }
-
-    game->id = 0;
+    game->id = save_id;
     game->display_zones_index = 0;
 
         // INIT THE GAME ZONES

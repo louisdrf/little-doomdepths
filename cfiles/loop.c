@@ -18,6 +18,7 @@
 #include "../headers/player/player_spell.h"
 #include "../headers/zones/display_zone.h"
 #include "../headers/spell/display_spell.h"
+#include "../headers/saves/create_save.h"
 
 /**
  * manages the game loop
@@ -53,6 +54,10 @@ void launch_loop(Game *game, Player *player) {
 
                     case 's':
                         display_spell_choice_sections(player);
+                        break;
+
+                    case 'x':
+                        create_save(game, player);
                         break;
                 }
 

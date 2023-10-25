@@ -71,5 +71,11 @@ add_executable(doom cfiles/main.c
         headers/saves/save_player.h
         cfiles/saves/save_player_spells.c
         headers/saves/save_player_spells.h
+        cfiles/saves/save_levels.c
+        headers/saves/save_levels.h
+        cfiles/player/has_player_a_save.c
+        headers/player/has_player_a_save.h
+        cfiles/db_connexion.c
+        headers/db_connexion.h
 )
 

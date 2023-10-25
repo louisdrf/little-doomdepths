@@ -8,6 +8,7 @@
 #include "player/player.h"
 
 void display_init_menu();
+int display_save_choice();
 void display_all(Player *player);
 
 void display_player(Player *player);
