@@ -53,9 +53,7 @@ add_executable(doom cfiles/main.c
         headers/zones/init_zones.h
         cfiles/zones/display_zone.c
         headers/zones/display_zone.h
-        cfiles/sqlite_test.c
         sqlite3/sqlite3.c
-        cfiles/sqlite_test.h
         sqlite3/sqlite3.h
         cfiles/spell/display_spell.c
         headers/spell/display_spell.h

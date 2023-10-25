@@ -46,6 +46,7 @@ Player *init_player(Game *game) {
             exit(1);
         }
 
+        player->id = game->id;
         player->isAlive = true;
         player->turn = true; // the player attack first
         player->lifepoints_max = 100;
