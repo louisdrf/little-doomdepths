@@ -75,5 +75,7 @@ add_executable(doom cfiles/main.c
         headers/player/has_player_a_save.h
         cfiles/db_connexion.c
         headers/db_connexion.h
+        cfiles/saves/save_zones.c
+        headers/saves/save_zones.h
 )
 

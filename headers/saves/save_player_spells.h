@@ -8,7 +8,6 @@
 #include "../../sqlite3/sqlite3.h"
 #include "../includes/structs.h"
 
-void save_player_spells(Player *player, sqlite3** conn);
 void save_player_spells_book(Player *player, sqlite3** conn);
 
 #endif //DOOM_SAVE_PLAYER_SPELLS_H
