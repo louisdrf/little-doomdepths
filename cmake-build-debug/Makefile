@@ -440,6 +440,78 @@ cfiles/inventory/potion.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/inventory/potion.c.s
 .PHONY : cfiles/inventory/potion.c.s
 
+cfiles/level/display_level_loot.obj: cfiles/level/display_level_loot.c.obj
+.PHONY : cfiles/level/display_level_loot.obj
+
+# target to build an object file
+cfiles/level/display_level_loot.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.obj
+.PHONY : cfiles/level/display_level_loot.c.obj
+
+cfiles/level/display_level_loot.i: cfiles/level/display_level_loot.c.i
+.PHONY : cfiles/level/display_level_loot.i
+
+# target to preprocess a source file
+cfiles/level/display_level_loot.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.i
+.PHONY : cfiles/level/display_level_loot.c.i
+
+cfiles/level/display_level_loot.s: cfiles/level/display_level_loot.c.s
+.PHONY : cfiles/level/display_level_loot.s
+
+# target to generate assembly for a file
+cfiles/level/display_level_loot.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.s
+.PHONY : cfiles/level/display_level_loot.c.s
+
+cfiles/level/display_level_loot_armors.obj: cfiles/level/display_level_loot_armors.c.obj
+.PHONY : cfiles/level/display_level_loot_armors.obj
+
+# target to build an object file
+cfiles/level/display_level_loot_armors.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.obj
+.PHONY : cfiles/level/display_level_loot_armors.c.obj
+
+cfiles/level/display_level_loot_armors.i: cfiles/level/display_level_loot_armors.c.i
+.PHONY : cfiles/level/display_level_loot_armors.i
+
+# target to preprocess a source file
+cfiles/level/display_level_loot_armors.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.i
+.PHONY : cfiles/level/display_level_loot_armors.c.i
+
+cfiles/level/display_level_loot_armors.s: cfiles/level/display_level_loot_armors.c.s
+.PHONY : cfiles/level/display_level_loot_armors.s
+
+# target to generate assembly for a file
+cfiles/level/display_level_loot_armors.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.s
+.PHONY : cfiles/level/display_level_loot_armors.c.s
+
+cfiles/level/display_level_loot_weapons.obj: cfiles/level/display_level_loot_weapons.c.obj
+.PHONY : cfiles/level/display_level_loot_weapons.obj
+
+# target to build an object file
+cfiles/level/display_level_loot_weapons.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj
+.PHONY : cfiles/level/display_level_loot_weapons.c.obj
+
+cfiles/level/display_level_loot_weapons.i: cfiles/level/display_level_loot_weapons.c.i
+.PHONY : cfiles/level/display_level_loot_weapons.i
+
+# target to preprocess a source file
+cfiles/level/display_level_loot_weapons.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.i
+.PHONY : cfiles/level/display_level_loot_weapons.c.i
+
+cfiles/level/display_level_loot_weapons.s: cfiles/level/display_level_loot_weapons.c.s
+.PHONY : cfiles/level/display_level_loot_weapons.s
+
+# target to generate assembly for a file
+cfiles/level/display_level_loot_weapons.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.s
+.PHONY : cfiles/level/display_level_loot_weapons.c.s
+
 cfiles/loop.obj: cfiles/loop.c.obj
 .PHONY : cfiles/loop.obj
 
@@ -848,6 +920,15 @@ help:
 	@echo ... cfiles/inventory/potion.obj
 	@echo ... cfiles/inventory/potion.i
 	@echo ... cfiles/inventory/potion.s
+	@echo ... cfiles/level/display_level_loot.obj
+	@echo ... cfiles/level/display_level_loot.i
+	@echo ... cfiles/level/display_level_loot.s
+	@echo ... cfiles/level/display_level_loot_armors.obj
+	@echo ... cfiles/level/display_level_loot_armors.i
+	@echo ... cfiles/level/display_level_loot_armors.s
+	@echo ... cfiles/level/display_level_loot_weapons.obj
+	@echo ... cfiles/level/display_level_loot_weapons.i
+	@echo ... cfiles/level/display_level_loot_weapons.s
 	@echo ... cfiles/loop.obj
 	@echo ... cfiles/loop.i
 	@echo ... cfiles/loop.s

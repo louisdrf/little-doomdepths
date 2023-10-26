@@ -460,6 +460,48 @@ CMakeFiles/doom.dir/cfiles/player/player_spell.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/doom.dir/cfiles/player/player_spell.c.s"
 	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\player\player_spell.c -o CMakeFiles\doom.dir\cfiles\player\player_spell.c.s
 
+CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj: CMakeFiles/doom.dir/flags.make
+CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj: C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/level/display_level_loot_weapons.c
+CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj: CMakeFiles/doom.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj -MF CMakeFiles\doom.dir\cfiles\level\display_level_loot_weapons.c.obj.d -o CMakeFiles\doom.dir\cfiles\level\display_level_loot_weapons.c.obj -c C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\level\display_level_loot_weapons.c
+
+CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.i"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\level\display_level_loot_weapons.c > CMakeFiles\doom.dir\cfiles\level\display_level_loot_weapons.c.i
+
+CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.s"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\level\display_level_loot_weapons.c -o CMakeFiles\doom.dir\cfiles\level\display_level_loot_weapons.c.s
+
+CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.obj: CMakeFiles/doom.dir/flags.make
+CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.obj: C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/level/display_level_loot.c
+CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.obj: CMakeFiles/doom.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.obj"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.obj -MF CMakeFiles\doom.dir\cfiles\level\display_level_loot.c.obj.d -o CMakeFiles\doom.dir\cfiles\level\display_level_loot.c.obj -c C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\level\display_level_loot.c
+
+CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.i"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\level\display_level_loot.c > CMakeFiles\doom.dir\cfiles\level\display_level_loot.c.i
+
+CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.s"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\level\display_level_loot.c -o CMakeFiles\doom.dir\cfiles\level\display_level_loot.c.s
+
+CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.obj: CMakeFiles/doom.dir/flags.make
+CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.obj: C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/level/display_level_loot_armors.c
+CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.obj: CMakeFiles/doom.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.obj"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.obj -MF CMakeFiles\doom.dir\cfiles\level\display_level_loot_armors.c.obj.d -o CMakeFiles\doom.dir\cfiles\level\display_level_loot_armors.c.obj -c C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\level\display_level_loot_armors.c
+
+CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.i"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\level\display_level_loot_armors.c > CMakeFiles\doom.dir\cfiles\level\display_level_loot_armors.c.i
+
+CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.s"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\level\display_level_loot_armors.c -o CMakeFiles\doom.dir\cfiles\level\display_level_loot_armors.c.s
+
 # Object files for target doom
 doom_OBJECTS = \
 "CMakeFiles/doom.dir/cfiles/main.c.obj" \
@@ -489,7 +531,10 @@ doom_OBJECTS = \
 "CMakeFiles/doom.dir/sqlite3/sqlite3.c.obj" \
 "CMakeFiles/doom.dir/cfiles/spell/display_spell.c.obj" \
 "CMakeFiles/doom.dir/cfiles/init/init_spell.c.obj" \
-"CMakeFiles/doom.dir/cfiles/player/player_spell.c.obj"
+"CMakeFiles/doom.dir/cfiles/player/player_spell.c.obj" \
+"CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj" \
+"CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.obj" \
+"CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.obj"
 
 # External object files for target doom
 doom_EXTERNAL_OBJECTS =
@@ -522,11 +567,14 @@ doom.exe: CMakeFiles/doom.dir/sqlite3/sqlite3.c.obj
 doom.exe: CMakeFiles/doom.dir/cfiles/spell/display_spell.c.obj
 doom.exe: CMakeFiles/doom.dir/cfiles/init/init_spell.c.obj
 doom.exe: CMakeFiles/doom.dir/cfiles/player/player_spell.c.obj
+doom.exe: CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj
+doom.exe: CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.obj
+doom.exe: CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.obj
 doom.exe: CMakeFiles/doom.dir/build.make
 doom.exe: CMakeFiles/doom.dir/linkLibs.rsp
 doom.exe: CMakeFiles/doom.dir/objects1.rsp
 doom.exe: CMakeFiles/doom.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking C executable doom.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Linking C executable doom.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\doom.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

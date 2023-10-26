@@ -115,6 +115,15 @@
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/inventory/potion.c">
 			<Option target="doom"/>
 		</Unit>
+		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/level/display_level_loot.c">
+			<Option target="doom"/>
+		</Unit>
+		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/level/display_level_loot_armors.c">
+			<Option target="doom"/>
+		</Unit>
+		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/level/display_level_loot_weapons.c">
+			<Option target="doom"/>
+		</Unit>
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/loop.c">
 			<Option target="doom"/>
 		</Unit>
@@ -206,6 +215,15 @@
 			<Option target="doom"/>
 		</Unit>
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/inventory/potion.h">
+			<Option target="doom"/>
+		</Unit>
+		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/level/display_level_loot.h">
+			<Option target="doom"/>
+		</Unit>
+		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/level/display_level_loot_armors.h">
+			<Option target="doom"/>
+		</Unit>
+		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/level/display_level_loot_weapons.h">
 			<Option target="doom"/>
 		</Unit>
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/loop.h">

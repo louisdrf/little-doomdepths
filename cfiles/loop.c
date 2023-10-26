@@ -53,7 +53,7 @@ void launch_loop(Game *game, Player *player) {
                         break;
 
                     case 'l':
-                        display_level_loot_choice_sections(player->current_level,player);
+                       display_level_loot_choice_sections(player->current_level,player);
                         break;
 
                     case 's':
