@@ -37,12 +37,12 @@ void save_player_spells_book(Player *player, sqlite3** conn) {
     sqlite3_stmt *res;
     int req = 0;
     const char *tail;
+    char query[500];
 
     Spell *current = player->book->spell_stock;
 
     while (current != NULL) {                  // sauvegarder les sorts dans le Book du joueur
 
-        char query[500];
         sprintf(query, "insert into Spell(name, value, mana_cost, spell_type, isEquiped)  values (%s, %d, %d, %d, %d);",
                 current->name, current->value, current->mana_cost, current->spell_type, false);
 

@@ -3,15 +3,14 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "../../headers/saves/save_inventory.h"
 #include "../../headers/includes/structs.h"
 #include "../../sqlite3/sqlite3.h"
+#include "../../headers/db_connexion.h"
 
 void save_inventory(Player *player, sqlite3** conn) {
 
-    sqlite3_stmt *res;
-    int req = 0;
-    const char *tail;
     char query[500];
 
     bool healthPotion = (player->inventory->healthPotion == NULL) ? false : true;       // est ce que le joueur a une potion en inventaire
@@ -21,29 +20,20 @@ void save_inventory(Player *player, sqlite3** conn) {
 
             sprintf(query, "UPDATE Inventory SET healthPotion=%d, manaPotion=%d WHERE player_id=%d;", healthPotion, manaPotion, player->id);
             printf("query : %s", query);
-
-            req = sqlite3_prepare_v2(*conn, query, -1, &res, &tail);
-            if (req != SQLITE_OK) {
-                fprintf(stderr, "Failed to prepare SQL query: %s\n", sqlite3_errmsg(*conn));
-                sqlite3_close(*conn);
-                return;
+            if(!prepare_and_exec_query(conn, query)) {
+                printf("\nFailed to prepare/execute query to update inventory potions.\n");
+                exit(1);
             }
-
-            req = sqlite3_step(res); // Exécuter la requête préparée
-            if (req != SQLITE_DONE) {
-                fprintf(stderr, "Failed to execute SQL query to insert potions in inventory: %s\n", sqlite3_errmsg(*conn));
-                sqlite3_finalize(res); // Finaliser la requête
-                sqlite3_close(*conn);
-                return;
-            }
-
-            sqlite3_finalize(res); // Finaliser la requête
 
             ///////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////
 
     // vider l'inventaire du joueur avant de le remplir avec les nouveaux équipements
-    sprintf(query, "DELETE * FROM Inventory WHERE player_id=%d;", player->id);
+    sprintf(query, "DELETE * FROM Weapon WHERE inventory_id=%d;", player->id);
+    if(!prepare_and_exec_query(conn, query)) {
+        printf("\nFailed to prepare/execute query to delete all weapons in player inventory.\n");
+        exit(1);
+    }
 
     int isWeaponEquipped = 0;
     int isArmorEquipped = 0;
@@ -72,22 +62,10 @@ void save_inventory(Player *player, sqlite3** conn) {
                                 player->inventory->weaponList[i]->rarity,
                                 isWeaponEquipped);
 
-                        req = sqlite3_prepare_v2(*conn, query, -1, &res, &tail);
-                        if (req != SQLITE_OK) {
-                            fprintf(stderr, "Failed to prepare SQL query to insert a weapon: %s\n", sqlite3_errmsg(*conn));
-                            sqlite3_close(*conn);
-                            return;
-                        }
-
-                    req = sqlite3_step(res); // Exécuter la requête préparée
-                    if (req != SQLITE_DONE) {
-                        fprintf(stderr, "Failed to execute SQL query to insert a weapon in inventory: %s\n", sqlite3_errmsg(*conn));
-                        sqlite3_finalize(res); // Finaliser la requête
-                        sqlite3_close(*conn);
-                        return;
+                    if(!prepare_and_exec_query(conn, query)) {
+                        printf("\nFailed to prepare/execute query to insert weapon in player inventory.\n");
+                        exit(1);
                     }
-
-                    sqlite3_finalize(res); // Finaliser la requête
                     isWeaponEquipped = 0;
                 }
 
@@ -106,22 +84,10 @@ void save_inventory(Player *player, sqlite3** conn) {
                                     player->inventory->armorList[i]->rarity,
                                     isArmorEquipped);
 
-                        req = sqlite3_prepare_v2(*conn, query, -1, &res, &tail);
-                        if (req != SQLITE_OK) {
-                            fprintf(stderr, "Failed to prepare SQL query to insert an armor: %s\n", sqlite3_errmsg(*conn));
-                            sqlite3_close(*conn);
-                            return;
-                        }
-
-                        req = sqlite3_step(res); // Exécuter la requête préparée
-                        if (req != SQLITE_DONE) {
-                            fprintf(stderr, "Failed to execute SQL query to insert an armor in inventory: %s\n", sqlite3_errmsg(*conn));
-                            sqlite3_finalize(res); // Finaliser la requête
-                            sqlite3_close(*conn);
-                            return;
-                        }
-
-                        sqlite3_finalize(res); // Finaliser la requête
+                    if(!prepare_and_exec_query(conn, query)) {
+                        printf("\nFailed to prepare/execute query to insert armor in player inventory.\n");
+                        exit(1);
+                    }
                         isArmorEquipped = 0;
                 }
                 /////////////////////////////////////////////////////////////////

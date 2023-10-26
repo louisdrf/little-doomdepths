@@ -16,10 +16,12 @@ void create_save(Game *game, Player *player) {
     sqlite3 *conn = connect_to_db();
 
     save_player(player, &conn);
-    //save_inventory(player, &conn);
+    save_inventory(player, &conn);
     //save_player_spells(player, &conn);
     //save_zones(game);           // sauvegarde zones + leurs niveaux
     //save_game(game);
+
+    sqlite3_close(conn);
 }
 
 

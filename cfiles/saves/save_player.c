@@ -7,14 +7,11 @@
 #include "../../headers/saves/save_player.h"
 #include "../../sqlite3/sqlite3.h"
 #include "../../headers/includes/structs.h"
+#include "../../headers/db_connexion.h"
 
 #define DEBUG true
 
 void save_player(Player *player, sqlite3** conn) {
-
-    sqlite3_stmt *res;
-    int req = 0;
-    const char *tail;
 
     if(conn != NULL) {
         char query[300];
@@ -31,23 +28,11 @@ void save_player(Player *player, sqlite3** conn) {
                 player->id);
         printf("query : %s", query);
 
-        req = sqlite3_prepare_v2(*conn, query, -1, &res, &tail);
-        if (req != SQLITE_OK) {
-            fprintf(stderr, "Failed to execute SQL query to insert player data: %s\n", sqlite3_errmsg(*conn));
-            sqlite3_close(*conn);
-            return;
-        }
-
-        req = sqlite3_step(res); // Exécuter la requête préparée
-        if (req != SQLITE_DONE) {
-            printf( "Failed to execute SQL query: %s\n", sqlite3_errmsg(*conn));
-            sqlite3_finalize(res);
-            sqlite3_close(*conn);
+        prepare_and_exec_query(conn, query);
+        if(!prepare_and_exec_query(conn, query)) {
+            printf("\nFailed to prepare/execute query to update player data.\n");
             exit(1);
         }
-
-        sqlite3_finalize(res);
-        sqlite3_close(*conn);
     }
 
     else {
