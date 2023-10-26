@@ -10,6 +10,7 @@
 #include "../../headers/saves/save_player.h"
 #include "../../headers/saves/save_player_spells.h"
 #include "../../headers/db_connexion.h"
+#include "../../headers/saves/save_zones.h"
 
 void create_save(Game *game, Player *player) {
 
@@ -18,8 +19,7 @@ void create_save(Game *game, Player *player) {
     save_player(player, &conn);
     save_inventory(player, &conn);
     save_player_spells_book(player, &conn);
-    //save_zones(game);           // sauvegarde zones + leurs niveaux
-    //save_game(game);
+    save_zones(game, &conn);           // sauvegarde zones + leurs niveaux
 
     sqlite3_close(conn);
 }

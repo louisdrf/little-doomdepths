@@ -8,11 +8,18 @@
 #include "../../sqlite3/sqlite3.h"
 #include "../../headers/db_connexion.h"
 
+#define DEBUG true
 
 void save_player_spells_book(Player *player, sqlite3** conn) {
 
     char query[500];
     int isEquipped = 0;
+
+    sprintf(query, "delete from Spell where player_id=%d;", player->id);
+    if(!prepare_and_exec_query(conn, query)) {
+        printf("\nFailed to prepare/execute query to delete player spells.\n");
+        exit(1);
+    }
 
     Spell *current = player->book->spell_stock;
 
@@ -24,7 +31,7 @@ void save_player_spells_book(Player *player, sqlite3** conn) {
             isEquipped = 1;
         }
 
-        sprintf(query, "insert into Spell(player_id, name, value, mana_cost, spell_type, isEquipped)  values (%d, %s, %d, %d, %d, %d);",
+        sprintf(query, "insert into Spell(player_id, name, value, mana_cost, spell_type, isEquipped)  values (%d, '%s', %d, %d, %d, %d);",
                 player->id,
                 current->name,
                 current->value,
@@ -39,8 +46,11 @@ void save_player_spells_book(Player *player, sqlite3** conn) {
 
         isEquipped = 0;
         current = current->next;
-
     }
+
+#if DEBUG
+    printf("\nInsert Spells done.");
+#endif
 }
 
 /*

@@ -25,7 +25,7 @@ void save_player(Player *player, sqlite3** conn) {
                 player->current_level->id,
                 player->current_zone->id,
                 player->id);
-        printf("query : %s", query);
+        printf("\nquery : %s", query);
 
         prepare_and_exec_query(conn, query);
         if(!prepare_and_exec_query(conn, query)) {
@@ -38,6 +38,10 @@ void save_player(Player *player, sqlite3** conn) {
         printf("conn null");
         exit(1);
     }
+
+#if DEBUG
+    printf("\nUpdate player done.");
+#endif
 
 }
 
