@@ -20,6 +20,7 @@ void init_zones(Game *game) {
         game->zoneList[i]->name = malloc(strlen("zone1") + 1);
         strcpy(game->zoneList[i]->name, "zone1");
         game->zoneList[i]->multiplicator = 1.5;
+        game->zoneList[i]->difficulty = 0;
         #if DEBUG
                 printf("zone %d cree\n", i);
         #endif

@@ -94,3 +94,8 @@
 112	321	7200575117407264	doom.exe	159b05be9b55794
 5	114	7200576258975845	CMakeFiles/doom.dir/cfiles/saves/save_zones.c.obj	2529ffe9de4544bb
 114	326	7200576261040305	doom.exe	159b05be9b55794
+5	123	7200580658437953	CMakeFiles/doom.dir/cfiles/saves/save_player_spells.c.obj	a8cac009094c5ed3
+123	341	7200580660566130	doom.exe	159b05be9b55794
+5	122	7200583231313127	CMakeFiles/doom.dir/cfiles/zones/init_zones.c.obj	97882845aff3b1e1
+16	125	7200583231323099	CMakeFiles/doom.dir/cfiles/saves/save_zones.c.obj	2529ffe9de4544bb
+125	353	7200583233557125	doom.exe	159b05be9b55794
