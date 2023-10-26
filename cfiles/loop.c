@@ -18,6 +18,7 @@
 #include "../headers/player/player_spell.h"
 #include "../headers/zones/display_zone.h"
 #include "../headers/spell/display_spell.h"
+#include "../headers/level/display_level_loot.h"
 
 /**
  * manages the game loop
@@ -49,6 +50,10 @@ void launch_loop(Game *game, Player *player) {
 
                     case 'm':
                         display_player_zone(player, game);
+                        break;
+
+                    case 'l':
+                        display_level_loot_choice_sections(player->current_level,player);
                         break;
 
                     case 's':

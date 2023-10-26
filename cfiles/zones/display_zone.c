@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <conio.h>
+#include "../../headers/display.h"
+
 #include "../../headers/zones/display_zone.h"
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
@@ -81,7 +83,9 @@ void display_player_zone(Player *player, Game *game) {
             break;
 
         case 'q':
-            return;
+            display_all(player);
+            break;
+            //return;
 
         default:
             display_player_zone(player, game);

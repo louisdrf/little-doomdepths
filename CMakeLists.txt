@@ -63,5 +63,11 @@ add_executable(doom cfiles/main.c
         headers/init/init_spell.h
         cfiles/player/player_spell.c
         headers/player/player_spell.h
+        cfiles/level/display_level_loot_weapons.c
+        cfiles/level/display_level_loot.c
+        cfiles/level/display_level_loot_armors.c
+        headers/level/display_level_loot.h
+        headers/level/display_level_loot_weapons.h
+        headers/level/display_level_loot_armors.h
 )
 
