@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include "../../headers/saves/save_player.h"
 #include "../../sqlite3/sqlite3.h"
-#include "../../headers/includes/structs.h"
 #include "../../headers/db_connexion.h"
 
 #define DEBUG true

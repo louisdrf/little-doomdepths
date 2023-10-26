@@ -3,67 +3,42 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "../../headers/saves/save_player_spells.h"
-#include "../../headers/includes/structs.h"
 #include "../../sqlite3/sqlite3.h"
+#include "../../headers/db_connexion.h"
 
-
-void save_player_spells(Player *player, sqlite3** conn) {
-
-    sqlite3_stmt *res;
-    int req = 0;
-    const char *tail;
-
-    for(int i = 0; i < NBSPELL_MAX; i++) {                  // sauvegarder les sorts équipés par le joueur
-        if(player->book->spell_equipped[i] != NULL) {
-
-            char query[500];
-            sprintf(query, "insert into Spell(name, value, mana_cost, spell_type, isEquiped) values (%s, %d, %d, %d, %d);",
-                    player->book->spell_equipped[i]->name, player->book->spell_equipped[i]->value,
-                    player->book->spell_equipped[i]->mana_cost, player->book->spell_equipped[i]->spell_type, true);
-
-            req = sqlite3_prepare_v2(*conn, query, -1, &res, &tail);
-            if (req != SQLITE_OK) {
-                fprintf(stderr, "Failed to execute SQL query to insert player equipped spell: %s\n", sqlite3_errmsg(*conn));
-                sqlite3_close(*conn);
-                return;
-            }
-        }
-    }
-
-}
 
 void save_player_spells_book(Player *player, sqlite3** conn) {
-    sqlite3_stmt *res;
-    int req = 0;
-    const char *tail;
+
     char query[500];
+    int isEquipped = 0;
 
     Spell *current = player->book->spell_stock;
 
     while (current != NULL) {                  // sauvegarder les sorts dans le Book du joueur
 
-        sprintf(query, "insert into Spell(name, value, mana_cost, spell_type, isEquiped)  values (%s, %d, %d, %d, %d);",
-                current->name, current->value, current->mana_cost, current->spell_type, false);
-
-        req = sqlite3_prepare_v2(*conn, query, -1, &res, &tail);
-        if (req != SQLITE_OK) {
-            fprintf(stderr, "Failed to execute SQL query to insert player book spell: %s\n", sqlite3_errmsg(*conn));
-            sqlite3_close(*conn);
-            return;
+        if(current == player->book->spell_equipped[0]
+        || current == player->book->spell_equipped[1]
+        || current == player->book->spell_equipped[2]) {
+            isEquipped = 1;
         }
 
-        req = sqlite3_step(res); // Exécuter la requête préparée
-        if (req != SQLITE_DONE) {
-            fprintf(stderr, "Failed to execute SQL query: %s\n", sqlite3_errmsg(*conn));
-            sqlite3_finalize(res); // Finaliser la requête
-            sqlite3_close(*conn);
-            return;
+        sprintf(query, "insert into Spell(player_id, name, value, mana_cost, spell_type, isEquipped)  values (%d, %s, %d, %d, %d, %d);",
+                player->id,
+                current->name,
+                current->value,
+                current->mana_cost,
+                current->spell_type,
+                isEquipped);
+
+        if(!prepare_and_exec_query(conn, query)) {
+            printf("\nFailed to prepare/execute query to update player data.\n");
+            exit(1);
         }
 
-        sqlite3_finalize(res); // Finaliser la requête
-
-            current = current->next;
+        isEquipped = 0;
+        current = current->next;
 
     }
 }
