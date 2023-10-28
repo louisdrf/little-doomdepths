@@ -3,14 +3,14 @@
 //
 
 #include <stdio.h>
-#include "../../headers/saves/create_save.h"
-#include "../../headers/includes/structs.h"
-#include "../../sqlite3/sqlite3.h"
-#include "../../headers/saves/save_inventory.h"
-#include "../../headers/saves/save_player.h"
-#include "../../headers/saves/save_player_spells.h"
-#include "../../headers/db_connexion.h"
-#include "../../headers/saves/save_zones.h"
+#include "../../../headers/saves/create-save/create_save.h"
+#include "../../../headers/includes/structs.h"
+#include "../../../sqlite3/sqlite3.h"
+#include "../../../headers/saves/create-save/save_inventory.h"
+#include "../../../headers/saves/create-save/save_player.h"
+#include "../../../headers/saves/create-save/save_player_spells.h"
+#include "../../../headers/db_connexion.h"
+#include "../../../headers/saves/create-save/save_zones.h"
 
 void create_save(Game *game, Player *player) {
 

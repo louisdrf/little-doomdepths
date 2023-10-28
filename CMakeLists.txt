@@ -61,19 +61,25 @@ add_executable(doom cfiles/main.c
         headers/init/init_spell.h
         cfiles/player/player_spell.c
         headers/player/player_spell.h
-        cfiles/saves/create_save.c
-        headers/saves/create_save.h
-        cfiles/saves/save_inventory.c
-        headers/saves/save_inventory.h
-        cfiles/saves/save_player.c
-        headers/saves/save_player.h
-        cfiles/saves/save_player_spells.c
-        headers/saves/save_player_spells.h
+        cfiles/saves/create-save/create_save.c
+        headers/saves/create-save/create_save.h
+        cfiles/saves/create-save/save_inventory.c
+        headers/saves/create-save/save_inventory.h
+        cfiles/saves/create-save/save_player.c
+        headers/saves/create-save/save_player.h
+        cfiles/saves/create-save/save_player_spells.c
+        headers/saves/create-save/save_player_spells.h
         cfiles/player/has_player_a_save.c
         headers/player/has_player_a_save.h
         cfiles/db_connexion.c
         headers/db_connexion.h
-        cfiles/saves/save_zones.c
-        headers/saves/save_zones.h
+        cfiles/saves/create-save/save_zones.c
+        headers/saves/create-save/save_zones.h
+        cfiles/saves/load-save/load_game.c
+        headers/saves/load-save/load_game.h
+        cfiles/saves/load-save/load_zones.c
+        headers/saves/load-save/load_zones.h
+        cfiles/saves/load-save/load_levels.c
+        headers/saves/load-save/load_levels.h
 )
 
