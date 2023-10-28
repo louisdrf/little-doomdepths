@@ -27,6 +27,7 @@ Level *init_level(int id) {
     }
 
     level->id = id;
+    level->finished = false;
 
     // init the linked list of monsters for the level
     Monster *first_monster = NULL;
