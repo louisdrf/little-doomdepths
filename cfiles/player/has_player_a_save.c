@@ -24,7 +24,7 @@ int has_player_a_save(int id) {
 
     req = sqlite3_prepare_v2(conn, query, -1, &res, &tail);
     if (req != SQLITE_OK) {
-        fprintf(stderr, "Failed to execute SQL query to insert Game: %s\n", sqlite3_errmsg(conn));
+        fprintf(stderr, "Failed to execute SQL query to get Game: %s\n", sqlite3_errmsg(conn));
         sqlite3_close(conn);
         exit(1);
     }
@@ -33,7 +33,7 @@ int has_player_a_save(int id) {
     if (req == SQLITE_ROW) {
         hasSave = sqlite3_column_int(res, 0); // Retrieve the value from the result set
     } else if (req != SQLITE_DONE) {
-        fprintf(stderr, "Failed to execute SQL query: %s\n", sqlite3_errmsg(conn));
+        fprintf(stderr, "Failed to execute SQL query to get Game: %s\n", sqlite3_errmsg(conn));
     }
 
     sqlite3_finalize(res); // Finalize the query
