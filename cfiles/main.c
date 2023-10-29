@@ -28,8 +28,8 @@ int main() {
         case 1: // new game
             save_id = display_save_choice();
 
-                if(has_player_a_save(save_id) == 0)
-                {
+                //if(has_player_a_save(save_id) == 0)
+                //{
                         printf("\nAucune sauvegarde pour cette partie, lancement d'une nouvelle partie...\n.");
                         game = init_game(save_id);                                 // init la partie et les niveaux
                         player = init_player(game);
@@ -38,12 +38,12 @@ int main() {
 
                         free_player(player);
                         free_game(game);
-                }
-                else
-                {
-                    printf("\nChargement de la partie...\n");
-                    game = load_game(save_id);                                 // init la partie et les niveaux
-                }
+                //}
+                //else
+                //{
+                //    printf("\nChargement de la partie...\n");
+                    //game = load_game(save_id);                                 // init la partie et les niveaux
+                //}
 
             break;
 

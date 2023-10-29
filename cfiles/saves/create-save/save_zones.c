@@ -25,12 +25,14 @@ void save_zones(Game *game, sqlite3** conn) {
         printf("\ninsert zone %d", game->zoneList[i]->id);
 
             /////////// INSERT ZONE  //////////////
-            sprintf(query, "INSERT INTO Zone(player_id, name, multiplicator, finished, difficulty) values(%d, '%s', %lf, %d, %d);",
+            sprintf(query, "INSERT INTO Zone(player_id, name, multiplicator, finished, difficulty, height, width) values(%d, '%s', %lf, %d, %d, %d, %d);",
                     game->id,
                     game->zoneList[i]->name,
                     game->zoneList[i]->multiplicator,
                     game->zoneList[i]->finished,
-                    game->zoneList[i]->difficulty
+                    game->zoneList[i]->difficulty,
+                    game->zoneList[i]->height,
+                    game->zoneList[i]->width
             );
 
             if(!prepare_and_exec_query(conn, query)) {

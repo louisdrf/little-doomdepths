@@ -3,6 +3,8 @@
 //
 
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 #include "../../../headers/saves/load-save/load_zones.h"
 #include "../../../headers/includes/structs.h"
 #include "../../../sqlite3/sqlite3.h"
@@ -13,9 +15,46 @@
 void load_zones(Game *game) {
 
     sqlite3 *conn = connect_to_db();
+    sqlite3_stmt *res; // Variable pour stocker le résultat de la requête
+    const char *tail;
+    char query[300];
 
     for(int i = 0; i < NBZONES; i++) {
+
         game->zoneList[i] = malloc(sizeof(Zone));
-        load_levels(game, i);
+
+        sprintf(query, "SELECT * FROM Zone WHERE player_id=%d AND zone_id=%d;", game->id, i); // on recupere la zone 0, 1, 2... pour la partie en cours
+
+        int error = sqlite3_prepare_v2(conn, query, -1, &res, &tail);
+        if (error != SQLITE_OK) {
+            fprintf(stderr, "Failed to execute SQL query to select zone %d: %s\n", i,  sqlite3_errmsg(conn));
+            sqlite3_close(conn);
+            return;
+        }
+
+        // reconstuire la zone avec les données récupérées
+        while (sqlite3_step(res) == SQLITE_ROW) {
+            game->zoneList[i]->name = malloc(strlen(sqlite3_column_text(res, 2)) + 1); // nom de la zone
+            strcpy(game->zoneList[i]->name, sqlite3_column_text(res, 2));
+
+            game->zoneList[i]->multiplicator = sqlite3_column_double(res, 3);   // multiplicateur de la zone
+            game->zoneList[i]->finished = sqlite3_column_int(res, 4);           // zone terminée ou non
+            game->zoneList[i]->difficulty = sqlite3_column_int(res, 5);         // niveau de difficulté
+            game->zoneList[i]->height = sqlite3_column_int(res, 6);
+            game->zoneList[i]->width = sqlite3_column_int(res, 7);
+        }
+
+        sqlite3_finalize(res); // Finaliser la requête
+
+        printf("Zone %d : %s -> multiplicateur: %lf, finie: %d, diff: %d, height: %d, width: %d\n", i,
+               game->zoneList[i]->name,
+               game->zoneList[i]->multiplicator,
+               game->zoneList[i]->finished,
+               game->zoneList[i]->difficulty,
+               game->zoneList[i]->height,
+               game->zoneList[i]->width);
+
+
+        //load_levels(game, i);
     }
 }
