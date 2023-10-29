@@ -43,6 +43,7 @@ int main() {
                 {
                     printf("\nChargement de la partie...\n");
                     game = load_game(save_id);                                 // init la partie et les niveaux
+
                 }
 
             break;

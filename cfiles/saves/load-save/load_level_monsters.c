@@ -33,7 +33,7 @@ void load_level_monsters(Level *level, int save_id, int zone_id) {
         while(sqlite3_step(res) == SQLITE_ROW) {
             Monster *monster = malloc(sizeof(Monster)); // Allouer de la mémoire pour le nouveau monstre
 
-            monster->id = index;
+            monster->id = sqlite3_column_int(res, 0);
             monster->monster_type = sqlite3_column_int(res, 2);
             monster->lifepoints = sqlite3_column_int(res, 3);
             monster->lifepoints_max = sqlite3_column_int(res, 4);
