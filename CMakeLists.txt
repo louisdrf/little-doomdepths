@@ -83,5 +83,7 @@ add_executable(doom cfiles/main.c
         headers/saves/load-save/load_levels.h
         cfiles/saves/load-save/load_level_monsters.c
         headers/saves/load-save/load_level_monsters.h
+        cfiles/saves/load-save/load_player.c
+        headers/saves/load-save/load_player.h
 )
 

@@ -27,13 +27,11 @@ void load_level_monsters(Level *level, int save_id, int zone_id) {
             return;
         }
 
-        int index = 0;
         level->monsters = NULL; // Initialiser la liste chaînée à NULL
 
         while(sqlite3_step(res) == SQLITE_ROW) {
             Monster *monster = malloc(sizeof(Monster)); // Allouer de la mémoire pour le nouveau monstre
 
-            monster->id = sqlite3_column_int(res, 0);
             monster->monster_type = sqlite3_column_int(res, 2);
             monster->lifepoints = sqlite3_column_int(res, 3);
             monster->lifepoints_max = sqlite3_column_int(res, 4);
@@ -45,6 +43,7 @@ void load_level_monsters(Level *level, int save_id, int zone_id) {
             monster->turn = sqlite3_column_int(res, 10);
             monster->isAlive = sqlite3_column_int(res, 11);
             monster->loot_gold = sqlite3_column_int(res, 12);
+            monster->id = sqlite3_column_int(res, 15);
 
             char *sprite = return_monster_sprite(monster->monster_type);
             monster->draw = malloc(strlen(sprite) + 1);

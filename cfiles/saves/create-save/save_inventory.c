@@ -27,7 +27,7 @@ void save_inventory(Player *player, sqlite3** conn) {
             }
 
             ///////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////
 
     // vider l'inventaire du joueur avant de le remplir avec les nouveaux équipements
     sprintf(query, "DELETE FROM Weapon WHERE inventory_id=%d;", player->id);
@@ -98,40 +98,3 @@ void save_inventory(Player *player, sqlite3** conn) {
     printf("\nInsert in inventory done.");
 #endif
 }
-
-
-/*
- * CREATE TABLE Inventory (
-   id INTEGER PRIMARY KEY,
-   player_id INTEGER,
-   healthPotion BOOLEAN,
-   manaPotion BOOLEAN,
-   FOREIGN KEY (player_id) REFERENCES Player(id)
-);
-
- CREATE TABLE Armor (
- id INTEGER PRIMARY KEY,
-   inventory_id INTEGER,
-   player_id INTEGER,
-   armor_name VARCHAR(70),
-   defense INTEGER NOT NULL,
-   rarity INTEGER NOT NULL,
-   FOREIGN KEY (inventory_id) REFERENCES Inventory(id),
-   FOREIGN KEY (player_id) REFERENCES Player(id)
-);
-
-
-CREATE TABLE Weapon (
-   id INTEGER PRIMARY KEY,
-   inventory_id INTEGER,
-   player_id INTEGER,
-   weapon_name VARCHAR(70),
-   min_strength INTEGER NOT NULL,
-   max_strength INTEGER NOT NULL,
-   attacks_by_turn INTEGER NOT NULL,
-   mana_cost INTEGER,
-   rarity INTEGER NOT NULL,
-   FOREIGN KEY (inventory_id) REFERENCES Inventory(id),
-   FOREIGN KEY (player_id) REFERENCES Player(id)
-);
- */

@@ -10,6 +10,7 @@
 #include "../headers/player/player_spell.h"
 #include "../headers/player/has_player_a_save.h"
 #include "../headers/saves/load-save/load_game.h"
+#include "../headers/saves/load-save/load_player.h"
 
 int main() {
 
@@ -31,7 +32,7 @@ int main() {
                 if(has_player_a_save(save_id) == 0)
                 {
                         printf("\nAucune sauvegarde pour cette partie, lancement d'une nouvelle partie...\n.");
-                        game = init_game(save_id);                                 // init la partie et les niveaux
+                        game = init_game(save_id);                                                                      // init la partie et les niveaux
                         player = init_player(game);
 
                         launch_loop(game, player);
@@ -42,7 +43,8 @@ int main() {
                 else
                 {
                     printf("\nChargement de la partie...\n");
-                    game = load_game(save_id);                                 // init la partie et les niveaux
+                    game = load_game(save_id);                                 // charger la partie et les niveaux
+                    player = load_player(game);
 
                 }
 

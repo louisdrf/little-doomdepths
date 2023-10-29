@@ -14,7 +14,8 @@ Game *load_game(int game_id) {
     Game *game;
     game = malloc(sizeof(Game));
 
-    if(game == NULL) {
+    if(game == NULL)
+    {
         printf("Allocating memory for game to load failed.\n");
         exit(1);
     }

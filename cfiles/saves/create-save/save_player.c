@@ -14,7 +14,7 @@ void save_player(Player *player, sqlite3** conn) {
 
     if(conn != NULL) {
         char query[300];
-        sprintf(query, "UPDATE Player SET name = '%s', lifepoints = %d, shield = %d, mana = %d, attacks_left = %d, gold = %d, turn = %d, current_level_id = %d, current_zone_id = %d WHERE id = %d;",
+        sprintf(query, "UPDATE Player SET name='%s', lifepoints=%d, shield=%d, mana=%d, attacks_left=%d, gold=%d, turn=%d, current_level_id=%d, current_zone_id=%d, posX=%d, posY=%d WHERE id = %d;",
                 player->name,
                 player->lifepoints,
                 player->shield,
@@ -24,6 +24,7 @@ void save_player(Player *player, sqlite3** conn) {
                 player->turn,
                 player->current_level->id,
                 player->current_zone->id,
+                0, 0,
                 player->id);
         printf("\nquery : %s", query);
 
@@ -45,19 +46,3 @@ void save_player(Player *player, sqlite3** conn) {
 
 }
 
-/*
- * CREATE TABLE Player (
-   id INTEGER PRIMARY KEY,
-   name TEXT,
-   lifepoints INTEGER,
-   shield INTEGER,
-   mana INTEGER,
-   attacks_left INTEGER,
-   gold INTEGER,
-   turn BOOLEAN,
-   current_level_id INTEGER,
-   current_zone_id INTEGER,
-   game_id INTEGER,
-   FOREIGN KEY (game_id) REFERENCES Game(id)
-);
- */

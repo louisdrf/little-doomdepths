@@ -52,27 +52,3 @@ void save_player_spells_book(Player *player, sqlite3** conn) {
     printf("\nInsert Spells done.");
 #endif
 }
-
-/*
- * CREATE TABLE Spell (
-   id INTEGER PRIMARY KEY,
-   book_id INTEGER,
-   player_id INTEGER,
-   next_spell_id INTEGER,
-   name TEXT,
-   value INTEGER,
-   mana_cost INTEGER,
-   spell_type INTEGER,
-   isEquiped BOOLEAN,
-   FOREIGN KEY (book_id) REFERENCES Book(id),
-   FOREIGN KEY (player_id) REFERENCES Player(id)
-);
-
-CREATE TABLE Book (
-   id INTEGER PRIMARY KEY,
-   player_id INTEGER,
-   spell_stock_id INTEGER,
-   FOREIGN KEY (spell_stock_id) REFERENCES Spell(id),
-   FOREIGN KEY (player_id) REFERENCES Player(id)
-);
- */
