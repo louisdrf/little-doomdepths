@@ -73,8 +73,8 @@ struct Monster {
     char *                         draw;               // chaine de caractère de dessin du monstre
     int                            drawIndex;          // index utilisé pour dessiner le monstre
     struct Monster*                next;
-    struct Weapon*                 loot_weapon;        // arme lootable sur le monstre
-    struct Armor*                  loot_armor;         // armure lootable sur le monstre
+    Weapon*                        monster_weapon;        // arme lootable sur le monstre
+    Armor*                         monster_armor;         // armure lootable sur le monstre
     unsigned int                   loot_gold;          // gold lootable sur le monstre
 
 };

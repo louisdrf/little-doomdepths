@@ -51,6 +51,12 @@ void display_player_ath(Player *player) {
     printf(YELLOW "%d\n" RESET, player->gold);
     printf("Attacks left this turn:   %d\n\n", player->attacks_left);
     printf("Current level:            %d", player->current_level->id);
+    if(player->current_weapon!=NULL){
+        printf("\ncurrent weapon :         %s\n",player->current_weapon->name);
+    }else{
+        printf("\nMain nue\n");
+    }
+
     printf("\n\n\n");
 
 }

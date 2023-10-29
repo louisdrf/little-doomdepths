@@ -35,6 +35,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/doom.dir/cfiles/loop.c.obj.d"
   "CMakeFiles/doom.dir/cfiles/main.c.obj"
   "CMakeFiles/doom.dir/cfiles/main.c.obj.d"
+  "CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.obj"
+  "CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.obj.d"
   "CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj"
   "CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj.d"
   "CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj"

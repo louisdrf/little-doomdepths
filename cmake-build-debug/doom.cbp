@@ -130,6 +130,9 @@
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/main.c">
 			<Option target="doom"/>
 		</Unit>
+		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/display_monster_loot.c">
+			<Option target="doom"/>
+		</Unit>
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/monster.c">
 			<Option target="doom"/>
 		</Unit>
@@ -227,6 +230,9 @@
 			<Option target="doom"/>
 		</Unit>
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/loop.h">
+			<Option target="doom"/>
+		</Unit>
+		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/monsters/display_monster_loot.h">
 			<Option target="doom"/>
 		</Unit>
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/monsters/monster.h">

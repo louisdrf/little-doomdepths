@@ -9,6 +9,7 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/defines.h"
 #include "../../headers/monsters/monster_sprite.h"
+#include "../../headers/weapon/init_weapon.h"
 
 #define DEBUG false
 
@@ -43,6 +44,7 @@ Monster *create_monster(Monster *head, int index) {
     new->loot_gold = rand() % MAX_GOLD_LOOT + MIN_GOLD_LOOT;
     new->next = head;
     new->drawIndex = 0;
+    new->monster_weapon= init_weapon("Monster_Loot_epee1", 2, 8, 18, 4, RARE);
 
     char *sprite = return_monster_sprite(new->monster_type);
     new->draw = malloc(strlen(sprite) + 1);

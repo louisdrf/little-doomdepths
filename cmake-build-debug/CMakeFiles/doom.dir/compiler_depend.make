@@ -190,6 +190,8 @@ CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj: C:/Users/mokra/OneDrive/Docu
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/defines.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/monsters/monster_sprite.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/weapon/init_weapon.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h
 
 CMakeFiles/doom.dir/cfiles/init/init_spell.c.obj: C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/init/init_spell.c \
@@ -601,6 +603,42 @@ CMakeFiles/doom.dir/cfiles/main.c.obj: C:/Users/mokra/OneDrive/Documents/GitHub/
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/player/player_spell.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h
 
+CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.obj: C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/display_monster_loot.c \
+  C:/mingw64/x86_64-w64-mingw32/include/stdio.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
+  C:/mingw64/x86_64-w64-mingw32/include/vadefs.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
+  C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed/limits.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed/syslimits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/limits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
+  C:/mingw64/x86_64-w64-mingw32/include/conio.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/stddef.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stddef.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/conio_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/string.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/stdbool.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/defines.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/zones/define_zones.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/colors.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/monsters/display_monster_loot.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/inventory/inventory.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h
+
 CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj: C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/monster.c \
   C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
   C:/mingw64/x86_64-w64-mingw32/include/corecrt.h \
@@ -626,7 +664,9 @@ CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj: C:/Users/mokra/OneDrive/Docum
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/stdbool.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/defines.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/zones/define_zones.h \
-  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/colors.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/monsters/display_monster_loot.h
 
 CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj: C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/monster_sprite.c \
   C:/mingw64/x86_64-w64-mingw32/include/string.h \
@@ -1436,6 +1476,14 @@ C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/zones/display
 
 C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/sqlite_test.h:
 
+C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/display_monster_loot.c:
+
+C:/mingw64/x86_64-w64-mingw32/include/mcx.h:
+
+C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/avx512bwintrin.h:
+
+C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/monsters/display_monster_loot.h:
+
 C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/monster.c:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/avx512vpopcntdqvlintrin.h:
@@ -1579,10 +1627,6 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/avx512pfintrin.h:
 C:/mingw64/x86_64-w64-mingw32/include/unknwn.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/avx512vlintrin.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/mcx.h:
-
-C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/avx512bwintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/avx512dqintrin.h:
 

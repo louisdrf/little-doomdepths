@@ -560,6 +560,30 @@ cfiles/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/main.c.s
 .PHONY : cfiles/main.c.s
 
+cfiles/monsters/display_monster_loot.obj: cfiles/monsters/display_monster_loot.c.obj
+.PHONY : cfiles/monsters/display_monster_loot.obj
+
+# target to build an object file
+cfiles/monsters/display_monster_loot.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.obj
+.PHONY : cfiles/monsters/display_monster_loot.c.obj
+
+cfiles/monsters/display_monster_loot.i: cfiles/monsters/display_monster_loot.c.i
+.PHONY : cfiles/monsters/display_monster_loot.i
+
+# target to preprocess a source file
+cfiles/monsters/display_monster_loot.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.i
+.PHONY : cfiles/monsters/display_monster_loot.c.i
+
+cfiles/monsters/display_monster_loot.s: cfiles/monsters/display_monster_loot.c.s
+.PHONY : cfiles/monsters/display_monster_loot.s
+
+# target to generate assembly for a file
+cfiles/monsters/display_monster_loot.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.s
+.PHONY : cfiles/monsters/display_monster_loot.c.s
+
 cfiles/monsters/monster.obj: cfiles/monsters/monster.c.obj
 .PHONY : cfiles/monsters/monster.obj
 
@@ -935,6 +959,9 @@ help:
 	@echo ... cfiles/main.obj
 	@echo ... cfiles/main.i
 	@echo ... cfiles/main.s
+	@echo ... cfiles/monsters/display_monster_loot.obj
+	@echo ... cfiles/monsters/display_monster_loot.i
+	@echo ... cfiles/monsters/display_monster_loot.s
 	@echo ... cfiles/monsters/monster.obj
 	@echo ... cfiles/monsters/monster.i
 	@echo ... cfiles/monsters/monster.s

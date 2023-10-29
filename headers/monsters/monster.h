@@ -9,5 +9,5 @@
 int are_all_monsters_dead(Player *player);
 Monster *getTargetMonster(Player *player, int id);
 int monsters_attack(Player *player);
-
+void monster_Drop_loot(Player *player);
 #endif //DOOM_MONSTER_H
