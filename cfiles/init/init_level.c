@@ -17,7 +17,7 @@
  * @param id
  * @return
  */
-Level *init_level(int id) {
+Level *init_level(int id, int in_zone_id) {
 
     // create a level
     Level *level = malloc(sizeof(Level));
@@ -27,6 +27,7 @@ Level *init_level(int id) {
     }
 
     level->id = id;
+    level->in_zone_id = in_zone_id;
     level->finished = false;
 
     // init the linked list of monsters for the level

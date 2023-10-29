@@ -12,6 +12,7 @@
 void save_zones(Game *game, sqlite3** conn) {
 
     char query[500];
+    int level_id = 0;
 
     // supprimer les zones avant de tout recréer
     sprintf(query, "DELETE FROM Zone WHERE player_id=%d;", game->id);
@@ -74,9 +75,9 @@ void save_zones(Game *game, sqlite3** conn) {
 #endif
 
                     // supprimer les monstres du niveau avant de tout recréer
-                    sprintf(query, "DELETE FROM Monster WHERE level_id=%d AND player_id=%d AND zone_id=%d;", game->zoneList[i]->levelList[j][k]->id, game->id, game->zoneList[i]->id);
+                    sprintf(query, "DELETE FROM Monster WHERE level_id=%d AND player_id=%d AND zone_id=%d;", level_id, game->id, game->zoneList[i]->id);
                     if(!prepare_and_exec_query(conn, query)) {
-                        printf("\nFailed to prepare/execute query to delete all monsters in level %d.\n", game->zoneList[i]->levelList[j][k]->id);
+                        printf("\nFailed to prepare/execute query to delete all monsters in level %d.\n", level_id);
                         exit(1);
                     }
 
@@ -89,7 +90,7 @@ void save_zones(Game *game, sqlite3** conn) {
                         printf("\ninsert monster %d", current->id);
                         sprintf(query, "INSERT INTO Monster(level_id, monster_type, lifepoints, lifepoints_max, min_strength, max_strength, defense, attacks_by_turn, attacks_left, turn, isAlive, loot_gold, player_id, zone_id) "
                                        "values(%d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d);",
-                                game->zoneList[i]->levelList[j][k]->id,
+                                game->zoneList[i]->levelList[j][k]->in_zone_id,
                                 current->monster_type,
                                 current->lifepoints,
                                 current->lifepoints_max,
@@ -105,7 +106,7 @@ void save_zones(Game *game, sqlite3** conn) {
                                 game->zoneList[i]->id
                         );
                         if(!prepare_and_exec_query(conn, query)) {
-                            printf("\nFailed to prepare/execute query to add monsters in level %d.\n", game->zoneList[i]->levelList[j][k]->id);
+                            printf("\nFailed to prepare/execute query to add monsters in level %d.\n", level_id);
                             exit(1);
                         }
 
@@ -115,9 +116,10 @@ void save_zones(Game *game, sqlite3** conn) {
 #if DEBUG
                     printf("\nInsert monsters done.");
 #endif
-
+                    level_id++;
                     ////////////////////////////////////////////////////////
                 }
+                else level_id++;
 
 
             }

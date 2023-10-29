@@ -4,9 +4,11 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "../../../headers/saves/load-save/load_levels.h"
 #include "../../../sqlite3/sqlite3.h"
 #include "../../../headers/db_connexion.h"
+#include "../../../headers/saves/load-save/load_level_monsters.h"
 
 void load_levels(Game *game, int zone_id) {
 
@@ -42,15 +44,13 @@ void load_levels(Game *game, int zone_id) {
                 game->zoneList[zone_id]->levelList[i][j]->nbMonsters = sqlite3_column_int(res, 2);   // nombre de monstres dans le niveau
                 game->zoneList[zone_id]->levelList[i][j]->finished = sqlite3_column_int(res, 3);     // niveau terminé ou non
                 game->zoneList[zone_id]->levelList[i][j]->id = level_id;
+                game->zoneList[zone_id]->levelList[i][j]->in_zone_id = sqlite3_column_int(res, 7); // emplacement du niveau dans la zone
 
-
-                //printf("Level %d : nbMonsters: %d finished: %d\n", game->zoneList[zone_id]->levelList[i][j]->id, game->zoneList[zone_id]->levelList[i][j]->nbMonsters, game->zoneList[zone_id]->levelList[i][j]->finished);
+                load_level_monsters(game->zoneList[zone_id]->levelList[i][j], game->id, zone_id);
                 level_id++;
             }
             else {
                 game->zoneList[zone_id]->levelList[i][j] = NULL;
-                //printf("level null\n");
-                level_id++;
             }
         }
     }
@@ -59,3 +59,5 @@ void load_levels(Game *game, int zone_id) {
     printf("\nNiveaux de la zone recuperes.\n");
 
 }
+
+

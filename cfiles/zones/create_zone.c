@@ -24,14 +24,17 @@ Zone *create_zone(Game *game) {
             }
 
             int index = 0;
+            int in_zone_index = 0;
 
             for (int i = 0; i < map->height; i++) {
                 for (int j = 0; j < map->width; j++) {
                     if (map->map[i][j] == 1) {
-                        levelList[i][j] = init_level(index);            // creer un niveau avec son id
+                        levelList[i][j] = init_level(index, in_zone_index);            // creer un niveau avec son id
                         index++;
+                        in_zone_index++;
                     } else {
                         levelList[i][j] = NULL;
+                        in_zone_index++;
                     }
                 }
             }

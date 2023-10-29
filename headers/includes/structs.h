@@ -83,6 +83,7 @@ struct Monster {
 typedef struct {
 
     unsigned short           id;                  // niveau 1, 2, 3...
+    unsigned short           in_zone_id;          // index du niveau dans sa zone
     Monster*                 monsters;            // liste chainée de monstres
     unsigned short           nbMonsters;          // nb de monstres de la partie
     struct Weapon*           loot_weapon;         // arme lootable sur le niveau

@@ -7,7 +7,7 @@
 
 #include "../includes/structs.h"
 
-Level *init_level(int id);
+Level *init_level(int id, int in_zone_id);
 void next_level(Game *game, Player *player);
 
 #endif //DOOM_INIT_LEVEL_H

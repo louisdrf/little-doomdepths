@@ -3,6 +3,7 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "../../../headers/saves/create-save/create_save.h"
 #include "../../../headers/includes/structs.h"
 #include "../../../sqlite3/sqlite3.h"
@@ -15,6 +16,16 @@
 void create_save(Game *game, Player *player) {
 
     sqlite3 *conn = connect_to_db();
+
+    char query[300];
+    sprintf(query, "UPDATE Game SET hasSave=1;");
+    printf("\nquery : %s", query);
+
+    prepare_and_exec_query(&conn, query);
+    if(!prepare_and_exec_query(&conn, query)) {
+        printf("\nFailed to prepare/execute query to update game data.\n");
+        exit(1);
+    }
 
     save_player(player, &conn);
     save_inventory(player, &conn);
