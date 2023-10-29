@@ -57,7 +57,7 @@ void load_zones(Game *game) {
                    game->zoneList[i]->height,
                    game->zoneList[i]->width);
 
-            load_levels(game->zoneList[i], game->id, i);
+            load_levels(game, i);
         }
 
 }
