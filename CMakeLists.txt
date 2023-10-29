@@ -69,5 +69,7 @@ add_executable(doom cfiles/main.c
         headers/level/display_level_loot.h
         headers/level/display_level_loot_weapons.h
         headers/level/display_level_loot_armors.h
+        cfiles/monsters/display_monster_loot.c
+        headers/monsters/display_monster_loot.h
 )
 

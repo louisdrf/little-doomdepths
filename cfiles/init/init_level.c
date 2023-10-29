@@ -74,12 +74,12 @@ void next_level(Game *game, Player *player) {
 
     int next_level;
     int i = 0;
-
+    /*
     while(game->zoneList[i]->levelList[0][player->current_level->id] == NULL) {
         player->current_level->id++;
     }
-
-    next_level = player->current_level->id;
+    */
+    next_level = player->current_level->id+1;
 
     player->current_level = game->zoneList[player->current_zone->id]->levelList[0][next_level];
     printf("\nVous passez au niveau %d !\n", next_level);

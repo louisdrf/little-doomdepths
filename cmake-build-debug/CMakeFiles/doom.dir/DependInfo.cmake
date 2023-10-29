@@ -26,6 +26,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/level/display_level_loot_weapons.c" "CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/loop.c" "CMakeFiles/doom.dir/cfiles/loop.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/loop.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/main.c" "CMakeFiles/doom.dir/cfiles/main.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/main.c.obj.d"
+  "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/display_monster_loot.c" "CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/monster.c" "CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/monster_sprite.c" "CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/player/player.c" "CMakeFiles/doom.dir/cfiles/player/player.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/player/player.c.obj.d"

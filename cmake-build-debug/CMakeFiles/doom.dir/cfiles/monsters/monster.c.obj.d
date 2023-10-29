@@ -24,4 +24,6 @@ CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj: \
  c\:\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\stdbool.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\defines.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\zones\define_zones.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h \
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\colors.h \
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\monsters\display_monster_loot.h
