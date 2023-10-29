@@ -57,11 +57,12 @@ void save_zones(Game *game, sqlite3** conn) {
 
                     printf("\ninsert level %d-%d", j, k);
 
-                    sprintf(query, "INSERT INTO Level(player_id, zone_id, nbMonsters, finished) values(%d, %d, %d, %d);",
+                    sprintf(query, "INSERT INTO Level(player_id, zone_id, nbMonsters, finished, height_index, width_index) values(%d, %d, %d, %d, %d, %d);",
                             game->id,
                             game->zoneList[i]->id,
                             game->zoneList[i]->levelList[j][k]->nbMonsters,
-                            game->zoneList[i]->levelList[j][k]->finished
+                            game->zoneList[i]->levelList[j][k]->finished,
+                            j, k
                     );
                     if(!prepare_and_exec_query(conn, query)) {
                         printf("\nFailed to prepare/execute query to insert all levels in zone %d.\n", game->zoneList[i]->id);

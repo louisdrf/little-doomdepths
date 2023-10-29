@@ -7,6 +7,6 @@
 
 #include "../../includes/structs.h"
 
-void load_levels(Game *game, int zone_id);
+void load_levels(Zone *zone, int zone_id, int save_id);
 
 #endif //DOOM_LOAD_LEVELS_H

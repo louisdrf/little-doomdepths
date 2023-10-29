@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include "../../../headers/saves/load-save/load_game.h"
 #include "../../../headers/includes/structs.h"
+#include "../../../headers/saves/load-save/load_zones.h"
 
 
 Game *load_game(int game_id) {
