@@ -56,7 +56,7 @@ void load_levels(Game *game, int zone_id) {
     }
     sqlite3_finalize(res); // Finaliser la requête
 
-    printf("\nNiveaux de la zone recuperes.\n");
+    //printf("\nNiveaux de la zone recuperes.\n");
 
 }
 

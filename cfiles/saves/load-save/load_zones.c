@@ -43,12 +43,13 @@ void load_zones(Game *game) {
             game->zoneList[i]->height = sqlite3_column_int(res, 6);
             game->zoneList[i]->width = sqlite3_column_int(res, 7);
 
+            load_levels(game, i);
             i++;
         }
 
         sqlite3_finalize(res); // Finaliser la requête
 
-        for(i = 0; i < NBZONES; i++) {
+       /* for(i = 0; i < NBZONES; i++) {
             printf("Zone %d : %s -> multiplicateur: %lf, finie: %d, diff: %d, height: %d, width: %d\n", i,
                    game->zoneList[i]->name,
                    game->zoneList[i]->multiplicator,
@@ -56,8 +57,6 @@ void load_zones(Game *game) {
                    game->zoneList[i]->difficulty,
                    game->zoneList[i]->height,
                    game->zoneList[i]->width);
-
-            load_levels(game, i);
-        }
+        }*/
 
 }

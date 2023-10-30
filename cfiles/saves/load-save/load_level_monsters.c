@@ -56,6 +56,6 @@ void load_level_monsters(Level *level, int save_id, int zone_id) {
         sqlite3_finalize(res); // Finaliser la requête
     }
 
-    printf("Monstres niveau %d recup\n", level->id);
+    //printf("Monstres niveau %d recup\n", level->id);
 
 }

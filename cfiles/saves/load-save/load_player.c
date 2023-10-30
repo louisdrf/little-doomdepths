@@ -15,7 +15,7 @@ Player *load_player(Game *game) {
     sqlite3 *conn = connect_to_db();
     sqlite3_stmt *res;
     const char *tail;
-    char query[200];
+    char query[50];
 
     Player *player = malloc(sizeof(Player));
 
@@ -44,9 +44,9 @@ Player *load_player(Game *game) {
         player->turn = sqlite3_column_int(res, 7);
         int current_zone_id = sqlite3_column_int(res, 8);
         player->current_zone = game->zoneList[current_zone_id];
-        //int x = sqlite3_column_int(res, 11);
-        //int y = sqlite3_column_int(res, 12);
-        player->current_level = game->zoneList[current_zone_id]->levelList[0][0];
+        player->currentX = sqlite3_column_int(res, 11);
+        player->currentY = sqlite3_column_int(res, 12);
+        player->current_level = game->zoneList[current_zone_id]->levelList[player->currentX][player->currentY];
 
     }
 

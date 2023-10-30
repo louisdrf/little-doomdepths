@@ -59,13 +59,6 @@ void display_all(Player *player) {
 }
 
 
-
-void display_player(Player *player) {
-    printf(RED"%s\n"RESET, player->draw);
-}
-
-
-
 void display_player_ath(Player *player) {
 
     display_player_health(player);
@@ -77,7 +70,6 @@ void display_player_ath(Player *player) {
     printf("\n");
 
 }
-
 
 
 void display_player_health(Player *player) {

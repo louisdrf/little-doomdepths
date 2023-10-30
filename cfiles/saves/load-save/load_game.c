@@ -21,6 +21,7 @@ Game *load_game(int game_id) {
     }
     game->id = game_id;
     game->display_zones_index = 0;
+    game->isRunning = true;
 
     // INIT THE GAME ZONES
 

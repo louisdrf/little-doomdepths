@@ -42,7 +42,7 @@ int main() {
                 }
                 else
                 {
-                    printf("\nChargement de la partie...\n");
+                    printf("\nChargement de la partie...\n\n\n");
                     game = load_game(save_id);                                 // charger la partie et les niveaux
                     player = load_player(game);
 
