@@ -8,16 +8,11 @@
 #include <string.h>
 #include <conio.h>
 #include "../../headers/player/player.h"
-#include "../../headers/includes/structs.h"
 #include "../../headers/init/init_inventory.h"
 #include "../../headers/init/init_spell.h"
 #include "../../headers/inventory/inventory.h"
 #include "../../headers/weapon/init_weapon.h"
-#include "../../headers/inventory/potion.h"
-#include "../../headers/monsters/monster_sprite.h"
 #include "../../headers/armor/init_armor.h"
-#include "../../headers/player/player_spell.h"
-
 
 #define DEBUG false
 
@@ -209,14 +204,15 @@ void add_player_name_to_game(Game *game, Player *player) {
  * free inventory, draw and player itself
  * @param player
  */
-void updateMovement(Zone* zone,Player *player, char command){
+void updateMovement(Player *player, char command, Game* game) {
+    Zone* zone=player->current_zone;
     switch (command) {
         case 'z':
             if(player->currentX - 1 < 0){
                 printf("1");
                 command=getch();
-                updateMovement(zone,player,command);
-            }else if(zone->levelList[player->currentX - 1][player->currentY]!=NULL){
+                updateMovement(player,command,game);
+            }else if(zone->map[player->currentX - 1][player->currentY - 1]!=0){
                 player->currentX--;
             }
             break;
@@ -224,8 +220,8 @@ void updateMovement(Zone* zone,Player *player, char command){
             if(player->currentY - 1 < 0){
                 printf("2");
                 command=getch();
-                updateMovement(zone,player,command);
-            }else if(zone->levelList[player->currentX][player->currentY - 1]!=NULL ){
+                updateMovement(player,command,game);
+            }else if(zone->map[player->currentX][player->currentY - 1]!=0 ){
                 player->currentY--;
             }
             break;
@@ -233,8 +229,8 @@ void updateMovement(Zone* zone,Player *player, char command){
             if(player->currentX + 1 >= zone->height){
                 printf("3");
                 command=getch();
-                updateMovement(zone,player,command);
-            }else if(zone->levelList[player->currentX + 1][player->currentY]!=NULL ) {
+                updateMovement(player,command,game);
+            }else if(zone->map[player->currentX + 1][player->currentY]!=0 ) {
                 player->currentX++;
             }
             break;
@@ -242,8 +238,8 @@ void updateMovement(Zone* zone,Player *player, char command){
             if(player->currentY + 1 >= zone->width){
                 printf("4");
                 command=getch();
-                updateMovement(zone,player,command);
-            }else if(zone->levelList[player->currentX][player->currentY + 1]!=NULL ){
+                updateMovement(player,command,game);
+            }else if(zone->map[player->currentX][player->currentY + 1]!=0 ){
                 player->currentY++;
             }
             break;
@@ -252,11 +248,16 @@ void updateMovement(Zone* zone,Player *player, char command){
     }
 
 
-    if(zone->levelList[player->currentX][player->currentY]!=NULL  ){
+    if(zone->map[player->currentX][player->currentY]==1  ){
         player->current_level=zone->levelList[player->currentX][player->currentY];
-    } else{
+    }
+    else if(zone->map[player->currentX][player->currentY]==3 ){
+        player->current_zone=game->zoneList[player->current_zone->id+1];
+        player->current_level=player->current_zone->levelList[player->currentX][player->currentY];
+    }
+    else{
         command=getch();
-        updateMovement(zone,player,command);
+        updateMovement(player,command,game);
     }
 
 

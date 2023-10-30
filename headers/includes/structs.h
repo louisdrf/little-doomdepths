@@ -70,7 +70,7 @@ struct Monster {
     unsigned short                 attacks_left;       // nombre d'attaques restantes pour le tour
     bool                           turn;               // indique si cest au tour du monstre de jouer
     bool                           isAlive;            // indique si le monstre a été tué ou non
-    char *                         draw;               // chaine de caractère de dessin du monstre
+    char*                          draw;               // chaine de caractère de dessin du monstre
     int                            drawIndex;          // index utilisé pour dessiner le monstre
     struct Monster*                next;
     struct Weapon*                 loot_weapon;        // arme lootable sur le monstre
@@ -106,6 +106,7 @@ typedef struct {
     bool                    finished;                               // true si tous les niveaux de la zone ont été terminés
     unsigned short          difficulty;                             // indicateur du niveau de difficulté de la zone (EASY, MODERATE, HARD)
     int**                   map;
+
 } Zone;
 
 
