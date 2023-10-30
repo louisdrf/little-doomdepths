@@ -28,12 +28,35 @@
 void launch_loop(Game *game, Player *player) {
 
     int playerEntry;
-
+    char moveEntry;
+    Zone * zone=game->zoneList[player->current_level->id];
     while(game->isRunning)
     {
-            if(player->turn)
+
+        if(player->turn)
+        {
+
+            if(are_all_monsters_dead(player) == 1)              // retourne 1 si tous les monstres du niveau sont morts et passe le joueur au niveau supérieur
             {
                 system("cls");
+                printf("map :\n");
+
+                for(int i = 0; i < zone->height; i++) {
+                    for(int j = 0; j < zone->width; j++) {
+                        if(j==player->currentY && i==player->currentX){
+                            printf("@ ");
+                        } else{
+                            printf("%d ",zone->map[i][j]);
+                        }
+
+                    }
+                    printf("\n");
+                }
+                moveEntry = getch();
+                printf("move %c",moveEntry);
+                updateMovement(zone,player,moveEntry);
+
+            } else{
                 display_all(player); // affichage
 
                 playerEntry = getch();
@@ -65,24 +88,16 @@ void launch_loop(Game *game, Player *player) {
 
                     if(playerEntry > 9 || playerEntry < 1) continue;
 
-                    player_attack(player, playerEntry);        // le joueur attaque le monstre dont l'id est passé en argument
+                player_attack(player, playerEntry);        // le joueur attaque le monstre dont l'id est passé en argument
+            }
 
-                    if(are_all_monsters_dead(player) == 1)              // retourne 1 si tous les monstres du niveau sont morts et passe le joueur au niveau supérieur
-                    {
-                        printf("all monsters dead");
-                        if(display_next_level_menu() == 1) {
-                            getPotion(player);
-                            next_level(game, player);
-                            player->shield = 0;
-                        }
-                        else return;
-                    }
+        }
+        else {
+            if(monsters_attack(player) == 1) {                      // retourne 1 si le joueur se fait tuer
+                printf("\n test \n");
+                display_lose();
+                break;
             }
-            else {
-                if(monsters_attack(player) == 1) {                      // retourne 1 si le joueur se fait tuer
-                    display_lose();
-                    break;
-                }
-            }
+        }
     }
 }

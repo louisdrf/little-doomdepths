@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <conio.h>
 #include "../../headers/player/player.h"
 #include "../../headers/includes/structs.h"
 #include "../../headers/init/init_inventory.h"
@@ -17,7 +18,8 @@
 #include "../../headers/armor/init_armor.h"
 #include "../../headers/player/player_spell.h"
 
-#define DEBUG true
+
+#define DEBUG false
 
 /**
  * init the player
@@ -61,16 +63,31 @@ Player *init_player(Game *game) {
         player->min_strength = 10;
         player->max_strength = 16;
         player->book = book;
+        player->currentX=0;
+        player->currentY=0;
         init_player_draw(player);
         get_player_name(player);
         player->current_zone = game->zoneList[0];
         player->current_level = game->zoneList[0]->levelList[0][0];      // joueur initialisé au premier niveau de la premiere zone
         player->inventory = inventory;
-        player->current_weapon = NULL;
-        player->current_armor = NULL;
 
         add_player_name_to_game(game, player);
 
+    Weapon *weapon1 = init_weapon("epee1", 2, 8, 18, 4, RARE);
+    Weapon *weapon2 = init_weapon("epee2", 2, 12, 24, 6, EPIC);
+    Weapon *weapon3 = init_weapon("epee3", 3, 16, 24, 4, LEGENDARY);
+
+    add_item(player, weapon1, NULL);
+    add_item(player, weapon2, NULL);
+    add_item(player, weapon3, NULL);
+
+    Armor *armor1 = init_armor("armure1", 10, RARE);
+    Armor *armor2 = init_armor("armure2", 15, EPIC);
+    Armor *armor3 = init_armor("armure3", 20, LEGENDARY);
+
+    add_item(player, NULL, armor1);
+    add_item(player, NULL, armor2);
+    add_item(player, NULL, armor3);
 
     #if DEBUG
         print_player_stats(player);
@@ -192,6 +209,64 @@ void add_player_name_to_game(Game *game, Player *player) {
  * free inventory, draw and player itself
  * @param player
  */
+void updateMovement(Zone* zone,Player *player, char command){
+    switch (command) {
+        case 'z':
+            if(player->currentX - 1 < 0){
+                printf("1");
+                command=getch();
+                updateMovement(zone,player,command);
+            }else if(zone->levelList[player->currentX - 1][player->currentY]!=NULL){
+                player->currentX--;
+            }
+            break;
+        case 'q':
+            if(player->currentY - 1 < 0){
+                printf("2");
+                command=getch();
+                updateMovement(zone,player,command);
+            }else if(zone->levelList[player->currentX][player->currentY - 1]!=NULL ){
+                player->currentY--;
+            }
+            break;
+        case 's':
+            if(player->currentX + 1 >= zone->height){
+                printf("3");
+                command=getch();
+                updateMovement(zone,player,command);
+            }else if(zone->levelList[player->currentX + 1][player->currentY]!=NULL ) {
+                player->currentX++;
+            }
+            break;
+        case'd':
+            if(player->currentY + 1 >= zone->width){
+                printf("4");
+                command=getch();
+                updateMovement(zone,player,command);
+            }else if(zone->levelList[player->currentX][player->currentY + 1]!=NULL ){
+                player->currentY++;
+            }
+            break;
+        default:
+            break;
+    }
+
+
+    if(zone->levelList[player->currentX][player->currentY]!=NULL  ){
+        player->current_level=zone->levelList[player->currentX][player->currentY];
+    } else{
+        command=getch();
+        updateMovement(zone,player,command);
+    }
+
+
+}
+
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+
+
 void free_player(Player *player) {
 
     for(int i = 0; i < NBOBJECTS_MAX; i++) {

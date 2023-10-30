@@ -105,7 +105,7 @@ typedef struct {
     Level***                levelList;                              // tableau des niveaux de la zone
     bool                    finished;                               // true si tous les niveaux de la zone ont été terminés
     unsigned short          difficulty;                             // indicateur du niveau de difficulté de la zone (EASY, MODERATE, HARD)
-
+    int**                   map;
 } Zone;
 
 
@@ -174,6 +174,8 @@ typedef struct {
     unsigned short      attacks_by_turn;
     unsigned short      attacks_left;
     unsigned short      gold;
+    int                 currentX;
+    int                 currentY;
     bool                isAlive;
     bool                turn;               // indique si cest au tour du joueur de jouer
     char*               draw;

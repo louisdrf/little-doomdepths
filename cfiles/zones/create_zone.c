@@ -14,6 +14,10 @@ Zone *create_zone(Game *game) {
     Zone *zone = malloc(sizeof(Zone));
 
     Map *map = init_random_map_dimensions();
+    int **tab = calloc(map->height, sizeof(int *));
+    for (int i = 0; i < map->height; i++) {
+        tab[i] = calloc(map->width, sizeof(int));
+    }
     if(map != NULL) {
 
             Level ***levelList = NULL;
@@ -39,12 +43,18 @@ Zone *create_zone(Game *game) {
                 }
             }
 
+            for(int i = 0; i < map->height; i++) {
+                for(int j = 0; j < map->width; j++) {
+                    tab[i][j]=map->map[i][j];
+
+                }
+            }
                 if (levelList != NULL) {
                     zone->levelList = levelList;
                     zone->height = map->height;
                     zone->width = map->width;
                 }
-
+            zone->map=tab;
             for (int i = 0; i < map->height; i++) {
                 free(map->map[i]);
             }

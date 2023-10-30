@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include "../../headers/zones/generate_random_map.h"
 
-#define DEBUG false
+#define DEBUG true
 
 /**
  * return a random dimensions tab full of 0
