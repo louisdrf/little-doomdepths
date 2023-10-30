@@ -205,11 +205,11 @@ void add_player_name_to_game(Game *game, Player *player) {
  * @param player
  */
 void updateMovement(Player *player, char command, Game* game) {
-    Zone* zone=player->current_zone;
+    Zone* zone = player->current_zone;
+
     switch (command) {
         case 'z':
             if(player->currentX - 1 < 0){
-                printf("1");
                 command=getch();
                 updateMovement(player,command,game);
             }else if(zone->map[player->currentX - 1][player->currentY - 1]!=0){
@@ -218,7 +218,6 @@ void updateMovement(Player *player, char command, Game* game) {
             break;
         case 'q':
             if(player->currentY - 1 < 0){
-                printf("2");
                 command=getch();
                 updateMovement(player,command,game);
             }else if(zone->map[player->currentX][player->currentY - 1]!=0 ){
@@ -227,7 +226,6 @@ void updateMovement(Player *player, char command, Game* game) {
             break;
         case 's':
             if(player->currentX + 1 >= zone->height){
-                printf("3");
                 command=getch();
                 updateMovement(player,command,game);
             }else if(zone->map[player->currentX + 1][player->currentY]!=0 ) {
@@ -236,7 +234,6 @@ void updateMovement(Player *player, char command, Game* game) {
             break;
         case'd':
             if(player->currentY + 1 >= zone->width){
-                printf("4");
                 command=getch();
                 updateMovement(player,command,game);
             }else if(zone->map[player->currentX][player->currentY + 1]!=0 ){

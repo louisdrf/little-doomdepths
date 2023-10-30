@@ -45,16 +45,12 @@ void display_player_zone(Player *player, Game *game) {
     };
 
 
-    int playerEntry;
-    int j = 0;
-    int i = 0;
-
     printf("\n");
 
-    for (i = 0; i < player->current_zone->height; i++) {
+    for (int i = 0; i < player->current_zone->height; i++) {
 
         for (int line = 0; line < NBLINES; line++) { // 7 lignes dans level_cell ou void_cell
-            for (j = 0; j < player->current_zone->width; j++) {
+            for (int j = 0; j < player->current_zone->width; j++) {
                 if (player->current_zone->levelList[i][j] != NULL) {
 
                         if(player->current_level == player->current_zone->levelList[i][j]) {        // afficher en rouge le niveau où se situe le joueur
@@ -68,23 +64,6 @@ void display_player_zone(Player *player, Game *game) {
             }
             printf("\n");
         }
-    }
-
-    printf("Zone %d : \n\n", player->current_zone->id);
-    printf("Afficher toutes les zones (m)       Quitter (q)\n");
-    printf("-> ");
-    playerEntry = getch();
-
-    switch(playerEntry) {
-        case 'm':
-            display_all_zones(player, game);
-            break;
-
-        case 'q':
-            return;
-
-        default:
-            display_player_zone(player, game);
     }
 
 }
