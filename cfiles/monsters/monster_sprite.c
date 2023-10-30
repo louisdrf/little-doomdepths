@@ -16,40 +16,41 @@ Monster* little_print_monster(Monster* current) {
     int entityWidth = 50;
     int printIndex = 0;
     if (current != NULL) {
-    if (current->isAlive == true) {
+        if (current->isAlive == true) {
 
-        while (current->draw[current->drawIndex] != '\n' && current->draw[current->drawIndex] != '\0') {
-            printf( RED"%c"RESET, current->draw[current->drawIndex]);
-            current->drawIndex++;
-            printIndex++;
-        }
-
-        if (current->draw[current->drawIndex] == '\n') {
-            current->drawIndex++; // Passer à la ligne suivante
-        } else if (current->draw[current->drawIndex] == '\0') {
-            while (printIndex < entityWidth) {
-                printf(" "); // Ajouter des espaces jusqu'à la largeur de l'entité
+            while (current->draw[current->drawIndex] != '\n' && current->draw[current->drawIndex] != '\0') {
+                printf( RED"%c"RESET, current->draw[current->drawIndex]);
+                current->drawIndex++;
                 printIndex++;
             }
+
+            if (current->draw[current->drawIndex] == '\n') {
+                current->drawIndex++; // Passer à la ligne suivante
+            } else if (current->draw[current->drawIndex] == '\0') {
+                while (printIndex < entityWidth) {
+                    printf(" "); // Ajouter des espaces jusqu'à la largeur de l'entité
+                    printIndex++;
+                }
+            }
+
+
+            while (printIndex < entityWidth) {
+                printf(" ");
+                printIndex++;
+            }
+
+            printIndex = 0;
+            return  current->next;
+        } else {
+            little_print_monster(current->next);
         }
 
-
-        while (printIndex < entityWidth) {
-            printf(" ");
-            printIndex++;
-        }
-
-        printIndex = 0;
-        return  current->next;
-    } else {
-        little_print_monster(current->next);
     }
-
-}
 }
 
 
 void print_monsters(Player *player) {
+
     int entityWidth = 50; // Une entité prendra 50 caractères de largeur
 
     Monster *current = player->current_level->monsters;

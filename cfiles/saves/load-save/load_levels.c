@@ -22,6 +22,11 @@ void load_levels(Game *game, int zone_id) {
         game->zoneList[zone_id]->levelList[i] = malloc(sizeof(Level *) * game->zoneList[zone_id]->width);
     }
 
+    game->zoneList[zone_id]->map = calloc(game->zoneList[zone_id]->height, sizeof(int*));
+    for (int i = 0; i < game->zoneList[zone_id]->height; i++) {
+        game->zoneList[zone_id]->map[i] = calloc(game->zoneList[zone_id]->width, sizeof(int*));
+    }
+
 
     int level_id = 0;
 
@@ -45,6 +50,8 @@ void load_levels(Game *game, int zone_id) {
                 game->zoneList[zone_id]->levelList[i][j]->finished = sqlite3_column_int(res, 3);     // niveau terminé ou non
                 game->zoneList[zone_id]->levelList[i][j]->id = level_id;
                 game->zoneList[zone_id]->levelList[i][j]->in_zone_id = sqlite3_column_int(res, 7); // emplacement du niveau dans la zone
+
+                game->zoneList[zone_id]->map[i][j] = 1;
 
                 load_level_monsters(game->zoneList[zone_id]->levelList[i][j], game->id, zone_id);
                 level_id++;

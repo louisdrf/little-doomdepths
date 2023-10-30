@@ -48,6 +48,11 @@ Player *load_player(Game *game) {
         player->currentY = sqlite3_column_int(res, 12);
         player->current_level = game->zoneList[current_zone_id]->levelList[player->currentX][player->currentY];
 
+        player->min_strength = 10;
+        player->max_strength = 20;
+        player->attacks_by_turn = 2;
+        init_player_draw(player);
+
     }
 
     //load_player_inventory();
