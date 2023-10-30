@@ -44,9 +44,9 @@ Player *load_player(Game *game) {
         player->turn = sqlite3_column_int(res, 7);
         int current_zone_id = sqlite3_column_int(res, 8);
         player->current_zone = game->zoneList[current_zone_id];
-        int x = sqlite3_column_int(res, 11);
-        int y = sqlite3_column_int(res, 12);
-        player->current_level = game->zoneList[current_zone_id]->levelList[x][y];
+        //int x = sqlite3_column_int(res, 11);
+        //int y = sqlite3_column_int(res, 12);
+        player->current_level = game->zoneList[current_zone_id]->levelList[0][0];
 
     }
 
