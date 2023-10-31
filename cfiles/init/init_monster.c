@@ -10,6 +10,7 @@
 #include "../../headers/includes/defines.h"
 #include "../../headers/monsters/monster_sprite.h"
 #include "../../headers/weapon/init_weapon.h"
+#include "../../headers/armor/init_armor.h"
 
 #define DEBUG false
 
@@ -44,8 +45,13 @@ Monster *create_monster(Monster *head, int index) {
     new->loot_gold = rand() % MAX_GOLD_LOOT + MIN_GOLD_LOOT;
     new->next = head;
     new->drawIndex = 0;
-    new->monster_weapon= init_weapon("Monster_Loot_epee1", 2, 8, 18, 4, RARE);
+    new->monster_weapon = NULL;
+    new->monster_armor = NULL;
+    Weapon *weapon1 = init_weapon("Monster_Loot_epee1", 2, 8, 18, 4, RARE);
+    Armor *armor1 = init_armor("Monster_Loot_armure1", 10, RARE);
 
+    new->monster_weapon = weapon1;
+    new->monster_armor = armor1;
     char *sprite = return_monster_sprite(new->monster_type);
     new->draw = malloc(strlen(sprite) + 1);
     strcpy(new->draw, sprite);

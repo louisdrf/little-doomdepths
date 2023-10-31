@@ -199,6 +199,8 @@ CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj
  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h
  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/weapon/init_weapon.h
  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h
+ C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/armor/init_armor.h
+ C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h
 
 CMakeFiles/doom.dir/cfiles/init/init_spell.c.obj
  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/init/init_spell.c
@@ -550,6 +552,15 @@ CMakeFiles/doom.dir/cfiles/loop.c.obj
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/stddef.h
  C:/mingw64/x86_64-w64-mingw32/include/stddef.h
  C:/mingw64/x86_64-w64-mingw32/include/sec_api/conio_s.h
+ C:/mingw64/x86_64-w64-mingw32/include/unistd.h
+ C:/mingw64/x86_64-w64-mingw32/include/io.h
+ C:/mingw64/x86_64-w64-mingw32/include/string.h
+ C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h
+ C:/mingw64/x86_64-w64-mingw32/include/process.h
+ C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h
+ C:/mingw64/x86_64-w64-mingw32/include/sys/types.h
+ C:/mingw64/x86_64-w64-mingw32/include/getopt.h
+ C:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h
  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/stdbool.h
  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/defines.h

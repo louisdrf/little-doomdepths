@@ -23,6 +23,15 @@ CMakeFiles/doom.dir/cfiles/loop.c.obj: \
  c\:\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\stddef.h \
  c\:\mingw64\x86_64-w64-mingw32\include\stddef.h \
  c\:\mingw64\x86_64-w64-mingw32\include\sec_api\conio_s.h \
+ c\:\mingw64\x86_64-w64-mingw32\include\unistd.h \
+ c\:\mingw64\x86_64-w64-mingw32\include\io.h \
+ c\:\mingw64\x86_64-w64-mingw32\include\string.h \
+ c\:\mingw64\x86_64-w64-mingw32\include\sec_api\string_s.h \
+ c\:\mingw64\x86_64-w64-mingw32\include\process.h \
+ c\:\mingw64\x86_64-w64-mingw32\include\corecrt_startup.h \
+ c\:\mingw64\x86_64-w64-mingw32\include\sys\types.h \
+ c\:\mingw64\x86_64-w64-mingw32\include\getopt.h \
+ c\:\mingw64\x86_64-w64-mingw32\include\pthread_unistd.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h \
  c\:\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\stdbool.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\defines.h \

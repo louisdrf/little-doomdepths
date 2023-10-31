@@ -192,6 +192,8 @@ CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj: C:/Users/mokra/OneDrive/Docu
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/monsters/monster_sprite.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/weapon/init_weapon.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h \
+  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/armor/init_armor.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h
 
 CMakeFiles/doom.dir/cfiles/init/init_spell.c.obj: C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/init/init_spell.c \
@@ -533,6 +535,15 @@ CMakeFiles/doom.dir/cfiles/loop.c.obj: C:/Users/mokra/OneDrive/Documents/GitHub/
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/stddef.h \
   C:/mingw64/x86_64-w64-mingw32/include/stddef.h \
   C:/mingw64/x86_64-w64-mingw32/include/sec_api/conio_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/unistd.h \
+  C:/mingw64/x86_64-w64-mingw32/include/io.h \
+  C:/mingw64/x86_64-w64-mingw32/include/string.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/process.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sys/types.h \
+  C:/mingw64/x86_64-w64-mingw32/include/getopt.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/stdbool.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/defines.h \
@@ -1466,6 +1477,26 @@ C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/level/display_
 
 C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/loop.c:
 
+C:/mingw64/x86_64-w64-mingw32/include/unistd.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/pshpack2.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/io.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/process.h:
+
+C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/xsaveintrin.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/sys/types.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/apisetcconv.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/getopt.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/dpapi.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h:
+
 C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/loop.h:
 
 C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/player/player_attack.h:
@@ -1599,10 +1630,6 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/wmmintrin.h:
 C:/mingw64/x86_64-w64-mingw32/include/winbase.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/fxsrintrin.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/sys/types.h:
-
-C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/xsaveintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/xsaveoptintrin.h:
 
@@ -1752,11 +1779,7 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/mwaitxintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/10.2.0/include/clzerointrin.h:
 
-C:/mingw64/x86_64-w64-mingw32/include/pshpack2.h:
-
 C:/mingw64/x86_64-w64-mingw32/include/ktmtypes.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/apisetcconv.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/minwinbase.h:
 
@@ -1860,8 +1883,6 @@ C:/mingw64/x86_64-w64-mingw32/include/psdk_inc/_xmitfile.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/bcrypt.h:
 
-C:/mingw64/x86_64-w64-mingw32/include/dpapi.h:
-
 C:/mingw64/x86_64-w64-mingw32/include/winefs.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/winscard.h:
@@ -1901,7 +1922,5 @@ C:/mingw64/x86_64-w64-mingw32/include/sec_api/stralign_s.h:
 C:/mingw64/x86_64-w64-mingw32/include/winsvc.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/imm.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/process.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/math.h:

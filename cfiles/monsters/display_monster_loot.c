@@ -18,25 +18,18 @@ void get_Monster_loot(Player *player){
     unsigned short choice;
     printf("\ndropType : %d\n",dropType);//debug
     choice = display_monster_loot_choice(dropType, player);
-    switch (choice){
-        case 1 : // Équiper l'item
-            use_item(player,dropType);
-            break;
-        case 2 : // stocker l'item
-            stock_item(player,dropType);
-            break;
-
-        case 3 :// Aucune operation
-            printf(RED"Aucun item n'a ete choisi\n"RESET);
-            break;
-        case 4 :
-            printf("\n");
-            return;
-        default:
-            break;
-
+    if(choice == 1){
+        use_item(player,dropType);
     }
-
+    if (choice == 2) {
+        stock_item(player, dropType);
+    }
+    if (choice == 3) {
+        printf(RED"Aucun item n'a ete choisi\n"RESET);
+    }
+    if(choice !=1 && choice !=2 && choice!=3) {
+        printf(RED"Les monstres ne laissent tomber aucun item "RESET);
+    }
 
 
 }
@@ -68,22 +61,24 @@ int display_monster_loot_choice(unsigned short dropType, Player *player){
             if(player->current_level->monsters->monster_armor != NULL){
                 if (player->current_level->monsters->monster_armor->rarity == COMMON) {
                     //case COMMON :
+
                     printf("\n\n");
-                    printf(GREEN"     |   |\n");
-                    printf(GREEN"  ___|   |___ \n");
-                    printf(GREEN" |           |\n");
-                    printf(GREEN" |           |\n");
-                    printf(GREEN" |___________|\n");
+                    printf(GREEN"     |  |\n");
+                    printf(GREEN"  ___|  |___ \n");
+                    printf(GREEN" |          |\n");
+                    printf(GREEN" |          |\n");
+                    printf(GREEN" |__________|\n");
                     printf(RESET"\n\n");
                     yn=1;
-                }else if(player->current_level->monsters->monster_armor->rarity == COMMON) {
+                }
+            if(player->current_level->monsters->monster_armor->rarity == RARE) {
                     //case RARE:
                     printf("\n\n");
-                    printf(BLUE"     |   |\n");
-                    printf(BLUE"  ___|   |___ \n");
-                    printf(BLUE" |           |\n");
-                    printf(BLUE" |           |\n");
-                    printf(BLUE" |___________|\n");
+                    printf(BLUE"     |  |\n");
+                    printf(BLUE"  ___|  |___ \n");
+                    printf(BLUE" |          |\n");
+                    printf(BLUE" |          |\n");
+                    printf(BLUE" |__________|\n");
                     printf(RESET"\n\n");
                     yn=1;
                 }
@@ -101,26 +96,37 @@ int display_monster_loot_choice(unsigned short dropType, Player *player){
         playerEntry = getch();
         playerEntry -= 48;
     }
-
         return playerEntry;
     }else{
-        printf(RED"Les monstres ne laissent tomber aucun item "RESET);
-        return 4; // // Aucune arme ni armure disponible, retourne 4 pour annuler.
+        return 4; // // Aucune arme ni armure disponible, retourne 4.
     }
 }
 
 void use_item(Player *player, unsigned short  dropType){
     switch (dropType) {
+
         case 1 : //Weapon
-            player->current_weapon=player->current_level->monsters->monster_weapon;
-            printf(GREEN"\nArme equipee\n"RESET);
-            player->current_level->monsters->monster_weapon=NULL;
+            if(player->current_level->monsters->monster_weapon != NULL){
+                player->current_weapon=player->current_level->monsters->monster_weapon;
+                player->current_level->monsters->monster_weapon=NULL;
+                printf(GREEN"\nArme equipee\n"RESET);
+
+
+            }else{
+                printf(RED"\nArme du monstre n a pas ete correctement equiper !\n"RESET);
+            }
             break;
+
         case 2 : //Armor
-            player->current_armor=player->current_level->monsters->monster_armor;
-            printf(GREEN"\nArmure equipee.\n"RESET);
-            player->current_level->monsters->monster_armor=NULL;
+            if(player->current_level->monsters->monster_armor != NULL) {
+                player->current_armor = player->current_level->monsters->monster_armor;
+                printf(GREEN"\nArmure equipee.\n"RESET);
+                player->current_level->monsters->monster_armor = NULL;
+            }else{
+                printf(RED"\nArmure du monstre n a pas ete correctement equiper !\n"RESET);
+            }
             break;
+
         default:
             break;
     }
@@ -128,16 +134,27 @@ void use_item(Player *player, unsigned short  dropType){
 }
 void stock_item(Player *player,unsigned short dropType){
     switch (dropType) {
+
         case 1 : //weapon
-            add_item(player,player->current_level->monsters->monster_weapon,NULL);
+            if(player->current_level->monsters->monster_weapon != NULL){
+                add_item(player,player->current_level->monsters->monster_weapon,NULL);
             printf(GREEN"\nArme ajoutee a l'inventaire\n"RESET);
             player->current_level->monsters->monster_weapon=NULL;
+            }else{
+                printf(RED"Arme du monstre n a pas ete correctement stocker !"RESET);
+            }
             break;
+
         case 2 : //armor
-            add_item(player,NULL,player->current_level->monsters->monster_armor);
-            printf(GREEN"\nArmure ajoutee a l'inventaire\n"RESET);
-            player->current_level->monsters->monster_armor=NULL;
+            if(player->current_level->monsters->monster_armor != NULL) {
+                add_item(player, NULL, player->current_level->monsters->monster_armor);
+                printf(GREEN"\nArmure ajoutee a l'inventaire\n"RESET);
+                player->current_level->monsters->monster_armor = NULL;
+            }else{
+                printf(RED"Armure du monstre n a pas ete correctement stocker !"RESET);
+            }
             break;
+
         default:
             break;
     }

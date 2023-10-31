@@ -57,6 +57,11 @@ void display_player_ath(Player *player) {
     }else{
         printf("\nMain nue\n");
     }
+    if(player->current_armor!=NULL){
+        printf("\ncurrent armor :        %s\n",player->current_armor->name);
+    }else{
+        printf("\naucune armure\n");
+    }
 
 }
 
