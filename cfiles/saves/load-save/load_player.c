@@ -8,6 +8,7 @@
 #include "../../../headers/saves/load-save/load_player.h"
 #include "../../../headers/includes/structs.h"
 #include "../../../headers/db_connexion.h"
+#include "../../../headers/saves/load-save/load_player_inventory.h"
 
 
 Player *load_player(Game *game) {
@@ -66,8 +67,9 @@ Player *load_player(Game *game) {
 
     }
 
-    //load_player_inventory();
     sqlite3_finalize(res);
+
+    load_player_inventory(player, &conn);
     sqlite3_close(conn);
 
     return player;

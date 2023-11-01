@@ -35,6 +35,11 @@ void save_inventory(Player *player, sqlite3** conn) {
         printf("\nFailed to prepare/execute query to delete all weapons in player inventory.\n");
         exit(1);
     }
+    sprintf(query, "DELETE FROM Armor WHERE inventory_id=%d;", player->id);
+    if(!prepare_and_exec_query(conn, query)) {
+        printf("\nFailed to prepare/execute query to delete all armors in player inventory.\n");
+        exit(1);
+    }
 
     int isWeaponEquipped = 0;
     int isArmorEquipped = 0;
