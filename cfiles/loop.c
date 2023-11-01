@@ -41,6 +41,7 @@ void launch_loop(Game *game, Player *player) {
                 display_player_zone(player, game);
                 moveEntry = getch();
                 updateMovement(player,moveEntry, game);
+                printf("\nX : %d       Y : %d\n", player->currentX, player->currentY);
 
             } else {
                 display_all(player); // affichage

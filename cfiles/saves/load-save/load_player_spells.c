@@ -40,8 +40,9 @@ void load_player_spells(Player *player, sqlite3 **conn) {
        spell->value = sqlite3_column_int(res, 3);
        spell->mana_cost = sqlite3_column_int(res, 4);
        spell->spell_type = sqlite3_column_int(res, 5);
-
        int isEquipped = sqlite3_column_int(res, 6);
+       spell->id = sqlite3_column_int(res, 7);
+
        if(isEquipped) {
            player->book->spell_equipped[i] = spell;
            i++;

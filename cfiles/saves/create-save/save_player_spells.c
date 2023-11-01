@@ -31,14 +31,14 @@ void save_player_spells_book(Player *player, sqlite3** conn) {
             isEquipped = 1;
         }
 
-        sprintf(query, "insert into Spell(id, player_id, name, value, mana_cost, spell_type, isEquipped)  values (%d, %d, '%s', %d, %d, %d, %d);",
-                current->id,
+        sprintf(query, "insert into Spell(player_id, name, value, mana_cost, spell_type, isEquipped, spell_id)  values (%d, '%s', %d, %d, %d, %d, %d);",
                 player->id,
                 current->name,
                 current->value,
                 current->mana_cost,
                 current->spell_type,
-                isEquipped);
+                isEquipped,
+                current->id);
 
         if(!prepare_and_exec_query(conn, query)) {
             printf("\nFailed to prepare/execute query to update player data.\n");

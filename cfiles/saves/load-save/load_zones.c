@@ -32,7 +32,6 @@ void load_zones(Game *game, sqlite3 **conn) {
         // reconstuire la zone avec les données récupérées
         while (sqlite3_step(res) == SQLITE_ROW) {
             game->zoneList[i] = malloc(sizeof(Zone));
-            game->zoneList[i]->id = i;
             game->zoneList[i]->name = malloc(strlen(sqlite3_column_text(res, 2)) + 1); // nom de la zone
             strcpy(game->zoneList[i]->name, sqlite3_column_text(res, 2));
 
@@ -41,6 +40,7 @@ void load_zones(Game *game, sqlite3 **conn) {
             game->zoneList[i]->difficulty = sqlite3_column_int(res, 5);         // niveau de difficulté
             game->zoneList[i]->height = sqlite3_column_int(res, 6);
             game->zoneList[i]->width = sqlite3_column_int(res, 7);
+            game->zoneList[i]->id = sqlite3_column_int(res, 8);
 
             load_levels(game, i, conn);
             i++;
