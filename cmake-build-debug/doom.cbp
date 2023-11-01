@@ -100,6 +100,9 @@
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/init/init_spell.c">
 			<Option target="doom"/>
 		</Unit>
+		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/init/init_store.c">
+			<Option target="doom"/>
+		</Unit>
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/inventory/display_inventory.c">
 			<Option target="doom"/>
 		</Unit>
@@ -160,6 +163,9 @@
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/sqlite_test.h">
 			<Option target="doom"/>
 		</Unit>
+		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/store/display_store.c">
+			<Option target="doom"/>
+		</Unit>
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/weapon/draw_weapon.c">
 			<Option target="doom"/>
 		</Unit>
@@ -211,6 +217,9 @@
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/init/init_spell.h">
 			<Option target="doom"/>
 		</Unit>
+		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/init/init_store.h">
+			<Option target="doom"/>
+		</Unit>
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/inventory/display_inventory.h">
 			<Option target="doom"/>
 		</Unit>
@@ -260,6 +269,9 @@
 			<Option target="doom"/>
 		</Unit>
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/spell/display_spell.h">
+			<Option target="doom"/>
+		</Unit>
+		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/store/display_store.h">
 			<Option target="doom"/>
 		</Unit>
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/weapon/draw_weapon.h">

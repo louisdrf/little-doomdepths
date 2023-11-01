@@ -85,7 +85,9 @@
 				61,
 				65,
 				67,
-				69
+				69,
+				71,
+				73
 			]
 		}
 	],
@@ -155,7 +157,9 @@
 				61,
 				65,
 				67,
-				69
+				69,
+				71,
+				73
 			]
 		},
 		{
@@ -198,7 +202,9 @@
 				64,
 				66,
 				68,
-				70
+				70,
+				72,
+				74
 			]
 		}
 	],
@@ -591,6 +597,28 @@
 		{
 			"backtrace" : 1,
 			"path" : "headers/armor/draw_armor.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "cfiles/init/init_store.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "headers/init/init_store.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "cfiles/store/display_store.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "headers/store/display_store.h",
 			"sourceGroupIndex" : 1
 		}
 	],

@@ -13,6 +13,8 @@
 
 #define DEBUG true
 
+static int armorIDCounter = 1; // Initialisation du compteur
+
 Armor *init_armor(char *name, int defense, int rarity) {
 
     Armor *armor;
@@ -80,7 +82,7 @@ Armor *randomArmor() {
         armor->rarity = LEGENDARY;
     }
 
-    armor->id = rand(); // Générez un ID aléatoire pour l'armure
+    armor->id = armorIDCounter++; // Générez un ID aléatoire pour l'armure
 
     // Initialisez la défense en fonction de la rareté
     switch (armor->rarity) {

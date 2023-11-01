@@ -19,6 +19,9 @@
 #include "../headers/zones/display_zone.h"
 #include "../headers/spell/display_spell.h"
 #include "../headers/level/display_level_loot.h"
+#include "../headers/store/display_store.h"
+#include "../headers/store/display_store.h"
+
 
 /**
  * manages the game loop
@@ -58,6 +61,9 @@ void launch_loop(Game *game, Player *player) {
 
                     case 's':
                         display_spell_choice_sections(player);
+                        break;
+                    case 'b':
+                        displayStoreEquipment(game->store);
                         break;
                 }
 

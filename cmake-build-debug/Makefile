@@ -320,6 +320,30 @@ cfiles/init/init_spell.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/init/init_spell.c.s
 .PHONY : cfiles/init/init_spell.c.s
 
+cfiles/init/init_store.obj: cfiles/init/init_store.c.obj
+.PHONY : cfiles/init/init_store.obj
+
+# target to build an object file
+cfiles/init/init_store.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/init/init_store.c.obj
+.PHONY : cfiles/init/init_store.c.obj
+
+cfiles/init/init_store.i: cfiles/init/init_store.c.i
+.PHONY : cfiles/init/init_store.i
+
+# target to preprocess a source file
+cfiles/init/init_store.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/init/init_store.c.i
+.PHONY : cfiles/init/init_store.c.i
+
+cfiles/init/init_store.s: cfiles/init/init_store.c.s
+.PHONY : cfiles/init/init_store.s
+
+# target to generate assembly for a file
+cfiles/init/init_store.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/init/init_store.c.s
+.PHONY : cfiles/init/init_store.c.s
+
 cfiles/inventory/display_inventory.obj: cfiles/inventory/display_inventory.c.obj
 .PHONY : cfiles/inventory/display_inventory.obj
 
@@ -776,6 +800,30 @@ cfiles/sqlite_test.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/sqlite_test.c.s
 .PHONY : cfiles/sqlite_test.c.s
 
+cfiles/store/display_store.obj: cfiles/store/display_store.c.obj
+.PHONY : cfiles/store/display_store.obj
+
+# target to build an object file
+cfiles/store/display_store.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/store/display_store.c.obj
+.PHONY : cfiles/store/display_store.c.obj
+
+cfiles/store/display_store.i: cfiles/store/display_store.c.i
+.PHONY : cfiles/store/display_store.i
+
+# target to preprocess a source file
+cfiles/store/display_store.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/store/display_store.c.i
+.PHONY : cfiles/store/display_store.c.i
+
+cfiles/store/display_store.s: cfiles/store/display_store.c.s
+.PHONY : cfiles/store/display_store.s
+
+# target to generate assembly for a file
+cfiles/store/display_store.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/store/display_store.c.s
+.PHONY : cfiles/store/display_store.c.s
+
 cfiles/weapon/draw_weapon.obj: cfiles/weapon/draw_weapon.c.obj
 .PHONY : cfiles/weapon/draw_weapon.obj
 
@@ -977,6 +1025,9 @@ help:
 	@echo ... cfiles/init/init_spell.obj
 	@echo ... cfiles/init/init_spell.i
 	@echo ... cfiles/init/init_spell.s
+	@echo ... cfiles/init/init_store.obj
+	@echo ... cfiles/init/init_store.i
+	@echo ... cfiles/init/init_store.s
 	@echo ... cfiles/inventory/display_inventory.obj
 	@echo ... cfiles/inventory/display_inventory.i
 	@echo ... cfiles/inventory/display_inventory.s
@@ -1034,6 +1085,9 @@ help:
 	@echo ... cfiles/sqlite_test.obj
 	@echo ... cfiles/sqlite_test.i
 	@echo ... cfiles/sqlite_test.s
+	@echo ... cfiles/store/display_store.obj
+	@echo ... cfiles/store/display_store.i
+	@echo ... cfiles/store/display_store.s
 	@echo ... cfiles/weapon/draw_weapon.obj
 	@echo ... cfiles/weapon/draw_weapon.i
 	@echo ... cfiles/weapon/draw_weapon.s

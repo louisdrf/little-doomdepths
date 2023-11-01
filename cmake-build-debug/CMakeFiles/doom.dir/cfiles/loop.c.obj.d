@@ -50,4 +50,6 @@ CMakeFiles/doom.dir/cfiles/loop.c.obj: \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\spell\display_spell.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\level\display_level_loot.h
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\level\display_level_loot.h \
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\store\display_store.h \
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h

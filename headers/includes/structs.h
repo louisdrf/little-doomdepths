@@ -28,6 +28,13 @@ enum monster_type {
     GHOST,
     DRAGON
 };
+
+typedef enum {
+    ARME,
+    ARMURE,
+    //OBJET_SPECIAL
+} TypeStore;
+
 static const char *monster_string[] = {
         "GRIM", "SKELETON", "GHOST", "DRAGON",
 };
@@ -183,7 +190,19 @@ typedef struct {
     Book*               book;               // livre de sorts du joueur
 
 } Player;
+typedef struct Store Store;
+struct Store {
+    unsigned short id;
+    int prix;
+    TypeStore type;
+    union {
+        Weapon*             arme;  // Pour les armes
+        Armor*              armure; // Pour les armures
+        // OBJET_SPECIAL
+    } contenu;
+    Store*           next;  // Pointeur vers le prochain élément dans le magasin
 
+} ;
 
 typedef struct {
 
@@ -192,8 +211,10 @@ typedef struct {
     Zone*                   zoneList[NBZONES];              // tableaux des zones de la partie
     bool                    isRunning;                      // bool d'état de la partie
     int                     display_zones_index;            // id de la zone actuelle en affichage
-
+    Store*                  store;
 } Game;
+
+
 
 
 #endif //DOOM_STRUCTS_H

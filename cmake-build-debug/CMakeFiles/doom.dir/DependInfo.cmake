@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/store/display_store.c" "CMakeFiles/doom.dir/cfiles/Store/display_store.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/Store/display_store.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/armor/draw_armor.c" "CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/armor/init_armor.c" "CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/display.c" "CMakeFiles/doom.dir/cfiles/display.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/display.c.obj.d"
@@ -16,6 +17,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/init/init_level.c" "CMakeFiles/doom.dir/cfiles/init/init_level.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/init/init_level.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/init/init_monster.c" "CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/init/init_spell.c" "CMakeFiles/doom.dir/cfiles/init/init_spell.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/init/init_spell.c.obj.d"
+  "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/init/init_store.c" "CMakeFiles/doom.dir/cfiles/init/init_store.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/init/init_store.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/inventory/display_inventory.c" "CMakeFiles/doom.dir/cfiles/inventory/display_inventory.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/inventory/display_inventory.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/inventory/display_inventory_armors.c" "CMakeFiles/doom.dir/cfiles/inventory/display_inventory_armors.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/inventory/display_inventory_armors.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/inventory/display_inventory_potions.c" "CMakeFiles/doom.dir/cfiles/inventory/display_inventory_potions.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/inventory/display_inventory_potions.c.obj.d"

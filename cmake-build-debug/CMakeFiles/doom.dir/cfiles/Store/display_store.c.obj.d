@@ -1,5 +1,5 @@
-CMakeFiles/doom.dir/cfiles/game.c.obj: \
- C\:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\game.c \
+CMakeFiles/doom.dir/cfiles/store/display_store.c.obj: \
+ C\:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\store\display_store.c \
  c\:\mingw64\x86_64-w64-mingw32\include\stdio.h \
  c\:\mingw64\x86_64-w64-mingw32\include\corecrt_stdio_config.h \
  c\:\mingw64\x86_64-w64-mingw32\include\corecrt.h \
@@ -19,20 +19,9 @@ CMakeFiles/doom.dir/cfiles/game.c.obj: \
  c\:\mingw64\x86_64-w64-mingw32\include\crtdefs.h \
  c\:\mingw64\x86_64-w64-mingw32\include\sec_api\stdlib_s.h \
  c\:\mingw64\x86_64-w64-mingw32\include\malloc.h \
- c\:\mingw64\x86_64-w64-mingw32\include\time.h \
- c\:\mingw64\x86_64-w64-mingw32\include\_timeval.h \
- c\:\mingw64\x86_64-w64-mingw32\include\sys\timeb.h \
- c\:\mingw64\x86_64-w64-mingw32\include\sec_api\sys\timeb_s.h \
- c\:\mingw64\x86_64-w64-mingw32\include\pthread_time.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\game.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes/structs.h \
+ c\:\mingw64\x86_64-w64-mingw32\include\string.h \
+ c\:\mingw64\x86_64-w64-mingw32\include\sec_api\string_s.h \
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h \
  c\:\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\stdbool.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes/defines.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\zones\define_zones.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\defines.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\init\init_level.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\zones\init_zones.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\init\init_store.h
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\zones\define_zones.h

@@ -75,5 +75,9 @@ add_executable(doom cfiles/main.c
         headers/weapon/draw_weapon.h
         cfiles/armor/draw_armor.c
         headers/armor/draw_armor.h
+        cfiles/init/init_store.c
+        headers/init/init_store.h
+        cfiles/store/display_store.c
+        headers/store/display_store.h
 )
 

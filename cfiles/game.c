@@ -11,7 +11,7 @@
 #include "../headers/includes/defines.h"
 #include "../headers/init/init_level.h"
 #include "../headers/zones/init_zones.h"
-
+#include "../headers/init/init_store.h"
 #define DEBUG true
 
 Game *init_game() {
@@ -34,8 +34,12 @@ Game *init_game() {
        init_zones(game);
 
        /////////////////
-
-
+       // init the linked list of store for the game
+Store *item = NULL;
+for(int j = 1; j < MAX_STORE_ITEMS+1; j++ ){
+    item = create_store(item,j);
+}
+    game->store = item;
 #if DEBUG
     if(game->zoneList[0] == NULL) printf("Error while creating zone in game.");
 #endif
@@ -43,7 +47,6 @@ Game *init_game() {
 #if DEBUG
         printf("\n\nGame initialized.\n");
 #endif
-
     return game;
 }
 
@@ -59,6 +62,7 @@ void free_game(Game *game) {
     if(game != NULL) {
         free_zones(game);
         free(game->player_name);
+        free(game->store);
         free(game);
     }
 

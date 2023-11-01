@@ -9300,7 +9300,7 @@ static void zipfileMtimeToDos(ZipfileCDS *pCds, u32 mUnixTime){
 ** final value of (*ppEntry) undefined.
 */
 static int zipfileGetEntry(
-  ZipfileTab *pTab,               /* Store any error message here */
+  ZipfileTab *pTab,               /* store any error message here */
   const u8 *aBlob,                /* Pointer to in-memory file image */
   int nBlob,                      /* Size of aBlob[] in bytes */
   FILE *pFile,                    /* If aBlob==0, read from this file */
@@ -9443,7 +9443,7 @@ static void zipfileFree(void *p) {
 ** If an error occurs, an error code is left in pCtx instead.
 */
 static void zipfileInflate(
-  sqlite3_context *pCtx,          /* Store result here */
+  sqlite3_context *pCtx,          /* store result here */
   const u8 *aIn,                  /* Compressed data */
   int nIn,                        /* Size of buffer aIn[] in bytes */
   int nOut                        /* Expected output size */
@@ -21711,12 +21711,12 @@ static void import_append_char(ImportCtx *p, int c){
 ** with the option of having a separator other than ",".
 **
 **   +  Input comes from p->in.
-**   +  Store results in p->z of length p->n.  Space to hold p->z comes
+**   +  store results in p->z of length p->n.  Space to hold p->z comes
 **      from sqlite3_malloc64().
 **   +  Use p->cSep as the column separator.  The default is ",".
 **   +  Use p->rSep as the row separator.  The default is "\n".
 **   +  Keep track of the line number in p->nLine.
-**   +  Store the character that terminates the field in p->cTerm.  Store
+**   +  store the character that terminates the field in p->cTerm.  store
 **      EOF on end-of-file.
 **   +  Report syntax errors on stderr
 */
@@ -21801,12 +21801,12 @@ static char *SQLITE_CDECL csv_read_one_field(ImportCtx *p){
 /* Read a single field of ASCII delimited text.
 **
 **   +  Input comes from p->in.
-**   +  Store results in p->z of length p->n.  Space to hold p->z comes
+**   +  store results in p->z of length p->n.  Space to hold p->z comes
 **      from sqlite3_malloc64().
 **   +  Use p->cSep as the column separator.  The default is "\x1F".
 **   +  Use p->rSep as the row separator.  The default is "\x1E".
 **   +  Keep track of the row number in p->nLine.
-**   +  Store the character that terminates the field in p->cTerm.  Store
+**   +  store the character that terminates the field in p->cTerm.  store
 **      EOF on end-of-file.
 **   +  Report syntax errors on stderr
 */
@@ -26615,7 +26615,7 @@ static int do_meta_command(char *zLine, ShellState *p){
     freeText(&s);
     if( rc ) return shellDatabaseError(p->db);
 
-    /* Run the SQL statement prepared by the above block. Store the results
+    /* Run the SQL statement prepared by the above block. store the results
     ** as an array of nul-terminated strings in azResult[].  */
     nRow = nAlloc = 0;
     azResult = 0;

@@ -10,6 +10,7 @@
 #include "../../headers/includes/structs.h"
 
 #define DEBUG true
+static int weaponIDCounter = 1; // Initialisation du compteur
 
 Weapon *init_weapon(char *name, int att_by_turn, int min_strength, int max_strength, int mana_cost, int rarity) {
 
@@ -173,7 +174,7 @@ Weapon *randomWeapon() {
         weapon->rarity = LEGENDARY;
     }
 
-    weapon->id = rand(); // Générez un ID aléatoire pour l'arme
+    weapon->id = weaponIDCounter++; // Générez un ID aléatoire pour l'arme
 
     // Initialisez les autres champs de l'arme en fonction de la rareté
     switch (weapon->rarity) {

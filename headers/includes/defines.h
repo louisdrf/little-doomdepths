@@ -23,5 +23,6 @@
 
 #define NBOBJECTS_MAX 10
 #define NBSPELL_MAX 3
+#define MAX_STORE_ITEMS 4
 
 #endif //DOOM_DEFINES_H
