@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 #include "../../headers/includes/structs.h"
 
 #define DEBUG true
@@ -147,4 +148,72 @@ int get_first_level_loot_armor_free_space(Level *level) {
     }
 
     return i; // on retourne la case suivante
+}
+
+Weapon *randomWeapon() {
+    Weapon *weapon;
+    weapon= malloc(sizeof(Weapon));
+
+    if(weapon == NULL) {
+#if DEBUG
+        printf("Allocating memory for weapon failed.\n");
+#endif
+        exit(1);
+    }
+
+    int rarityRoll = rand() % 95;
+
+    if (rarityRoll < 60) {
+        weapon->rarity = COMMON;
+    } else if (rarityRoll < 85) {
+        weapon->rarity = RARE;
+    } else if (rarityRoll < 95) {
+        weapon->rarity = EPIC;
+    } else {
+        weapon->rarity = LEGENDARY;
+    }
+
+    weapon->id = rand(); // Générez un ID aléatoire pour l'arme
+
+    // Initialisez les autres champs de l'arme en fonction de la rareté
+    switch (weapon->rarity) {
+        case COMMON:
+            weapon->name = "Common Sword";
+            weapon->min_strength = 5;
+            weapon->max_strength = 15;
+            weapon->attacks_by_turn = rand() % 2 + 1; // De 1 à 2 attaques par tour
+            weapon->mana_cost = rand() % 11; // Coût en mana de 0 à 10
+
+            //weapon->draw = "";
+            break;
+        case RARE:
+            weapon->name = "Rare Bow";
+            weapon->min_strength = 10;
+            weapon->max_strength = 20;
+            weapon->attacks_by_turn = rand() % 3 + 1; // De 1 à 3 attaques par tour
+            weapon->mana_cost = rand() % 16; // Coût en mana de 0 à 15
+
+            //weapon->draw = "";
+            break;
+        case EPIC:
+            weapon->name = "Epic Axe";
+            weapon->min_strength = 15;
+            weapon->max_strength = 25;
+            weapon->attacks_by_turn = rand() % 3 + 1; // De 1 à 3 attaques par tour
+            weapon->mana_cost = rand() % 21; // Coût en mana de 0 à 20
+
+            //weapon->draw = "";
+            break;
+        case LEGENDARY:
+            weapon->name = "Legendary Staff";
+            weapon->min_strength = 20;
+            weapon->max_strength = 30;
+            weapon->attacks_by_turn = rand() % 3 + 1; // De 1 à 3 attaques par tour
+            weapon->mana_cost = rand() % 21; // Coût en mana de 0 à 20
+
+            //weapon->draw = "";
+            break;
+    }
+
+return weapon;
 }

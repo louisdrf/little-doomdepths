@@ -54,6 +54,11 @@ CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj: C:/Users/mokra/OneDrive/Docum
   C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
   C:/mingw64/x86_64-w64-mingw32/include/string.h \
   C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/time.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_timeval.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h
 
 CMakeFiles/doom.dir/cfiles/display.c.obj: C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/display.c \
@@ -956,6 +961,11 @@ CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj: C:/Users/mokra/OneDrive/Doc
   C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
   C:/mingw64/x86_64-w64-mingw32/include/string.h \
   C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/time.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_timeval.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h \
   C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h
 
 CMakeFiles/doom.dir/cfiles/zones/create_zone.c.obj: C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/zones/create_zone.c \
@@ -1442,6 +1452,16 @@ C:/mingw64/x86_64-w64-mingw32/include/reason.h:
 
 C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/armor/init_armor.h:
 
+C:/mingw64/x86_64-w64-mingw32/include/time.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/_timeval.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h:
+
+C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/spell/display_spell.h:
+
 C:/mingw64/x86_64-w64-mingw32/include/sec_api/conio_s.h:
 
 C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/display.c:
@@ -1455,16 +1475,6 @@ C:/mingw64/x86_64-w64-mingw32/include/stddef.h:
 C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/display.h:
 
 C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/player/player.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/time.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/_timeval.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h:
-
-C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/spell/display_spell.h:
 
 C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/init/init_level.h:
 

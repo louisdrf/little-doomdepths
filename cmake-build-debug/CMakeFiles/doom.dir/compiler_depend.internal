@@ -56,6 +56,11 @@ CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj
  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h
  C:/mingw64/x86_64-w64-mingw32/include/string.h
  C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h
+ C:/mingw64/x86_64-w64-mingw32/include/time.h
+ C:/mingw64/x86_64-w64-mingw32/include/_timeval.h
+ C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h
+ C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h
+ C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h
  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h
 
 CMakeFiles/doom.dir/cfiles/display.c.obj
@@ -985,6 +990,11 @@ CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj
  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h
  C:/mingw64/x86_64-w64-mingw32/include/string.h
  C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h
+ C:/mingw64/x86_64-w64-mingw32/include/time.h
+ C:/mingw64/x86_64-w64-mingw32/include/_timeval.h
+ C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h
+ C:/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h
+ C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h
  C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/includes/structs.h
 
 CMakeFiles/doom.dir/cfiles/zones/create_zone.c.obj
