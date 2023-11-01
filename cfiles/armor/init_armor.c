@@ -89,15 +89,15 @@ Armor *randomArmor() {
             armor->name = "Common Armor";
             break;
         case RARE:
-            armor->defense = rand() % 21; // Points de défense de 0 à 20 pour une armure rare
+            armor->defense = rand() % 11 + 20; // Points de défense de 11 à 20 pour une armure rare
             armor->name = "Rare Plate";
             break;
         case EPIC:
-            armor->defense = rand() % 31; // Points de défense de 0 à 30 pour une armure épique
+            armor->defense = rand() % 20 + 30; // Points de défense de 20 à 30 pour une armure épique
             armor->name = "Epic Shield";
             break;
         case LEGENDARY:
-            armor->defense = rand() % 41; // Points de défense de 0 à 40 pour une armure légendaire
+            armor->defense = rand() % 30 + 40; // Points de défense de 0 à 40 pour une armure légendaire
             armor->name = "Legendary Helmet";
             break;
     }

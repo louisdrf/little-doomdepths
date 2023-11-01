@@ -182,7 +182,7 @@ Weapon *randomWeapon() {
             weapon->min_strength = 5;
             weapon->max_strength = 15;
             weapon->attacks_by_turn = rand() % 2 + 1; // De 1 à 2 attaques par tour
-            weapon->mana_cost = rand() % 11; // Coût en mana de 0 à 10
+            weapon->mana_cost = rand() % 4 + 11; // Coût en mana de 4 à 11
 
             //weapon->draw = "";
             break;
@@ -191,7 +191,7 @@ Weapon *randomWeapon() {
             weapon->min_strength = 10;
             weapon->max_strength = 20;
             weapon->attacks_by_turn = rand() % 3 + 1; // De 1 à 3 attaques par tour
-            weapon->mana_cost = rand() % 16; // Coût en mana de 0 à 15
+            weapon->mana_cost = rand() % 11 + 15; // Coût en mana de 11 à 15
 
             //weapon->draw = "";
             break;
@@ -200,7 +200,7 @@ Weapon *randomWeapon() {
             weapon->min_strength = 15;
             weapon->max_strength = 25;
             weapon->attacks_by_turn = rand() % 3 + 1; // De 1 à 3 attaques par tour
-            weapon->mana_cost = rand() % 21; // Coût en mana de 0 à 20
+            weapon->mana_cost = rand() % 15 + 20; // Coût en mana de 15 à 20
 
             //weapon->draw = "";
             break;

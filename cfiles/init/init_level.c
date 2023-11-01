@@ -20,7 +20,7 @@
  * @return
  */
 Level *init_level(int id) {
-
+    int randnbloot =0;
     // create a level
     Level *level = malloc(sizeof(Level));
     if(level == NULL) {
@@ -32,7 +32,8 @@ Level *init_level(int id) {
 
     // init the linked list of monsters for the level
     Monster *first_monster = NULL;
-    level->nbMonsters = rand() % NBMONSTERS_MAX + NBMONSTERS_MIN; // nombre de monstres pour le niveau
+    level->nbMonsters = rand() % NBMONSTERS_MAX + NBMONSTERS_MIN; // nombre de monstres pour le niveau;
+
 
     for(int j = 1; j < level->nbMonsters + 1; j++) {
         first_monster = create_monster(first_monster, j);
@@ -46,22 +47,20 @@ Level *init_level(int id) {
 
     // Initialise le tableau loot_weapon avec des pointeurs NULL
 
-    Weapon *weapon1 = init_weapon("Level_Loot_epee1", 2, 8, 18, 4, RARE);
-    Armor *armor1 = init_armor("Level_Loot_armure1", 10, RARE);
-    Weapon *weapon2 = init_weapon("Level_Loot_epee2", 2, 8, 18, 4, RARE);
-    Armor *armor2 = init_armor("Level_Loot_armure2", 10, RARE);
-
     for(int i =0; i<MAX_LEVEL_LOOT_ITEM;i++){
         level->loot_weapon[i] = NULL;
         level->loot_armor[i] = NULL;
     }
-
-    add_loot_item(level, weapon1, NULL);
-    add_loot_item(level, weapon2, NULL);
-    add_loot_item(level, NULL, armor1);
-    add_loot_item(level, NULL, armor2);
-
-
+    // random weapon/armor generation by level
+randnbloot= rand() % (id + 1); // Generate a random number between 0 and 'id'.
+printf("level id : %d | randnbloot : %d\n",level->id, randnbloot);
+for(int l = randnbloot; l > 0; l--){
+    if(l % 2 == 0){
+        add_loot_item(level, randomWeapon(), NULL);
+    }else{
+        add_loot_item(level, NULL,  randomArmor());
+    }
+}
 #if DEBUG
 printf("Level %d correctly initialized.\n", level->id);
 #endif
