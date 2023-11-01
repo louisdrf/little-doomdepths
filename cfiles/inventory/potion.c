@@ -142,9 +142,6 @@ void give_player_potion(Player *player, unsigned short type) {
 Potion *createPotion(const char* name, const char* sprite, unsigned short healthValue, unsigned short manaValue) {
 
     Potion *potion = malloc( sizeof(Potion));
-    if(potion == NULL) {
-        printf("allocate memory for potion failed\n");
-    }
 
     if (potion != NULL) {
         potion->name = malloc(strlen(name) + 1);
@@ -156,7 +153,7 @@ Potion *createPotion(const char* name, const char* sprite, unsigned short health
             potion->healthValue = healthValue;
             potion->manaValue = manaValue;
         } else {
-            printf("Allocation de mémoire pour le nom ou le sprite de la potion a échoué.\n");
+            printf("allocate memory for potion sprite or name failed.\n");
             if (potion->name != NULL) {
                 free(potion->name);
             }
@@ -167,7 +164,7 @@ Potion *createPotion(const char* name, const char* sprite, unsigned short health
             potion = NULL;
         }
     } else {
-        printf("Allocation de mémoire pour la potion a échoué.\n");
+        printf("allocate memory for potion failed.\n");
     }
 
     return potion;

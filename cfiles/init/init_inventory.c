@@ -25,6 +25,9 @@ Inventory *init_inventory()
         exit(1);
     }
 
+    inventory->manaPotion = NULL;
+    inventory->healthPotion = NULL;
+
     inventory->limObjects = NBOBJECTS_MAX;
 
 #if DEBUG

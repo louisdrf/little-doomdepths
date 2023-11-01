@@ -36,4 +36,16 @@ void load_player_inventory(Player *player, sqlite3 **conn) {
         }
     }
     sqlite3_finalize(res);
+
+    load_player_inventory_weapons(player, &conn);
+    load_player_inventory_armors(player, &conn);
+}
+
+
+void load_player_inventory_weapons(Player *player, sqlite3 **conn) {
+
+}
+
+void load_player_inventory_armors(Player *player, sqlite3 **conn) {
+
 }
