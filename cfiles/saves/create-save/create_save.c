@@ -16,13 +16,14 @@
 void create_save(Game *game, Player *player) {
 
     sqlite3 *conn = connect_to_db();
+    char query[100];
+    sprintf(query, "UPDATE Game SET hasSave=1 WHERE id=%d;", game->id);
+    prepare_and_exec_query(&conn, query);
 
     save_player(player, &conn);
     save_inventory(player, &conn);
     save_player_spells_book(player, &conn);
     save_zones(game, &conn);                // sauvegarde zones + leurs niveaux
-
-    sqlite3_close(conn);
 }
 
 

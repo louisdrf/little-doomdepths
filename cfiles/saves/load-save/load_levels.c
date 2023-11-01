@@ -10,9 +10,8 @@
 #include "../../../headers/db_connexion.h"
 #include "../../../headers/saves/load-save/load_level_monsters.h"
 
-void load_levels(Game *game, int zone_id) {
+void load_levels(Game *game, int zone_id, sqlite3 **conn) {
 
-    sqlite3 *conn = connect_to_db();
     sqlite3_stmt *res;
     const char *tail;
     char query[200];
@@ -23,7 +22,7 @@ void load_levels(Game *game, int zone_id) {
     }
 
     game->zoneList[zone_id]->map = calloc(game->zoneList[zone_id]->height, sizeof(int*));
-    for (int i = 0; i < game->zoneList[zone_id]->height; i++) {
+    for (int i = 0; i < game->zoneList[zone_id]->height; i++) {                                                             //  allouer la Map pour la zone
         game->zoneList[zone_id]->map[i] = calloc(game->zoneList[zone_id]->width, sizeof(int*));
     }
 
@@ -32,13 +31,13 @@ void load_levels(Game *game, int zone_id) {
 
     for(int i = 0; i < game->zoneList[zone_id]->height; i++) {
         for(int j = 0; j < game->zoneList[zone_id]->width; j++) {
-            sprintf(query, "SELECT * FROM Level WHERE player_id=%d AND zone_id=%d AND height_index=%d AND width_index=%d", game->id, zone_id, i, j); // on recupere le niveau pour la zone[i][j]
+            sprintf(query, "SELECT * FROM Level WHERE player_id=%d AND zone_id=%d AND height_index=%d AND width_index=%d;", game->id, zone_id, i, j); // on recupere le niveau pour la zone[i][j]
 
-            //printf("query : %s", query);
-            int error = sqlite3_prepare_v2(conn, query, -1, &res, &tail);
+            printf("LEVEL : %s", query);
+            int error = sqlite3_prepare_v2(*conn, query, -1, &res, &tail);
             if (error != SQLITE_OK) {
-                fprintf(stderr, "Failed to execute SQL query to select level %d %d for zone %d: %s\n", i, j, zone_id, sqlite3_errmsg(conn));
-                sqlite3_close(conn);
+                fprintf(stderr, "Failed to execute SQL query to select level %d %d for zone %d: %s\n", i, j, zone_id, sqlite3_errmsg(*conn));
+                sqlite3_close(*conn);
                 return;
             }
 
@@ -49,11 +48,10 @@ void load_levels(Game *game, int zone_id) {
                 game->zoneList[zone_id]->levelList[i][j]->nbMonsters = sqlite3_column_int(res, 2);   // nombre de monstres dans le niveau
                 game->zoneList[zone_id]->levelList[i][j]->finished = sqlite3_column_int(res, 3);     // niveau terminé ou non
                 game->zoneList[zone_id]->levelList[i][j]->id = level_id;
-                game->zoneList[zone_id]->levelList[i][j]->in_zone_id = sqlite3_column_int(res, 7); // emplacement du niveau dans la zone
 
                 game->zoneList[zone_id]->map[i][j] = 1;
 
-                load_level_monsters(game->zoneList[zone_id]->levelList[i][j], game->id, zone_id);
+                load_level_monsters(game->zoneList[zone_id]->levelList[i][j], game->id, i, j, zone_id, conn);
                 level_id++;
             }
             else {
@@ -63,7 +61,8 @@ void load_levels(Game *game, int zone_id) {
     }
     sqlite3_finalize(res); // Finaliser la requête
 
-    //printf("\nNiveaux de la zone recuperes.\n");
+
+    printf("\nNiveaux de la zone recuperes.\n");
 
 }
 

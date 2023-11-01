@@ -5,12 +5,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "../../../headers/saves/load-save/load_game.h"
-#include "../../../headers/includes/structs.h"
 #include "../../../headers/saves/load-save/load_zones.h"
+#include "../../../sqlite3/sqlite3.h"
+#include "../../../headers/db_connexion.h"
 
 
 Game *load_game(int game_id) {
 
+    sqlite3 *conn = connect_to_db();
     Game *game;
     game = malloc(sizeof(Game));
 
@@ -25,7 +27,9 @@ Game *load_game(int game_id) {
 
     // INIT THE GAME ZONES
 
-    load_zones(game);
+    load_zones(game, &conn);
+
+    printf("\nRecup all zones done\n");
 
     /////////////////
 

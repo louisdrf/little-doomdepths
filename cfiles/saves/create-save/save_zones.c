@@ -26,7 +26,8 @@ void save_zones(Game *game, sqlite3** conn) {
         printf("\ninsert zone %d", game->zoneList[i]->id);
 
             /////////// INSERT ZONE  //////////////
-            sprintf(query, "INSERT INTO Zone(player_id, name, multiplicator, finished, difficulty, height, width) values(%d, '%s', %lf, %d, %d, %d, %d);",
+            sprintf(query, "INSERT INTO Zone(id, player_id, name, multiplicator, finished, difficulty, height, width) values(%d, %d, '%s', %lf, %d, %d, %d, %d);",
+                    i,
                     game->id,
                     game->zoneList[i]->name,
                     game->zoneList[i]->multiplicator,
@@ -75,7 +76,7 @@ void save_zones(Game *game, sqlite3** conn) {
 #endif
 
                     // supprimer les monstres du niveau avant de tout recréer
-                    sprintf(query, "DELETE FROM Monster WHERE level_id=%d AND player_id=%d AND zone_id=%d;", level_id, game->id, game->zoneList[i]->id);
+                    sprintf(query, "DELETE FROM Monster WHERE level_height_index=%d AND level_width_index=%d AND player_id=%d AND zone_id=%d;", j, k, game->id, game->zoneList[i]->id);
                     if(!prepare_and_exec_query(conn, query)) {
                         printf("\nFailed to prepare/execute query to delete all monsters in level %d.\n", level_id);
                         exit(1);
@@ -88,9 +89,9 @@ void save_zones(Game *game, sqlite3** conn) {
                     while(current != NULL)
                     {
                         printf("\ninsert monster %d", current->id);
-                        sprintf(query, "INSERT INTO Monster(level_id, monster_type, lifepoints, lifepoints_max, min_strength, max_strength, defense, attacks_by_turn, attacks_left, turn, isAlive, loot_gold, player_id, zone_id, monster_id) "
-                                       "values(%d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d);",
-                                game->zoneList[i]->levelList[j][k]->in_zone_id,
+                        sprintf(query, "INSERT INTO Monster(level_height_index, level_width_index, monster_type, lifepoints, lifepoints_max, min_strength, max_strength, defense, attacks_by_turn, attacks_left, turn, isAlive, loot_gold, player_id, zone_id, monster_id) "
+                                       "values(%d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d);",
+                                j , k,
                                 current->monster_type,
                                 current->lifepoints,
                                 current->lifepoints_max,

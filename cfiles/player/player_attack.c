@@ -25,8 +25,6 @@ void player_attack(Player *player, int idMonster) {
     }
 
 
-
-
     Monster *target = getTargetMonster(player, idMonster);
     if(target == NULL) {
         printf("Monster targeting failed.\n");

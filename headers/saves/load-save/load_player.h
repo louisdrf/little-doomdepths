@@ -6,6 +6,7 @@
 #define DOOM_LOAD_PLAYER_H
 
 #include "../../player/player.h"
+#include "../../../sqlite3/sqlite3.h"
 
 Player *load_player(Game *game);
 

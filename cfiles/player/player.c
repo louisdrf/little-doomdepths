@@ -206,7 +206,6 @@ void add_player_name_to_game(Game *game, Player *player) {
  */
 void updateMovement(Player *player, char command, Game* game) {
 
-    printf("call movement");
     Zone* zone = player->current_zone;
 
     switch (command) {
