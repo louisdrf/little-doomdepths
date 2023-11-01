@@ -9,5 +9,7 @@
 #include "../../../sqlite3/sqlite3.h"
 
 void load_player_inventory(Player *player, sqlite3 **conn);
+void load_player_inventory_weapons(Player *player, sqlite3 **conn);
+void load_player_inventory_armors(Player *player, sqlite3 **conn);
 
 #endif //DOOM_LOAD_PLAYER_INVENTORY_H
