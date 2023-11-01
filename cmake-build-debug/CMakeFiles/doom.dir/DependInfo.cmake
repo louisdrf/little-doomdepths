@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/armor/draw_armor.c" "CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/armor/init_armor.c" "CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/display.c" "CMakeFiles/doom.dir/cfiles/display.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/display.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/game.c" "CMakeFiles/doom.dir/cfiles/game.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/game.c.obj.d"
@@ -34,6 +35,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/player/player_spell.c" "CMakeFiles/doom.dir/cfiles/player/player_spell.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/player/player_spell.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/spell/display_spell.c" "CMakeFiles/doom.dir/cfiles/spell/display_spell.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/spell/display_spell.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/sqlite_test.c" "CMakeFiles/doom.dir/cfiles/sqlite_test.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/sqlite_test.c.obj.d"
+  "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/weapon/draw_weapon.c" "CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/weapon/init_weapon.c" "CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/zones/create_zone.c" "CMakeFiles/doom.dir/cfiles/zones/create_zone.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/zones/create_zone.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/zones/display_zone.c" "CMakeFiles/doom.dir/cfiles/zones/display_zone.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/zones/display_zone.c.obj.d"

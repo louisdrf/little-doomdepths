@@ -10,10 +10,12 @@
 #include "../../headers/includes/colors.h"
 #include "../../headers/monsters/display_monster_loot.h"
 #include"../../headers/inventory/inventory.h"
+#include"../../headers/weapon/draw_weapon.h"
+#include"../../headers/armor//draw_armor.h"
 
 void get_Monster_loot(Player *player){
 
-    unsigned short dropType = rand() % 3 + 1;
+    unsigned short dropType =  rand() % 3 + 1;
     //rand() % 3 + 1;
     unsigned short choice;
     printf("\ndropType : %d\n",dropType);//debug
@@ -40,49 +42,15 @@ int display_monster_loot_choice(unsigned short dropType, Player *player){
     switch (dropType) {
         case 1: // Weapon
             if(player->current_level->monsters->monster_weapon != NULL){
-                if (player->current_level->monsters->monster_weapon->rarity==COMMON) {
-                    //case COMMON :
-                    printf("\n\n");
-                    printf(GREEN" ----|)>>>>>>>>>>\n");
-                    printf(RESET"\n\n");
-                    yn =1;
-                }
-                if (player->current_level->monsters->monster_weapon->rarity==RARE) {
-                    //case RARE:
-                    printf("\n\n");
-                    printf(BLUE" ----|)>>>>>>>>>>-\n");
-                    printf(RESET"\n\n");
-                    yn=1;
-                }
+                drawWeapon(player->current_level->monsters->monster_weapon);
+                yn=1;
             }
             break;
 
         case 2: // Armor
             if(player->current_level->monsters->monster_armor != NULL){
-                if (player->current_level->monsters->monster_armor->rarity == COMMON) {
-                    //case COMMON :
-
-                    printf("\n\n");
-                    printf(GREEN"     |  |\n");
-                    printf(GREEN"  ___|  |___ \n");
-                    printf(GREEN" |          |\n");
-                    printf(GREEN" |          |\n");
-                    printf(GREEN" |__________|\n");
-                    printf(RESET"\n\n");
-                    yn=1;
-                }
-            if(player->current_level->monsters->monster_armor->rarity == RARE) {
-                    //case RARE:
-                    printf("\n\n");
-                    printf(BLUE"     |  |\n");
-                    printf(BLUE"  ___|  |___ \n");
-                    printf(BLUE" |          |\n");
-                    printf(BLUE" |          |\n");
-                    printf(BLUE" |__________|\n");
-                    printf(RESET"\n\n");
-                    yn=1;
-                }
-
+                drawArmor(player->current_level->monsters->monster_armor);
+                yn=1;
             }
             break;
         default:

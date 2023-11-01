@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj"
+  "CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj.d"
   "CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj"
   "CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj.d"
   "CMakeFiles/doom.dir/cfiles/display.c.obj"
@@ -51,6 +53,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/doom.dir/cfiles/spell/display_spell.c.obj.d"
   "CMakeFiles/doom.dir/cfiles/sqlite_test.c.obj"
   "CMakeFiles/doom.dir/cfiles/sqlite_test.c.obj.d"
+  "CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.obj"
+  "CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.obj.d"
   "CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj"
   "CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj.d"
   "CMakeFiles/doom.dir/cfiles/zones/create_zone.c.obj"

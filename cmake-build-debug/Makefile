@@ -128,6 +128,30 @@ doom/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/build
 .PHONY : doom/fast
 
+cfiles/armor/draw_armor.obj: cfiles/armor/draw_armor.c.obj
+.PHONY : cfiles/armor/draw_armor.obj
+
+# target to build an object file
+cfiles/armor/draw_armor.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj
+.PHONY : cfiles/armor/draw_armor.c.obj
+
+cfiles/armor/draw_armor.i: cfiles/armor/draw_armor.c.i
+.PHONY : cfiles/armor/draw_armor.i
+
+# target to preprocess a source file
+cfiles/armor/draw_armor.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.i
+.PHONY : cfiles/armor/draw_armor.c.i
+
+cfiles/armor/draw_armor.s: cfiles/armor/draw_armor.c.s
+.PHONY : cfiles/armor/draw_armor.s
+
+# target to generate assembly for a file
+cfiles/armor/draw_armor.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.s
+.PHONY : cfiles/armor/draw_armor.c.s
+
 cfiles/armor/init_armor.obj: cfiles/armor/init_armor.c.obj
 .PHONY : cfiles/armor/init_armor.obj
 
@@ -752,6 +776,30 @@ cfiles/sqlite_test.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/sqlite_test.c.s
 .PHONY : cfiles/sqlite_test.c.s
 
+cfiles/weapon/draw_weapon.obj: cfiles/weapon/draw_weapon.c.obj
+.PHONY : cfiles/weapon/draw_weapon.obj
+
+# target to build an object file
+cfiles/weapon/draw_weapon.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.obj
+.PHONY : cfiles/weapon/draw_weapon.c.obj
+
+cfiles/weapon/draw_weapon.i: cfiles/weapon/draw_weapon.c.i
+.PHONY : cfiles/weapon/draw_weapon.i
+
+# target to preprocess a source file
+cfiles/weapon/draw_weapon.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.i
+.PHONY : cfiles/weapon/draw_weapon.c.i
+
+cfiles/weapon/draw_weapon.s: cfiles/weapon/draw_weapon.c.s
+.PHONY : cfiles/weapon/draw_weapon.s
+
+# target to generate assembly for a file
+cfiles/weapon/draw_weapon.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.s
+.PHONY : cfiles/weapon/draw_weapon.c.s
+
 cfiles/weapon/init_weapon.obj: cfiles/weapon/init_weapon.c.obj
 .PHONY : cfiles/weapon/init_weapon.obj
 
@@ -905,6 +953,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... doom
+	@echo ... cfiles/armor/draw_armor.obj
+	@echo ... cfiles/armor/draw_armor.i
+	@echo ... cfiles/armor/draw_armor.s
 	@echo ... cfiles/armor/init_armor.obj
 	@echo ... cfiles/armor/init_armor.i
 	@echo ... cfiles/armor/init_armor.s
@@ -983,6 +1034,9 @@ help:
 	@echo ... cfiles/sqlite_test.obj
 	@echo ... cfiles/sqlite_test.i
 	@echo ... cfiles/sqlite_test.s
+	@echo ... cfiles/weapon/draw_weapon.obj
+	@echo ... cfiles/weapon/draw_weapon.i
+	@echo ... cfiles/weapon/draw_weapon.s
 	@echo ... cfiles/weapon/init_weapon.obj
 	@echo ... cfiles/weapon/init_weapon.i
 	@echo ... cfiles/weapon/init_weapon.s

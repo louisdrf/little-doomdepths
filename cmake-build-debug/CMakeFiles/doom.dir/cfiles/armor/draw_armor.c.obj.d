@@ -1,5 +1,5 @@
-CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.obj: \
- C\:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\monsters\display_monster_loot.c \
+CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj: \
+ C\:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\armor\draw_armor.c \
  c\:\mingw64\x86_64-w64-mingw32\include\stdio.h \
  c\:\mingw64\x86_64-w64-mingw32\include\corecrt_stdio_config.h \
  c\:\mingw64\x86_64-w64-mingw32\include\corecrt.h \
@@ -19,22 +19,8 @@ CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.obj: \
  c\:\mingw64\x86_64-w64-mingw32\include\crtdefs.h \
  c\:\mingw64\x86_64-w64-mingw32\include\sec_api\stdlib_s.h \
  c\:\mingw64\x86_64-w64-mingw32\include\malloc.h \
- c\:\mingw64\x86_64-w64-mingw32\include\conio.h \
- c\:\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\stddef.h \
- c\:\mingw64\x86_64-w64-mingw32\include\stddef.h \
- c\:\mingw64\x86_64-w64-mingw32\include\sec_api\conio_s.h \
- c\:\mingw64\x86_64-w64-mingw32\include\string.h \
- c\:\mingw64\x86_64-w64-mingw32\include\sec_api\string_s.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h \
  c\:\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\stdbool.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\defines.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\zones\define_zones.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\colors.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\monsters\display_monster_loot.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\inventory\inventory.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\weapon\draw_weapon.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\armor\draw_armor.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\colors.h

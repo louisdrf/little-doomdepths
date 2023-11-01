@@ -516,6 +516,34 @@ CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.s"
 	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\monsters\display_monster_loot.c -o CMakeFiles\doom.dir\cfiles\monsters\display_monster_loot.c.s
 
+CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.obj: CMakeFiles/doom.dir/flags.make
+CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.obj: C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/weapon/draw_weapon.c
+CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.obj: CMakeFiles/doom.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.obj"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.obj -MF CMakeFiles\doom.dir\cfiles\weapon\draw_weapon.c.obj.d -o CMakeFiles\doom.dir\cfiles\weapon\draw_weapon.c.obj -c C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\weapon\draw_weapon.c
+
+CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.i"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\weapon\draw_weapon.c > CMakeFiles\doom.dir\cfiles\weapon\draw_weapon.c.i
+
+CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.s"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\weapon\draw_weapon.c -o CMakeFiles\doom.dir\cfiles\weapon\draw_weapon.c.s
+
+CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj: CMakeFiles/doom.dir/flags.make
+CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj: C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/armor/draw_armor.c
+CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj: CMakeFiles/doom.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj -MF CMakeFiles\doom.dir\cfiles\armor\draw_armor.c.obj.d -o CMakeFiles\doom.dir\cfiles\armor\draw_armor.c.obj -c C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\armor\draw_armor.c
+
+CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.i"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\armor\draw_armor.c > CMakeFiles\doom.dir\cfiles\armor\draw_armor.c.i
+
+CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.s"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cfiles\armor\draw_armor.c -o CMakeFiles\doom.dir\cfiles\armor\draw_armor.c.s
+
 # Object files for target doom
 doom_OBJECTS = \
 "CMakeFiles/doom.dir/cfiles/main.c.obj" \
@@ -549,7 +577,9 @@ doom_OBJECTS = \
 "CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj" \
 "CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.obj" \
 "CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.obj" \
-"CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.obj"
+"CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.obj" \
+"CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.obj" \
+"CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj"
 
 # External object files for target doom
 doom_EXTERNAL_OBJECTS =
@@ -586,11 +616,13 @@ doom.exe: CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj
 doom.exe: CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.obj
 doom.exe: CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.obj
 doom.exe: CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.obj
+doom.exe: CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.obj
+doom.exe: CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj
 doom.exe: CMakeFiles/doom.dir/build.make
 doom.exe: CMakeFiles/doom.dir/linkLibs.rsp
 doom.exe: CMakeFiles/doom.dir/objects1.rsp
 doom.exe: CMakeFiles/doom.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Linking C executable doom.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\mokra\OneDrive\Documents\GitHub\little-doomdepths\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Linking C executable doom.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\doom.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
