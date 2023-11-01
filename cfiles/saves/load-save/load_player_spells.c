@@ -4,9 +4,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "../../../headers/saves/load-save/load_player_spells.h"
 #include "../../../sqlite3/sqlite3.h"
 #include "../../../headers/init/init_spell.h"
+
+#define DEBUG true
 
 void load_player_spells(Player *player, sqlite3 **conn) {
 
@@ -31,7 +34,9 @@ void load_player_spells(Player *player, sqlite3 **conn) {
     while(sqlite3_step(res) == SQLITE_ROW) {
        Spell *spell = malloc(sizeof(Spell));
 
-       spell->name = (char *) sqlite3_column_text(res, 2);
+       spell->name = malloc(strlen(sqlite3_column_text(res, 2)) + 1);
+       strcpy(spell->name, sqlite3_column_text(res, 2));
+
        spell->value = sqlite3_column_int(res, 3);
        spell->mana_cost = sqlite3_column_int(res, 4);
        spell->spell_type = sqlite3_column_int(res, 5);
@@ -46,5 +51,9 @@ void load_player_spells(Player *player, sqlite3 **conn) {
         player->book->spell_stock = spell;
 
     }
+#if DEBUG
+    printf("\nSpells loaded well.\n");
+#endif
+
     sqlite3_finalize(res);
 }

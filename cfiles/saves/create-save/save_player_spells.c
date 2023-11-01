@@ -31,7 +31,8 @@ void save_player_spells_book(Player *player, sqlite3** conn) {
             isEquipped = 1;
         }
 
-        sprintf(query, "insert into Spell(player_id, name, value, mana_cost, spell_type, isEquipped)  values (%d, '%s', %d, %d, %d, %d);",
+        sprintf(query, "insert into Spell(id, player_id, name, value, mana_cost, spell_type, isEquipped)  values (%d, %d, '%s', %d, %d, %d, %d);",
+                current->id,
                 player->id,
                 current->name,
                 current->value,
