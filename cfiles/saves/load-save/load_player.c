@@ -68,6 +68,7 @@ Player *load_player(Game *game) {
 
     //load_player_inventory();
     sqlite3_finalize(res);
+    sqlite3_close(conn);
 
     return player;
 }

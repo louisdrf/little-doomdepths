@@ -44,7 +44,7 @@ void save_inventory(Player *player, sqlite3** conn) {
     /////////// INSERT ARMORS AND WEAPONS IN INVENTORY //////////////
     /////////////////////////////////////////////////////////////////
 
-    /*for(int i = 0; i < NBOBJECTS_MAX; i++)      // insérer les armes/armures dans l'inventaire du joueur
+    for(int i = 0; i < NBOBJECTS_MAX; i++)      // insérer les armes/armures dans l'inventaire du joueur
     {
 
                 if(player->inventory->weaponList[i] != NULL) {
@@ -93,7 +93,7 @@ void save_inventory(Player *player, sqlite3** conn) {
                 }
                 /////////////////////////////////////////////////////////////////
 
-    }*/
+    }
 #if DEBUG
     printf("\nInsert in inventory done.");
 #endif

@@ -16,14 +16,6 @@ void save_player(Player *player, sqlite3** conn) {
 
     if(conn != NULL) {
 
-        /*sprintf(query, "UPDATE Game SET hasSave=1 WHERE id=%d;", player->id);
-        prepare_and_exec_query(conn, query);
-        if(!prepare_and_exec_query(conn, query)) {
-            printf("\nFailed to prepare/execute query to update game hasSave.\n");
-            exit(1);
-        }*/
-
-
         sprintf(query, "UPDATE Player SET name='%s', lifepoints=%d, shield=%d, mana=%d, attacks_left=%d, gold=%d, turn=%d, current_level_id=%d, current_zone_id=%d, posX=%d, posY=%d WHERE id=%d;",
                 player->name,
                 player->lifepoints,

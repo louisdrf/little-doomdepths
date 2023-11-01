@@ -28,6 +28,7 @@ Game *load_game(int game_id) {
     // INIT THE GAME ZONES
 
     load_zones(game, &conn);
+    sqlite3_close(conn);
 
     printf("\nRecup all zones done\n");
 
