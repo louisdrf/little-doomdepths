@@ -4,7 +4,6 @@
 
 #include <stdio.h>
 #include "../../../headers/saves/load-save/load_player_inventory.h"
-#include "../../../headers/includes/structs.h"
 #include "../../../headers/init/init_inventory.h"
 #include "../../../headers/inventory/potion.h"
 #include "../../../headers/weapon/init_weapon.h"
@@ -61,7 +60,7 @@ void load_player_inventory_weapons(Player *player, sqlite3 **conn) {
 
     int i = 0;
     while(sqlite3_step(res) == SQLITE_ROW) {
-        char *weapon_name = sqlite3_column_text(res, 2);
+        char *weapon_name = (char *) sqlite3_column_text(res, 2);
         unsigned short min_strength = sqlite3_column_int(res, 3);
         unsigned short max_strength = sqlite3_column_int(res, 4);
         unsigned short attacks_by_turn = sqlite3_column_int(res, 5);
@@ -95,7 +94,7 @@ void load_player_inventory_armors(Player *player, sqlite3 **conn) {
 
     int i = 0;
     while(sqlite3_step(res) == SQLITE_ROW) {
-        char *armor_name = sqlite3_column_text(res, 2);
+        char *armor_name = (char *) sqlite3_column_text(res, 2);
         unsigned short defense = sqlite3_column_int(res, 3);
         unsigned short rarity = sqlite3_column_int(res, 4);
         unsigned short isEquipped = sqlite3_column_int(res, 5);

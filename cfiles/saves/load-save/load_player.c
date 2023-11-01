@@ -9,6 +9,7 @@
 #include "../../../headers/includes/structs.h"
 #include "../../../headers/db_connexion.h"
 #include "../../../headers/saves/load-save/load_player_inventory.h"
+#include "../../../headers/saves/load-save/load_player_spells.h"
 
 
 Player *load_player(Game *game) {
@@ -70,6 +71,8 @@ Player *load_player(Game *game) {
     sqlite3_finalize(res);
 
     load_player_inventory(player, &conn);
+    load_player_spells(player, &conn);
+
     sqlite3_close(conn);
 
     return player;

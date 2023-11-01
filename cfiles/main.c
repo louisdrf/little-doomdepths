@@ -29,7 +29,7 @@ int main() {
         case 1: // new game
             save_id = display_save_choice();
 
-                if(has_player_a_save(save_id) == 1)
+                if(has_player_a_save(save_id) == 0)
                 {
                         printf("\nAucune sauvegarde pour cette partie, lancement d'une nouvelle partie...\n.");
                         game = init_game(save_id);                                                                      // init la partie et les niveaux
