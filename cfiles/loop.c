@@ -59,7 +59,7 @@ void launch_loop(Game *game, Player *player) {
                         break;
 
                     case 'm':
-                        display_player_zone(player, game);
+                        display_player_all_zone(player, game);
                         break;
 
                     case 's':

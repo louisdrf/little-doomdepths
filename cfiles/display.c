@@ -66,7 +66,8 @@ void display_player_ath(Player *player) {
     printf("Gold:     ");
     printf(YELLOW "%d\n" RESET, player->gold);
     printf("Attacks left this turn:   %d\n\n", player->attacks_left);
-    printf("Current level:            %d", player->current_level->id);
+    printf(MAGENTA"Zone:  %s\n", player->current_zone->name);
+    printf("Level: %d"RESET, player->current_level->id);
     printf("\n");
 
 }

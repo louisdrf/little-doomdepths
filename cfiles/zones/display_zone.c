@@ -68,6 +68,22 @@ void display_player_zone(Player *player, Game *game) {
 
 }
 
+void display_player_all_zone(Player *player, Game *game) {
+
+    display_player_zone(player, game);
+    printf("Afficher toutes les zones (z)        Retour (q)\n-> ");
+    int playerEntry = getch();
+    switch(playerEntry) {
+        case 'z':
+            display_all_zones(player, game);
+            break;
+
+        case 'q':
+            return;
+    }
+}
+
+
 
 void display_all_zones(Player *player, Game *game) {
 
@@ -75,7 +91,7 @@ void display_all_zones(Player *player, Game *game) {
 
     int playerEntry;
 
-    printf("Zone %d : \n\n", game->display_zones_index);
+    printf(RED"Zone %d : %s\n\n"RESET, game->display_zones_index, game->zoneList[game->display_zones_index]->name);
     display_zone(game->zoneList[game->display_zones_index]);
     printf("\n\nZone precedente (<)          Zone suivante (>)\nZone actuelle (z)            Quitter (q)\n");
     printf("-> ");
@@ -101,7 +117,7 @@ void display_all_zones(Player *player, Game *game) {
             break;
 
         case 'z':
-            display_player_zone(player, game);
+            display_player_all_zone(player, game);
             break;
 
         case 'q':
