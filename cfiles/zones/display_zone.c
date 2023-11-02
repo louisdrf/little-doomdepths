@@ -44,7 +44,7 @@ void display_player_zone(Player *player, Game *game) {
             "*-----------------*"
     };
 
-
+    system("cls");
     printf("\n");
 
     for (int i = 0; i < player->current_zone->height; i++) {

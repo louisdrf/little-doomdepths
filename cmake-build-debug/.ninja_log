@@ -150,3 +150,12 @@
 131	381	7206525362070756	doom.exe	bb79f434d05dc4f8
 5	113	7206526102088074	CMakeFiles/doom.dir/cfiles/zones/display_zone.c.obj	971560ce7c3fcfc9
 114	348	7206526104371963	doom.exe	bb79f434d05dc4f8
+16	134	7206529540961384	CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj	5cd918d7a28ba230
+5	136	7206529540971365	CMakeFiles/doom.dir/cfiles/main.c.obj	d0995440ae458e26
+136	366	7206529543235300	doom.exe	bb79f434d05dc4f8
+17	127	7206530352695765	CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj	5cd918d7a28ba230
+6	129	7206530352705762	CMakeFiles/doom.dir/cfiles/display.c.obj	bd9a8766fd1c7864
+129	349	7206530354870202	doom.exe	bb79f434d05dc4f8
+35	138	7206530951853954	CMakeFiles/doom.dir/cfiles/display.c.obj	bd9a8766fd1c7864
+45	146	7206530951943727	CMakeFiles/doom.dir/cfiles/zones/display_zone.c.obj	971560ce7c3fcfc9
+146	357	7206530953998211	doom.exe	bb79f434d05dc4f8

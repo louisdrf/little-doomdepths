@@ -3,6 +3,7 @@
 //
 #include <stdio.h>
 #include <conio.h>
+#include <stdlib.h>
 #include "../headers/display.h"
 #include "../headers/includes/colors.h"
 #include "../headers/monsters/monster_sprite.h"
