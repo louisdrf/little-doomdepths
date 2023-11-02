@@ -80,6 +80,9 @@ void display_player_all_zone(Player *player, Game *game) {
 
         case 'q':
             return;
+
+        default:
+            display_player_all_zone(player, game);
     }
 }
 

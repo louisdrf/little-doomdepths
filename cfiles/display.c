@@ -46,8 +46,31 @@ int display_save_choice() {
     printf("votre choix -> ");
     choice = getch() - 48;
 
-    if(choice == 1 || choice == 2 || choice == 3) return choice;
+    if(choice == 1 || choice == 2 || choice == 3) {
+        return choice;
+    }
     else display_save_choice();
+}
+
+void display_play_or_destroy_save(int save_id) {
+    int playerEntry;
+
+    printf(GREEN"\nJouer (1)      "RESET);
+    printf(RED"Supprimer la sauvegarde (2)\n"RESET);
+    printf("-> ");
+
+    playerEntry = getch() - 48;
+    switch(playerEntry) {
+        case 1:
+            return; // on charge la partie normalement
+
+        case 2:
+            //destroy_save(save);
+            break;
+
+        default:
+            display_play_or_destroy_save(save_id);
+    }
 }
 
 

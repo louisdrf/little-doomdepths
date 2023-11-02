@@ -21,6 +21,7 @@
 #include "../headers/saves/create-save/create_save.h"
 #include "../sqlite3/sqlite3.h"
 #include "../headers/db_connexion.h"
+#include "../headers/includes/colors.h"
 
 /**
  * manages the game loop
@@ -51,7 +52,10 @@ void launch_loop(Game *game, Player *player) {
 
                 switch(playerEntry) {
                     case 'q':
-                        printf("\nSauvegarder avant de quitter ? \nSauvegarder et quitter (x)    Quitter (q)\n-> ");
+                        printf("\nSauvegarder avant de quitter ?\n");
+                        printf(GREEN"Sauvegarder et quitter (x)     "RESET);
+                        printf(RED"Quitter (q)\n"RESET);
+                        printf("-> ");
                         playerEntry = getch();
                         switch(playerEntry) {
                             case 'x':

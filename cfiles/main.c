@@ -42,6 +42,7 @@ int main() {
                 }
                 else
                 {
+                    display_play_or_destroy_save(save_id);
                     printf(RED"\nChargement de la partie...\n\n"RESET);
                     game = load_game(save_id);                                 // charger la partie et les niveaux
                     player = load_player(game);
