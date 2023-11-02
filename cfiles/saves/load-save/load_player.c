@@ -35,6 +35,7 @@ Player *load_player(Game *game) {
         // Récupérer les données du joueur
         player->name = malloc(strlen(sqlite3_column_text(res, 1)) + 1);
         strcpy(player->name, sqlite3_column_text(res, 1));
+
         player->id = game->id;
         player->lifepoints_max = 100;
         player->lifepoints = sqlite3_column_int(res, 2);
@@ -46,8 +47,8 @@ Player *load_player(Game *game) {
         player->turn = sqlite3_column_int(res, 7);
         int current_zone_id = sqlite3_column_int(res, 8);
         player->current_zone = game->zoneList[current_zone_id];
-        player->currentX = sqlite3_column_int(res, 11);
-        player->currentY = sqlite3_column_int(res, 12);
+        player->currentX = sqlite3_column_int(res, 10);
+        player->currentY = sqlite3_column_int(res, 11);
         player->current_level = game->zoneList[current_zone_id]->levelList[player->currentX][player->currentY];
         player->isAlive = true;
         player->min_strength = 10;

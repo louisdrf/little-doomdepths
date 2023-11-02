@@ -58,12 +58,12 @@ Player *init_player(Game *game) {
         player->min_strength = 10;
         player->max_strength = 16;
         player->book = book;
-        player->currentX=0;
-        player->currentY=0;
+        player->currentX=0; // Y
+        player->currentY=0; // X
         init_player_draw(player);
         get_player_name(player);
         player->current_zone = game->zoneList[0];
-        player->current_level = game->zoneList[0]->levelList[0][0];      // joueur initialisé au premier niveau de la premiere zone
+        player->current_level = game->zoneList[0]->levelList[player->currentX][player->currentY];      // joueur initialisé au premier niveau de la premiere zone
         player->inventory = inventory;
 
         add_player_name_to_game(game, player);

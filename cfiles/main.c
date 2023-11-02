@@ -46,6 +46,9 @@ int main() {
                     game = load_game(save_id);                                 // charger la partie et les niveaux
                     player = load_player(game);
 
+                    printf("\nX : %d       Y : %d\nCURRENT LEVEL: %d", player->currentX, player->currentY, player->current_level->id);
+
+
                     launch_loop(game, player);
 
                     free_player(player);

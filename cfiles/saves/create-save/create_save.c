@@ -17,7 +17,7 @@ void create_save(Game *game, Player *player) {
 
     sqlite3 *conn = connect_to_db();
 
-    char query[100];
+    char query[50];
     sprintf(query, "UPDATE Game SET hasSave=1 WHERE id=%d;", game->id);
     prepare_and_exec_query(&conn, query);
 

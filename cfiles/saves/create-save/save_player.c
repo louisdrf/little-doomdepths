@@ -26,8 +26,8 @@ void save_player(Player *player, sqlite3** conn) {
                 player->turn,
                 player->current_level->id,
                 player->current_zone->id,
-                player->currentY,
                 player->currentX,
+                player->currentY,
                 player->id);
         printf("\nquery : %s", query);
 
