@@ -19,6 +19,8 @@
 #include "../headers/zones/display_zone.h"
 #include "../headers/spell/display_spell.h"
 #include "../headers/saves/create-save/create_save.h"
+#include "../sqlite3/sqlite3.h"
+#include "../headers/db_connexion.h"
 
 /**
  * manages the game loop
@@ -41,7 +43,6 @@ void launch_loop(Game *game, Player *player) {
                 display_player_zone(player, game);
                 moveEntry = getch();
                 updateMovement(player,moveEntry, game);
-                printf("\nX : %d       Y : %d\n", player->currentX, player->currentY);
 
             } else {
                 display_all(player); // affichage
@@ -80,6 +81,11 @@ void launch_loop(Game *game, Player *player) {
         else {
             if(monsters_attack(player) == 1) {                      // retourne 1 si le joueur se fait tuer
                 display_lose();
+                sqlite3 *conn = connect_to_db();
+                char query[50];
+                sprintf(query, "UPDATE Game SET hasSave=0 WHERE id=%d;", game->id);
+                prepare_and_exec_query(&conn, query);
+                sqlite3_close(conn);
                 break;
             }
         }

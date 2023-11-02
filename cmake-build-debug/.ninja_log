@@ -127,3 +127,10 @@
 96	297	7206503108042039	doom.exe	bb79f434d05dc4f8
 5	130	7206505209251770	CMakeFiles/doom.dir/cfiles/saves/load-save/load_player.c.obj	2a289634dee14c85
 131	383	7206505211705203	doom.exe	bb79f434d05dc4f8
+19	137	7206507790953691	CMakeFiles/doom.dir/cfiles/saves/load-save/load_player.c.obj	2a289634dee14c85
+6	149	7206507791013531	CMakeFiles/doom.dir/cfiles/saves/load-save/load_player_inventory.c.obj	6cf3450d32f5add3
+149	368	7206507793177731	doom.exe	bb79f434d05dc4f8
+6	120	7206510777474702	CMakeFiles/doom.dir/cfiles/loop.c.obj	bcf47ea57414fce5
+120	333	7206510779539537	doom.exe	bb79f434d05dc4f8
+5	113	7206511496797265	CMakeFiles/doom.dir/cfiles/loop.c.obj	bcf47ea57414fce5
+113	334	7206511498951501	doom.exe	bb79f434d05dc4f8

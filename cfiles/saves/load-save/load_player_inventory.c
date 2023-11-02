@@ -71,6 +71,7 @@ void load_player_inventory_weapons(Player *player, sqlite3 **conn) {
         player->inventory->weaponList[i] = init_weapon(weapon_name, attacks_by_turn, min_strength, max_strength, mana_cost, rarity);
         if(isEquipped) {
             player->current_weapon = player->inventory->weaponList[i];
+            player->attacks_by_turn = player->current_weapon->attacks_by_turn;
         }
         i++;
     }
@@ -102,6 +103,7 @@ void load_player_inventory_armors(Player *player, sqlite3 **conn) {
         player->inventory->armorList[i] = init_armor(armor_name, defense, rarity);
         if(isEquipped) {
             player->current_armor = player->inventory->armorList[i];
+            player->defense = player->current_armor->defense;
         }
         i++;
     }

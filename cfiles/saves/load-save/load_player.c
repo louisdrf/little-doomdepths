@@ -57,16 +57,6 @@ Player *load_player(Game *game) {
         player->current_armor = NULL;
         player->current_weapon = NULL;
         init_player_draw(player);
-
-        printf("Player\nlifepoints:%d\nshield:%d\nmana:%d\nattacks-left:%d\ngold:%d\ncurrent zone id:%d\ncurrent_level:%d\n",
-               player->lifepoints,
-               player->shield,
-               player->mana,
-               player->attacks_left,
-               player->gold,
-               current_zone_id,
-               player->current_level->id);
-
     }
 
     sqlite3_finalize(res);
