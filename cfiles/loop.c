@@ -45,6 +45,7 @@ void launch_loop(Game *game, Player *player) {
                 updateMovement(player,moveEntry, game);
 
             } else {
+                system("cls");
                 display_all(player); // affichage
                 playerEntry = getch();
 

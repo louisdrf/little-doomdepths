@@ -159,3 +159,5 @@
 35	138	7206530951853954	CMakeFiles/doom.dir/cfiles/display.c.obj	bd9a8766fd1c7864
 45	146	7206530951943727	CMakeFiles/doom.dir/cfiles/zones/display_zone.c.obj	971560ce7c3fcfc9
 146	357	7206530953998211	doom.exe	bb79f434d05dc4f8
+5	113	7206532116563690	CMakeFiles/doom.dir/cfiles/loop.c.obj	bcf47ea57414fce5
+113	327	7206532118638139	doom.exe	bb79f434d05dc4f8
