@@ -10,6 +10,8 @@
 #include "../../../headers/db_connexion.h"
 #include "../../../headers/saves/load-save/load_level_monsters.h"
 
+#define DEBUG false
+
 void load_levels(Game *game, int zone_id, sqlite3 **conn) {
 
     sqlite3_stmt *res;
@@ -33,7 +35,9 @@ void load_levels(Game *game, int zone_id, sqlite3 **conn) {
         for(int j = 0; j < game->zoneList[zone_id]->width; j++) {
             sprintf(query, "SELECT * FROM Level WHERE player_id=%d AND zone_id=%d AND height_index=%d AND width_index=%d;", game->id, zone_id, i, j); // on recupere le niveau pour la zone[i][j]
 
+#if DEBUG
             printf("LEVEL : %s", query);
+#endif
             int error = sqlite3_prepare_v2(*conn, query, -1, &res, &tail);
             if (error != SQLITE_OK) {
                 fprintf(stderr, "Failed to execute SQL query to select level %d %d for zone %d: %s\n", i, j, zone_id, sqlite3_errmsg(*conn));
@@ -62,7 +66,9 @@ void load_levels(Game *game, int zone_id, sqlite3 **conn) {
         }
     }
 
+#if DEBUG
     printf("\nNiveaux de la zone recuperes.\n");
+#endif
 
 }
 

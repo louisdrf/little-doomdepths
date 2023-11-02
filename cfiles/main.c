@@ -11,6 +11,7 @@
 #include "../headers/player/has_player_a_save.h"
 #include "../headers/saves/load-save/load_game.h"
 #include "../headers/saves/load-save/load_player.h"
+#include "../headers/includes/colors.h"
 
 int main() {
 
@@ -41,11 +42,14 @@ int main() {
                 }
                 else
                 {
-                    printf("\nChargement de la partie...\n\n\n");
+                    printf(RED"\nChargement de la partie...\n\n"RESET);
                     game = load_game(save_id);                                 // charger la partie et les niveaux
                     player = load_player(game);
 
-                    launch_loop(game, player);
+                    if(game != NULL && player != NULL) {
+                        launch_loop(game, player);
+                    }
+
                     free_player(player);
                     free_game(game);
                 }

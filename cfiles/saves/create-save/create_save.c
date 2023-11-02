@@ -12,8 +12,12 @@
 #include "../../../headers/saves/create-save/save_player_spells.h"
 #include "../../../headers/db_connexion.h"
 #include "../../../headers/saves/create-save/save_zones.h"
+#include "../../../headers/includes/colors.h"
 
 void create_save(Game *game, Player *player) {
+
+    system("cls");
+    printf(RED"\nSauvegarde en cours...\n"RESET);
 
     sqlite3 *conn = connect_to_db();
 
@@ -27,6 +31,8 @@ void create_save(Game *game, Player *player) {
     save_zones(game, &conn);                // sauvegarde zones + leurs niveaux
 
     sqlite3_close(conn);
+
+    printf(GREEN"\nPartie correctement sauvegardee.\n"RESET);
 }
 
 

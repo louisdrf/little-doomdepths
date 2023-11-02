@@ -8,7 +8,7 @@
 #include "../../../sqlite3/sqlite3.h"
 #include "../../../headers/db_connexion.h"
 
-#define DEBUG true
+#define DEBUG false
 
 void save_inventory(Player *player, sqlite3** conn) {
 
@@ -20,7 +20,9 @@ void save_inventory(Player *player, sqlite3** conn) {
     /* ******** UPDATE INVENTORY POTIONS ********** */
 
             sprintf(query, "UPDATE Inventory SET healthPotion=%d, manaPotion=%d WHERE player_id=%d;", healthPotion, manaPotion, player->id);
+#if DEBUG
             printf("\nquery : %s", query);
+#endif
             if(!prepare_and_exec_query(conn, query)) {
                 printf("\nFailed to prepare/execute query to update inventory potions.\n");
                 exit(1);

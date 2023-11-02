@@ -8,7 +8,7 @@
 #include "../../../sqlite3/sqlite3.h"
 #include "../../../headers/db_connexion.h"
 
-#define DEBUG true
+#define DEBUG false
 
 void save_player(Player *player, sqlite3** conn) {
 
@@ -29,7 +29,9 @@ void save_player(Player *player, sqlite3** conn) {
                 player->currentX,
                 player->currentY,
                 player->id);
+#if DEBUG
         printf("\nquery : %s", query);
+#endif
 
         if(!prepare_and_exec_query(conn, query)) {
             printf("\nFailed to prepare/execute query to update player data.\n");

@@ -7,7 +7,7 @@
 #include "../../../headers/saves/create-save/save_zones.h"
 #include "../../../headers/db_connexion.h"
 
-#define DEBUG true
+#define DEBUG false
 
 void save_zones(Game *game, sqlite3** conn) {
 
@@ -22,9 +22,9 @@ void save_zones(Game *game, sqlite3** conn) {
     }
 
     for(int i = 0; i < NBZONES; i++) {
-
+#if DEBUG
         printf("\ninsert zone %d", game->zoneList[i]->id);
-
+#endif
             /////////// INSERT ZONE  //////////////
             sprintf(query, "INSERT INTO Zone(player_id, name, multiplicator, finished, difficulty, height, width, zone_id) values(%d, '%s', %lf, %d, %d, %d, %d, %d);",
                     game->id,
@@ -56,8 +56,9 @@ void save_zones(Game *game, sqlite3** conn) {
             for (int k = 0; k < game->zoneList[i]->width; k++) {
 
                 if(game->zoneList[i]->levelList[j][k] != NULL) {
-
+#if DEBUG
                     printf("\ninsert level %d-%d", j, k);
+#endif
 
                     sprintf(query, "INSERT INTO Level(player_id, zone_id, nbMonsters, finished, height_index, width_index) values(%d, %d, %d, %d, %d, %d);",
                             game->id,
@@ -83,12 +84,16 @@ void save_zones(Game *game, sqlite3** conn) {
                     }
 
                     /////////// INSERT LEVEL MONSTERS //////////////
+#if DEBUG
                     printf("\nNb monsters level %d : %d", game->zoneList[i]->levelList[j][k]->id, game->zoneList[i]->levelList[j][k]->nbMonsters);
+#endif
 
                     Monster *current = game->zoneList[i]->levelList[j][k]->monsters;
                     while(current != NULL)
                     {
+#if DEBUG
                         printf("\ninsert monster %d", current->id);
+#endif
                         sprintf(query, "INSERT INTO Monster(level_height_index, level_width_index, monster_type, lifepoints, lifepoints_max, min_strength, max_strength, defense, attacks_by_turn, attacks_left, turn, isAlive, loot_gold, player_id, zone_id, monster_id) "
                                        "values(%d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d);",
                                 j , k,

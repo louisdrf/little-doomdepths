@@ -51,6 +51,19 @@ void launch_loop(Game *game, Player *player) {
 
                 switch(playerEntry) {
                     case 'q':
+                        printf("\nSauvegarder avant de quitter ? \nSauvegarder et quitter (x)    Quitter (q)\n-> ");
+                        playerEntry = getch();
+                        switch(playerEntry) {
+                            case 'x':
+                                create_save(game, player);
+                                break;
+
+                            case 'q':
+                                break;
+
+                            default:
+                                launch_loop(game, player);
+                        }
                         printf("\nFin de partie.\n");
                         game->isRunning = false;                        // cas de fin de partie
                         break;

@@ -11,6 +11,7 @@
 #include "../../../headers/db_connexion.h"
 #include "../../../headers/saves/load-save/load_levels.h"
 
+#define DEBUG false
 
 void load_zones(Game *game, sqlite3 **conn) {
 
@@ -48,7 +49,7 @@ void load_zones(Game *game, sqlite3 **conn) {
 
         sqlite3_finalize(res); // Finaliser la requête
 
-
+#if DEBUG
      for(i = 0; i < NBZONES; i++) {
          printf("Zone %d : %s -> multiplicateur: %lf, finie: %d, diff: %d, height: %d, width: %d\n", i,
                 game->zoneList[i]->name,
@@ -58,5 +59,5 @@ void load_zones(Game *game, sqlite3 **conn) {
                 game->zoneList[i]->height,
                 game->zoneList[i]->width);
      }
-
+#endif
 }

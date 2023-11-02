@@ -9,7 +9,7 @@
 #include "../../../sqlite3/sqlite3.h"
 #include "../../../headers/init/init_spell.h"
 
-#define DEBUG true
+#define DEBUG false
 
 void load_player_spells(Player *player, sqlite3 **conn) {
 

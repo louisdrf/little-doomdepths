@@ -10,6 +10,8 @@
 #include "../../../headers/db_connexion.h"
 #include "../../../headers/monsters/monster_sprite.h"
 
+#define DEBUG false
+
 void load_level_monsters(Level *level, int save_id, int height_index, int width_index, int zone_id, sqlite3 **conn) {
 
     sqlite3_stmt *res;
@@ -29,12 +31,14 @@ void load_level_monsters(Level *level, int save_id, int height_index, int width_
             sqlite3_close(*conn);
             return;
         }
+#if DEBUG
         printf("\nMONSTRES: %s", query);
+#endif
 
-        level->monsters = NULL; // Initialiser la liste chaînée à NULL
+        level->monsters = NULL;
 
         while(sqlite3_step(res) == SQLITE_ROW) {
-            Monster *monster = malloc(sizeof(Monster)); // Allouer de la mémoire pour le nouveau monstre
+            Monster *monster = malloc(sizeof(Monster));
 
             monster->monster_type = sqlite3_column_int(res, 1);
             monster->lifepoints = sqlite3_column_int(res, 2);
@@ -58,10 +62,12 @@ void load_level_monsters(Level *level, int save_id, int height_index, int width_
             level->monsters = monster;
         }
 
-        sqlite3_finalize(res); // Finaliser la requête
+        sqlite3_finalize(res);
     }
 
+#if DEBUG
     printf("Monster level recup\n");
+#endif
 
 
 }

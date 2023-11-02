@@ -9,6 +9,7 @@
 #include "../../../sqlite3/sqlite3.h"
 #include "../../../headers/db_connexion.h"
 
+#define DEBUG false
 
 Game *load_game(int game_id) {
 
@@ -30,7 +31,9 @@ Game *load_game(int game_id) {
     load_zones(game, &conn);
     sqlite3_close(conn);
 
+#if DEBUG
     printf("\nRecup all zones done\n");
+#endif
 
     /////////////////
 
