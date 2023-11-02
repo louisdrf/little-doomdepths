@@ -17,10 +17,7 @@ void init_zones(Game *game) {
         game->zoneList[i] = create_zone(game);
         game->zoneList[i]->id = i;
         game->zoneList[i]->finished = false;
-        game->zoneList[i]->name = malloc(strlen("zone1") + 1);
-        strcpy(game->zoneList[i]->name, "zone1");
-        game->zoneList[i]->multiplicator = 1.5;
-        game->zoneList[i]->difficulty = 0;
+        attribute_zone_data(game, i);
         #if DEBUG
                 printf("zone %d cree\n", i);
         #endif
@@ -28,6 +25,49 @@ void init_zones(Game *game) {
 
 }
 
+void attribute_zone_data(Game *game, int id) {
+
+    switch(id) {
+        case 0:
+            game->zoneList[id]->name = malloc(strlen("Foret enchantee") + 1);
+            strcpy(game->zoneList[id]->name, "Foret enchantee");
+            game->zoneList[id]->multiplicator = 1.;
+            game->zoneList[id]->difficulty = 1;
+            break;
+
+        case 1:
+            game->zoneList[id]->name = malloc(strlen("Foret profonde") + 1);
+            strcpy(game->zoneList[id]->name, "Foret profonde");
+            game->zoneList[id]->multiplicator = 1.5;
+            game->zoneList[id]->difficulty = 1;
+            break;
+
+        case 2:
+            game->zoneList[id]->name = malloc(strlen("Terres desacrees") + 1);
+            strcpy(game->zoneList[id]->name, "Terres desacrees");
+            game->zoneList[id]->multiplicator = 2.;
+            game->zoneList[id]->difficulty = 2;
+            break;
+
+        case 3:
+            game->zoneList[id]->name = malloc(strlen("Zone volcanique") + 1);
+            strcpy(game->zoneList[id]->name, "Zone volcanique");
+            game->zoneList[id]->multiplicator = 2.;
+            game->zoneList[id]->difficulty = 2;
+            break;
+
+        case 4:
+            game->zoneList[id]->name = malloc(strlen("Sommet du volcan") + 1);
+            strcpy(game->zoneList[id]->name, "Sommet du volcan");
+            game->zoneList[id]->multiplicator = 2.5;
+            game->zoneList[id]->difficulty = 3;
+            break;
+
+        default:
+            break;
+    }
+
+}
 
 void free_zones(Game *game) {
     for(int i = 0; i < NBZONES; i++) {
