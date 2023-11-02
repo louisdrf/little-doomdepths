@@ -6,6 +6,6 @@
 #define DOOM_PLAYER_ATTACK_H
 #include "../includes/structs.h"
 
-void player_attack(Player *player, int idMonster);
+bool player_attack(Player *player, int idMonster);
 
 #endif //DOOM_PLAYER_ATTACK_H

@@ -57,11 +57,13 @@ Monster *getTargetMonster(Player *player, int id) {
 
     Monster *current = player->current_level->monsters;
 
-    while(current->id != id) {
+    while(current != NULL) {
+        if(current->id == id) {
+            return current;
+        }
         current = current->next;
     }
-
-    return current;
+    return NULL;
 }
 
 

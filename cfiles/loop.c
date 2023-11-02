@@ -74,8 +74,7 @@ void launch_loop(Game *game, Player *player) {
                 }
 
                 playerEntry -= 48;
-                if(playerEntry > 9 || playerEntry < 1) continue;
-                player_attack(player, playerEntry);        // le joueur attaque le monstre dont l'id est passé en argument
+                if(!player_attack(player, playerEntry)) continue;        // le joueur attaque le monstre dont l'id est passé en argument
             }
 
         }
