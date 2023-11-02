@@ -22,6 +22,7 @@
 #include "../sqlite3/sqlite3.h"
 #include "../headers/db_connexion.h"
 #include "../headers/includes/colors.h"
+#include "../headers/saves/destroy_save.h"
 
 /**
  * manages the game loop
@@ -97,11 +98,7 @@ void launch_loop(Game *game, Player *player) {
         else {
             if(monsters_attack(player) == 1) {                      // retourne 1 si le joueur se fait tuer
                 display_lose();
-                sqlite3 *conn = connect_to_db();
-                char query[50];
-                sprintf(query, "UPDATE Game SET hasSave=0 WHERE id=%d;", game->id);
-                prepare_and_exec_query(&conn, query);
-                sqlite3_close(conn);
+                destroy_save(game->id);
                 break;
             }
         }

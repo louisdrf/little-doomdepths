@@ -89,5 +89,7 @@ add_executable(doom cfiles/main.c
         headers/saves/load-save/load_player_inventory.h
         cfiles/saves/load-save/load_player_spells.c
         headers/saves/load-save/load_player_spells.h
+        cfiles/saves/destroy_save.c
+        headers/saves/destroy_save.h
 )
 

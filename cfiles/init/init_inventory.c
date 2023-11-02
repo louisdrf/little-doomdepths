@@ -7,7 +7,7 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/defines.h"
 
-#define DEBUG true
+#define DEBUG false
 
 Inventory *init_inventory()
 {

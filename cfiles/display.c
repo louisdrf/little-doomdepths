@@ -7,6 +7,7 @@
 #include "../headers/display.h"
 #include "../headers/includes/colors.h"
 #include "../headers/monsters/monster_sprite.h"
+#include "../headers/saves/destroy_save.h"
 
 void display_init_menu() {
     printf(RED"                     ----Doomdepths----\n\n");
@@ -39,10 +40,10 @@ void display_init_menu() {
 int display_save_choice() {
 
     int choice;
-    printf(MAGENTA"-----Choix de la sauvegarde-----\n\n"RESET);
-    printf("SAUVEGARDE 1\n");
+    printf(RED"-----Choix de la sauvegarde-----\n\n"RESET);
+    printf(MAGENTA"SAUVEGARDE 1\n");
     printf("SAUVEGARDE 2\n");
-    printf("SAUVEGARDE 3\n\n");
+    printf("SAUVEGARDE 3\n\n"RESET);
     printf("votre choix -> ");
     choice = getch() - 48;
 
@@ -52,7 +53,9 @@ int display_save_choice() {
     else display_save_choice();
 }
 
-void display_play_or_destroy_save(int save_id) {
+
+int display_play_or_destroy_save(int save_id) {
+
     int playerEntry;
 
     printf(GREEN"\nJouer (1)      "RESET);
@@ -62,11 +65,11 @@ void display_play_or_destroy_save(int save_id) {
     playerEntry = getch() - 48;
     switch(playerEntry) {
         case 1:
-            return; // on charge la partie normalement
+            return 1; // on charge la partie normalement
 
         case 2:
-            //destroy_save(save);
-            break;
+            destroy_save(save_id);
+            return 2;
 
         default:
             display_play_or_destroy_save(save_id);

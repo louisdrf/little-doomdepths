@@ -13,6 +13,9 @@
 #include "../headers/saves/load-save/load_player.h"
 #include "../headers/includes/colors.h"
 
+#define LOAD_SAVE 1
+#define DESTROY_SAVE 2
+
 int main() {
 
     Game        *game;
@@ -33,7 +36,7 @@ int main() {
                 if(has_player_a_save(save_id) == 0)
                 {
                         printf("\nLancement d'une nouvelle partie...\n.");
-                        game = init_game(save_id);                                                                      // init la partie et les niveaux
+                        game = init_game(save_id);                                          // init la partie et les niveaux
                         player = init_player(game);
 
                         launch_loop(game, player);
@@ -42,17 +45,22 @@ int main() {
                 }
                 else
                 {
-                    display_play_or_destroy_save(save_id);
-                    printf(RED"\nChargement de la partie...\n\n"RESET);
-                    game = load_game(save_id);                                 // charger la partie et les niveaux
-                    player = load_player(game);
+                    if(display_play_or_destroy_save(save_id) == LOAD_SAVE)
+                    {
+                        printf(RED"\nChargement de la partie...\n\n"RESET);
+                        game = load_game(save_id);                                 // charger la partie et les niveaux
+                        player = load_player(game);
 
-                    if(game != NULL && player != NULL) {
-                        launch_loop(game, player);
+                        if(game != NULL && player != NULL) {
+                            launch_loop(game, player);
+                        }
+                        free_player(player);
+                        free_game(game);
                     }
-
-                    free_player(player);
-                    free_game(game);
+                    else {
+                        printf(RED"\nPartie %d correctement supprimee."RESET, save_id);
+                        return EXIT_SUCCESS;
+                    }
                 }
 
             break;

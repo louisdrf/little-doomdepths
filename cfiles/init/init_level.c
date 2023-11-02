@@ -50,24 +50,3 @@ printf("Level %d correctly initialized.\n", level->id);
     return level;
 }
 
-
-void next_level(Game *game, Player *player) {
-
-    int next_level;
-    int i = 0;
-
-    while(game->zoneList[i]->levelList[0][player->current_level->id] == NULL) {
-        player->current_level->id++;
-    }
-
-    next_level = player->current_level->id;
-
-    player->current_level = game->zoneList[player->current_zone->id]->levelList[0][next_level];
-    printf("\nVous passez au niveau %d !\n", next_level);
-
-    player->turn = true;
-    player->attacks_left = player->attacks_by_turn;
-    player->lifepoints = player->lifepoints_max;
-}
-
-

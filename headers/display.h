@@ -11,7 +11,7 @@ void display_init_menu();
 int display_save_choice();
 void display_all(Player *player);
 
-void display_play_or_destroy_save(int save_id);
+int display_play_or_destroy_save(int save_id);
 void display_player_ath(Player *player);
 void display_player_health(Player *player);
 void display_player_mana(Player *player);

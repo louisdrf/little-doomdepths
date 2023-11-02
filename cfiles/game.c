@@ -12,7 +12,7 @@
 #include "../headers/init/init_level.h"
 #include "../headers/zones/init_zones.h"
 
-#define DEBUG true
+#define DEBUG false
 
 Game *init_game(int save_id) {
 
