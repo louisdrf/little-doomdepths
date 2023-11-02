@@ -173,3 +173,9 @@
 5	110	7206583230554447	CMakeFiles/doom.dir/cfiles/player/player_attack.c.obj	b9aade89dbf4ccda
 16	111	7206583230554447	CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj	70c564f15ebe5b80
 111	334	7206583232727900	doom.exe	bb79f434d05dc4f8
+6	131	7206585517855220	CMakeFiles/doom.dir/cfiles/loop.c.obj	bcf47ea57414fce5
+131	362	7206585520102975	doom.exe	bb79f434d05dc4f8
+5	121	7206586175348690	CMakeFiles/doom.dir/cfiles/player/player_attack.c.obj	b9aade89dbf4ccda
+121	339	7206586177448874	doom.exe	bb79f434d05dc4f8
+6	111	7206588383834471	CMakeFiles/doom.dir/cfiles/display.c.obj	bd9a8766fd1c7864
+111	329	7206588385933033	doom.exe	bb79f434d05dc4f8

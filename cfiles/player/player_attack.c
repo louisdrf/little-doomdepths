@@ -10,6 +10,7 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
 
+#define DEBUG false
 
 bool player_attack(Player *player, int idMonster) {
 
@@ -19,7 +20,9 @@ bool player_attack(Player *player, int idMonster) {
 
     Monster *target = getTargetMonster(player, idMonster);
     if(target == NULL) {
-        printf("Monster targeting failed.\n");
+    #if DEBUG
+    printf("Monster targeting failed.\n");
+    #endif
         return false;
     }
 

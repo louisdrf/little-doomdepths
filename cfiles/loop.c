@@ -70,7 +70,6 @@ void launch_loop(Game *game, Player *player) {
                     case 'x':
                         create_save(game, player);
                         break;
-
                 }
 
                 playerEntry -= 48;
