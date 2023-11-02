@@ -18,8 +18,6 @@
 
 int main() {
 
-    Game        *game;
-    Player      *player;
     int choice;
     int save_id;        // choix de la sauvegarde
 
@@ -35,31 +33,17 @@ int main() {
 
                 if(has_player_a_save(save_id) == 0)
                 {
-                        printf("\nLancement d'une nouvelle partie...\n.");
-                        game = init_game(save_id);                                          // init la partie et les niveaux
-                        player = init_player(game);
-
-                        launch_loop(game, player);
-                        free_player(player);
-                        free_game(game);
+                    launch_new_game(save_id);
                 }
                 else
                 {
                     if(display_play_or_destroy_save(save_id) == LOAD_SAVE)
                     {
-                        printf(RED"\nChargement de la partie...\n\n"RESET);
-                        game = load_game(save_id);                                 // charger la partie et les niveaux
-                        player = load_player(game);
-
-                        if(game != NULL && player != NULL) {
-                            launch_loop(game, player);
-                        }
-                        free_player(player);
-                        free_game(game);
+                        load_saved_game(save_id);
                     }
-                    else {
+                    else if(display_play_or_destroy_save(save_id) == DESTROY_SAVE) {
                         printf(RED"\nPartie %d correctement supprimee."RESET, save_id);
-                        return EXIT_SUCCESS;
+                        launch_new_game(save_id);
                     }
                 }
 
