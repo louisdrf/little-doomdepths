@@ -4,12 +4,14 @@
 
 #include <stdio.h>
 #include <conio.h>
+#include <stdlib.h>
 #include "../../headers/player/display_player_equipment.h"
 #include "../../headers/includes/colors.h"
 
 void display_player_equipment(Player *player) {
 
     int playerEntry;
+    system("cls");
 
     if(player->current_weapon != NULL) {
         printf("---------------ARME--------------- \n| ");

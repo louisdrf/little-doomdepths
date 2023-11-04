@@ -80,6 +80,7 @@ void display_player_armors(Player *player) {
             choice = getch();
             choice -= 48;
             player->current_armor = player->inventory->armorList[choice];
+            player->defense = player->current_armor->defense;
             printf("\n\n");
             printf("armure equipee : %s | %d \n\n", player->current_armor->name, player->current_armor->defense);
             display_inventory_choice_sections(player);

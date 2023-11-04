@@ -75,3 +75,11 @@
 116	370	7208084074474993	doom.exe	8266dcf0753bae48
 6	106	7208084610552036	CMakeFiles/doom.dir/cfiles/player/display_player_stats.c.obj	7bec0bbd1e6156e2
 106	364	7208084613089259	doom.exe	8266dcf0753bae48
+6	131	7208086843367379	CMakeFiles/doom.dir/cfiles/display.c.obj	bd9a8766fd1c7864
+131	372	7208086845727613	doom.exe	8266dcf0753bae48
+8	146	7208090561720819	CMakeFiles/doom.dir/cfiles/main.c.obj	d0995440ae458e26
+25	150	7208090561755774	CMakeFiles/doom.dir/cfiles/display.c.obj	bd9a8766fd1c7864
+150	421	7208090564409718	doom.exe	8266dcf0753bae48
+5	134	7208091834805668	CMakeFiles/doom.dir/cfiles/main.c.obj	d0995440ae458e26
+17	135	7208091834815642	CMakeFiles/doom.dir/cfiles/display.c.obj	bd9a8766fd1c7864
+136	380	7208091837201584	doom.exe	8266dcf0753bae48

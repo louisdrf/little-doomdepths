@@ -57,6 +57,7 @@ int display_save_choice() {
 int display_play_or_destroy_save(int save_id) {
 
     int playerEntry;
+    system("cls");
 
     printf(GREEN"\nJouer (1)      "RESET);
     printf(RED"Supprimer la sauvegarde (2)\n"RESET);

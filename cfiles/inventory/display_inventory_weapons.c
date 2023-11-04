@@ -84,7 +84,9 @@ void display_player_weapons(Player *player) {
             choice = getch();
             choice -= 48;
             player->current_weapon = player->inventory->weaponList[choice];
-            player->attacks_by_turn = player->inventory->weaponList[choice]->attacks_by_turn;
+            player->attacks_by_turn = player->current_weapon->attacks_by_turn;
+            player->min_strength = player->current_weapon->min_strength;
+            player->max_strength = player->current_weapon->max_strength;
             printf("\n\n");
             printf("arme equipee : %s | %d-%d | %d \n\n", player->current_weapon->name, player->current_weapon->min_strength, player->current_weapon->max_strength, player->current_weapon->mana_cost);
             display_inventory_choice_sections(player);
