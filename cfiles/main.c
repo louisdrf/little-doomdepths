@@ -13,6 +13,7 @@
 #include "../headers/saves/load-save/load_player.h"
 #include "../headers/includes/colors.h"
 
+#define HAS_SAVE 0
 #define LOAD_SAVE 1
 #define DESTROY_SAVE 2
 
@@ -31,7 +32,7 @@ int main() {
         case 1: // new game
             save_id = display_save_choice();
 
-            if(has_player_a_save(save_id) == 0) launch_new_game(save_id);
+            if(has_player_a_save(save_id) == HAS_SAVE) launch_new_game(save_id);
             else
                 {
                     if(display_play_or_destroy_save(save_id) == LOAD_SAVE)

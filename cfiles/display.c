@@ -29,8 +29,8 @@ void display_init_menu() {
            "            \\   \\__, \\_     `~'     _/ .__/   /            \n"
            "             `-._,-'   `-._______,-'   `-._,-'");
     printf("\n\n"RESET);
-    printf("Play    (1)\n");
-    printf("Exit    (2)\n\n");
+    printf(GREEN"Play    (1)\n"RESET);
+    printf(RED"Exit    (2)\n\n"RESET);
 }
 
 /*
