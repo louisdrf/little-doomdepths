@@ -186,17 +186,20 @@ typedef struct {
     Zone*               current_zone;       // zone dans laquelle se situe le joueur
     Inventory*          inventory;          // inventaire du joueur
     Book*               book;               // livre de sorts du joueur
+    int                 nbKill;             // nombre de monstres tués
+    int                 nbQuestDone;             // nombre de quetes terminées
 
 } Player;
 
 
 
 typedef struct Quest Quest;
-struct Quest{
+struct Quest {
 
     int                    id;
-    char*                  description;                            // nom du sort
+    char*                  description;
     struct Quest*          next;
+    bool                   finished;
 
 };
 
