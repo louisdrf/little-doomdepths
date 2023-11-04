@@ -6,9 +6,9 @@
 #define DOOM_DISPLAY_SPELL_H
 #include "../includes/structs.h"
 char* name_spell(int spell_type);
-void print_spell_equipped(Player *player);
+int print_spell_equipped(Player *player);
+int print_spell_stocked(Player *player);
 void display_spell_section(Player *player, int choice);
-void print_spell_stocked(Player *player);
 void display_spell_choice_sections(Player *player);
 void print_spell_type(int type);
 #endif //DOOM_DISPLAY_SPELL_H

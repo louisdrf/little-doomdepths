@@ -10,6 +10,10 @@
 #include <conio.h>
 #include <stdio.h>
 
+#define HAS_SPELL 0
+#define HASNT_SPELL 1
+
+
 char* name_spell(int spell_type){
     static char *spell[][4] = {
             {"Regen","Heal"},
@@ -30,39 +34,55 @@ char* name_spell(int spell_type){
 };
  */
 
-void print_spell_equipped(Player *player){
+int print_spell_equipped(Player *player) {
     printf("\n");
     if(player->book->spell_equipped[0] ==NULL){
         printf("Aucun sort equipe\n");
+        return HASNT_SPELL;
     }
     for (int i = 0; player->book->spell_equipped[i] != NULL ; ++i) {
 
-        printf(CYAN"ID : %d |  name : %s |  power : %d |  cost : %d | "RESET, i,
-               player->book->spell_equipped[i]->name,
-               player->book->spell_equipped[i]->value,
-               player->book->spell_equipped[i]->mana_cost);
+        printf("ID : ");
+        printf(RED"%d "RESET, i);
+        printf("| Name : ");
+        printf(CYAN"%s "RESET, player->book->spell_equipped[i]->name);
+        printf("| Power : ");
+        printf(RED"%d "RESET, player->book->spell_equipped[i]->value);
+        printf("| Cost : ");
+        printf(BLUE"%d "RESET, player->book->spell_equipped[i]->mana_cost);
+        printf("| ");
 
         print_spell_type(player->book->spell_equipped[i]->spell_type);
-
     }
+
+    return HAS_SPELL;
 
 }
 
-void print_spell_stocked(Player *player) {
+int print_spell_stocked(Player *player) {
     printf("\n");
     Spell *current = player->book->spell_stock;
 
-    while (current!=NULL){
+    if(current == NULL) return HASNT_SPELL;
 
-        printf(CYAN"ID : %d |  name : %s |  power : %d |  cost : %d | "RESET,
-               current->id,current->name,
-               current->value,
-               current->mana_cost);
+    while (current != NULL) {
+
+        printf("ID : ");
+        printf(RED"%d "RESET, current->id);
+        printf("| Name : ");
+        printf(CYAN"%s "RESET, current->name);
+        printf("| Power : ");
+        printf(RED"%d "RESET, current->value);
+        printf("| Cost : ");
+        printf(BLUE"%d "RESET, current->mana_cost);
+        printf("| ");
 
         print_spell_type(current->spell_type);
 
         current= current->next;
     }
+
+    return HAS_SPELL;
 
 }
 
@@ -134,24 +154,29 @@ void display_spell_section(Player *player, int choice) {
             return;
 
         case 1:
-            print_spell_equipped(player);
-            choice=getch();
-            choice -= 48;
+            if(print_spell_equipped(player) == HAS_SPELL) {
+                printf("\nID du sort\n-> ");
+                choice = getch() - 48;
+                display_spell_use(player,player->book->spell_equipped[choice]);
+                player->attacks_left--;
+                break;
+            }
+            else {
+                return;
+            }
 
-            display_spell_use(player,player->book->spell_equipped[choice]);
-            player->attacks_left--;
-            break;
 
         case 2:
-            print_spell_stocked(player);
-            int choice;
-            choice=getch();
-            choice -= 48;
-            add_spell(player,get_spell_stocked(player,choice));
-            print_spell_equipped(player);
-            break;
-
-
+            if(print_spell_stocked(player) == HAS_SPELL) {
+                printf("\nID du sort\n-> ");
+                choice = getch() - 48;
+                add_spell(player,get_spell_stocked(player,choice));
+                print_spell_equipped(player);
+                break;
+            }
+            else {
+                return;
+            }
 
         default:
             display_spell_choice_sections(player);
