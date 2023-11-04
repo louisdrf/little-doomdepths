@@ -46,6 +46,8 @@ Player *init_player(Game *game) {
         player->id = game->id;
         init_player_draw(player);
         get_player_name(player);
+        player->nbKill = 0;
+        player->nbQuestDone = 0;
         player->isAlive = true;
         player->gold = 0;
         player->turn = true;
