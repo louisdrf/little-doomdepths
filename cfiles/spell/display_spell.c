@@ -5,6 +5,7 @@
 #include "../../headers/player/player_spell.h"
 #include "../../headers/spell/display_spell.h"
 #include "../../headers/monsters/monster.h"
+#include "../../headers/includes/colors.h"
 #include <stdlib.h>
 #include <conio.h>
 #include <stdio.h>
@@ -19,19 +20,32 @@ char* name_spell(int spell_type){
     return spell[spell_type][rand()%2];
 }
 
-
+/*
+ * enum spell_type {
+    HEAL,
+    DAMAGE,
+    SHIELD,
+    AOE,
+    BUFF_SPEED,
+};
+ */
 
 void print_spell_equipped(Player *player){
     printf("\n");
     if(player->book->spell_equipped[0] ==NULL){
         printf("Aucun sort equipe\n");
     }
-    for (int i = 0; player->book->spell_equipped[i] !=NULL ; ++i) {
-        printf("id:%d , %s, power:%d, cost:%d\n", i,
+    for (int i = 0; player->book->spell_equipped[i] != NULL ; ++i) {
+
+        printf(CYAN"ID : %d |  name : %s |  power : %d |  cost : %d | "RESET, i,
                player->book->spell_equipped[i]->name,
                player->book->spell_equipped[i]->value,
                player->book->spell_equipped[i]->mana_cost);
+
+        print_spell_type(player->book->spell_equipped[i]->spell_type);
+
     }
+
 }
 
 void print_spell_stocked(Player *player) {
@@ -39,13 +53,44 @@ void print_spell_stocked(Player *player) {
     Spell *current = player->book->spell_stock;
 
     while (current!=NULL){
-        printf("id:%d,  name:%s,  power:%d,  cost:%d\n",current->id,current->name,current->value,current->mana_cost);
+
+        printf(CYAN"ID : %d |  name : %s |  power : %d |  cost : %d | "RESET,
+               current->id,current->name,
+               current->value,
+               current->mana_cost);
+
+        print_spell_type(current->spell_type);
+
         current= current->next;
     }
 
 }
 
+void print_spell_type(int type) {
 
+    switch(type) {
+        case HEAL:
+            printf(MAGENTA"HEAL\n"RESET);
+            break;
+
+        case DAMAGE:
+            printf(RED"DAMAGE\n"RESET);
+            break;
+
+        case SHIELD:
+            printf(BLUE"SHIELD\n"RESET);
+            break;
+
+        case AOE:
+            printf(RED"DAMAGE IN ZONE\n"RESET);
+            break;
+
+        case BUFF_SPEED:
+            printf(YELLOW"SPEED BUFF\n"RESET);
+            break;
+    }
+
+}
 void display_spell_choice_sections(Player *player) {
     int choice;
     printf("\n\n    Spell\n\n");

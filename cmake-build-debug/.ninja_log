@@ -97,3 +97,7 @@
 45	220	7208133808711640	CMakeFiles/doom.dir/cfiles/loop.c.obj	bcf47ea57414fce5
 58	226	7208133808774568	CMakeFiles/doom.dir/cfiles/saves/load-save/load_player.c.obj	2a289634dee14c85
 226	461	7208133811065173	doom.exe	8266dcf0753bae48
+6	127	7208150408607513	CMakeFiles/doom.dir/cfiles/spell/display_spell.c.obj	9afc417720a18f83
+128	627	7208150413550162	doom.exe	8266dcf0753bae48
+6	110	7208151114248368	CMakeFiles/doom.dir/cfiles/spell/display_spell.c.obj	9afc417720a18f83
+111	337	7208151116444883	doom.exe	8266dcf0753bae48
