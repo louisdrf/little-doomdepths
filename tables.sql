@@ -108,3 +108,16 @@ CREATE TABLE Monster (
                          level_height_index INTEGER,
                          level_width_index INTEGER
 );
+
+
+INSERT INTO Game(id, hasSave) VALUES (1, 0);
+INSERT INTO Game(id, hasSave) VALUES (2, 0);
+INSERT INTO Game(id, hasSave) VALUES (3, 0);
+
+INSERT INTO Player(id) VALUES(1);
+INSERT INTO Player(id) VALUES(2);
+INSERT INTO Player(id) VALUES(3);
+
+INSERT INTO Inventory(id, player_id) VALUES(1, 1);
+INSERT INTO Inventory(id, player_id) VALUES(2, 2);
+INSERT INTO Inventory(id, player_id) VALUES(2, 2);
