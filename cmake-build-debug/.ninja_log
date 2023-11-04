@@ -113,3 +113,9 @@
 24	147	7208162952350343	CMakeFiles/doom.dir/cfiles/init/init_spell.c.obj	a4ec550eff964a10
 16	148	7208162952380292	CMakeFiles/doom.dir/cfiles/spell/display_spell.c.obj	9afc417720a18f83
 148	385	7208162954717563	doom.exe	8266dcf0753bae48
+6	196	7208168557314632	CMakeFiles/doom.dir/cfiles/main.c.obj	d0995440ae458e26
+17	200	7208168557329660	CMakeFiles/doom.dir/cfiles/display.c.obj	bd9a8766fd1c7864
+27	205	7208168557424938	CMakeFiles/doom.dir/cfiles/loop.c.obj	bcf47ea57414fce5
+37	216	7208168557519810	CMakeFiles/doom.dir/cfiles/spell/display_spell.c.obj	9afc417720a18f83
+50	231	7208168557689852	CMakeFiles/doom.dir/cfiles/saves/create-save/create_save.c.obj	d6ecdbbc3c923ff9
+231	456	7208168559860139	doom.exe	8266dcf0753bae48

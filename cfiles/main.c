@@ -40,7 +40,7 @@ int main() {
                         load_saved_game(save_id);
                     }
                     else if(display_play_or_destroy_save(save_id) == DESTROY_SAVE) {
-                        printf(RED"\nPartie %d correctement supprimee."RESET, save_id);
+                        printf(RED"\nGame %d correctly destroyed."RESET, save_id);
                         launch_new_game(save_id);
                     }
                 }

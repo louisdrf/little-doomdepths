@@ -24,16 +24,6 @@ char* name_spell(int spell_type){
     return spell[spell_type][rand()%2];
 }
 
-/*
- * enum spell_type {
-    HEAL,
-    DAMAGE,
-    SHIELD,
-    AOE,
-    BUFF_SPEED,
-};
- */
-
 int print_spell_equipped(Player *player) {
     printf("\n");
     if(player->book->spell_equipped[0] ==NULL){

@@ -40,11 +40,11 @@ void display_init_menu() {
 int display_save_choice() {
 
     int choice;
-    printf(RED"-----Choix de la sauvegarde-----\n\n"RESET);
-    printf(MAGENTA"SAUVEGARDE 1\n");
-    printf("SAUVEGARDE 2\n");
-    printf("SAUVEGARDE 3\n\n"RESET);
-    printf("votre choix -> ");
+    printf(RED"-------SAVE CHOICE-------\n\n"RESET);
+    printf(MAGENTA"SAVE 1\n");
+    printf("SAVE 2\n");
+    printf("SAVE 3\n\n"RESET);
+    printf("your choice -> ");
     choice = getch() - 48;
 
     if(choice == 1 || choice == 2 || choice == 3) {
@@ -59,8 +59,8 @@ int display_play_or_destroy_save(int save_id) {
     int playerEntry;
     system("cls");
 
-    printf(GREEN"\nJouer (1)      "RESET);
-    printf(RED"Supprimer la sauvegarde (2)\n"RESET);
+    printf(GREEN"\nPlay (1)      "RESET);
+    printf(RED"Delete save (2)\n"RESET);
     printf("-> ");
 
     playerEntry = getch() - 48;

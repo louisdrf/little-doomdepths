@@ -17,7 +17,7 @@
 void create_save(Game *game, Player *player) {
 
     system("cls");
-    printf(RED"\nSauvegarde en cours...\n"RESET);
+    printf(RED"\nSaving...\n"RESET);
 
     sqlite3 *conn = connect_to_db();
 
@@ -32,7 +32,7 @@ void create_save(Game *game, Player *player) {
 
     sqlite3_close(conn);
 
-    printf(GREEN"\nPartie correctement sauvegardee.\n"RESET);
+    printf(GREEN"\nGame correctly save.\n"RESET);
 }
 
 
