@@ -22,7 +22,7 @@
 
 };
  */
-void create_quests() {
+Quest *create_quests() {
 
     Quest* questList = NULL;
 
@@ -56,6 +56,6 @@ void create_quests() {
 
     /////////////////////////////////////////////////////////////////////////////////////
 
-
+return questList;
 
 }

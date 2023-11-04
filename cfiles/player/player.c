@@ -13,6 +13,7 @@
 #include "../../headers/inventory/inventory.h"
 #include "../../headers/weapon/init_weapon.h"
 #include "../../headers/armor/init_armor.h"
+#include "../../headers/quests/create_quests.h"
 
 #define DEBUG false
 
@@ -25,15 +26,18 @@ Player *init_player(Game *game) {
         Player *player;
         Inventory *inventory = NULL;
         inventory = init_inventory();
+
         Book *book= NULL;
         book = init_book();
         Spell *first_spell = NULL;
-
 
     for(int j = 0; j < 2 ; j++) {
         first_spell = create_spell(first_spell, j);
         book->spell_stock = first_spell;
     }
+
+    Quest *questList = NULL;
+    questList = create_quests();
 
         player = malloc(sizeof(Player));
         if(player == NULL) {
@@ -64,11 +68,13 @@ Player *init_player(Game *game) {
         player->min_strength = 10;
         player->max_strength = 16;
         player->book = book;
+        player->inventory = inventory;
+        player->questList = questList;
         player->currentX=0;
         player->currentY=0;
         player->current_zone = game->zoneList[0];
         player->current_level = game->zoneList[0]->levelList[player->currentX][player->currentY];      // joueur initialisé au premier niveau de la premiere zone
-        player->inventory = inventory;
+
 
     Weapon *weapon1 = init_weapon("epee1", 2, 8, 18, 4, RARE);
     Weapon *weapon2 = init_weapon("epee2", 2, 12, 24, 6, EPIC);

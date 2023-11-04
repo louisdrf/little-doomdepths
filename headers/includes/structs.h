@@ -160,6 +160,22 @@ typedef struct {
 } Book;
 
 
+
+typedef struct Quest Quest;
+struct Quest {
+
+    int                    id;
+    char*                  description;
+    int                    goldReward;
+    Weapon                *weaponReward;
+    Armor                 *armorReward;
+    bool                   claimedReward;
+    struct Quest*          next;
+    bool                   finished;
+
+};
+
+
 typedef struct {
 
     int                 id;
@@ -186,26 +202,13 @@ typedef struct {
     Zone*               current_zone;       // zone dans laquelle se situe le joueur
     Inventory*          inventory;          // inventaire du joueur
     Book*               book;               // livre de sorts du joueur
+    Quest*              questList;          // liste de quetes du joueur
     int                 nbKill;             // nombre de monstres tués
     int                 nbQuestDone;             // nombre de quetes terminées
 
 } Player;
 
 
-
-typedef struct Quest Quest;
-struct Quest {
-
-    int                    id;
-    char*                  description;
-    int                    goldReward;
-    Weapon                *weaponReward;
-    Armor                 *armorReward;
-    bool                   claimedReward;
-    struct Quest*          next;
-    bool                   finished;
-
-};
 
 
 typedef struct {
