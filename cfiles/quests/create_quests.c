@@ -38,7 +38,6 @@ Quest *create_quests() {
 
         quest1->next = questList;
         quest1->finished = false;
-        questList = quest1;
 
         /////////////////////////////////////////////////////////////////////////////////////
         Quest* quest2 = malloc(sizeof(struct Quest));

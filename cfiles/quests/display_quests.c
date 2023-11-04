@@ -16,9 +16,9 @@ void display_quests_menu(Player *player) {
     int playerEntry;
 
     printf(GREEN"----- Quetes -----\n\n"RESET);
-    printf(BLUE "Quetes en cours  (1)\n"RESET);
-    printf(GREEN"Quetes terminees (2)\n\n\n"RESET);
-    printf(     "Retour           (3)\n");
+    printf(BLUE "Liste des quetes  (1)\n"RESET);
+    printf(GREEN"Quetes terminees  (2)\n\n\n"RESET);
+    printf(     "Retour            (3)\n");
     printf("-> ");
 
     playerEntry = getch() - 48;
@@ -40,9 +40,42 @@ void display_quests_menu(Player *player) {
 }
 
 void display_quests(Player *player) {
+    system("cls");
+    int nbQuests = 0;
 
+    Quest *current = player->questList;
+    while(current != NULL) {
+
+            printf("Quete %d : %s | terminee : ", current->id, current->description);
+            if(current->finished == true) printf(GREEN"oui\n"RESET);
+            else  printf(RED"non\n"RESET);
+
+        nbQuests++;
+        current = current->next;
+    }
+
+    if(nbQuests == 0) {
+        printf("Aucune quete en cours.\n");
+    }
 }
 
 void display_done_quests(Player *player) {
+
+    system("cls");
+    int nbQuests = 0;
+
+    Quest *current = player->questList;
+    while(current != NULL) {
+
+        if(current->finished == true) {
+            printf("Quete %d : %s |", current->id, current->description);
+            nbQuests++;
+        }
+        current = current->next;
+    }
+
+    if(nbQuests == 0) {
+        printf(RED"Aucune quete terminee.\n"RESET);
+    }
 
 }
