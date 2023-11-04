@@ -24,6 +24,7 @@
 #include "../headers/includes/colors.h"
 #include "../headers/saves/destroy_save.h"
 #include "../headers/player/display_player_equipment.h"
+#include "../headers/player/display_player_stats.h"
 
 /**
  * manages the game loop
@@ -80,6 +81,10 @@ void launch_loop(Game *game, Player *player) {
 
                     case 'e':
                         display_player_equipment(player);
+                        break;
+
+                    case 'c':
+                        display_player_stats(player);
                         break;
 
                     case 'm':

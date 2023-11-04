@@ -93,5 +93,7 @@ add_executable(doom cfiles/main.c
         headers/saves/destroy_save.h
         cfiles/player/display_player_equipment.c
         headers/player/display_player_equipment.h
+        cfiles/player/display_player_stats.c
+        headers/player/display_player_stats.h
 )
 
