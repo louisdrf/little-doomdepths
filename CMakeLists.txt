@@ -95,5 +95,7 @@ add_executable(doom cfiles/main.c
         headers/player/display_player_equipment.h
         cfiles/player/display_player_stats.c
         headers/player/display_player_stats.h
+        cfiles/quests/create_quests.c
+        headers/quests/create_quests.h
 )
 
