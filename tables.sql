@@ -16,7 +16,9 @@ CREATE TABLE Player (
                         current_zone_id INTEGER,
                         current_level_id INTEGER,
                         posX INTEGER,
-                        posY INTEGER
+                        posY INTEGER,
+                        nbKill INTEGER,
+                        nbQuestDone INTEGER
 );
 
 
