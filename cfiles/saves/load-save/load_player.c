@@ -49,6 +49,8 @@ Player *load_player(Game *game) {
         player->current_zone = game->zoneList[current_zone_id];
         player->currentX = sqlite3_column_int(res, 10);
         player->currentY = sqlite3_column_int(res, 11);
+        player->nbKill = sqlite3_column_int(res, 12);
+        player->nbQuestDone = sqlite3_column_int(res, 13);
         player->current_level = game->zoneList[current_zone_id]->levelList[player->currentX][player->currentY];
         player->isAlive = true;
         player->min_strength = 10;
