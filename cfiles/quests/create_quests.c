@@ -26,7 +26,7 @@ void create_quests() {
 
     Quest* questList = NULL;
 
-    // Création de cinq quêtes
+    // Création de quêtes
         Quest* quest1 = malloc(sizeof(struct Quest));
         quest1->id = 1;
         quest1->description = malloc(strlen("Kill 10 monsters") + 1);

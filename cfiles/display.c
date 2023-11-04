@@ -84,7 +84,7 @@ void display_all(Player *player) {
     print_monsters(player);
     display_monsters_alive(player->current_level->monsters);
     printf(CYAN"\nequipments (e)      inventory (i)      spell (s)      stats (c)\n"
-                        "map        (m)      save      (x)      exit (q)\n"RESET);
+                        "quests     (j)      map       (m)      save  (x)      exit  (q)\n"RESET);
 }
 
 

@@ -25,6 +25,7 @@
 #include "../headers/saves/destroy_save.h"
 #include "../headers/player/display_player_equipment.h"
 #include "../headers/player/display_player_stats.h"
+#include "../headers/quests/display_quests.h"
 
 /**
  * manages the game loop
@@ -57,7 +58,8 @@ void launch_loop(Game *game, Player *player) {
                     case 'q':
                         printf("\nSave before quit ?\n");
                         printf(GREEN"Save and quit (x)     "RESET);
-                        printf(RED"Return (enter any key)\n"RESET);
+                        printf(RED"Quit (q)     "RESET);
+                        printf("Return (enter any key)\n");
                         printf("-> ");
                         playerEntry = getch();
                         switch(playerEntry) {
@@ -65,12 +67,15 @@ void launch_loop(Game *game, Player *player) {
                                 create_save(game, player);
                                 break;
 
+                            case 'q':
+                                printf("\nEnd of game.\n");
+                                game->isRunning = false;
+                                exit(0);
+
                             default:
                                 launch_loop(game, player);
                         }
-                        printf("\nEnd of game.\n");
-                        game->isRunning = false;                        // cas de fin de partie
-                        break;
+
 
                     case 'i':
                         display_inventory_choice_sections(player);
@@ -86,6 +91,10 @@ void launch_loop(Game *game, Player *player) {
 
                     case 'm':
                         display_player_all_zone(player, game);
+                        break;
+
+                    case 'j':
+                        display_quests_menu();
                         break;
 
                     case 's':

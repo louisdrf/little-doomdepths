@@ -14,21 +14,33 @@ void display_quests_menu() {
     int playerEntry;
 
     printf(GREEN"----- Quetes -----\n\n"RESET);
-    printf("Quetes en cours  (1)\n");
-    printf("Quetes terminees (2)\n");
+    printf(BLUE "Quetes en cours  (1)\n"RESET);
+    printf(GREEN"Quetes terminees (2)\n\n\n"RESET);
+    printf(     "Retour           (3)\n");
     printf("-> ");
 
     playerEntry = getch() - 48;
     switch(playerEntry) {
         case 1:
-            //display_quests();
+            display_quests();
             break;
 
         case 2:
-            //display_done_quests();
+            display_done_quests();
             break;
+
+        case 3:
+            return;
 
         default:
             display_quests_menu();
     }
+}
+
+void display_quests() {
+
+}
+
+void display_done_quests() {
+
 }
