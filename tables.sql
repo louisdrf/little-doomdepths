@@ -6,21 +6,17 @@ CREATE TABLE Game (
 
 CREATE TABLE Player (
                         id INTEGER PRIMARY KEY,
-                        game_id INTEGER KEY AUTOINCREMENT,
-                        name TEXT,
+                        name VARCHAR(40),
                         lifepoints INTEGER,
                         shield INTEGER,
                         mana INTEGER,
                         attacks_left INTEGER,
                         gold INTEGER,
                         turn BOOLEAN,
-                        current_weapon_id INTEGER,
-                        current_armor_id INTEGER,
-                        current_level_id INTEGER,
                         current_zone_id INTEGER,
-                        FOREIGN KEY (game_id) REFERENCES Game(id),
-                        FOREIGN KEY (current_weapon_id) REFERENCES Weapon(id),
-                        FOREIGN KEY (current_armor_id) REFERENCES Armor(id)
+                        current_level_id INTEGER,
+                        posX INTEGER,
+                        posY INTEGER
 );
 
 
@@ -32,7 +28,8 @@ CREATE TABLE Spell (
                        value INTEGER,
                        mana_cost INTEGER,
                        spell_type INTEGER,
-                       isEquipped BOOLEAN
+                       isEquipped BOOLEAN,
+                       spell_id INTEGER
 );
 
 
@@ -42,8 +39,7 @@ CREATE TABLE Inventory (
                            id INTEGER PRIMARY KEY,
                            player_id INTEGER KEY AUTOINCREMENT,
                            healthPotion BOOLEAN,
-                           manaPotion BOOLEAN,
-                           FOREIGN KEY (player_id) REFERENCES Player(id)
+                           manaPotion BOOLEAN
 );
 
 
@@ -51,27 +47,23 @@ CREATE TABLE Inventory (
 CREATE TABLE Armor (
                        id INTEGER PRIMARY KEY,
                        inventory_id INTEGER,
-                       player_id INTEGER KEY AUTOINCREMENT,
                        armor_name VARCHAR(70),
                        defense INTEGER NOT NULL,
                        rarity INTEGER NOT NULL,
-                       FOREIGN KEY (inventory_id) REFERENCES Inventory(id),
-                       FOREIGN KEY (player_id) REFERENCES Player(id)
+                       isEquipped INTEGER
 );
 
 
 CREATE TABLE Weapon (
                         id INTEGER PRIMARY KEY,
                         inventory_id INTEGER,
-                        player_id INTEGER KEY AUTOINCREMENT,
                         weapon_name VARCHAR(70),
                         min_strength INTEGER NOT NULL,
                         max_strength INTEGER NOT NULL,
                         attacks_by_turn INTEGER NOT NULL,
                         mana_cost INTEGER,
                         rarity INTEGER NOT NULL,
-                        FOREIGN KEY (inventory_id) REFERENCES Inventory(id),
-                        FOREIGN KEY (player_id) REFERENCES Player(id)
+                        isEquipped INTEGER
 );
 
 CREATE TABLE Zone (
@@ -80,7 +72,10 @@ CREATE TABLE Zone (
                       name TEXT,
                       multiplicator REAL,
                       finished BOOLEAN,
-                      difficulty INTEGER
+                      difficulty INTEGER,
+                      height INTEGER,
+                      width INTEGER,
+                      zone_id INTEGER
 );
 
 
@@ -89,12 +84,13 @@ CREATE TABLE Level (
                        zone_id INTEGER,
                        nbMonsters INTEGER,
                        finished BOOLEAN,
-                       player_id INTEGER
+                       player_id INTEGER,
+                       height_index INTEGER,
+                       width_index INTEGER
 );
 
 CREATE TABLE Monster (
                          id INTEGER PRIMARY KEY,
-                         level_id INTEGER,
                          monster_type INTEGER,
                          lifepoints INTEGER,
                          lifepoints_max INTEGER,
@@ -107,5 +103,8 @@ CREATE TABLE Monster (
                          isAlive BOOLEAN,
                          loot_gold INTEGER,
                          player_id INTEGER,
-                         zone_id INTEGER
+                         zone_id INTEGER,
+                         monster_id INTEGER,
+                         level_height_index INTEGER,
+                         level_width_index INTEGER
 );
