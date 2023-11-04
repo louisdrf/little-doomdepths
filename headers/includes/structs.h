@@ -190,6 +190,17 @@ typedef struct {
 } Player;
 
 
+
+typedef struct Quest Quest;
+struct Quest{
+
+    int                    id;
+    char*                  description;                            // nom du sort
+    struct Quest*          next;
+
+};
+
+
 typedef struct {
 
     int                     id;
