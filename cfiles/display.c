@@ -82,8 +82,8 @@ void display_all(Player *player) {
     display_player_ath(player);
     print_monsters(player);
     display_monsters_alive(player->current_level->monsters);
-    printf("\nequipments (e)      inventory (i)      map  (m)\n"
-                    "spell      (s)      save      (x)      exit (q)\n");
+    printf(CYAN"\nequipments (e)      inventory (i)      map  (m)\n"
+                    "spell      (s)      save      (x)      exit (q)\n"RESET);
 }
 
 

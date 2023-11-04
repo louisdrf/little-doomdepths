@@ -23,6 +23,7 @@
 #include "../headers/db_connexion.h"
 #include "../headers/includes/colors.h"
 #include "../headers/saves/destroy_save.h"
+#include "../headers/player/display_player_equipment.h"
 
 /**
  * manages the game loop
@@ -75,6 +76,10 @@ void launch_loop(Game *game, Player *player) {
 
                     case 'i':
                         display_inventory_choice_sections(player);
+                        break;
+
+                    case 'e':
+                        display_player_equipment(player);
                         break;
 
                     case 'm':

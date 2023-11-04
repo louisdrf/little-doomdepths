@@ -52,7 +52,7 @@ Player *init_player(Game *game) {
         player->mana_max = 100;
         player->mana = player->mana_max;
         player->gold = 0;
-        player->defense = 10;
+        player->defense = 5;
         player->attacks_by_turn = 2;
         player->attacks_left = player->attacks_by_turn;
         player->min_strength = 10;

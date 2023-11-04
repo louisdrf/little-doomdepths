@@ -31,11 +31,8 @@ int main() {
         case 1: // new game
             save_id = display_save_choice();
 
-                if(has_player_a_save(save_id) == 0)
-                {
-                    launch_new_game(save_id);
-                }
-                else
+            if(has_player_a_save(save_id) == 0) launch_new_game(save_id);
+            else
                 {
                     if(display_play_or_destroy_save(save_id) == LOAD_SAVE)
                     {
@@ -46,11 +43,10 @@ int main() {
                         launch_new_game(save_id);
                     }
                 }
-
             break;
 
         case 2: // exit
-            printf("End.");
+            printf("Bye.");
             break;
 
         default:
