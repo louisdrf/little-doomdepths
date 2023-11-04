@@ -5,8 +5,10 @@
 #ifndef DOOM_DISPLAY_QUESTS_H
 #define DOOM_DISPLAY_QUESTS_H
 
-void display_quests_menu();
-void display_quests();
-void display_done_quests();
+#include "../includes/structs.h"
+
+void display_quests_menu(Player *player);
+void display_quests(Player *player);
+void display_done_quests(Player *player);
 
 #endif //DOOM_DISPLAY_QUESTS_H

@@ -94,7 +94,7 @@ void launch_loop(Game *game, Player *player) {
                         break;
 
                     case 'j':
-                        display_quests_menu();
+                        display_quests_menu(player);
                         break;
 
                     case 's':
