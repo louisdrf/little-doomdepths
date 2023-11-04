@@ -13,12 +13,17 @@
 
     int                    id;
     char*                  description;
+    int                    goldReward;
+    Weapon                *weaponReward;
+    Armor                 *armorReward;
+    bool                   claimedReward;
     struct Quest*          next;
     bool                   finished;
 
 };
  */
 void create_quests() {
+
     Quest* questList = NULL;
 
     // Création de cinq quêtes
@@ -26,6 +31,7 @@ void create_quests() {
         quest1->id = 1;
         quest1->description = malloc(strlen("Kill 10 monsters") + 1);
         strcpy(quest1->description, "Kill 10 monsters");
+        quest1->claimedReward = false;
         quest1->goldReward = 0;
         quest1->armorReward = NULL;
         quest1->weaponReward = NULL;
@@ -39,6 +45,7 @@ void create_quests() {
         quest2->id = 2;
         quest2->description = malloc(strlen("Reach second zone") + 1);
         strcpy(quest2->description, "Reach second zone");
+        quest2->claimedReward = false;
         quest2->goldReward = 0;
         quest2->armorReward = NULL;
         quest2->weaponReward = NULL;

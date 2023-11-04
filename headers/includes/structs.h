@@ -199,8 +199,9 @@ struct Quest {
     int                    id;
     char*                  description;
     int                    goldReward;
-    Weapon                 *weaponReward;
-    Armor                  *armorReward;
+    Weapon                *weaponReward;
+    Armor                 *armorReward;
+    bool                   claimedReward;
     struct Quest*          next;
     bool                   finished;
 
