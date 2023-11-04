@@ -87,3 +87,6 @@
 6	148	7208112451800550	CMakeFiles/doom.dir/cfiles/inventory/display_inventory_armors.c.obj	2e023a3db3cc1626
 25	152	7208112451835546	CMakeFiles/doom.dir/cfiles/player/display_player_equipment.c.obj	fdaeb685da6e5fbb
 152	633	7208112456598147	doom.exe	8266dcf0753bae48
+8	143	7208127837630024	CMakeFiles/doom.dir/cfiles/main.c.obj	d0995440ae458e26
+20	144	7208127837639986	CMakeFiles/doom.dir/cfiles/display.c.obj	bd9a8766fd1c7864
+144	374	7208127839888880	doom.exe	8266dcf0753bae48

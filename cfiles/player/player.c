@@ -44,29 +44,29 @@ Player *init_player(Game *game) {
         }
 
         player->id = game->id;
+        init_player_draw(player);
+        get_player_name(player);
         player->isAlive = true;
-        player->turn = true; // the player attack first
+        player->gold = 0;
+        player->turn = true;
         player->lifepoints_max = 100;
         player->lifepoints = player->lifepoints_max;
         player->shield=0;
         player->mana_max = 100;
         player->mana = player->mana_max;
-        player->gold = 0;
         player->defense = 5;
+        player->current_weapon = NULL;
+        player->current_armor = NULL;
         player->attacks_by_turn = 2;
         player->attacks_left = player->attacks_by_turn;
         player->min_strength = 10;
         player->max_strength = 16;
         player->book = book;
-        player->currentX=0; // Y
-        player->currentY=0; // X
-        init_player_draw(player);
-        get_player_name(player);
+        player->currentX=0;
+        player->currentY=0;
         player->current_zone = game->zoneList[0];
         player->current_level = game->zoneList[0]->levelList[player->currentX][player->currentY];      // joueur initialisé au premier niveau de la premiere zone
         player->inventory = inventory;
-
-        add_player_name_to_game(game, player);
 
     Weapon *weapon1 = init_weapon("epee1", 2, 8, 18, 4, RARE);
     Weapon *weapon2 = init_weapon("epee2", 2, 12, 24, 6, EPIC);
@@ -84,22 +84,15 @@ Player *init_player(Game *game) {
     add_item(player, NULL, armor2);
     add_item(player, NULL, armor3);
 
-    #if DEBUG
-        print_player_stats(player);
-    #endif
-
     if(player == NULL) {
         #if DEBUG
                 printf("Error while creating player.\n");
         #endif
         exit(1);
     }
-    if(player != NULL) return player;
-    else {
-        puts("\nInitializing player failed.");
-        return NULL;
-    }
 
+
+    return player;
 }
 
 //-------------------------------------------------------------------------------------------------
@@ -144,20 +137,6 @@ void init_player_draw(Player *player) {
 //-------------------------------------------------------------------------------------------------
 
 
-void print_player_stats(Player *player) {
-
-    printf("\nPlayer initialized.\n");
-    printf("Player stats :\n"
-           "pv : %d\n"
-           "mana : %d\n"
-           "defense : %d\n", player->lifepoints, player->mana, player->defense);
-}
-
-
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
-
 void get_player_name(Player *player) {
 
     char name[40];
@@ -186,19 +165,6 @@ void get_player_name(Player *player) {
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
-
-void add_player_name_to_game(Game *game, Player *player) {
-
-    game->player_name = malloc(strlen(player->name) + 1);
-    strcpy(game->player_name, player->name);
-
-    //printf("Nom de la sauvegarde : %s\n", game->player_name);
-}
-
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
-
 
 /**
  * free inventory, draw and player itself
