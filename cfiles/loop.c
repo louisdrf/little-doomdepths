@@ -70,6 +70,7 @@ void launch_loop(Game *game, Player *player) {
                             default:
                                 launch_loop(game, player);
                         }
+                        break;
 
 
                     case 'i':

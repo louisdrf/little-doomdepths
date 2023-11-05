@@ -20,7 +20,7 @@
  */
 Level *init_level(int id, int in_zone_id) {
 
-    int randnbloot =0;
+    int randnbloot = 0;
     // create a level
     Level *level = malloc(sizeof(Level));
     if(level == NULL) {

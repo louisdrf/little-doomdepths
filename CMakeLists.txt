@@ -111,5 +111,8 @@ add_executable(doom cfiles/main.c
         headers/weapon/draw_weapon.h
         cfiles/armor/draw_armor.c
         headers/armor/draw_armor.h
+        cfiles/quests/check_quests.c
+        headers/quests/check_quests.h
+        headers/includes/quests_defines.h
 )
 
