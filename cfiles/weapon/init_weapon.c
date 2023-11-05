@@ -8,6 +8,7 @@
 #include <string.h>
 #include <time.h>
 #include "../../headers/includes/structs.h"
+#include "../../headers/includes/colors.h"
 
 #define DEBUG true
 
@@ -216,4 +217,17 @@ Weapon *randomWeapon() {
     }
 
 return weapon;
+}
+
+
+void display_weapon_stats(Weapon *weapon) {
+
+    printf("Arme : ");
+    printf(MAGENTA"%s "RESET, weapon->name);
+    printf("| att : ");
+    printf(RED"%d-%d "RESET, weapon->min_strength, weapon->max_strength);
+    printf("| cout en mana : ");
+    printf(BLUE"%d "RESET, weapon->mana_cost);
+    printf("| nombre attaques /tour : ");
+    printf(YELLOW"%d"RESET, weapon->attacks_by_turn);
 }

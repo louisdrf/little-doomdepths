@@ -8,6 +8,7 @@
 #include "../../headers/quests/display_quests.h"
 #include "../../headers/includes/colors.h"
 #include "../../headers/includes/structs.h"
+#include "../../headers/weapon/init_weapon.h"
 
 
 void display_quests_menu(Player *player) {
@@ -145,9 +146,11 @@ void display_quest_rewards(Player* player, int quest_id) {
 
 
 void get_quest_rewards(Quest *quest) {
-    printf("Recompenses de la quete\n\n");
+    printf(GREEN"Recompenses de la quete\n\n"RESET);
+
     if(quest->weaponReward != NULL) {
-        printf("arme\n");
+        display_weapon_stats(quest->weaponReward);
+        printf("\n");
     }
     if(quest->armorReward != NULL) {
         printf("armure\n");
@@ -158,3 +161,5 @@ void get_quest_rewards(Quest *quest) {
 
     int pass = getch();
 }
+
+

@@ -14,5 +14,6 @@ void add_loot_item(Level *level, Weapon *weapon, Armor *armor);
 int get_first_level_loot_weapon_free_space(Level *level);
 int get_first_level_loot_armor_free_space(Level *level);
 Weapon *randomWeapon();
+void display_weapon_stats(Weapon *weapon);
 
 #endif //DOOM_CREATE_WEAPON_H
