@@ -243,13 +243,29 @@ void updateMovement(Player *player, char command, Game* game) {
 void free_player(Player *player) {
 
     for(int i = 0; i < NBOBJECTS_MAX; i++) {
-        free(player->inventory->armorList[i]);
-        free(player->inventory->weaponList[i]);
+        if(player->inventory->armorList[i] != NULL) {
+            free(player->inventory->armorList[i]);
+        }
+        if(player->inventory->weaponList[i] != NULL) {
+            free(player->inventory->weaponList[i]);
+        }
     }
+    free(player->inventory);
+
     free(player->draw);
     free(player->name);
     if(player->current_weapon != NULL) free(player->current_weapon);
     if(player->current_armor != NULL) free(player->current_armor);
+    free(player->current_zone);
+    free(player->current_level);
+
+    for(int i = 0; i < NBSPELL_MAX; i++) {
+        if(player->book->spell_equipped[i] != NULL) {
+            free(player->book->spell_equipped[i]);
+        }
+    }
+
+
     free(player);
 
 #if DEBUG
