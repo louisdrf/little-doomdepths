@@ -77,7 +77,7 @@ void display_done_quests(Player *player) {
 
         if(current->finished == true) {
             printf("%d : %s | Recompenses recuperees : ",current->id, current->description);
-            if(!current->claimedReward) printf(RED"non\n"RESET);
+            if(!current->claimedRewards) printf(RED"non\n"RESET);
             else printf(GREEN"oui\n"RESET);
             nbQuests++;
         }
@@ -118,7 +118,7 @@ void display_quest_rewards(Player* player, int quest_id) {
     bool questExists = false;
 
     while (current != NULL) {
-        if (current->id == quest_id) {
+        if (current->id == quest_id && current->finished) {
             questExists = true;
             break;
         }
@@ -133,7 +133,7 @@ void display_quest_rewards(Player* player, int quest_id) {
         display_done_quests(player);
     }
 
-    if (current->claimedReward) {
+    if (current->claimedRewards) {
         system("cls");
         printf(RED"Les recompenses pour cette quete ont deja ete recuperees.\n"RESET);
         printf("\nRetour (pressez n'importe quelle touche)\n->");
@@ -147,21 +147,43 @@ void display_quest_rewards(Player* player, int quest_id) {
 
 
 void get_quest_rewards(Quest *quest) {
-    printf(GREEN"Recompenses de la quete\n\n"RESET);
 
-    if(quest->weaponReward != NULL) {
+    system("cls");
+
+    printf(GREEN"Recompenses de la quete\n\n\n"RESET);
+
+    if(quest->weaponReward != NULL && !quest->claimedWeapon) {
         display_weapon_stats(quest->weaponReward);
-        printf("\n");
-    }
-    if(quest->armorReward != NULL) {
-        display_armor_stats(quest->armorReward);
-        printf("\n");
-    }
-    if(quest->goldReward > 0) {
-        printf(YELLOW"Or : %d\n"RESET, quest->goldReward);
+        printf("\n\n");
     }
 
-    int pass = getch();
+
+    if(quest->armorReward != NULL && !quest->claimedArmor) {
+        display_armor_stats(quest->armorReward);
+        printf("\n\n");
+    }
+
+
+    if(quest->goldReward > 0 && !quest->claimedGold) {
+        printf(YELLOW"Or : %d\n\n"RESET, quest->goldReward);
+    }
+
+
+    printf(GREEN"Recuperer les recompenses (r)      "RESET);
+    printf(RED"Retour (q)\n"RESET);
+    printf("-> ");
+
+    int playerEntry = getch();
+    switch(playerEntry) {
+        case 'r':
+            break;
+
+        case 'q':
+            return;
+
+        default:
+            get_quest_rewards(quest);
+    }
 }
 
 

@@ -169,11 +169,13 @@ struct Quest {
     int                    goldReward;
     Weapon                *weaponReward;
     Armor                 *armorReward;
-    bool                   claimedReward;
+    bool                   claimedRewards;
     struct Quest*          next;
     bool                   finished;
     bool                   displayedAlert;  // pour n'afficher le message d'alerte qu'une fois
-
+    bool                   claimedGold;
+    bool                   claimedWeapon;
+    bool                   claimedArmor;
 };
 
 
