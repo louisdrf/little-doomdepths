@@ -82,13 +82,6 @@ void load_saved_game(int save_id) {
 }
 
 
-int end_game(Game *game) {
-    free_game(game);
-    printf("\nFin de partie.\n");
-    return 0;
-}
-
-
 void free_game(Game *game) {
     if(game != NULL) {
         free_zones(game);

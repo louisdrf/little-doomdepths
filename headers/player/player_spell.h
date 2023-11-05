@@ -15,5 +15,6 @@ void spell_damage(Player *player,int idMonster,Spell *spell);
 void spell_heal(Player *player,Spell *spell);
 void spell_shield(Player *player,Spell *spell);
 void spell_aoe(Player *player,Spell *spell);
+void free_spell_list(Spell *spellList);
 
 #endif //DOOM_PLAYER_SPELL_H

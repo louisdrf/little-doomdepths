@@ -14,6 +14,7 @@
 #include "../../headers/weapon/init_weapon.h"
 #include "../../headers/armor/init_armor.h"
 #include "../../headers/quests/create_quests.h"
+#include "../../headers/player/player_spell.h"
 
 #define DEBUG false
 
@@ -75,22 +76,6 @@ Player *init_player(Game *game) {
         player->current_zone = game->zoneList[0];
         player->current_level = game->zoneList[0]->levelList[player->currentX][player->currentY];      // joueur initialisé au premier niveau de la premiere zone
 
-
-    Weapon *weapon1 = init_weapon("epee1", 2, 8, 18, 4, RARE);
-    Weapon *weapon2 = init_weapon("epee2", 2, 12, 24, 6, EPIC);
-    Weapon *weapon3 = init_weapon("epee3", 3, 16, 24, 4, LEGENDARY);
-
-    add_item(player, weapon1, NULL);
-    add_item(player, weapon2, NULL);
-    add_item(player, weapon3, NULL);
-
-    Armor *armor1 = init_armor("armure1", 10, RARE);
-    Armor *armor2 = init_armor("armure2", 15, EPIC);
-    Armor *armor3 = init_armor("armure3", 20, LEGENDARY);
-
-    add_item(player, NULL, armor1);
-    add_item(player, NULL, armor2);
-    add_item(player, NULL, armor3);
 
     if(player == NULL) {
         #if DEBUG
@@ -242,6 +227,8 @@ void updateMovement(Player *player, char command, Game* game) {
 
 void free_player(Player *player) {
 
+    printf("free player\n");
+
     for(int i = 0; i < NBOBJECTS_MAX; i++) {
         if(player->inventory->armorList[i] != NULL) {
             free(player->inventory->armorList[i]);
@@ -252,24 +239,39 @@ void free_player(Player *player) {
     }
     free(player->inventory);
 
+    printf("free inventory\n");
+
     free(player->draw);
     free(player->name);
+
+    printf("free name & draw\n");
+
     if(player->current_weapon != NULL) free(player->current_weapon);
     if(player->current_armor != NULL) free(player->current_armor);
     free(player->current_zone);
     free(player->current_level);
+
+    printf("free player equipment and lelve and zone\n");
 
     for(int i = 0; i < NBSPELL_MAX; i++) {
         if(player->book->spell_equipped[i] != NULL) {
             free(player->book->spell_equipped[i]);
         }
     }
+    printf("free spell equipped\n");
 
+    free_quest_list(player->questList);
+
+    printf("free player quests\n");
+
+    /*free_spell_list(player->book->spell_stock);
+    free(player->book);
+
+    printf("free player book spell stock and book\n");*/
 
     free(player);
 
-#if DEBUG
-    if(player == NULL)   printf("\nplayer correctly free\n");
-#endif
+
+    printf("\nplayer correctly free\n");
 }
 

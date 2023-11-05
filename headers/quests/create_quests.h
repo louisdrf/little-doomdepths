@@ -8,5 +8,6 @@
 #include "../includes/structs.h"
 
 Quest *create_quests();
+void free_quest_list(Quest *questList);
 
 #endif //DOOM_CREATE_QUESTS_H

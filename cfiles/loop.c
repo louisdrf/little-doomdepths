@@ -65,7 +65,7 @@ void launch_loop(Game *game, Player *player) {
                             case 'q':
                                 printf("\nEnd of game.\n");
                                 game->isRunning = false;
-                                exit(0);
+                                return;
 
                             default:
                                 launch_loop(game, player);
@@ -114,7 +114,8 @@ void launch_loop(Game *game, Player *player) {
             if(monsters_attack(player) == 1) {                      // retourne 1 si le joueur se fait tuer
                 display_lose();
                 destroy_save(game->id);
-                break;
+                game->isRunning = false;
+                return;
             }
         }
     }

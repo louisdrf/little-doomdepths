@@ -4,16 +4,18 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/init/init_spell.h"
 #include "../../headers/spell/display_spell.h"
-#include "../../headers/monsters/monster.h"
 #include <stdlib.h>
 #include <conio.h>
 #include <stdio.h>
+
+#define DEBUG true
+
 Spell *create_spell(Spell *head, int index) {
 
     Spell *new = malloc(sizeof(Spell));
     if(new == NULL) {
 #if DEBUG
-        printf("Error while allocating memory for monster.\n");
+        printf("Error while allocating memory for spell.\n");
                 exit(1);
 #endif
     }
@@ -47,7 +49,7 @@ Book *init_book()
         exit(1);
     }
 #if DEBUG
-    printf("Inventory correctly initialized.\n");
+    printf("Book correctly initialized.\n");
 #endif
 
     return book;

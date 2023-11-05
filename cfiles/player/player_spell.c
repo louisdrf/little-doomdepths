@@ -56,12 +56,16 @@ int get_first_spell_free_space(Player *player) {
     }
     return i; // on retourne la case suivante
 }
+
+
 void spell_damage(Player *player,int idMonster,Spell *spell){
     Monster *target = getTargetMonster(player, idMonster);
     target->lifepoints-=spell->value*5;
     printf("\nVous infligez %d points de degats.\n",spell->value*5);
     player->mana-=spell->mana_cost;
 }
+
+
 void spell_aoe(Player *player,Spell *spell){
     Monster *current = player->current_level->monsters;
     int i = 0;
@@ -75,12 +79,16 @@ void spell_aoe(Player *player,Spell *spell){
     }
     player->mana-=spell->mana_cost;
 }
+
+
 void spell_heal(Player *player,Spell *spell){
     if((player->lifepoints + spell->value*5) >= player->lifepoints_max) player->lifepoints = 100;
     else player->lifepoints += spell->value*5;
     printf("\nVous recuperez %d points de vie.\n",spell->value*5);
     player->mana-=spell->mana_cost;
 }
+
+
 void spell_shield(Player *player,Spell *spell){
     if(player->shield>spell->value*3){
         printf("\nVous ne pouvez pas posseder un  bouclier plus puissant avec ce sort.\n");
@@ -90,4 +98,21 @@ void spell_shield(Player *player,Spell *spell){
     }
 
     player->mana-=spell->mana_cost;
+}
+
+
+
+void free_spell_list(Spell *spellList) {
+
+    Spell *current = spellList;
+    Spell *next;
+
+    while (current != NULL) {
+        printf("Desallocating spell : %s\n", current->name);
+        next = current->next;
+        free(current->name);
+        free(current);
+        current = next;
+    }
+
 }

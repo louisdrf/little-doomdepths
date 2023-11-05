@@ -9,7 +9,6 @@
 Game *init_game(int save_id);
 void launch_new_game(int save_id);
 void load_saved_game(int save_id);
-int end_game(Game *game);
 void free_game(Game *game);
 
 #endif //DOOM_GAME_H
