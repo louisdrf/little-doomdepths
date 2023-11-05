@@ -229,5 +229,31 @@ void display_weapon_stats(Weapon *weapon) {
     printf("| cout en mana : ");
     printf(BLUE"%d "RESET, weapon->mana_cost);
     printf("| nombre attaques /tour : ");
-    printf(YELLOW"%d"RESET, weapon->attacks_by_turn);
+    printf(YELLOW"%d "RESET, weapon->attacks_by_turn);
+    printf("| rarete : ");
+    display_rarity(weapon->rarity);
+
+
+}
+
+
+void display_rarity(int rarity) {
+
+    switch(rarity) {
+        case COMMON:
+            printf(GREEN"commune"RESET);
+            break;
+
+        case RARE:
+            printf(BLUE"rare"RESET);
+            break;
+
+        case EPIC:
+            printf(MAGENTA"epique"RESET);
+            break;
+
+        case LEGENDARY:
+            printf(YELLOW"*legendaire*"RESET);
+            break;
+    }
 }

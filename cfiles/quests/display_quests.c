@@ -9,6 +9,7 @@
 #include "../../headers/includes/colors.h"
 #include "../../headers/includes/structs.h"
 #include "../../headers/weapon/init_weapon.h"
+#include "../../headers/armor/init_armor.h"
 
 
 void display_quests_menu(Player *player) {
@@ -100,7 +101,7 @@ void display_done_quests(Player *player) {
                 printf("Numero de la quete : ");
                 int quest_id = getch() - 48;
                 display_quest_rewards(player, quest_id);
-                break;
+                return;
 
             case 2:
                 display_quests_menu(player);
@@ -153,7 +154,8 @@ void get_quest_rewards(Quest *quest) {
         printf("\n");
     }
     if(quest->armorReward != NULL) {
-        printf("armure\n");
+        display_armor_stats(quest->armorReward);
+        printf("\n");
     }
     if(quest->goldReward > 0) {
         printf(YELLOW"Or : %d\n"RESET, quest->goldReward);

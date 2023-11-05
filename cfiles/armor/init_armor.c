@@ -10,6 +10,8 @@
 #include <string.h>
 #include <time.h>
 #include "../../headers/includes/structs.h"
+#include "../../headers/includes/colors.h"
+#include "../../headers/weapon/init_weapon.h"
 
 #define DEBUG true
 
@@ -103,6 +105,18 @@ Armor *randomArmor() {
     }
 
     return armor;
+}
+
+
+void display_armor_stats(Armor *armor) {
+
+    printf("Armure : ");
+    printf(MAGENTA"%s "RESET, armor->name);
+    printf("| defense : ");
+    printf(BLUE"%d "RESET, armor->defense);
+    printf("| rarete : ");
+    display_rarity(armor->rarity);
+
 }
 
 
