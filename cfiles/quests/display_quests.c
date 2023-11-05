@@ -44,10 +44,9 @@ void display_quests(Player *player) {
     int nbQuests = 0;
 
     Quest *current = player->questList;
-    if(current == NULL) printf(RED"Liste vide\n"RESET);
     while(current != NULL) {
 
-            printf("Quete %d : %s | terminee : ", current->id, current->description);
+            printf("%s | terminee : ", current->description);
             if(current->finished == true) printf(GREEN"oui\n"RESET);
             else  printf(RED"non\n"RESET);
 
@@ -59,32 +58,51 @@ void display_quests(Player *player) {
         printf("Aucune quete en cours.\n");
     }
 
-    int test = getch();
+    int pass = getch();
 }
 
 void display_done_quests(Player *player) {
 
     system("cls");
+    int playerEntry;
     int nbQuests = 0;
 
     Quest *current = player->questList;
-    if(current == NULL) printf(RED"Liste vide\n"RESET);
 
     while(current != NULL) {
 
         if(current->finished == true) {
-            printf("Quete %d : %s | Recompenses recuperees : ", current->id, current->description);
-            if(!current->claimedReward) printf("non\n");
-            else printf("oui\n");
+            printf("%d : %s | Recompenses recuperees : ",current->id, current->description);
+            if(!current->claimedReward) printf(RED"non\n"RESET);
+            else printf(GREEN"oui\n"RESET);
             nbQuests++;
         }
         current = current->next;
     }
 
     if(nbQuests == 0) {
-        printf(RED"Aucune quete terminee.\n"RESET);
+        printf(RED"Aucune quete terminee pour l'instant.\n"RESET);
     }
+    else {
+        printf(BLUE"\nRecuperer les recompenses (1)"RESET);
+        printf(RED"        Retour (2)\n"RESET);
+        printf("-> ");
+        playerEntry = getch() - 48;
+        switch(playerEntry) {
 
-    int test = getch();
+            case 1:
+                printf("Numero de la quete : ");
+                int quest_id = getch() - 48;
+                display_quest_rewards(player, quest_id);
+                break;
+
+            default:
+                display_done_quests(player);
+        }
+    }
+}
+
+
+void display_quest_rewards(Player* player, int quest_id) {
 
 }

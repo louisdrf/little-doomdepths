@@ -19,8 +19,8 @@ Quest *create_quests() {
     // Création de quêtes
         Quest *quest1 = malloc(sizeof(Quest));
         quest1->id = KILL_10_MONSTERS;
-        quest1->description = malloc(strlen("Kill 10 monsters") + 1);
-        strcpy(quest1->description, "Kill 10 monsters");
+        quest1->description = malloc(strlen("Tuer 10 monstres") + 1);
+        strcpy(quest1->description, "Tuer 10 monstres");
         quest1->displayedAlert = false;
         quest1->claimedReward = false;
         quest1->goldReward = 50;
@@ -33,8 +33,8 @@ Quest *create_quests() {
         /////////////////////////////////////////////////////////////////////////////////////
         Quest  *quest2 = malloc(sizeof(Quest));
         quest2->id = REACH_SECOND_LEVEL;
-        quest2->description = malloc(strlen("Reach second level") + 1);
-        strcpy(quest2->description, "Reach second level");
+        quest2->description = malloc(strlen("Explorer le niveau 2 de la premiere zone") + 1);
+        strcpy(quest2->description, "Explorer le niveau 2 de la premiere zone");
         quest2->displayedAlert = false;
         quest2->claimedReward = false;
         quest2->goldReward = 0;
