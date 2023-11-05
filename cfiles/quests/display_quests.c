@@ -58,7 +58,9 @@ void display_quests(Player *player) {
         printf("Aucune quete en cours.\n");
     }
 
+    printf("\nRetour (pressez n'importe quelle touche)\n->");
     int pass = getch();
+    display_quests_menu(player);
 }
 
 void display_done_quests(Player *player) {
@@ -82,6 +84,9 @@ void display_done_quests(Player *player) {
 
     if(nbQuests == 0) {
         printf(RED"Aucune quete terminee pour l'instant.\n"RESET);
+        printf("\nRetour (pressez n'importe quelle touche)\n->");
+        int pause = getch();
+        return;
     }
     else {
         printf(BLUE"\nRecuperer les recompenses (1)"RESET);
@@ -96,6 +101,9 @@ void display_done_quests(Player *player) {
                 display_quest_rewards(player, quest_id);
                 break;
 
+            case 2:
+                display_quests_menu(player);
+
             default:
                 display_done_quests(player);
         }
@@ -104,5 +112,49 @@ void display_done_quests(Player *player) {
 
 
 void display_quest_rewards(Player* player, int quest_id) {
+    Quest *current = player->questList;
+    bool questExists = false;
 
+    while (current != NULL) {
+        if (current->id == quest_id) {
+            questExists = true;
+            break;
+        }
+        current = current->next;
+    }
+
+    if (!questExists) {
+        system("cls");
+        printf(RED"Le numero saisi ne correspond a aucune quete.\n"RESET);
+        printf("\nRetour (pressez n'importe quelle touche)\n->");
+        int pause = getch();
+        display_done_quests(player);
+    }
+
+    if (current->claimedReward) {
+        system("cls");
+        printf(RED"Les recompenses pour cette quete ont deja ete recuperees.\n"RESET);
+        printf("\nRetour (pressez n'importe quelle touche)\n->");
+        int pause = getch();
+        display_done_quests(player);
+    }
+    else {
+        get_quest_rewards(current);
+    }
+}
+
+
+void get_quest_rewards(Quest *quest) {
+    printf("Recompenses de la quete\n\n");
+    if(quest->weaponReward != NULL) {
+        printf("arme\n");
+    }
+    if(quest->armorReward != NULL) {
+        printf("armure\n");
+    }
+    if(quest->goldReward > 0) {
+        printf(YELLOW"Or : %d\n"RESET, quest->goldReward);
+    }
+
+    int pass = getch();
 }

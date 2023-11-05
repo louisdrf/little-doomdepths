@@ -25,7 +25,7 @@ Quest *create_quests() {
         quest1->claimedReward = false;
         quest1->goldReward = 50;
         quest1->armorReward = randomArmor();
-        quest1->weaponReward = NULL;
+        quest1->weaponReward = randomWeapon();
 
         quest1->next = questList;
         quest1->finished = false;
@@ -57,7 +57,7 @@ void free_quest_list(Quest *questList) {
     Quest *next;
 
     while (current != NULL) {
-        printf("Desallocating quest : %s\n", current->description);
+        //printf("Desallocating quest : %s\n", current->description);
         next = current->next;
         free(current->description);
         free(current);
