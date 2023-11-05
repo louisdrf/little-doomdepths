@@ -19,7 +19,7 @@
  * create a Monster * and add it to the linked list of Monster
  */
 Monster *create_monster(Monster *head, int index) {
-    srand(time(NULL));
+
     Monster *new = malloc(sizeof(Monster));
     if(new == NULL) {
         #if DEBUG
