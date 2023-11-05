@@ -54,168 +54,272 @@ build CMakeFiles/doom.dir/cfiles/main.c.obj: C_COMPILER__doom_unscanned_Debug C$
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/game.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/game.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\game.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/display.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/display.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\display.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/player/player.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/player/player.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\player\player.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\player
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/init/init_monster.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\init\init_monster.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\init
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/init/init_inventory.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/init/init_inventory.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\init\init_inventory.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\init
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/init/init_level.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/init/init_level.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\init\init_level.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\init
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/loop.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/loop.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\loop.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/player/player_attack.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/player/player_attack.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\player\player_attack.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\player
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/monsters/monster.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\monsters\monster.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\monsters
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/inventory/inventory.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/inventory/inventory.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\inventory\inventory.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\inventory
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/weapon/init_weapon.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\weapon\init_weapon.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\weapon
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/inventory/potion.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/inventory/potion.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\inventory\potion.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\inventory
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/monsters/monster_sprite.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\monsters\monster_sprite.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\monsters
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/inventory/display_inventory.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/inventory/display_inventory.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\inventory\display_inventory.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\inventory
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/armor/init_armor.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\armor\init_armor.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\armor
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/inventory/display_inventory_potions.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/inventory/display_inventory_potions.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\inventory\display_inventory_potions.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\inventory
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/inventory/display_inventory_armors.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/inventory/display_inventory_armors.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\inventory\display_inventory_armors.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\inventory
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/inventory/display_inventory_weapons.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/inventory/display_inventory_weapons.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\inventory\display_inventory_weapons.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\inventory
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/zones/generate_random_map.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/zones/generate_random_map.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\zones\generate_random_map.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\zones
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/zones/create_zone.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/zones/create_zone.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\zones\create_zone.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\zones
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/zones/init_zones.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/zones/init_zones.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\zones\init_zones.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\zones
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/zones/display_zone.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/zones/display_zone.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\zones\display_zone.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\zones
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/sqlite_test.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/sqlite_test.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\sqlite_test.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/sqlite3/sqlite3.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/sqlite3/sqlite3.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\sqlite3\sqlite3.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\sqlite3
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/spell/display_spell.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/spell/display_spell.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\spell\display_spell.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\spell
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/init/init_spell.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/init/init_spell.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\init\init_spell.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\init
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 build CMakeFiles/doom.dir/cfiles/player/player_spell.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/player/player_spell.c || cmake_object_order_depends_target_doom
   DEP_FILE = CMakeFiles\doom.dir\cfiles\player\player_spell.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\doom.dir
   OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\player
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
+
+build CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/level/display_level_loot_weapons.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\cfiles\level\display_level_loot_weapons.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\level
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
+
+build CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/level/display_level_loot.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\cfiles\level\display_level_loot.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\level
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
+
+build CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/level/display_level_loot_armors.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\cfiles\level\display_level_loot_armors.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\level
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
+
+build CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/monsters/display_monster_loot.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\cfiles\monsters\display_monster_loot.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\monsters
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
+
+build CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/weapon/draw_weapon.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\cfiles\weapon\draw_weapon.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\weapon
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
+
+build CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj: C_COMPILER__doom_unscanned_Debug C$:/Users/louis/CLionProjects/doom/cfiles/armor/draw_armor.c || cmake_object_order_depends_target_doom
+  DEP_FILE = CMakeFiles\doom.dir\cfiles\armor\draw_armor.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\doom.dir
+  OBJECT_FILE_DIR = CMakeFiles\doom.dir\cfiles\armor
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
+  TARGET_PDB = doom.pdb
 
 
 # =============================================================================
@@ -225,15 +329,16 @@ build CMakeFiles/doom.dir/cfiles/player/player_spell.c.obj: C_COMPILER__doom_uns
 #############################################
 # Link the executable doom.exe
 
-build doom.exe: C_EXECUTABLE_LINKER__doom_Debug CMakeFiles/doom.dir/cfiles/main.c.obj CMakeFiles/doom.dir/cfiles/game.c.obj CMakeFiles/doom.dir/cfiles/display.c.obj CMakeFiles/doom.dir/cfiles/player/player.c.obj CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj CMakeFiles/doom.dir/cfiles/init/init_inventory.c.obj CMakeFiles/doom.dir/cfiles/init/init_level.c.obj CMakeFiles/doom.dir/cfiles/loop.c.obj CMakeFiles/doom.dir/cfiles/player/player_attack.c.obj CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj CMakeFiles/doom.dir/cfiles/inventory/inventory.c.obj CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj CMakeFiles/doom.dir/cfiles/inventory/potion.c.obj CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj CMakeFiles/doom.dir/cfiles/inventory/display_inventory.c.obj CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj CMakeFiles/doom.dir/cfiles/inventory/display_inventory_potions.c.obj CMakeFiles/doom.dir/cfiles/inventory/display_inventory_armors.c.obj CMakeFiles/doom.dir/cfiles/inventory/display_inventory_weapons.c.obj CMakeFiles/doom.dir/cfiles/zones/generate_random_map.c.obj CMakeFiles/doom.dir/cfiles/zones/create_zone.c.obj CMakeFiles/doom.dir/cfiles/zones/init_zones.c.obj CMakeFiles/doom.dir/cfiles/zones/display_zone.c.obj CMakeFiles/doom.dir/cfiles/sqlite_test.c.obj CMakeFiles/doom.dir/sqlite3/sqlite3.c.obj CMakeFiles/doom.dir/cfiles/spell/display_spell.c.obj CMakeFiles/doom.dir/cfiles/init/init_spell.c.obj CMakeFiles/doom.dir/cfiles/player/player_spell.c.obj
+build doom.exe: C_EXECUTABLE_LINKER__doom_Debug CMakeFiles/doom.dir/cfiles/main.c.obj CMakeFiles/doom.dir/cfiles/game.c.obj CMakeFiles/doom.dir/cfiles/display.c.obj CMakeFiles/doom.dir/cfiles/player/player.c.obj CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj CMakeFiles/doom.dir/cfiles/init/init_inventory.c.obj CMakeFiles/doom.dir/cfiles/init/init_level.c.obj CMakeFiles/doom.dir/cfiles/loop.c.obj CMakeFiles/doom.dir/cfiles/player/player_attack.c.obj CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj CMakeFiles/doom.dir/cfiles/inventory/inventory.c.obj CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj CMakeFiles/doom.dir/cfiles/inventory/potion.c.obj CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj CMakeFiles/doom.dir/cfiles/inventory/display_inventory.c.obj CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj CMakeFiles/doom.dir/cfiles/inventory/display_inventory_potions.c.obj CMakeFiles/doom.dir/cfiles/inventory/display_inventory_armors.c.obj CMakeFiles/doom.dir/cfiles/inventory/display_inventory_weapons.c.obj CMakeFiles/doom.dir/cfiles/zones/generate_random_map.c.obj CMakeFiles/doom.dir/cfiles/zones/create_zone.c.obj CMakeFiles/doom.dir/cfiles/zones/init_zones.c.obj CMakeFiles/doom.dir/cfiles/zones/display_zone.c.obj CMakeFiles/doom.dir/cfiles/sqlite_test.c.obj CMakeFiles/doom.dir/sqlite3/sqlite3.c.obj CMakeFiles/doom.dir/cfiles/spell/display_spell.c.obj CMakeFiles/doom.dir/cfiles/init/init_spell.c.obj CMakeFiles/doom.dir/cfiles/player/player_spell.c.obj CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.obj CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.obj CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.obj CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.obj CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\doom.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\doom.dir\
   TARGET_FILE = doom.exe
   TARGET_IMPLIB = libdoom.dll.a
-  TARGET_PDB = doom.exe.dbg
+  TARGET_PDB = doom.pdb
 
 
 #############################################
@@ -280,14 +385,14 @@ build all: phony doom.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake C$:/Users/louis/CLionProjects/doom/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompileFeatures.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystem.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake C$:/Users/louis/CLionProjects/doom/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake C$:/Users/louis/CLionProjects/doom/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
+build C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompileFeatures.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystem.cmake.in C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake C$:/Users/louis/CLionProjects/doom/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
 
 
 #############################################
