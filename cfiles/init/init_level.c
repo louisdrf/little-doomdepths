@@ -7,7 +7,8 @@
 #include "../../headers/init/init_level.h"
 #include "../../headers/init/init_monster.h"
 #include "../../headers/inventory/potion.h"
-
+#include "../../headers/weapon/init_weapon.h"
+#include "../../headers/armor/init_armor.h"
 
 
 #define DEBUG false
@@ -19,6 +20,7 @@
  */
 Level *init_level(int id, int in_zone_id) {
 
+    int randnbloot =0;
     // create a level
     Level *level = malloc(sizeof(Level));
     if(level == NULL) {
@@ -43,6 +45,23 @@ Level *init_level(int id, int in_zone_id) {
 
     level->monsters = first_monster; // ajoute la tete de liste de monstres au niveau
 
+
+    // Initialise le tableau loot_weapon avec des pointeurs NULL
+
+    for(int i =0; i<MAX_LEVEL_LOOT_ITEM;i++){
+        level->loot_weapon[i] = NULL;
+        level->loot_armor[i] = NULL;
+    }
+    // random weapon/armor generation by level
+randnbloot= rand() % (id + 1); // Generate a random number between 0 and 'id'.
+printf("level id : %d | randnbloot : %d\n",level->id, randnbloot);
+for(int l = randnbloot; l > 0; l--){
+    if(l % 2 == 0){
+        add_loot_item(level, randomWeapon(), NULL);
+    }else{
+        add_loot_item(level, NULL,  randomArmor());
+    }
+}
 #if DEBUG
 printf("Level %d correctly initialized.\n", level->id);
 #endif

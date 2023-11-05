@@ -83,10 +83,13 @@ void display_all(Player *player) {
     display_player_ath(player);
     print_monsters(player);
     display_monsters_alive(player->current_level->monsters);
-    printf(CYAN"\nequipments (e)      inventory (i)      spell (s)      stats (c)\n"
+    printf(CYAN"\nequipments (e)      inventory (i)      spell (s)      stats (c)     loot(l)\n"
                         "quests     (j)      map       (m)      save  (x)      exit  (q)\n"RESET);
 }
 
+void display_player(Player *player) {
+    printf(RED"%s\n"RESET, player->draw);
+}
 
 void display_player_ath(Player *player) {
 
@@ -100,7 +103,6 @@ void display_player_ath(Player *player) {
     printf("\n");
 
 }
-
 
 void display_player_health(Player *player) {
 
@@ -129,7 +131,6 @@ void display_player_health(Player *player) {
 }
 
 
-
 void display_player_mana(Player *player) {
 
     int i = 0;
@@ -154,10 +155,10 @@ void display_player_mana(Player *player) {
                 i++;
         }
 
+
     printf( RESET "  %d/100", player->mana);
         printf("\n");
 }
-
 
 
 

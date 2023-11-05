@@ -19,6 +19,7 @@
 #define SPELL_COST_MAX 25
 #define NB_SPELL_TYPE 4
 #define NBLEVELS 5
+#define MAX_LEVEL_LOOT_ITEM 10
 
 #define NBOBJECTS_MAX 10
 #define NBSPELL_MAX 3

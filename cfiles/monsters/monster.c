@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include "../../headers/monsters/monster.h"
 #include "../../headers/includes/structs.h"
+#include "../../headers/includes/colors.h"
+#include "../../headers/monsters/display_monster_loot.h"
 
 /**
  * return 1 if all monsters are dead, else return 0
@@ -83,4 +85,13 @@ int monsters_attack(Player *player) {
     player->turn = true;                                                                        // le joueur peut rejouer ensuite
     player->attacks_left = player->attacks_by_turn;
     return 0;
+}
+void monster_Drop_loot(Player *player){   // Drop les items des monstres.
+    if (player->current_level->monsters->monster_weapon == NULL && player->current_level->monsters->monster_armor == NULL) {
+        printf(RED"\nLe monstre n'a pas d'arme ni d'armure.\n"RESET);
+        return;
+    }else{
+        get_Monster_loot(player);
+    }
+
 }

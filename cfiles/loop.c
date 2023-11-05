@@ -5,27 +5,21 @@
 #include <stdlib.h>
 #include <conio.h>
 #include "../headers/includes/structs.h"
-#include "../headers/includes/defines.h"
 #include "../headers/loop.h"
-#include "../headers/game.h"
 #include "../headers/display.h"
 #include "../headers/player/player_attack.h"
 #include "../headers/monsters/monster.h"
-#include "../headers/init/init_level.h"
-#include "../headers/inventory/potion.h"
-#include "../headers/monsters/monster_sprite.h"
 #include "../headers/inventory/display_inventory.h"
-#include "../headers/player/player_spell.h"
 #include "../headers/zones/display_zone.h"
 #include "../headers/spell/display_spell.h"
 #include "../headers/saves/create-save/create_save.h"
 #include "../sqlite3/sqlite3.h"
-#include "../headers/db_connexion.h"
 #include "../headers/includes/colors.h"
 #include "../headers/saves/destroy_save.h"
 #include "../headers/player/display_player_equipment.h"
 #include "../headers/player/display_player_stats.h"
 #include "../headers/quests/display_quests.h"
+#include "../headers/level/display_level_loot.h"
 
 /**
  * manages the game loop
@@ -52,6 +46,7 @@ void launch_loop(Game *game, Player *player) {
             } else {
                 system("cls");
                 display_all(player); // affichage
+
                 playerEntry = getch();
 
                 switch(playerEntry) {
@@ -95,6 +90,10 @@ void launch_loop(Game *game, Player *player) {
 
                     case 'j':
                         display_quests_menu(player);
+                        break;
+
+                    case 'l':
+                       display_level_loot_choice_sections(player->current_level,player);
                         break;
 
                     case 's':

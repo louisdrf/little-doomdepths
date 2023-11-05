@@ -73,8 +73,8 @@ struct Monster {
     char*                          draw;               // chaine de caractère de dessin du monstre
     int                            drawIndex;          // index utilisé pour dessiner le monstre
     struct Monster*                next;
-    struct Weapon*                 loot_weapon;        // arme lootable sur le monstre
-    struct Armor*                  loot_armor;         // armure lootable sur le monstre
+    Weapon*                        monster_weapon;        // arme lootable sur le monstre
+    Armor*                         monster_armor;         // armure lootable sur le monstre
     unsigned int                   loot_gold;          // gold lootable sur le monstre
 
 };
@@ -86,8 +86,8 @@ typedef struct {
     unsigned short           in_zone_id;          // index du niveau dans sa zone
     Monster*                 monsters;            // liste chainée de monstres
     unsigned short           nbMonsters;          // nb de monstres de la partie
-    struct Weapon*           loot_weapon;         // arme lootable sur le niveau
-    struct Armor*            loot_armor;          // armure lootable sur le niveau
+    Weapon*                  loot_weapon[MAX_LEVEL_LOOT_ITEM];         // arme lootable sur le niveau
+    Armor*                   loot_armor[MAX_LEVEL_LOOT_ITEM];
     unsigned int             loot_gold;           // gold lootable sur le niveau
     bool                     finished;            // true si le niveau a été fini
 

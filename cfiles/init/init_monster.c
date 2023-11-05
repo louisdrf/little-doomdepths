@@ -9,6 +9,8 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/defines.h"
 #include "../../headers/monsters/monster_sprite.h"
+#include "../../headers/weapon/init_weapon.h"
+#include "../../headers/armor/init_armor.h"
 
 #define DEBUG false
 
@@ -17,7 +19,7 @@
  * create a Monster * and add it to the linked list of Monster
  */
 Monster *create_monster(Monster *head, int index) {
-
+    srand(time(NULL));
     Monster *new = malloc(sizeof(Monster));
     if(new == NULL) {
         #if DEBUG
@@ -43,7 +45,10 @@ Monster *create_monster(Monster *head, int index) {
     new->loot_gold = rand() % MAX_GOLD_LOOT + MIN_GOLD_LOOT;
     new->next = head;
     new->drawIndex = 0;
-
+    new->monster_weapon = NULL;
+    new->monster_armor = NULL;
+    new->monster_weapon = randomWeapon(); // rand() weapon generate by rarity.
+    new->monster_armor = randomArmor();  // rand() armor generate by rarity.
     char *sprite = return_monster_sprite(new->monster_type);
     new->draw = malloc(strlen(sprite) + 1);
     strcpy(new->draw, sprite);

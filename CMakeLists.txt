@@ -99,5 +99,17 @@ add_executable(doom cfiles/main.c
         headers/quests/create_quests.h
         cfiles/quests/display_quests.c
         headers/quests/display_quests.h
+        cfiles/level/display_level_loot_weapons.c
+        cfiles/level/display_level_loot.c
+        cfiles/level/display_level_loot_armors.c
+        headers/level/display_level_loot.h
+        headers/level/display_level_loot_weapons.h
+        headers/level/display_level_loot_armors.h
+        cfiles/monsters/display_monster_loot.c
+        headers/monsters/display_monster_loot.h
+        cfiles/weapon/draw_weapon.c
+        headers/weapon/draw_weapon.h
+        cfiles/armor/draw_armor.c
+        headers/armor/draw_armor.h
 )
 
