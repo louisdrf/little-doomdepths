@@ -68,7 +68,9 @@ void display_done_quests(Player *player) {
     while(current != NULL) {
 
         if(current->finished == true) {
-            printf("Quete %d : %s |", current->id, current->description);
+            printf("Quete %d : %s | Recompenses recuperees : ", current->id, current->description);
+            if(!current->claimedReward) printf("non\n");
+            else printf("oui\n");
             nbQuests++;
         }
         current = current->next;

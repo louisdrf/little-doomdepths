@@ -27,7 +27,7 @@ Quest *create_quests() {
     Quest* questList = NULL;
 
     // Création de quêtes
-        Quest* quest1 = malloc(sizeof(struct Quest));
+        Quest *quest1 = malloc(sizeof(Quest));
         quest1->id = 1;
         quest1->description = malloc(strlen("Kill 10 monsters") + 1);
         strcpy(quest1->description, "Kill 10 monsters");
@@ -40,7 +40,7 @@ Quest *create_quests() {
         quest1->finished = false;
 
         /////////////////////////////////////////////////////////////////////////////////////
-        Quest* quest2 = malloc(sizeof(struct Quest));
+        Quest  *quest2 = malloc(sizeof(Quest));
         quest2->id = 2;
         quest2->description = malloc(strlen("Reach second zone") + 1);
         strcpy(quest2->description, "Reach second zone");

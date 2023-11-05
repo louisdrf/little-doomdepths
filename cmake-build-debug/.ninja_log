@@ -167,3 +167,5 @@
 1600	1835	7208260356394913	doom.exe	9a2785e843a38f1a
 6	102	7208261212378432	CMakeFiles/doom.dir/cfiles/quests/create_quests.c.obj	c7d96a6cb05643ad
 103	326	7208261214542645	doom.exe	9a2785e843a38f1a
+6	106	7208264415698557	CMakeFiles/doom.dir/cfiles/quests/display_quests.c.obj	bf4a7fddb9b68fdc
+107	325	7208264417792943	doom.exe	9a2785e843a38f1a
