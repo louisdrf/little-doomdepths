@@ -172,6 +172,7 @@ struct Quest {
     bool                   claimedReward;
     struct Quest*          next;
     bool                   finished;
+    bool                   displayedAlert;  // pour n'afficher le message d'alerte qu'une fois
 
 };
 

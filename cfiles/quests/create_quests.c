@@ -21,6 +21,7 @@ Quest *create_quests() {
         quest1->id = KILL_10_MONSTERS;
         quest1->description = malloc(strlen("Kill 10 monsters") + 1);
         strcpy(quest1->description, "Kill 10 monsters");
+        quest1->displayedAlert = false;
         quest1->claimedReward = false;
         quest1->goldReward = 50;
         quest1->armorReward = randomArmor();
@@ -34,6 +35,7 @@ Quest *create_quests() {
         quest2->id = REACH_SECOND_LEVEL;
         quest2->description = malloc(strlen("Reach second level") + 1);
         strcpy(quest2->description, "Reach second level");
+        quest2->displayedAlert = false;
         quest2->claimedReward = false;
         quest2->goldReward = 0;
         quest2->armorReward = NULL;

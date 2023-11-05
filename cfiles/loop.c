@@ -20,6 +20,7 @@
 #include "../headers/player/display_player_stats.h"
 #include "../headers/quests/display_quests.h"
 #include "../headers/level/display_level_loot.h"
+#include "../headers/quests/check_quests.h"
 
 /**
  * manages the game loop
@@ -37,6 +38,8 @@ void launch_loop(Game *game, Player *player) {
 
         if(player->turn)
         {
+            check_quests(player);
+
             if(are_all_monsters_dead(player) == 1)              // retourne 1 si tous les monstres du niveau sont morts et passe le joueur au niveau supérieur
             {
                 display_player_zone(player, game);
