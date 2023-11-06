@@ -161,3 +161,7 @@
 6	148	7209599026476690	CMakeFiles/doom.dir/cfiles/loop.c.obj	bcf47ea57414fce5
 6	123	7209599135165114	CMakeFiles/doom.dir/cfiles/quests/display_quests.c.obj	bf4a7fddb9b68fdc
 124	380	7209599137668415	doom.exe	a5fcc56fb71acf42
+6	116	7209600218406054	CMakeFiles/doom.dir/cfiles/quests/display_quests.c.obj	bf4a7fddb9b68fdc
+117	345	7209600220640070	doom.exe	a5fcc56fb71acf42
+6	117	7209601690863338	CMakeFiles/doom.dir/cfiles/quests/display_quests.c.obj	bf4a7fddb9b68fdc
+118	489	7209601694164499	doom.exe	a5fcc56fb71acf42

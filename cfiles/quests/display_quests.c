@@ -175,6 +175,12 @@ void get_quest_rewards(Quest *quest, Player *player) {
     int playerEntry = getch();
     switch(playerEntry) {
         case 'r':
+            if(quest->goldReward > 0 && !quest->claimedGold) {
+                printf("Vous avez recupere %d d'or !\n\n", quest->goldReward);
+                player->gold += quest->goldReward;
+                int pass = getch();
+            }
+
                 if(quest->weaponReward != NULL && !quest->claimedWeapon) {
                     display_weapon_stats(quest->weaponReward);
                     printf("\nAjouter a votre inventaire ? (1)     Equipper (2)\n");
@@ -190,6 +196,7 @@ void get_quest_rewards(Quest *quest, Player *player) {
                             player->min_strength = quest->weaponReward->min_strength;
                             player->max_strength = quest->weaponReward->max_strength;
                             player->attacks_by_turn = quest->weaponReward->attacks_by_turn;
+                            break;
 
                         default:
                             get_quest_rewards(quest, player);
