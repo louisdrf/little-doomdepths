@@ -230,28 +230,30 @@ void free_player(Player *player) {
     printf("free player\n");
 
     for(int i = 0; i < NBOBJECTS_MAX; i++) {
+        printf("i : %d\n", i);
         if(player->inventory->armorList[i] != NULL) {
-            free(player->inventory->armorList[i]);
+            printf("armure\n");
+            free_armor(player->inventory->armorList[i]);
         }
         if(player->inventory->weaponList[i] != NULL) {
-            free(player->inventory->weaponList[i]);
+            printf("arme\n");
+            free_weapon(player->inventory->weaponList[i]);
         }
     }
     free(player->inventory);
-
     printf("free inventory\n");
 
     free(player->draw);
     free(player->name);
-
     printf("free name & draw\n");
 
-    if(player->current_weapon != NULL) free(player->current_weapon);
-    if(player->current_armor != NULL) free(player->current_armor);
     free(player->current_zone);
     free(player->current_level);
+    printf("free player level and zone\n");
 
-    printf("free player equipment and level and zone\n");
+    if(player->current_weapon != NULL) free_weapon(player->current_weapon);
+    if(player->current_armor != NULL) free_armor(player->current_armor);
+    printf("free player equipment\n");
 
     for(int i = 0; i < NBSPELL_MAX; i++) {
         if(player->book->spell_equipped[i] != NULL) {
@@ -270,8 +272,6 @@ void free_player(Player *player) {
     printf("free player book spell stock and book\n");*/
 
     free(player);
-
-
     printf("\nplayer correctly free\n");
 }
 

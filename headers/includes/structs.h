@@ -48,7 +48,6 @@ typedef struct {
     unsigned short          min_strength;
     unsigned short          max_strength;
     unsigned short          attacks_by_turn;   // nombre d'attaques par tour que confère l'arme
-    char*                   draw;
     int                     mana_cost;         // cout en mana d'une attaque
     unsigned short          rarity;            // rareté de l'arme
 

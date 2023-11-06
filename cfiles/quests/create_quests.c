@@ -40,9 +40,9 @@ Quest *create_quests() {
         strcpy(quest2->description, "Explorer le niveau 2 de la premiere zone");
         quest2->displayedAlert = false;
         quest2->claimedRewards = false;
-        quest2->claimedGold = false;
+        quest2->claimedGold = true;
         quest2->claimedArmor = false;
-        quest2->claimedWeapon = false;
+        quest2->claimedWeapon = true;
 
         quest2->goldReward = 0;
         quest2->armorReward = randomArmor();
@@ -55,12 +55,12 @@ Quest *create_quests() {
 
         Quest  *quest3 = malloc(sizeof(Quest));
         quest3->id = FINISH_TWO_QUESTS;
-        quest3->description = malloc(strlen("Terminer deux quetes") + 1);
-        strcpy(quest3->description, "Terminer deux quetes");
+        quest3->description = malloc(strlen("Terminer une quete") + 1);
+        strcpy(quest3->description, "Terminer une quete");
         quest3->displayedAlert = false;
         quest3->claimedRewards = false;
         quest3->claimedGold = false;
-        quest3->claimedArmor = false;
+        quest3->claimedArmor = true;
         quest3->claimedWeapon = false;
 
         quest3->goldReward = 50;

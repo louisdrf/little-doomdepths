@@ -47,7 +47,7 @@ void check_quests(Player *player) {
                 break;
 
             case FINISH_TWO_QUESTS:
-                if(player->nbQuestDone == 2) {
+                if(player->nbQuestDone == 1) {
                     current->finished = true;
                     if(!current->displayedAlert) {
                         system("cls");
