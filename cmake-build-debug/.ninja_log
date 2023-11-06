@@ -59,3 +59,15 @@
 119	352	7209611474150540	doom.exe	a5fcc56fb71acf42
 6	119	7209613956211560	CMakeFiles/doom.dir/cfiles/quests/display_quests.c.obj	bf4a7fddb9b68fdc
 120	359	7209613958535339	doom.exe	a5fcc56fb71acf42
+90	348	7209929981628172	CMakeFiles/doom.dir/cfiles/inventory/display_inventory_weapons.c.obj	3ea3e87a3e185562
+28	363	7209929981658091	CMakeFiles/doom.dir/cfiles/player/player.c.obj	98a48f816ba24173
+41	377	7209929981797721	CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj	ba4a0d04f1163003
+10	394	7209929981857566	CMakeFiles/doom.dir/cfiles/init/init_level.c.obj	10e6784b4bb8ee6e
+72	411	7209929982076971	CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj	1c75fed269756b2d
+55	438	7209929982116866	CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj	346da82170a2bfab
+377	617	7209929984719901	CMakeFiles/doom.dir/cfiles/saves/load-save/load_player_inventory.c.obj	6cf3450d32f5add3
+394	642	7209929984889447	CMakeFiles/doom.dir/cfiles/player/display_player_equipment.c.obj	fdaeb685da6e5fbb
+349	643	7209929984779740	CMakeFiles/doom.dir/cfiles/quests/display_quests.c.obj	bf4a7fddb9b68fdc
+411	653	7209929985268430	CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj	b644fe631a452c24
+363	654	7209929985258454	CMakeFiles/doom.dir/cfiles/quests/create_quests.c.obj	c7d96a6cb05643ad
+655	983	7209929988479827	doom.exe	a5fcc56fb71acf42

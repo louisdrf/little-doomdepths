@@ -209,7 +209,7 @@ void get_weapon_quest_reward(Quest *quest, Player *player) {
         display_weapon_stats(quest->weaponReward);
         printf("\n\nAjouter a votre inventaire ? (1)     Equipper (2)        ");
         printf(BLUE"Ignorer (3)\n"RESET);
-        int choice = getch() -48;
+        int choice = getch() - 48;
         switch(choice) {
             case 1:
                 add_item(player,quest->weaponReward, NULL);
@@ -217,7 +217,6 @@ void get_weapon_quest_reward(Quest *quest, Player *player) {
                 break;
 
             case 2: // ranger l'arme precedente dans l'inventaire et equipper la nouvelle arme
-                add_item(player, player->current_weapon, NULL);
                 equip_weapon(player, quest->weaponReward);
                 quest->claimedWeapon = true;
                 break;
@@ -247,7 +246,6 @@ void get_armor_quest_reward(Quest *quest, Player *player) {
                 break;
 
             case 2: // ranger l'armure precedente dans l'inventaire et equipper la nouvelle armure
-                add_item(player,NULL, quest->armorReward);
                 player->current_armor = quest->armorReward;
                 player->defense = quest->armorReward->defense;
 
