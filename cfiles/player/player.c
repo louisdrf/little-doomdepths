@@ -251,7 +251,7 @@ void free_player(Player *player) {
     free(player->current_zone);
     free(player->current_level);
 
-    printf("free player equipment and lelve and zone\n");
+    printf("free player equipment and level and zone\n");
 
     for(int i = 0; i < NBSPELL_MAX; i++) {
         if(player->book->spell_equipped[i] != NULL) {

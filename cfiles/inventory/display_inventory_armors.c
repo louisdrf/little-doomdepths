@@ -5,9 +5,11 @@
 #include <string.h>
 #include <stdio.h>
 #include <conio.h>
+#include <stdlib.h>
 #include "../../headers/inventory/display_inventory_armors.h"
 #include "../../headers/inventory/display_inventory.h"
 #include "../../headers/includes/colors.h"
+#include "../../headers/armor/init_armor.h"
 
 
 void display_player_armors(Player *player) {
@@ -16,8 +18,12 @@ void display_player_armors(Player *player) {
     int inventoryWidth = 0;
     int choice;
 
+    system("cls");
+
     if(player->inventory->armorList[i] == NULL) {
         printf(RED"\nAucune armure dans l'inventaire\n\n"RESET);
+        printf("Retour (pressez n'importe quelle touche)\n");
+        int pass = getch();
         return;
     }
 
@@ -82,7 +88,8 @@ void display_player_armors(Player *player) {
             player->current_armor = player->inventory->armorList[choice];
             player->defense = player->current_armor->defense;
             printf("\n\n");
-            printf("armure equipee : %s | %d \n\n", player->current_armor->name, player->current_armor->defense);
+            printf("Armure equipee : ");
+            display_armor_stats(player->inventory->armorList[choice]);
             display_inventory_choice_sections(player);
             break;
 

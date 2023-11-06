@@ -207,7 +207,7 @@ typedef struct {
     Book*               book;               // livre de sorts du joueur
     Quest*              questList;          // liste de quetes du joueur
     int                 nbKill;             // nombre de monstres tués
-    int                 nbQuestDone;             // nombre de quetes terminées
+    int                 nbQuestDone;        // nombre de quetes terminées
 
 } Player;
 

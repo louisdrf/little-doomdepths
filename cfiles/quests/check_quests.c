@@ -27,6 +27,7 @@ void check_quests(Player *player) {
                         printf("Entrez n'importe quelle touche pour continuer.\n-> ");
                         pass = getch();
                         current->displayedAlert = true;
+                        player->nbQuestDone++;
                     }
                 }
                 break;
@@ -39,6 +40,7 @@ void check_quests(Player *player) {
                         printf(GREEN"Vous avez termine la quete : %s ! Allez recuperer vos recompenses !\n\n"RESET, current->description);
                         printf("Entrez n'importe quelle touche pour continuer.\n-> ");
                         current->displayedAlert = true;
+                        player->nbQuestDone++;
                     }
                 }
 

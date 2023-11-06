@@ -5,6 +5,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <conio.h>
+#include <stdlib.h>
 #include "../../headers/inventory/display_inventory_weapons.h"
 #include "../../headers/inventory/display_inventory.h"
 #include "../../headers/includes/colors.h"
@@ -17,8 +18,12 @@ void display_player_weapons(Player *player) {
     int inventoryWidth = 0;
     int choice;
 
+    system("cls");
+
     if(player->inventory->weaponList[i] == NULL) {
         printf(RED"\nAucune arme dans l'inventaire\n\n"RESET);
+        printf("Retour (pressez n'importe quelle touche)\n");
+        int pass = getch();
         return;
     }
 
@@ -75,18 +80,17 @@ void display_player_weapons(Player *player) {
 
     printf("\n");
     printf("Equiper une arme (1)    Retour (2)     Fermer l'inventaire (3)\n");
-    choice = getch();
-    choice -= 48;           // décalage ascii
+    choice = getch() - 48;
 
     switch(choice) {
 
         case 1:                                                 // equipe l'arme choisie
             printf("Id de l'arme a equiper : ");
-            choice = getch();
-            choice -= 48;
+            choice = getch() - 48;
             equip_weapon(player, player->inventory->weaponList[choice]);
             printf("\n\n");
-            printf("arme equipee : %s | %d-%d | %d \n\n", player->current_weapon->name, player->current_weapon->min_strength, player->current_weapon->max_strength, player->current_weapon->mana_cost);
+            printf("Arme equipee : ");
+            display_weapon_stats(player->inventory->weaponList[choice]);
             display_inventory_choice_sections(player);
             break;
 
