@@ -176,9 +176,8 @@ void get_quest_rewards(Quest *quest, Player *player) {
     switch(playerEntry) {
         case 'r':
                 if(quest->weaponReward != NULL && !quest->claimedWeapon) {
-                    printf("Ajouter :");
                     display_weapon_stats(quest->weaponReward);
-                    printf("\na votre inventaire ? (1)     Equipper (2)\n");
+                    printf("\nAjouter a votre inventaire ? (1)     Equipper (2)\n");
                     int choice = getch() -48;
                     switch(choice) {
                         case 1:
@@ -203,7 +202,7 @@ void get_quest_rewards(Quest *quest, Player *player) {
             return;
 
         default:
-            get_quest_rewards(quest);
+            get_quest_rewards(quest, player);
     }
 }
 
