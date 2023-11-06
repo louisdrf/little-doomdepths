@@ -26,7 +26,7 @@ Quest *create_quests() {
         quest1->claimedGold = false;
         quest1->claimedArmor = false;
         quest1->claimedWeapon = false;
-        quest1->goldReward = 50;
+        quest1->goldReward = 20;
         quest1->armorReward = randomArmor();
         quest1->weaponReward = randomWeapon();
 
@@ -43,15 +43,33 @@ Quest *create_quests() {
         quest2->claimedGold = false;
         quest2->claimedArmor = false;
         quest2->claimedWeapon = false;
+
         quest2->goldReward = 0;
-        quest2->armorReward = NULL;
-        quest2->weaponReward = randomWeapon();
+        quest2->armorReward = randomArmor();
+        quest2->weaponReward = NULL;
 
         quest2->next = quest1;
         quest2->finished = false;
-        questList = quest2;
 
     /////////////////////////////////////////////////////////////////////////////////////
+
+        Quest  *quest3 = malloc(sizeof(Quest));
+        quest3->id = FINISH_TWO_QUESTS;
+        quest3->description = malloc(strlen("Terminer deux quetes") + 1);
+        strcpy(quest3->description, "Terminer deux quetes");
+        quest3->displayedAlert = false;
+        quest3->claimedRewards = false;
+        quest3->claimedGold = false;
+        quest3->claimedArmor = false;
+        quest3->claimedWeapon = false;
+
+        quest3->goldReward = 50;
+        quest3->armorReward = NULL;
+        quest3->weaponReward = randomWeapon();
+
+        quest3->next = quest2;
+        quest3->finished = false;
+        questList = quest3;
 
 return questList;
 

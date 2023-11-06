@@ -140,3 +140,15 @@
 263	494	7210066730573962	doom.exe	a5fcc56fb71acf42
 6	106	7210068429578983	CMakeFiles/doom.dir/cfiles/inventory/inventory.c.obj	cfcd6ce51a5af8dd
 106	325	7210068431706815	doom.exe	a5fcc56fb71acf42
+17	114	7210072312405471	CMakeFiles/doom.dir/cfiles/quests/check_quests.c.obj	fc5622d047f3aa17
+6	115	7210072312405471	CMakeFiles/doom.dir/cfiles/quests/create_quests.c.obj	c7d96a6cb05643ad
+115	356	7210072314755366	doom.exe	a5fcc56fb71acf42
+6	118	7210078072231491	CMakeFiles/doom.dir/cfiles/quests/display_quests.c.obj	bf4a7fddb9b68fdc
+119	343	7210078074431791	doom.exe	a5fcc56fb71acf42
+6	113	7210079902275089	CMakeFiles/doom.dir/cfiles/loop.c.obj	bcf47ea57414fce5
+113	330	7210079904379462	doom.exe	a5fcc56fb71acf42
+6	105	7210081972768586	CMakeFiles/doom.dir/cfiles/quests/check_quests.c.obj	fc5622d047f3aa17
+105	327	7210081974932792	doom.exe	a5fcc56fb71acf42
+17	115	7210085041521358	CMakeFiles/doom.dir/cfiles/quests/check_quests.c.obj	fc5622d047f3aa17
+6	120	7210085041571238	CMakeFiles/doom.dir/cfiles/quests/display_quests.c.obj	bf4a7fddb9b68fdc
+120	338	7210085043695903	doom.exe	a5fcc56fb71acf42

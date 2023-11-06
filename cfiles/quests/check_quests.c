@@ -39,15 +39,31 @@ void check_quests(Player *player) {
                         system("cls");
                         printf(GREEN"Vous avez termine la quete : %s ! Allez recuperer vos recompenses !\n\n"RESET, current->description);
                         printf("Entrez n'importe quelle touche pour continuer.\n-> ");
+                        pass = getch();
                         current->displayedAlert = true;
                         player->nbQuestDone++;
                     }
                 }
+                break;
+
+            case FINISH_TWO_QUESTS:
+                if(player->nbQuestDone == 2) {
+                    current->finished = true;
+                    if(!current->displayedAlert) {
+                        system("cls");
+                        printf(GREEN"Vous avez termine la quete : %s ! Allez recuperer vos recompenses !\n\n"RESET, current->description);
+                        printf("Entrez n'importe quelle touche pour continuer.\n-> ");
+                        pass = getch();
+                        current->displayedAlert = true;
+                        player->nbQuestDone++;
+                    }
+                }
+                break;
 
             default:
                 break;
         }
 
-        current = current ->next;
+        current = current->next;
     }
 }
