@@ -237,6 +237,15 @@ void display_weapon_stats(Weapon *weapon) {
 }
 
 
+void equip_weapon(Player *player, Weapon *w) {
+
+    player->current_weapon = w;
+    player->min_strength = w->min_strength;
+    player->max_strength = w->max_strength;
+    player->attacks_by_turn = w->attacks_by_turn;
+}
+
+
 void display_rarity(int rarity) {
 
     switch(rarity) {

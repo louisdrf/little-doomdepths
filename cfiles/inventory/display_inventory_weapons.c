@@ -8,6 +8,7 @@
 #include "../../headers/inventory/display_inventory_weapons.h"
 #include "../../headers/inventory/display_inventory.h"
 #include "../../headers/includes/colors.h"
+#include "../../headers/weapon/init_weapon.h"
 
 
 void display_player_weapons(Player *player) {
@@ -83,10 +84,7 @@ void display_player_weapons(Player *player) {
             printf("Id de l'arme a equiper : ");
             choice = getch();
             choice -= 48;
-            player->current_weapon = player->inventory->weaponList[choice];
-            player->attacks_by_turn = player->current_weapon->attacks_by_turn;
-            player->min_strength = player->current_weapon->min_strength;
-            player->max_strength = player->current_weapon->max_strength;
+            equip_weapon(player, player->inventory->weaponList[choice]);
             printf("\n\n");
             printf("arme equipee : %s | %d-%d | %d \n\n", player->current_weapon->name, player->current_weapon->min_strength, player->current_weapon->max_strength, player->current_weapon->mana_cost);
             display_inventory_choice_sections(player);

@@ -218,11 +218,7 @@ void get_weapon_quest_reward(Quest *quest, Player *player) {
 
             case 2: // ranger l'arme precedente dans l'inventaire et equipper la nouvelle arme
                 add_item(player, player->current_weapon, NULL);
-                player->current_weapon = quest->weaponReward;
-                player->min_strength = quest->weaponReward->min_strength;
-                player->max_strength = quest->weaponReward->max_strength;
-                player->attacks_by_turn = quest->weaponReward->attacks_by_turn;
-
+                equip_weapon(player, quest->weaponReward);
                 quest->claimedWeapon = true;
                 break;
 
