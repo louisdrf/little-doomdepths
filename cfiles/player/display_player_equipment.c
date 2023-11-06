@@ -58,6 +58,7 @@ void display_player_equipment(Player *player) {
     playerEntry = getch() - 48;
     switch(playerEntry) {
         case 1:
+            remove_weapon_inventory(player, player->current_weapon);
             add_item(player, player->current_weapon, NULL);
             player->current_weapon = NULL;
             player->min_strength = 10;
@@ -66,6 +67,7 @@ void display_player_equipment(Player *player) {
             break;
 
         case 2:
+            remove_armor_inventory(player, player->current_armor);
             add_item(player, NULL, player->current_armor);
             player->current_armor = NULL;
             player->defense = 5;

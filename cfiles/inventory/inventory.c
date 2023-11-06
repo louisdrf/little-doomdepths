@@ -53,9 +53,11 @@ void add_item(Player *player, Weapon *weapon, Armor *armor) {
 void remove_weapon_inventory(Player *player, Weapon *w) {
 
     for(int i = 0; i < NBOBJECTS_MAX; i++) {
-        if(strcmp(player->inventory->weaponList[i]->name , w->name) == 0) {
-            player->inventory->weaponList[i] = NULL;
-            return;
+        if(player->inventory->armorList[i] != NULL) {
+            if (strcmp(player->inventory->weaponList[i]->name, w->name) == 0) {
+                player->inventory->weaponList[i] = NULL;
+                return;
+            }
         }
     }
 }
@@ -64,9 +66,11 @@ void remove_weapon_inventory(Player *player, Weapon *w) {
 void remove_armor_inventory(Player *player, Armor *a) {
 
     for(int i = 0; i < NBOBJECTS_MAX; i++) {
-        if(strcmp(player->inventory->armorList[i]->name , a->name) == 0) {
-            player->inventory->armorList[i] = NULL;
-            return;
+        if(player->inventory->armorList[i] != NULL) {
+            if(strcmp(player->inventory->armorList[i]->name , a->name) == 0) {
+                player->inventory->armorList[i] = NULL;
+                return;
+            }
         }
     }
 
