@@ -210,7 +210,7 @@ Weapon *randomWeapon() {
             weapon->min_strength = 20;
             weapon->max_strength = 30;
             weapon->attacks_by_turn = rand() % 3 + 1; // De 1 à 3 attaques par tour
-            weapon->mana_cost = rand() % 21; // Coût en mana de 0 à 20
+            weapon->mana_cost = rand() % 10; // Coût en mana de 0 à 7
 
             //weapon->draw = "";
             break;

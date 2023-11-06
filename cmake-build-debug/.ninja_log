@@ -145,3 +145,16 @@
 113	344	7209261405307199	doom.exe	a5fcc56fb71acf42
 6	109	7209262781192324	CMakeFiles/doom.dir/cfiles/quests/display_quests.c.obj	bf4a7fddb9b68fdc
 110	334	7209262783376477	doom.exe	a5fcc56fb71acf42
+37	340	7209590849380059	CMakeFiles/doom.dir/cfiles/player/player.c.obj	98a48f816ba24173
+7	353	7209590849429921	CMakeFiles/doom.dir/cfiles/game.c.obj	12e7c8e0922024d2
+78	367	7209590849439891	CMakeFiles/doom.dir/cfiles/inventory/inventory.c.obj	cfcd6ce51a5af8dd
+65	386	7209590849788961	CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj	70c564f15ebe5b80
+24	408	7209590849828853	CMakeFiles/doom.dir/cfiles/display.c.obj	bd9a8766fd1c7864
+50	603	7209590849858775	CMakeFiles/doom.dir/cfiles/player/player_attack.c.obj	b9aade89dbf4ccda
+386	615	7209590851923250	CMakeFiles/doom.dir/cfiles/quests/display_quests.c.obj	bf4a7fddb9b68fdc
+367	616	7209590851973117	CMakeFiles/doom.dir/cfiles/inventory/potion.c.obj	bdc8c73cfe7bfae5
+341	622	7209590852312207	CMakeFiles/doom.dir/cfiles/loop.c.obj	bcf47ea57414fce5
+353	624	7209590852332150	CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj	346da82170a2bfab
+624	1264	7209590858685164	doom.exe	a5fcc56fb71acf42
+7	139	7209592500761664	CMakeFiles/doom.dir/cfiles/quests/display_quests.c.obj	bf4a7fddb9b68fdc
+140	387	7209592503165231	doom.exe	a5fcc56fb71acf42

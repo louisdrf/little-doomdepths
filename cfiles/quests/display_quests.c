@@ -103,11 +103,9 @@ void display_done_quests(Player *player) {
                 display_quest_rewards(player, quest_id);
                 return;
 
-            case 2:
-                display_quests_menu(player);
 
             default:
-                display_done_quests(player);
+                return;
         }
     }
 }
