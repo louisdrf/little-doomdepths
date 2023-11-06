@@ -176,32 +176,14 @@ void get_quest_rewards(Quest *quest, Player *player) {
     switch(playerEntry) {
         case 'r':
             if(quest->goldReward > 0 && !quest->claimedGold) {
-                printf("Vous avez recupere %d d'or !\n\n", quest->goldReward);
+                printf(YELLOW"Vous recuperez %d d'or !\n\n"RESET, quest->goldReward);
                 player->gold += quest->goldReward;
                 int pass = getch();
             }
-
-                if(quest->weaponReward != NULL && !quest->claimedWeapon) {
-                    display_weapon_stats(quest->weaponReward);
-                    printf("\nAjouter a votre inventaire ? (1)     Equipper (2)\n");
-                    int choice = getch() -48;
-                    switch(choice) {
-                        case 1:
-                            add_item(player,quest->weaponReward, NULL);
-                            break;
-
-                        case 2: // ranger l'arme precedente dans l'inventaire et equipper la nouvelle arme
-                            add_item(player, player->current_weapon, NULL);
-                            player->current_weapon = quest->weaponReward;
-                            player->min_strength = quest->weaponReward->min_strength;
-                            player->max_strength = quest->weaponReward->max_strength;
-                            player->attacks_by_turn = quest->weaponReward->attacks_by_turn;
-                            break;
-
-                        default:
-                            get_quest_rewards(quest, player);
-                    }
-                }
+            get_weapon_quest_reward(quest, player);
+            int pass = getch();
+            get_armor_quest_reward(quest, player);
+            pass = getch();
 
             break;
 
@@ -210,6 +192,57 @@ void get_quest_rewards(Quest *quest, Player *player) {
 
         default:
             get_quest_rewards(quest, player);
+    }
+}
+
+
+void get_weapon_quest_reward(Quest *quest, Player *player) {
+
+    if(quest->weaponReward != NULL && !quest->claimedWeapon) {
+        display_weapon_stats(quest->weaponReward);
+        printf("\nAjouter a votre inventaire ? (1)     Equipper (2)\n");
+        int choice = getch() -48;
+        switch(choice) {
+            case 1:
+                add_item(player,quest->weaponReward, NULL);
+                break;
+
+            case 2: // ranger l'arme precedente dans l'inventaire et equipper la nouvelle arme
+                add_item(player, player->current_weapon, NULL);
+                player->current_weapon = quest->weaponReward;
+                player->min_strength = quest->weaponReward->min_strength;
+                player->max_strength = quest->weaponReward->max_strength;
+                player->attacks_by_turn = quest->weaponReward->attacks_by_turn;
+                break;
+
+            default:
+                get_quest_rewards(quest, player);
+        }
+    }
+}
+
+
+
+void get_armor_quest_reward(Quest *quest, Player *player) {
+
+    if(quest->armorReward != NULL && !quest->claimedArmor) {
+        display_armor_stats(quest->armorReward);
+        printf("\nAjouter a votre inventaire ? (1)     Equipper (2)\n");
+        int choice = getch() -48;
+        switch(choice) {
+            case 1:
+                add_item(player,NULL, quest->armorReward);
+                break;
+
+            case 2: // ranger l'armure precedente dans l'inventaire et equipper la nouvelle armure
+                add_item(player,NULL, quest->armorReward);
+                player->current_armor = quest->armorReward;
+                player->defense = quest->armorReward->defense;
+                break;
+
+            default:
+                get_quest_rewards(quest, player);
+        }
     }
 }
 
