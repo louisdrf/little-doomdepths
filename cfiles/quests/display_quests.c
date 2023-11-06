@@ -10,6 +10,7 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/weapon/init_weapon.h"
 #include "../../headers/armor/init_armor.h"
+#include "../../headers/inventory/inventory.h"
 
 
 void display_quests_menu(Player *player) {
@@ -139,12 +140,12 @@ void display_quest_rewards(Player* player, int quest_id) {
         display_done_quests(player);
     }
     else {
-        get_quest_rewards(current);
+        get_quest_rewards(current, player);
     }
 }
 
 
-void get_quest_rewards(Quest *quest) {
+void get_quest_rewards(Quest *quest, Player *player) {
 
     system("cls");
 
@@ -174,6 +175,28 @@ void get_quest_rewards(Quest *quest) {
     int playerEntry = getch();
     switch(playerEntry) {
         case 'r':
+                if(quest->weaponReward != NULL && !quest->claimedWeapon) {
+                    printf("Ajouter :");
+                    display_weapon_stats(quest->weaponReward);
+                    printf("\na votre inventaire ? (1)     Equipper (2)\n");
+                    int choice = getch() -48;
+                    switch(choice) {
+                        case 1:
+                            add_item(player,quest->weaponReward, NULL);
+                            break;
+
+                        case 2: // ranger l'arme precedente dans l'inventaire et equipper la nouvelle arme
+                            add_item(player, player->current_weapon, NULL);
+                            player->current_weapon = quest->weaponReward;
+                            player->min_strength = quest->weaponReward->min_strength;
+                            player->max_strength = quest->weaponReward->max_strength;
+                            player->attacks_by_turn = quest->weaponReward->attacks_by_turn;
+
+                        default:
+                            get_quest_rewards(quest, player);
+                    }
+                }
+
             break;
 
         case 'q':
