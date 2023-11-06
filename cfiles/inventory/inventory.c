@@ -5,8 +5,10 @@
 #include <conio.h>
 #include "../../headers/inventory/inventory.h"
 #include "../../headers/includes/structs.h"
+#include "../../headers/includes/colors.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
  * adding an item in the player inventory
@@ -45,6 +47,44 @@ void add_item(Player *player, Weapon *weapon, Armor *armor) {
         }
     }
 
+}
+
+
+void remove_weapon_inventory(Player *player, Weapon *w) {
+
+    bool found = false;
+
+    for(int i = 0; i < NBOBJECTS_MAX; i++) {
+        if(strcmp(player->inventory->weaponList[i]->name , w->name) == 0) {
+            player->inventory->weaponList[i] = NULL;
+            found = true;
+            printf(GREEN"\nL'arme a bien ete retiree de l'inventaire.\n"RESET);
+            int pass = getch();
+            return;
+        }
+    }
+
+    printf(RED"\nL'arme a supprimer n'existe pas dans l'inventaire.\n"RESET);
+    int pass = getch();
+}
+
+
+void remove_armor_inventory(Player *player, Armor *a) {
+
+    bool found = false;
+
+    for(int i = 0; i < NBOBJECTS_MAX; i++) {
+        if(strcmp(player->inventory->armorList[i]->name , a->name) == 0) {
+            player->inventory->armorList[i] = NULL;
+            found = true;
+            printf(GREEN"\nL'armure a bien ete retiree de l'inventaire.\n"RESET);
+            int pass = getch();
+            return;
+        }
+    }
+
+    printf(RED"\nL'armure a supprimer n'existe pas dans l'inventaire.\n"RESET);
+    int pass = getch();
 }
 
 
