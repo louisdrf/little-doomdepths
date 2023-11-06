@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include "../../headers/player/display_player_equipment.h"
 #include "../../headers/includes/colors.h"
+#include "../../headers/inventory/inventory.h"
 
 void display_player_equipment(Player *player) {
 
@@ -57,6 +58,7 @@ void display_player_equipment(Player *player) {
     playerEntry = getch() - 48;
     switch(playerEntry) {
         case 1:
+            add_item(player, player->current_weapon, NULL);
             player->current_weapon = NULL;
             player->min_strength = 10;
             player->max_strength = 16;
@@ -64,6 +66,7 @@ void display_player_equipment(Player *player) {
             break;
 
         case 2:
+            add_item(player, NULL, player->current_armor);
             player->current_armor = NULL;
             player->defense = 5;
             break;

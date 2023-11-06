@@ -207,7 +207,8 @@ void get_weapon_quest_reward(Quest *quest, Player *player) {
 
     if(quest->weaponReward != NULL && !quest->claimedWeapon) {
         display_weapon_stats(quest->weaponReward);
-        printf("\nAjouter a votre inventaire ? (1)     Equipper (2)        Ignorer (3)\n");
+        printf("\n\nAjouter a votre inventaire ? (1)     Equipper (2)        ");
+        printf(BLUE"Ignorer (3)\n"RESET);
         int choice = getch() -48;
         switch(choice) {
             case 1:
@@ -240,7 +241,8 @@ void get_armor_quest_reward(Quest *quest, Player *player) {
 
     if(quest->armorReward != NULL && !quest->claimedArmor) {
         display_armor_stats(quest->armorReward);
-        printf("\nAjouter a votre inventaire ? (1)     Equipper (2)        Ignorer (3)\n");
+        printf("\n\nAjouter a votre inventaire ? (1)     Equipper (2)        ");
+        printf(BLUE"Ignorer (3)\n"RESET);
         int choice = getch() -48;
         switch(choice) {
             case 1:

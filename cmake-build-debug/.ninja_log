@@ -57,3 +57,5 @@
 24	137	7209260325646771	CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj	d32c9a53b9fc3309
 6	119	7209611471886612	CMakeFiles/doom.dir/cfiles/quests/display_quests.c.obj	bf4a7fddb9b68fdc
 119	352	7209611474150540	doom.exe	a5fcc56fb71acf42
+6	119	7209613956211560	CMakeFiles/doom.dir/cfiles/quests/display_quests.c.obj	bf4a7fddb9b68fdc
+120	359	7209613958535339	doom.exe	a5fcc56fb71acf42
