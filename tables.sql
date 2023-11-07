@@ -111,6 +111,20 @@ CREATE TABLE Monster (
                          level_width_index INTEGER
 );
 
+CREATE TABLE Quests (
+                        id INTEGER PRIMARY KEY,
+                        player_id INTEGER,
+                        quest_id INTEGER,
+                        description VARCHAR(70),
+                        gold_reward INTEGER,
+                        claimedRewards INTEGER,
+                        finished INTEGER,
+                        displayedAlert INTEGER,
+                        claimedGold INTEGER,
+                        claimedWeapon INTEGER,
+                        claimedArmor INTEGER
+);
+
 
 INSERT INTO Game(id, hasSave) VALUES (1, 0);
 INSERT INTO Game(id, hasSave) VALUES (2, 0);

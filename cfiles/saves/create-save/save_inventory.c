@@ -60,7 +60,7 @@ void save_inventory(Player *player, sqlite3** conn) {
                     /////////// INSERT WEAPONS IN INVENTORY //////////////
 
                         sprintf(query,
-                                "insert into Weapon(inventory_id, weapon_name, min_strength, max_strength, attacks_by_turn, mana_cost, rarity, isEquipped)  values (%d, '%s', %d, %d, %d, %d, %d, %d);",
+                                "insert into Weapon(inventory_id, weapon_name, min_strength, max_strength, attacks_by_turn, mana_cost, rarity, isEquipped, quest_id)  values (%d, '%s', %d, %d, %d, %d, %d, %d, NULL);",
                                 player->id,
                                 player->inventory->weaponList[i]->name,
                                 player->inventory->weaponList[i]->min_strength,
@@ -85,7 +85,7 @@ void save_inventory(Player *player, sqlite3** conn) {
                     /////////// INSERT ARMORS IN INVENTORY //////////////
 
                             sprintf(query,
-                                    "insert into Armor(inventory_id, armor_name, defense, rarity, isEquipped)  values (%d, '%s', %d, %d, %d);",
+                                    "insert into Armor(inventory_id, armor_name, defense, rarity, isEquipped, quest_id)  values (%d, '%s', %d, %d, %d, NULL);",
                                     player->id,
                                     player->inventory->armorList[i]->name,
                                     player->inventory->armorList[i]->defense,

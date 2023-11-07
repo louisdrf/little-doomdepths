@@ -41,7 +41,7 @@ void save_player_spells_book(Player *player, sqlite3** conn) {
                 current->id);
 
         if(!prepare_and_exec_query(conn, query)) {
-            printf("\nFailed to prepare/execute query to update player data.\n");
+            printf("\nFailed to prepare/execute query to insert player spells.\n");
             exit(1);
         }
 

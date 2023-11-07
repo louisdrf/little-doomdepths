@@ -2,10 +2,10 @@
 880	1087	7208975042578614	CMakeFiles/doom.dir/cfiles/db_connexion.c.obj	8b8577300abc21b1
 1194	1373	7210150453462484	CMakeFiles/doom.dir/cfiles/player/display_player_equipment.c.obj	fdaeb685da6e5fbb
 935	6446	7208972481850489	CMakeFiles/doom.dir/sqlite3/sqlite3.c.obj	58f9b2d15eb3cca3
-107	341	7210909496572869	doom.exe	2afab159f9e40c2b
+99	336	7210934045989650	doom.exe	f9adf783c42b331d
 796	1008	7210150449919491	CMakeFiles/doom.dir/cfiles/saves/create-save/create_save.c.obj	d6ecdbbc3c923ff9
 769	935	7210150449151544	CMakeFiles/doom.dir/cfiles/init/init_spell.c.obj	a4ec550eff964a10
-1	183	7210928673091362	build.ninja	1c0d9a92d8a84135
+1	183	7210962373286434	build.ninja	1c0d9a92d8a84135
 840	1015	7194458170137701	CMakeFiles/doom.dir/cfiles/sqlite_test.c.obj	ecb11939cc39ec78
 1136	1355	7210150453163286	CMakeFiles/doom.dir/cfiles/saves/load-save/load_player_inventory.c.obj	6cf3450d32f5add3
 1373	1600	7210150455832379	CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.obj	56ac3ace4326b016
@@ -30,7 +30,7 @@
 6	224	7210863257762786	CMakeFiles/doom.dir/cfiles/player/player.c.obj	98a48f816ba24173
 1428	1606	7210150455872274	CMakeFiles/doom.dir/cfiles/quests/check_quests.c.obj	fc5622d047f3aa17
 6	114	7210905275842257	CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj	ba4a0d04f1163003
-18	235	7210863257902418	CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj	346da82170a2bfab
+6	135	7210933273616073	CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj	346da82170a2bfab
 6	107	7210909494298949	CMakeFiles/doom.dir/cfiles/player/player_attack.c.obj	b9aade89dbf4ccda
 399	614	7210150445903901	CMakeFiles/doom.dir/cfiles/inventory/display_inventory.c.obj	5925d3d48ece1b5a
 253	464	7210150444431495	CMakeFiles/doom.dir/cfiles/inventory/inventory.c.obj	cfcd6ce51a5af8dd
@@ -38,7 +38,7 @@
 37	196	7210902173604280	CMakeFiles/doom.dir/cfiles/inventory/potion.c.obj	bdc8c73cfe7bfae5
 1333	1565	7210150455343687	CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj	b644fe631a452c24
 451	601	7210150445844055	CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj	5cd918d7a28ba230
-28	216	7210863257663054	CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj	1c75fed269756b2d
+15	147	7210933273755701	CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj	1c75fed269756b2d
 38	175	7210908862352197	CMakeFiles/doom.dir/cfiles/zones/generate_random_map.c.obj	dec1dceef5358954
 1008	1194	7210150451760846	CMakeFiles/doom.dir/cfiles/saves/load-save/load_level_monsters.c.obj	c5aa2531ee57df01
 614	795	7210150447599357	CMakeFiles/doom.dir/cfiles/spell/display_spell.c.obj	9afc417720a18f83
@@ -56,3 +56,5 @@
 1356	1551	7210150455313770	CMakeFiles/doom.dir/cfiles/level/display_level_loot_armors.c.obj	4c8e0626fb14fec7
 1507	1643	7210150456281177	CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj	d32c9a53b9fc3309
 15	99	7210905275692650	CMakeFiles/doom.dir/cfiles/rand.c.obj	e0b20aa6f9135c95
+6	99	7210934043680353	CMakeFiles/doom.dir/cfiles/armor/init_random_armor_name.c.obj	d4ec8e91a0bce30b
+32	137	7210933273616073	CMakeFiles/doom.dir/cfiles/weapon/init_random_weapon_name.c.obj	f848c11adea1fcb2

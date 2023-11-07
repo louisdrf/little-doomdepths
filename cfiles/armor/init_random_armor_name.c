@@ -9,12 +9,13 @@
 
 void set_random_armor_name(Armor *a) {
 
-     char *commonArmorNames[5] = {"Armure en cuir renforcé", "Plastron de novice", "Tunique de recrue", "Gambison d'entraînement", "Veste de chasseur"};
-     char *rareArmorNames[5] = {"Cotte d'anneaux du gardien", "Cuirasse du vétéran", "Armure de la garde royale", "Cotte de mailles forgée", "Plaques d'acier noble"};
-     char *epicArmorNames[5] = {"Armure de l'ombre éternelle", "Armure céleste du protecteur", "Cuirasse du dragon écarlate", "Robe de l'archimage ancestral", "Armure du héros déchu"};
-     char *legendaryArmorNames[5] = {"Plaques du conquérant immortel", "Armure du seigneur divin", "Tunique du champion légendaire", "Cotte de mailles de la destinée", "Armure de l'Avatar cosmique"};
+     char *commonArmorNames[5] = {"Armure en cuir renforce", "Plastron de novice", "Tunique de recrue", "Gambison d'entrainement", "Veste de chasseur"};
+     char *rareArmorNames[5] = {"Cotte d'anneaux du gardien", "Cuirasse du veteran", "Armure de la garde royale", "Cotte de mailles forgee", "Plaques d'acier noble"};
+     char *epicArmorNames[5] = {"Armure de l'ombre eternelle", "Armure celeste du protecteur", "Cuirasse du dragon ecarlate", "Robe de l'archimage ancestral", "Armure du heros dechu"};
+     char *legendaryArmorNames[5] = {"Plaques du conquerant immortel", "Armure du seigneur divin", "Tunique du champion legendaire", "Cotte de mailles de la destinee", "Armure de l'Avatar cosmique"};
 
     char *randomName;
+
     switch (a->rarity) {
         case COMMON:
             randomName = commonArmorNames[rand() % 5];
