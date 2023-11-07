@@ -10,6 +10,7 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
 #include "../../headers/rand.h"
+#include "../../headers/weapon/init_random_weapon_name.h"
 
 #define DEBUG false
 
@@ -119,7 +120,7 @@ int get_first_level_loot_armor_free_space(Level *level) {
         i++;
     }
 
-    return i; // on retourne la case suivante
+    return i;
 }
 
 Weapon *randomWeapon() {
@@ -148,7 +149,7 @@ Weapon *randomWeapon() {
 
     switch (weapon->rarity) {
         case COMMON:
-            weapon->name = "Common Sword";
+            set_random_weapon_name(weapon);
             weapon->min_strength = random_int(5, 8);
             weapon->max_strength = random_int(8, 12);
             weapon->attacks_by_turn = 2;
@@ -156,7 +157,7 @@ Weapon *randomWeapon() {
             break;
 
         case RARE:
-            weapon->name = "Rare Bow";
+            set_random_weapon_name(weapon);
             weapon->min_strength = random_int(8, 12);
             weapon->max_strength = random_int(12, 16);
             weapon->attacks_by_turn = 2;
@@ -164,7 +165,7 @@ Weapon *randomWeapon() {
             break;
 
         case EPIC:
-            weapon->name = "Epic Axe";
+            set_random_weapon_name(weapon);
             weapon->min_strength = random_int(12, 16);
             weapon->max_strength = random_int(18, 25);
             weapon->attacks_by_turn = random_int(2, 3);
@@ -172,7 +173,7 @@ Weapon *randomWeapon() {
             break;
 
         case LEGENDARY:
-            weapon->name = "Legendary Staff";
+            set_random_weapon_name(weapon);
             weapon->min_strength = random_int(16, 22);
             weapon->max_strength = random_int(26, 30);
             weapon->attacks_by_turn = random_int(2, 3);

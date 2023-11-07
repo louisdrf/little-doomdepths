@@ -3,8 +3,8 @@
 //
 
 #include "../../headers/armor/init_random_armor_name.h"
-#include "../../headers/rand.h"
 #include "../../headers/armor/init_armor.h"
+#include "../../headers/rand.h"
 
 
 void set_random_armor_name(Armor *a) {
