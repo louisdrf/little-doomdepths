@@ -150,23 +150,23 @@ Weapon *randomWeapon() {
     switch (weapon->rarity) {
         case COMMON:
             set_random_weapon_name(weapon);
-            weapon->min_strength = random_int(5, 8);
-            weapon->max_strength = random_int(8, 12);
+            weapon->min_strength = random_int(8, 8);
+            weapon->max_strength = random_int(14, 14);
             weapon->attacks_by_turn = 2;
             weapon->mana_cost = random_int(2, 4);
             break;
 
         case RARE:
             set_random_weapon_name(weapon);
-            weapon->min_strength = random_int(8, 12);
-            weapon->max_strength = random_int(12, 16);
+            weapon->min_strength = random_int(10, 14);
+            weapon->max_strength = random_int(14, 20);
             weapon->attacks_by_turn = 2;
             weapon->mana_cost = random_int(3, 5);
             break;
 
         case EPIC:
             set_random_weapon_name(weapon);
-            weapon->min_strength = random_int(12, 16);
+            weapon->min_strength = random_int(16, 16);
             weapon->max_strength = random_int(18, 25);
             weapon->attacks_by_turn = random_int(2, 3);
             weapon->mana_cost = random_int(4, 6);
@@ -174,8 +174,8 @@ Weapon *randomWeapon() {
 
         case LEGENDARY:
             set_random_weapon_name(weapon);
-            weapon->min_strength = random_int(16, 22);
-            weapon->max_strength = random_int(26, 30);
+            weapon->min_strength = random_int(20, 22);
+            weapon->max_strength = random_int(30, 34);
             weapon->attacks_by_turn = random_int(2, 3);
             weapon->mana_cost = random_int(4, 8);
             break;

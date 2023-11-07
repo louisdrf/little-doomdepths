@@ -16,7 +16,7 @@
 #include "../../headers/quests/create_quests.h"
 #include "../../headers/player/player_spell.h"
 
-#define DEBUG false
+#define DEBUG true
 
 /**
  * init the player
@@ -66,8 +66,8 @@ Player *init_player(Game *game) {
         player->current_armor = NULL;
         player->attacks_by_turn = 2;
         player->attacks_left = player->attacks_by_turn;
-        player->min_strength = 10;
-        player->max_strength = 16;
+        player->min_strength = 6;
+        player->max_strength = 12;
         player->book = book;
         player->inventory = inventory;
         player->questList = questList;
