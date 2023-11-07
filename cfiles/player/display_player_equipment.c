@@ -15,32 +15,32 @@ void display_player_equipment(Player *player) {
     system("cls");
 
     if(player->current_weapon != NULL) {
-        printf("---------------ARME--------------- \n| ");
-        printf("%s | ", player->current_weapon->name); // nom de l'arme
-        printf("att : ");                                                                                                           // affiche l'attaque min et max de l'attaque
+        printf("~~~~~~~~~~~~~~~~~~~~ARME~~~~~~~~~~~~~~~~~~~~ \n| ");
+        printf("%s | ", player->current_weapon->name);
+        printf("att : ");
         printf(RED"%d-%d "RESET, player->current_weapon->min_strength, player->current_weapon->max_strength);
         printf("|  ");
         printf("mana : ");
         printf(BLUE "%d \n"RESET, player->current_weapon->mana_cost);
-        printf("----------------------------------\n");
+        printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     }
     else {
-        printf("---------------ARME--------------- \n| ");
+        printf("~~~~~~~~~~~~~~~~~~~~ARME~~~~~~~~~~~~~~~~~~~~ \n| ");
         printf(RED"aucune arme equipee\n"RESET);
-        printf("----------------------------------\n");
+        printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     }
 
     if(player->current_armor != NULL) {
-        printf("--------------ARMURE-------------- \n| ");
-        printf("%s | ", player->current_armor->name); // nom de l'arme
-        printf("def : ");                                                                                                           // affiche l'attaque min et max de l'attaque
+        printf("~~~~~~~~~~~~~~~~~~~~ARMURE~~~~~~~~~~~~~~~~~~~~ \n| ");
+        printf("%s | ", player->current_armor->name);
+        printf("def : ");
         printf(BLUE"%d \n"RESET, player->current_armor->defense);
-        printf("----------------------------------\n");
+        printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     }
     else {
-        printf("--------------ARMURE-------------- \n| ");
+        printf("~~~~~~~~~~~~~~~~~~~~ARMURE~~~~~~~~~~~~~~~~~~~~ \n| ");
         printf(RED"aucune armure equipee\n"RESET);
-        printf("--------------------------------\n");
+        printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     }
 
     if(player->current_weapon != NULL) {
