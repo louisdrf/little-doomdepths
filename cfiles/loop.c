@@ -63,7 +63,8 @@ void launch_loop(Game *game, Player *player) {
                         switch(playerEntry) {
                             case 'x':
                                 create_save(game, player);
-                                break;
+                                game->isRunning = false;
+                                return;
 
                             case 'q':
                                 printf("\nEnd of game.\n");
@@ -71,7 +72,7 @@ void launch_loop(Game *game, Player *player) {
                                 return;
 
                             default:
-                                launch_loop(game, player);
+                                break;
                         }
                         break;
 

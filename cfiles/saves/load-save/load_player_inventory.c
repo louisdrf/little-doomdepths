@@ -47,7 +47,7 @@ void load_player_inventory_weapons(Player *player, sqlite3 **conn) {
 
     sqlite3_stmt *res;
     const char *tail;
-    char query[50];
+    char query[100];
 
     sprintf(query, "SELECT * FROM Weapon WHERE inventory_id=%d  AND quest_id IS NULL;", player->id);
 
@@ -70,8 +70,10 @@ void load_player_inventory_weapons(Player *player, sqlite3 **conn) {
 
         player->inventory->weaponList[i] = init_weapon(weapon_name, attacks_by_turn, min_strength, max_strength, mana_cost, rarity);
         if(isEquipped) {
-            player->current_weapon = player->inventory->weaponList[i];
-            player->attacks_by_turn = player->current_weapon->attacks_by_turn;
+            equip_weapon(player, player->inventory->weaponList[i]);
+        }
+        else {
+            player->current_weapon = NULL;
         }
         i++;
     }
@@ -82,7 +84,7 @@ void load_player_inventory_weapons(Player *player, sqlite3 **conn) {
 void load_player_inventory_armors(Player *player, sqlite3 **conn) {
     sqlite3_stmt *res;
     const char *tail;
-    char query[50];
+    char query[100];
 
     sprintf(query, "SELECT * FROM Armor WHERE inventory_id=%d  AND quest_id IS NULL;", player->id);
 
@@ -104,6 +106,9 @@ void load_player_inventory_armors(Player *player, sqlite3 **conn) {
         if(isEquipped) {
             player->current_armor = player->inventory->armorList[i];
             player->defense = player->current_armor->defense;
+        }
+        else {
+            player->current_armor = NULL;
         }
         i++;
     }

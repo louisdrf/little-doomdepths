@@ -43,6 +43,7 @@ void load_player_quests(Player *player, sqlite3 **conn) {
         quest->claimedArmor = sqlite3_column_int(res, 10);
 
         load_quest_weapon(quest, player->id, conn);
+        load_quest_armor(quest, player->id, conn);
 
         i++;
         quest->next = player->questList;
@@ -61,7 +62,7 @@ void load_quest_weapon(Quest *quest, int player_id, sqlite3 **conn) {
 
     sqlite3_stmt *res;
     const char *tail;
-    char query[50];
+    char query[100];
 
     sprintf(query, "SELECT * FROM Weapon WHERE inventory_id=%d AND quest_id=%d;", player_id, quest->id);
 
@@ -102,7 +103,7 @@ void load_quest_armor(Quest *quest, int player_id, sqlite3 **conn) {
 
     sqlite3_stmt *res;
     const char *tail;
-    char query[50];
+    char query[100];
 
     sprintf(query, "SELECT * FROM Armor WHERE inventory_id=%d AND quest_id=%d;", player_id, quest->id);
 

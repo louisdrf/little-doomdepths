@@ -215,9 +215,6 @@ void get_weapon_quest_reward(Quest *quest, Player *player) {
                 break;
 
             case 2: // remplacer l'arme equipee
-            if(player->current_weapon != NULL) {
-                add_item(player, player->current_weapon, NULL);
-            }
                 equip_weapon(player, quest->weaponReward);
                 quest->claimedWeapon = true;
                 break;
@@ -247,9 +244,6 @@ void get_armor_quest_reward(Quest *quest, Player *player) {
                 break;
 
             case 2: // ranger l'armure precedente dans l'inventaire et equipper la nouvelle armure
-            if(player->current_armor != NULL) {
-                add_item(player, NULL, player->current_armor);
-            }
                 player->current_armor = quest->armorReward;
                 player->defense = quest->armorReward->defense;
 

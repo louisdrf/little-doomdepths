@@ -52,7 +52,7 @@ void display_player_equipment(Player *player) {
     if(player->current_armor != NULL) {
         printf("\nDesequipper l'armure (2)\n");
     }
-        printf(RED"Retour               (3)\n"RESET);
+        printf(RED"\nRetour               (3)\n"RESET);
     printf("-> ");
 
     playerEntry = getch() - 48;
