@@ -30,7 +30,6 @@ bool player_attack(Player *player, int idMonster) {
         current_attack_strength = rand() % (player->current_weapon->max_strength) + (player->current_weapon->min_strength);     // si le joueur a une arme équipée et suffisamment de mana pour attaquer
     }
     else {
-        printf(RED"\nAttaque a mains nues ! \n"RESET);
         current_attack_strength = rand() % (player->max_strength) + (player->min_strength);                                     // sinon le joueur attaque à mains nues
     }
 

@@ -10,7 +10,7 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
 
-#define DEBUG true
+#define DEBUG false
 
 Weapon *init_weapon(char *name, int att_by_turn, int min_strength, int max_strength, int mana_cost, int rarity) {
 

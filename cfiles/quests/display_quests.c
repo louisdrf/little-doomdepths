@@ -49,9 +49,9 @@ void display_quests(Player *player) {
     Quest *current = player->questList;
     while(current != NULL) {
 
-            printf("%s | terminee : ", current->description);
-            if(current->finished == true) printf(GREEN"oui\n"RESET);
-            else  printf(RED"non\n"RESET);
+            printf("%s | ", current->description);
+            if(current->finished == true) printf(GREEN"terminee\n"RESET);
+            else  printf(RED"non terminee\n"RESET);
 
         nbQuests++;
         current = current->next;
@@ -214,7 +214,7 @@ void get_weapon_quest_reward(Quest *quest, Player *player) {
                 quest->claimedWeapon = true;
                 break;
 
-            case 2: // ranger l'arme precedente dans l'inventaire et equipper la nouvelle arme
+            case 2: // remplacer l'arme equipee
             if(player->current_weapon != NULL) {
                 add_item(player, player->current_weapon, NULL);
             }

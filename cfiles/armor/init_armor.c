@@ -13,7 +13,7 @@
 #include "../../headers/includes/colors.h"
 #include "../../headers/weapon/init_weapon.h"
 
-#define DEBUG true
+#define DEBUG false
 
 Armor *init_armor(char *name, int defense, int rarity) {
 
