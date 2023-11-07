@@ -116,5 +116,7 @@ add_executable(doom cfiles/main.c
         headers/includes/quests_defines.h
         cfiles/rand.c
         headers/rand.h
+        cfiles/armor/init_random_armor_name.c
+        headers/armor/init_random_armor_name.h
 )
 

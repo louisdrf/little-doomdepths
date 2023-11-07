@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "../../headers/zones/generate_random_map.h"
+#include "../../headers/rand.h"
 
 #define DEBUG false
 
@@ -16,10 +17,10 @@ Map *init_random_map_dimensions() {
 
     Map *map = malloc(sizeof(Map));
 
-    map->height = rand() % (NBLEVELX_MAX - NBLEVELX_MIN + 1) + NBLEVELX_MIN;
-    map->width = rand() % (NBLEVELX_MAX - NBLEVELX_MIN + 1) + NBLEVELX_MIN;
+    map->height = random_int(NBLEVELX_MIN, NBLEVELX_MAX);
+    map->width = random_int(NBLEVELX_MIN, NBLEVELX_MAX);;
 
-    int path_length = (int)((map->height * map->width) * 0.7);
+    int path_length = (int)((map->height * map->width) * 0.8);
 
     map->map = calloc(map->height, sizeof(int*));
     for (int i = 0; i < map->height; i++) {

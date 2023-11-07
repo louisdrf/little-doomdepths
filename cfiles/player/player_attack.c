@@ -9,6 +9,7 @@
 #include "../../headers/monsters/monster.h"
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
+#include "../../headers/rand.h"
 
 #define DEBUG false
 
@@ -25,10 +26,10 @@ bool player_attack(Player *player, int idMonster) {
     }
 
     if(player->current_weapon != NULL && (player->mana - player->current_weapon->mana_cost) >= 0) {
-        current_attack_strength = rand() % (player->current_weapon->max_strength) + (player->current_weapon->min_strength);     // si le joueur a une arme équipée et suffisamment de mana pour attaquer
+        current_attack_strength = random_int((player->current_weapon->min_strength) , (player->current_weapon->max_strength));     // si le joueur a une arme équipée et suffisamment de mana pour attaquer
     }
     else {
-        current_attack_strength = rand() % (player->max_strength) + (player->min_strength);                                     // sinon le joueur attaque à mains nues
+        current_attack_strength = random_int((player->min_strength) , (player->max_strength));                                     // sinon le joueur attaque à mains nues
     }
 
     if((target->lifepoints) - current_attack_strength <= 0) {

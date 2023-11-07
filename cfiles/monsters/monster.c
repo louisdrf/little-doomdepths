@@ -8,6 +8,7 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
 #include "../../headers/monsters/display_monster_loot.h"
+#include "../../headers/rand.h"
 
 /**
  * return 1 if all monsters are dead, else return 0
@@ -63,7 +64,7 @@ int monsters_attack(Player *player) {
         {
                 while(current->attacks_left > 0)                                                // tant que le monstre peut jouer il attaque
                 {
-                    damages = rand() % current->max_strength + current->min_strength;           // degats du monstre au joueur
+                    damages = random_int(current->min_strength, current->max_strength);           // degats du monstre au joueur
                     if(player->current_armor != NULL) {
                         damages -= ((player->current_armor->defense) * damages) / 100;            // on reduit d'un % des degats si le joueur a une armure
                     }

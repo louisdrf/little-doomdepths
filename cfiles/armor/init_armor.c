@@ -12,6 +12,8 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
 #include "../../headers/weapon/init_weapon.h"
+#include "../../headers/rand.h"
+#include "../../headers/armor/init_random_armor_name.h"
 
 #define DEBUG false
 
@@ -76,25 +78,24 @@ Armor *randomArmor() {
         armor->rarity = LEGENDARY;
     }
 
-    armor->id = rand(); // Générez un ID aléatoire pour l'armure
+    armor->id = rand();
 
-    // Initialisez la défense en fonction de la rareté
     switch (armor->rarity) {
         case COMMON:
-            armor->defense = rand() % 11; // Points de défense de 0 à 10 pour une armure commune
-            armor->name = "Common Armor";
+            armor->defense = random_int(3, 6);
+            set_random_armor_name(armor);
             break;
         case RARE:
-            armor->defense = rand() % 11 + 20; // Points de défense de 11 à 20 pour une armure rare
-            armor->name = "Rare Plate";
+            armor->defense = random_int(6, 10);
+            set_random_armor_name(armor);
             break;
         case EPIC:
-            armor->defense = rand() % 20 + 30; // Points de défense de 20 à 30 pour une armure épique
-            armor->name = "Epic Shield";
+            armor->defense = random_int(12, 15);
+            set_random_armor_name(armor);
             break;
         case LEGENDARY:
-            armor->defense = rand() % 30 + 40; // Points de défense de 0 à 40 pour une armure légendaire
-            armor->name = "Legendary Helmet";
+            armor->defense = random_int(20, 30);
+            set_random_armor_name(armor);
             break;
     }
 
