@@ -8,10 +8,10 @@
 
 void set_random_weapon_name(Weapon *w) {
 
-    char *commonWeaponNames[5] = {"Lame de fer", "Dague aceree", "Glaive d'acier", "Epee courte du chasseur", "Sabre emousse"};
+    char *commonWeaponNames[5] = {"Lame de fer", "Dague aceree", "Glaive en acier", "Epee courte du chasseur", "Sabre emousse"};
     char *rareWeaponNames[5] = {"Lame de la garde royale", "Hache de guerre aiguisee", "Rapiere forgee", "Epee longue de l'aventurier", "Marteau de la justice"};
-    char *epicWeaponNames[5] = {"Katana de l'ombre eternelle", "Faux celeste du protecteur", "Hallebarde du dragon ecarlate", "Baton de l'archimage ancestral", "Masse du heros dechu"};
-    char *legendaryWeaponNames[5] = {"Lame du conquerant immortel", "Epee du seigneur divin", "Frappe du champion legendaire", "Lame de la destinee", "Furie de l'Avatar cosmique"};
+    char *epicWeaponNames[5] = {"Katana de glace", "Faux celeste du protecteur", "Hallebarde du dragon ecarlate", "Baton de mage ancestral", "Masse du heros dechu"};
+    char *legendaryWeaponNames[5] = {"Lame du conquerant immortel", "Epee du seigneur divin", "Frappe du champion legendaire", "Lame de la destinee", "Furie cosmique"};
 
     char *randomName;
 

@@ -49,7 +49,7 @@ void load_player_inventory_weapons(Player *player, sqlite3 **conn) {
     const char *tail;
     char query[50];
 
-    sprintf(query, "SELECT * FROM Weapon WHERE inventory_id=%d;", player->id);
+    sprintf(query, "SELECT * FROM Weapon WHERE inventory_id=%d  AND quest_id IS NULL;", player->id);
 
     int error = sqlite3_prepare_v2(*conn, query, -1, &res, &tail);
     if (error != SQLITE_OK) {
@@ -84,7 +84,7 @@ void load_player_inventory_armors(Player *player, sqlite3 **conn) {
     const char *tail;
     char query[50];
 
-    sprintf(query, "SELECT * FROM Armor WHERE inventory_id=%d;", player->id);
+    sprintf(query, "SELECT * FROM Armor WHERE inventory_id=%d  AND quest_id IS NULL;", player->id);
 
     int error = sqlite3_prepare_v2(*conn, query, -1, &res, &tail);
     if (error != SQLITE_OK) {

@@ -15,7 +15,7 @@ void save_player_quests(Player *player, sqlite3** conn) {
 
     sprintf(query, "delete from Quests where player_id=%d;", player->id);
     if(!prepare_and_exec_query(conn, query)) {
-        printf("\nFailed to prepare/execute query to delete player spells.\n");
+        printf("\nFailed to prepare/execute query to delete player quests.\n");
         exit(1);
     }
 
@@ -58,19 +58,19 @@ void save_player_quests(Player *player, sqlite3** conn) {
 }
 
 
-
 void save_quest_weapon(int player_id, Quest *quest, sqlite3** conn) {
 
     char query[200];
 
-    sprintf(query, "delete from Weapon where player_id=%d and quest_id=%d;", player_id, quest->id);
+    sprintf(query, "delete from Weapon where inventory_id=%d and quest_id=%d;", player_id, quest->id);
     if(!prepare_and_exec_query(conn, query)) {
         printf("\nFailed to prepare/execute query to delete quest %d weapon.\n", quest->id);
         exit(1);
     }
 
     sprintf(query,
-            "insert into Weapon(weapon_name, min_strength, max_strength, attacks_by_turn, mana_cost, rarity, quest_id)  values ('%s', %d, %d, %d, %d, %d, %d);",
+            "insert into Weapon(inventory_id, weapon_name, min_strength, max_strength, attacks_by_turn, mana_cost, rarity, quest_id)  values (%d, '%s', %d, %d, %d, %d, %d, %d);",
+            player_id,
             quest->weaponReward->name,
             quest->weaponReward->min_strength,
             quest->weaponReward->max_strength,
@@ -92,14 +92,15 @@ void save_quest_armor(int player_id, Quest *quest, sqlite3** conn) {
 
     char query[200];
 
-    sprintf(query, "delete from Armor where player_id=%d and quest_id=%d;", player_id, quest->id);
+    sprintf(query, "delete from Armor where inventory_id=%d and quest_id=%d;", player_id, quest->id);
     if(!prepare_and_exec_query(conn, query)) {
         printf("\nFailed to prepare/execute query to delete quest %d armor.\n", quest->id);
         exit(1);
     }
 
     sprintf(query,
-            "insert into Armor(armor_name, defense, rarity, quest_id)  values ('%s', %d, %d, %d);",
+            "insert into Armor(inventory_id, armor_name, defense, rarity, quest_id)  values (%d, '%s', %d, %d, %d);",
+            player_id,
             quest->armorReward->name,
             quest->armorReward->defense,
             quest->armorReward->rarity,
