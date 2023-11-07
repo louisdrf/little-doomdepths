@@ -14,8 +14,6 @@
 
 bool player_attack(Player *player, int idMonster) {
 
-    srand(time(NULL));
-
     int current_attack_strength;
 
     Monster *target = getTargetMonster(player, idMonster);

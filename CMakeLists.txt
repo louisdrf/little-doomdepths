@@ -114,5 +114,7 @@ add_executable(doom cfiles/main.c
         cfiles/quests/check_quests.c
         headers/quests/check_quests.h
         headers/includes/quests_defines.h
+        cfiles/rand.c
+        headers/rand.h
 )
 

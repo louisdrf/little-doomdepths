@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <time.h>
 #include "../headers/game.h"
 #include "../headers/includes/structs.h"
 #include "../headers/display.h"
@@ -18,6 +19,8 @@
 #define DESTROY_SAVE 2
 
 int main() {
+
+    srand( time (NULL));
 
     int choice;
     int save_id;        // choix de la sauvegarde

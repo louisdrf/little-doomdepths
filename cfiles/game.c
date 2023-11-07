@@ -21,8 +21,6 @@
 
 Game *init_game(int save_id) {
 
-    srand(time(NULL));
-
     Game *game;
     game = malloc(sizeof(Game));
 

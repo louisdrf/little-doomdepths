@@ -11,6 +11,7 @@
 #include "../../headers/monsters/monster_sprite.h"
 #include "../../headers/weapon/init_weapon.h"
 #include "../../headers/armor/init_armor.h"
+#include "../../headers/rand.h"
 
 #define DEBUG false
 
@@ -30,11 +31,11 @@ Monster *create_monster(Monster *head, int index) {
 
     new->id = index;
 
-    new->lifepoints_max = rand() % MONSTER_MAX_PV + MONSTER_MIN_PV;
-    while(new->lifepoints_max % 2 != 0) new->lifepoints_max = rand() % MONSTER_MAX_PV + MONSTER_MIN_PV;
+    new->lifepoints_max = random_int(MONSTER_MIN_PV, MONSTER_MAX_PV);
+    while(new->lifepoints_max % 2 != 0) new->lifepoints_max = random_int(MONSTER_MIN_PV, MONSTER_MAX_PV);
 
     new->lifepoints = new->lifepoints_max;
-    new->defense = rand() % MONSTER_MAX_DEFENSE + MONSTER_MIN_DEFENSE;
+    new->defense = random_int(MONSTER_MIN_DEFENSE, MONSTER_MAX_DEFENSE);
     new->min_strength = 2;
     new->max_strength = 6;
     new->attacks_by_turn = 1;
@@ -42,7 +43,7 @@ Monster *create_monster(Monster *head, int index) {
     new->turn = false;
     new->monster_type = rand() % NB_MONSTER_TYPE;
     new->isAlive = true;
-    new->loot_gold = rand() % MAX_GOLD_LOOT + MIN_GOLD_LOOT;
+    new->loot_gold = random_int(MIN_GOLD_LOOT, MAX_GOLD_LOOT);
     new->next = head;
     new->drawIndex = 0;
     new->monster_weapon = NULL;

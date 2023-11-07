@@ -15,8 +15,6 @@
 
 void getPotion(Player *player) {
 
-    srand(time(NULL));
-
     unsigned short choice;
 
     unsigned short potionType = rand() % 2 + 1;
