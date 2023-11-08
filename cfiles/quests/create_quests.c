@@ -18,6 +18,8 @@ Quest *create_quests() {
 
     // Création de quêtes
         Quest *quest1 = malloc(sizeof(Quest));
+        init_quest(questList, int id, char *description, bool armorReward, bool weaponReward, int goldReward);
+
         quest1->id = KILL_10_MONSTERS;
         quest1->description = malloc(strlen("Tuer 10 monstres") + 1);
         strcpy(quest1->description, "Tuer 10 monstres");
@@ -94,6 +96,47 @@ Quest *create_quests() {
     questList = quest4;
 
 return questList;
+
+}
+
+
+Quest *init_quest(Quest *head, int id, char *description, bool armorReward, bool weaponReward, int goldReward) {
+
+    Quest *q = malloc(sizeof(Quest));
+
+    q->id = id;
+    q->finished = false;
+
+    q->description = malloc(strlen(description) + 1);
+    strcpy(q->description, description);
+    q->displayedAlert = false;
+    q->claimedRewards = false;
+
+    q->goldReward = goldReward;
+    if(goldReward > 0) q->claimedGold = true;
+    else q->claimedGold = false;
+
+    if(armorReward) {
+        q->claimedArmor = false;
+        q->armorReward = randomArmor();
+    }
+    else {
+        q->claimedArmor = true;
+        q->armorReward = NULL;
+    }
+
+    if(weaponReward) {
+        q->claimedWeapon = false;
+        q->weaponReward = randomWeapon();
+    }
+    else {
+        q->claimedWeapon = true;
+        q->weaponReward = NULL;
+    }
+
+    q->next = head;
+
+    return q;
 
 }
 
