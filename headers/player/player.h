@@ -12,5 +12,5 @@ void free_player(Player *player);
 char** player_sprite();
 void init_player_draw(Player *player);
 void print_player_stats(Player *player);
-void updateMovement(Zone* zone,Player *player, char command);
+void updateMovement(Player *player, char command,Game* game);
 #endif //DOOM_PLAYER_H

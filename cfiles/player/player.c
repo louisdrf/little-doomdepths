@@ -26,41 +26,42 @@
  */
 Player *init_player(Zone *zone) {
 
-        Player *player;
-        Inventory *inventory = NULL;
-        inventory = init_inventory();
+    Player *player;
+    Inventory *inventory = NULL;
+    inventory = init_inventory();
 
-        player = malloc(sizeof(Player));
-        if(player == NULL) {
-    #if DEBUG
-            printf("Allocating memory for player failed.\n");
-    #endif
-            exit(1);
-        }
+    player = malloc(sizeof(Player));
+    if(player == NULL) {
+#if DEBUG
+        printf("Allocating memory for player failed.\n");
+#endif
+        exit(1);
+    }
 
-        player->isAlive = true;
-        player->turn = true; // the player attack first
-        player->lifepoints_max = 100;
-        player->lifepoints = player->lifepoints_max;
-        player->mana_max = 100;
-        player->mana = player->mana_max;
-        player->gold = 0;
-        player->defense = 10;
-        player->attacks_by_turn = 2;
-        player->attacks_left = player->attacks_by_turn;
-        player->min_strength = 10;
-        player->max_strength = 16;
-        player->currentX=0;
-        player->currentY=0;
+    player->isAlive = true;
+    player->turn = true; // the player attack first
+    player->lifepoints_max = 100;
+    player->lifepoints = player->lifepoints_max;
+    player->shield = 0;
+    player->mana_max = 100;
+    player->mana = player->mana_max;
+    player->gold = 0;
+    player->defense = 10;
+    player->attacks_by_turn = 2;
+    player->attacks_left = player->attacks_by_turn;
+    player->min_strength = 10;
+    player->max_strength = 16;
+    player->currentX=0;
+    player->currentY=0;
 
-        init_player_draw(player);
-        player->current_zone = zone;
-        player->current_level = zone->levelList[0][0];      // joueur initialisé au premier niveau de la premiere zone
-        player->inventory = inventory;
+    init_player_draw(player);
+    player->current_zone = zone;
+    player->current_level = zone->levelList[0][0];      // joueur initialisé au premier niveau de la premiere zone
+    player->inventory = inventory;
 
-        Weapon *weapon1 = init_weapon("epee1", 2, 8, 18, 4, RARE);
-        Weapon *weapon2 = init_weapon("epee2", 2, 12, 24, 6, EPIC);
-        Weapon *weapon3 = init_weapon("epee3", 3, 16, 24, 4, LEGENDARY);
+    Weapon *weapon1 = init_weapon("epee1", 2, 8, 18, 4, RARE);
+    Weapon *weapon2 = init_weapon("epee2", 2, 12, 24, 6, EPIC);
+    Weapon *weapon3 = init_weapon("epee3", 3, 16, 24, 4, LEGENDARY);
 
     add_item(player, weapon1, NULL);
     add_item(player, weapon2, NULL);
@@ -75,14 +76,14 @@ Player *init_player(Zone *zone) {
     add_item(player, NULL, armor3);
 
 
-    #if DEBUG
-        print_player_stats(player);
-    #endif
+#if DEBUG
+    print_player_stats(player);
+#endif
 
     if(player == NULL) {
-        #if DEBUG
-                printf("Error while creating player.\n");
-        #endif
+#if DEBUG
+        printf("Error while creating player.\n");
+#endif
         exit(1);
     }
     if(player != NULL) return player;
@@ -140,14 +141,15 @@ void print_player_stats(Player *player) {
  * free inventory, draw and player itself
  * @param player
  */
-void updateMovement(Zone* zone,Player *player, char command){
+void updateMovement(Player *player, char command,Game* game){
+    Zone* zone=player->current_zone;
     switch (command) {
         case 'z':
             if(player->currentX - 1 < 0){
                 printf("1");
                 command=getch();
-                updateMovement(zone,player,command);
-            }else if(zone->levelList[player->currentX - 1][player->currentY]!=NULL){
+                updateMovement(player,command,game);
+            }else if(zone->map[player->currentX - 1][player->currentY - 1]!=0){
                 player->currentX--;
             }
             break;
@@ -155,8 +157,8 @@ void updateMovement(Zone* zone,Player *player, char command){
             if(player->currentY - 1 < 0){
                 printf("2");
                 command=getch();
-                updateMovement(zone,player,command);
-            }else if(zone->levelList[player->currentX][player->currentY - 1]!=NULL ){
+                updateMovement(player,command,game);
+            }else if(zone->map[player->currentX][player->currentY - 1]!=0 ){
                 player->currentY--;
             }
             break;
@@ -164,8 +166,8 @@ void updateMovement(Zone* zone,Player *player, char command){
             if(player->currentX + 1 >= zone->height){
                 printf("3");
                 command=getch();
-                updateMovement(zone,player,command);
-            }else if(zone->levelList[player->currentX + 1][player->currentY]!=NULL ) {
+                updateMovement(player,command,game);
+            }else if(zone->map[player->currentX + 1][player->currentY]!=0 ) {
                 player->currentX++;
             }
             break;
@@ -173,8 +175,8 @@ void updateMovement(Zone* zone,Player *player, char command){
             if(player->currentY + 1 >= zone->width){
                 printf("4");
                 command=getch();
-                updateMovement(zone,player,command);
-            }else if(zone->levelList[player->currentX][player->currentY + 1]!=NULL ){
+                updateMovement(player,command,game);
+            }else if(zone->map[player->currentX][player->currentY + 1]!=0 ){
                 player->currentY++;
             }
             break;
@@ -183,11 +185,16 @@ void updateMovement(Zone* zone,Player *player, char command){
     }
 
 
-    if(zone->levelList[player->currentX][player->currentY]!=NULL  ){
+    if(zone->map[player->currentX][player->currentY]==1 || zone->map[player->currentX][player->currentY]==2 ){
         player->current_level=zone->levelList[player->currentX][player->currentY];
-    } else{
+    }
+    else if(zone->map[player->currentX][player->currentY]==3 ){
+        player->current_zone=game->zoneList[player->current_zone->id+1];
+        player->current_level=player->current_zone->levelList[player->currentX][player->currentY];
+    }
+    else{
         command=getch();
-        updateMovement(zone,player,command);
+        updateMovement(player,command,game);
     }
 
 

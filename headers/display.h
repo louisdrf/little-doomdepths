@@ -15,8 +15,8 @@ void display_player_ath(Player *player);
 void display_player_health(Player *player);
 void display_player_mana(Player *player);
 void display_monsters_alive(Monster *head);
-
-
+void display_monster_health(Monster *monster);
+void display_boss_health(Monster *monster);
 void display_lose();
 int display_next_level_menu();
 

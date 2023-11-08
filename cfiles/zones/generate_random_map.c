@@ -11,7 +11,7 @@
 /**
  * return a random dimensions tab full of 0
  */
-Map *init_random_map_dimensions() {
+Map *init_random_map_dimensions(int x, int y) {
 
     Map *map = malloc(sizeof(Map));
 
@@ -26,8 +26,7 @@ Map *init_random_map_dimensions() {
     }
 
 
-    int x = 0;
-    int y = 0;
+
     map->map[x][y] = 1;
     int k = 1;
 
@@ -78,7 +77,9 @@ Map *init_random_map_dimensions() {
             }
             continue;
         }
-
+        if(k == path_length){
+            map->map[x][y] = 2;
+        }
     } while (k != path_length);
 
 

@@ -30,14 +30,29 @@ void player_attack(Player *player, int idMonster) {
         printf("Monster targeting failed.\n");
         exit(1);
     }
-
-    if((target->lifepoints) - current_attack_strength <= 0) {
-        target->lifepoints = 0;
-        target->isAlive = false;
-        player->gold += target->loot_gold;
+    if(target->monster_type!=4) {//passif berserker du boss minotaure
+        if ((target->lifepoints) - current_attack_strength <= 0) {
+            target->lifepoints = 0;
+            target->isAlive = false;
+            player->gold += target->loot_gold;
+        } else target->lifepoints -= current_attack_strength;
     }
-    else target->lifepoints -= current_attack_strength;
-
+    else{
+        if ((target->lifepoints) - current_attack_strength <= 0) {
+            if(target->defense>0){
+                target->lifepoints = 1;
+                if ((target->defense) - 5 <= 0) {
+                    target->defense=0;
+                }
+                else target->defense-=5;
+                target->min_strength=target->max_strength;
+            } else{
+                target->lifepoints = 0;
+                target->isAlive = false;
+                player->gold += target->loot_gold;
+            }
+        } else target->lifepoints -= current_attack_strength;
+    }
 
     player->attacks_left--;
 

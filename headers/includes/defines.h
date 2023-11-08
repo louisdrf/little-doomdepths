@@ -16,7 +16,13 @@
 #define MAX_GOLD_LOOT 20
 #define MIN_GOLD_LOOT 5
 
-
+#define NB_BOSS_TYPE 1
+#define BOSS_MAX_PV 80
+#define BOSS_MIN_PV 40
+#define BOSS_MAX_DEFENSE 15
+#define BOSS_MIN_DEFENSE 10
+#define MAX_BOSS_GOLD_LOOT 20
+#define MIN_BOSS_GOLD_LOOT 5
 #define NBLEVELS 5
 
 #define NBOBJECTS_MAX 10

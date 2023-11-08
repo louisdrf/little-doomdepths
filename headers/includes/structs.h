@@ -15,12 +15,16 @@ enum rarity {
     EPIC,
     LEGENDARY
 };
-
+static const char *monster_string[] = {
+        "GRIM", "SKELETON", "GHOST", "DRAGON","MINOTAURE",
+};
 enum monster_type {
     GRIM,
     SKELETON,
     GHOST,
-    DRAGON
+    DRAGON,
+    BOSS_MINOTAURE,
+
 };
 
 typedef struct {
@@ -130,6 +134,7 @@ typedef struct {
 
     unsigned short      lifepoints;         // pv restants
     unsigned short      lifepoints_max;     // pv max
+    unsigned short      shield;             // bouclier
     unsigned short      mana;               // mana restant
     unsigned short      mana_max;           // mana max
     unsigned short      min_strength;
@@ -154,8 +159,11 @@ typedef struct {
 
 typedef struct {
 
+    unsigned short          id;                             // id de la partie
+    char*                   player_name;                    // nom du joueur
     Zone*                   zoneList[NBZONES];              // tableaux des zones de la partie
     bool                    isRunning;                      // bool d'état de la partie
+    int                     display_zones_index;            // id de la zone actuelle en affichage
 
 } Game;
 

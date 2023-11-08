@@ -25,7 +25,8 @@ Game *game;
         printf("Allocating memory for game failed.\n");
         exit(1);
     }
-
+    game->id = 0;
+    game->display_zones_index = 0;
 // INIT THE GAME ZONES
 
    init_zones(game);

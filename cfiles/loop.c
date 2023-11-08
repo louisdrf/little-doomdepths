@@ -15,7 +15,7 @@
 #include "../headers/inventory/potion.h"
 #include "../headers/monsters/monster_sprite.h"
 #include "../headers/inventory/display_inventory.h"
-
+#include "../headers/zones/display_zone.h"
 /**
  * manages the game loop
  * @param game
@@ -26,31 +26,28 @@ void launch_loop(Game *game, Player *player) {
     int playerEntry;
     char moveEntry;
     Zone * zone=game->zoneList[player->current_level->id];
+
     while(game->isRunning)
     {
-
+        printf("test");
         if(player->turn)
         {
 
             if(are_all_monsters_dead(player) == 1)              // retourne 1 si tous les monstres du niveau sont morts et passe le joueur au niveau supérieur
             {
-                printf("map :\n");
-
-                for(int i = 0; i < zone->height; i++) {
-                    for(int j = 0; j < zone->width; j++) {
-                        if(j==player->currentY && i==player->currentX){
-                            printf("@ ");
-                        } else{
-                            printf("%d ",zone->map[i][j]);
-                        }
-
-                    }
-                    printf("\n");
+                if(player->current_zone->map[player->currentX][player->currentY]==2){
+                    player->current_zone->map[player->currentX][player->currentY]=3;
+                    player->current_zone=game->zoneList[player->current_zone->id+1];
+                    player->current_level=player->current_zone->levelList[player->currentX][player->currentY];
                 }
-                moveEntry = getch();
-                printf("move %c",moveEntry);
-                updateMovement(zone,player,moveEntry);
-
+                else{
+                    printf("map :\n");
+                    display_player_zone(player,game);
+                    /*display_map_zone(zone, player);*/
+                    moveEntry = getch();
+                    printf("move %c",moveEntry);
+                    updateMovement(player,moveEntry,game);
+                }
             } else{
                 display_all(player); // affichage
 
