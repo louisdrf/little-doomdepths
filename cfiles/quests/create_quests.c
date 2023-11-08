@@ -16,87 +16,25 @@ Quest *create_quests() {
 
     Quest* questList = NULL;
 
-    // Création de quêtes
-        Quest *quest1 = malloc(sizeof(Quest));
-        init_quest(questList, int id, char *description, bool armorReward, bool weaponReward, int goldReward);
-
-        quest1->id = KILL_10_MONSTERS;
-        quest1->description = malloc(strlen("Tuer 10 monstres") + 1);
-        strcpy(quest1->description, "Tuer 10 monstres");
-        quest1->displayedAlert = false;
-        quest1->claimedRewards = false;
-        quest1->claimedGold = false;
-        quest1->claimedArmor = false;
-        quest1->claimedWeapon = false;
-        quest1->goldReward = 20;
-        quest1->armorReward = randomArmor();
-        quest1->weaponReward = randomWeapon();
-
-        quest1->next = questList;
-        quest1->finished = false;
+        Quest *quest1 = init_quest(questList, KILL_10_MONSTERS, "Tuer 10 monstres", true, true, 20);
 
     /////////////////////////////////////////////////////////////////////////////////////////
 
-        Quest  *quest2 = malloc(sizeof(Quest));
-        quest2->id = REACH_SECOND_LEVEL;
-        quest2->description = malloc(strlen("Explorer le niveau 2 de la premiere zone") + 1);
-        strcpy(quest2->description, "Explorer le niveau 2 de la premiere zone");
-        quest2->displayedAlert = false;
-        quest2->claimedRewards = false;
-        quest2->claimedGold = true;
-        quest2->claimedArmor = false;
-        quest2->claimedWeapon = true;
-
-        quest2->goldReward = 0;
-        quest2->armorReward = randomArmor();
-        quest2->weaponReward = NULL;
-
-        quest2->next = quest1;
-        quest2->finished = false;
+        Quest  *quest2 = init_quest(quest1, REACH_SECOND_LEVEL, "Explorer le niveau 2 de la premiere zone", true, false, 0);
 
     /////////////////////////////////////////////////////////////////////////////////////
 
-        Quest  *quest3 = malloc(sizeof(Quest));
-        quest3->id = FINISH_TWO_QUESTS;
-        quest3->description = malloc(strlen("Terminer une quete") + 1);
-        strcpy(quest3->description, "Terminer une quete");
-        quest3->displayedAlert = false;
-        quest3->claimedRewards = false;
-        quest3->claimedGold = false;
-        quest3->claimedArmor = true;
-        quest3->claimedWeapon = false;
-
-        quest3->goldReward = 50;
-        quest3->armorReward = NULL;
-        quest3->weaponReward = randomWeapon();
-
-        quest3->next = quest2;
-        quest3->finished = false;
+        Quest  *quest3 = init_quest(quest2, FINISH_TWO_QUESTS, "Terminer deux quetes", false, true, 50);
 
     /////////////////////////////////////////////////////////////////////////////////////////
-        Quest  *quest4 = malloc(sizeof(Quest));
-        quest4->id = FINISH_TWO_QUESTS;
-        quest4->description = malloc(strlen("Terminer 5 niveaux") + 1);
-        strcpy(quest4->description, "Terminer 5 niveaux");
-        quest4->displayedAlert = false;
-        quest4->claimedRewards = false;
-        quest4->claimedGold = false;
-        quest4->claimedArmor = false;
-        quest4->claimedWeapon = false;
 
-        quest4->goldReward = 50;
-        quest4->armorReward = randomArmor();
-        quest4->weaponReward = randomWeapon();
-
-        quest4->next = quest3;
-        quest4->finished = false;
+        Quest  *quest4 = init_quest(quest3, FINISH_5_LEVELS, "Terminer 5 niveaux", true, true, 50);
 
     /////////////////////////////////////////////////////////////////////////////////////////
 
     questList = quest4;
 
 return questList;
-
 }
 
 
@@ -137,7 +75,6 @@ Quest *init_quest(Quest *head, int id, char *description, bool armorReward, bool
     q->next = head;
 
     return q;
-
 }
 
 
