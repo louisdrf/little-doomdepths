@@ -16,7 +16,7 @@
 #include "../../headers/quests/create_quests.h"
 #include "../../headers/player/player_spell.h"
 
-#define DEBUG true
+#define DEBUG false
 
 /**
  * init the player

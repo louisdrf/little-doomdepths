@@ -55,7 +55,7 @@ Level *init_level(int id, int in_zone_id) {
     }
     // random weapon/armor generation by level
 randnbloot= rand() % (id + 1); // Generate a random number between 0 and 'id'.
-printf("level id : %d | randnbloot : %d\n",level->id, randnbloot);
+//printf("level id : %d | randnbloot : %d\n",level->id, randnbloot);
 for(int l = randnbloot; l > 0; l--){
     if(l % 2 == 0){
         add_loot_item(level, randomWeapon(), NULL);

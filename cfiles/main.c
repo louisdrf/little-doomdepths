@@ -3,15 +3,8 @@
 #include <conio.h>
 #include <time.h>
 #include "../headers/game.h"
-#include "../headers/includes/structs.h"
 #include "../headers/display.h"
-#include "../headers/player/player.h"
-#include "../headers/loop.h"
-#include "../headers/zones/display_zone.h"
-#include "../headers/player/player_spell.h"
 #include "../headers/player/has_player_a_save.h"
-#include "../headers/saves/load-save/load_game.h"
-#include "../headers/saves/load-save/load_player.h"
 #include "../headers/includes/colors.h"
 
 #define HAS_SAVE 0
@@ -44,7 +37,7 @@ int main() {
                     }
                     else if(display_play_or_destroy_save(save_id) == DESTROY_SAVE) {
                         printf(RED"\nGame %d correctly destroyed."RESET, save_id);
-                        launch_new_game(save_id);
+                        return EXIT_SUCCESS;
                     }
                 }
             break;

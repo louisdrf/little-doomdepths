@@ -8,7 +8,7 @@
 #include <conio.h>
 #include <stdio.h>
 
-#define DEBUG true
+#define DEBUG false
 
 Spell *create_spell(Spell *head, int index) {
 

@@ -52,7 +52,8 @@ CREATE TABLE Armor (
                        armor_name VARCHAR(70),
                        defense INTEGER NOT NULL,
                        rarity INTEGER NOT NULL,
-                       isEquipped INTEGER
+                       isEquipped INTEGER,
+                       quest_id INTEGER
 );
 
 
@@ -65,7 +66,8 @@ CREATE TABLE Weapon (
                         attacks_by_turn INTEGER NOT NULL,
                         mana_cost INTEGER,
                         rarity INTEGER NOT NULL,
-                        isEquipped INTEGER
+                        isEquipped INTEGER,
+                        quest_id INTEGER
 );
 
 CREATE TABLE Zone (

@@ -10,6 +10,7 @@
 #include "../../headers/inventory/display_inventory_potions.h"
 #include "../../headers/inventory/display_inventory_weapons.h"
 #include "../../headers/inventory/display_inventory_armors.h"
+#include "../../headers/includes/colors.h"
 
 
 /**
@@ -22,11 +23,11 @@ void display_inventory_choice_sections(Player *player) {
 
     int choice;
     printf("\n\n    Inventaire\n\n");
-    printf("Armes          (1)\n");
-    printf("Armures        (2)\n");
+    printf(GREEN"Armes          (1)\n"RESET);
+    printf(BLUE"Armures        (2)\n"RESET);
     printf("Potions        (3)\n");
     printf("\n");
-    printf("Quitter        (0)\n");
+    printf(RED"Quitter        (0)\n"RESET);
     choice = getch();
     choice -= 48;
 

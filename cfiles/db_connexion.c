@@ -43,14 +43,14 @@ bool prepare_and_exec_query(sqlite3 **conn, char *query) {
         return false;
     }
 
-    req = sqlite3_step(res); // Exécuter la requête préparée
+    req = sqlite3_step(res);
     if (req != SQLITE_DONE) {
         fprintf(stderr, "Failed to execute SQL query: %s\n", sqlite3_errmsg(*conn));
-        sqlite3_finalize(res); // Finaliser la requête
+        sqlite3_finalize(res);
         sqlite3_close(*conn);
         return false;
     }
 
-    sqlite3_finalize(res); // Finaliser la requête
+    sqlite3_finalize(res);
     return true;
 }
