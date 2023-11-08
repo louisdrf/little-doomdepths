@@ -73,42 +73,42 @@ void launch_loop(Game *game, Player *player) {
                                 return;
 
                             default:
-                                break;
+                                launch_loop(game, player);
                         }
-                        break;
+                        continue;
 
 
                     case 'i':
                         display_inventory_choice_sections(player);
-                        break;
+                        continue;
 
                     case 'e':
                         display_player_equipment(player);
-                        break;
+                        continue;
 
                     case 'c':
                         display_player_stats(player);
-                        break;
+                        continue;
 
                     case 'm':
                         display_player_all_zone(player, game);
-                        break;
+                        continue;
 
                     case 'j':
                         display_quests_menu(player);
-                        break;
+                        continue;
 
                     case 'l':
                        display_level_loot_choice_sections(player->current_level,player);
-                        break;
+                        continue;
 
                     case 's':
                         display_spell_choice_sections(player);
-                        break;
+                        continue;
 
                     case 'x':
                         create_save(game, player);
-                        break;
+                        continue;
                 }
 
                 playerEntry -= 48;

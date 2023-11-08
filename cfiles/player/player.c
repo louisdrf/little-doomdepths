@@ -232,9 +232,8 @@ void free_player(Player *player) {
     printf("free player equipment\n");
 
     for(int i = 0; i < NBOBJECTS_MAX; i++) {
-
-            free(player->inventory->armorList[i]);
-            free(player->inventory->weaponList[i]);
+            free_armor(player->inventory->armorList[i]);
+            free_weapon(player->inventory->weaponList[i]);
     }
     free(player->inventory);
     printf("free inventory\n");

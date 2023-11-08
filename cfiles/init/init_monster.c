@@ -43,13 +43,13 @@ Monster *create_monster(Monster *head, int index, double multiplicator) {
     new->turn = false;
     new->monster_type = rand() % NB_MONSTER_TYPE;
     new->isAlive = true;
-    new->loot_gold = random_int(MIN_GOLD_LOOT, MAX_GOLD_LOOT);
+    new->loot_gold = (int)(random_int(MIN_GOLD_LOOT, MAX_GOLD_LOOT) * multiplicator);
     new->next = head;
     new->drawIndex = 0;
     new->monster_weapon = NULL;
     new->monster_armor = NULL;
-    new->monster_weapon = randomWeapon(); // rand() weapon generate by rarity.
-    new->monster_armor = randomArmor();  // rand() armor generate by rarity.
+    new->monster_weapon = randomWeapon();
+    new->monster_armor = randomArmor();
     char *sprite = return_monster_sprite(new->monster_type);
     new->draw = malloc(strlen(sprite) + 1);
     strcpy(new->draw, sprite);

@@ -102,3 +102,13 @@
 108	345	7211867044320705	doom.exe	c4b8825f4fa0c7d0
 6	94	7211867291013430	CMakeFiles/doom.dir/cfiles/zones/init_zones.c.obj	97882845aff3b1e1
 94	320	7211867293189754	doom.exe	c4b8825f4fa0c7d0
+6	127	7211869622093589	CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj	ba4a0d04f1163003
+17	128	7211869622093589	CMakeFiles/doom.dir/cfiles/zones/init_zones.c.obj	97882845aff3b1e1
+129	371	7211869624456748	doom.exe	c4b8825f4fa0c7d0
+6	117	7211875276565256	CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj	ba4a0d04f1163003
+17	119	7211875276590429	CMakeFiles/doom.dir/cfiles/loop.c.obj	bcf47ea57414fce5
+120	364	7211875278990346	doom.exe	c4b8825f4fa0c7d0
+6	125	7211877999761723	CMakeFiles/doom.dir/cfiles/loop.c.obj	bcf47ea57414fce5
+125	368	7211878002124900	doom.exe	c4b8825f4fa0c7d0
+5	127	7211879446782430	CMakeFiles/doom.dir/cfiles/player/player.c.obj	98a48f816ba24173
+128	395	7211879449394747	doom.exe	c4b8825f4fa0c7d0
