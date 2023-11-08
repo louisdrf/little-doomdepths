@@ -54,8 +54,12 @@ void setWeaponName(Weapon *weapon, char *name) {
 
 void free_weapon(Weapon *weapon) {
 
-        free(weapon->name);
-        free(weapon);
+    if(weapon == NULL) return;
+    if(weapon->name != NULL) free(weapon->name);
+    if(weapon->name == NULL) printf("weapon name free\n");
+
+    free(weapon);
+    if(weapon == NULL) printf("weapon free\n");
 }
 
 

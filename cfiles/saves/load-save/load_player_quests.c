@@ -15,7 +15,7 @@ void load_player_quests(Player *player, sqlite3 **conn) {
     const char *tail;
     char query[50];
 
-    sprintf(query, "SELECT * FROM Quests WHERE player_id=%d;", player->id);
+    sprintf(query, "SELECT * FROM Quests WHERE player_id=%d ORDER BY quest_id;", player->id);
 
     int error = sqlite3_prepare_v2(*conn, query, -1, &res, &tail);
     if (error != SQLITE_OK) {

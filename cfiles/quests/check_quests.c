@@ -18,7 +18,7 @@ void check_quests(Player *player) {
         switch(current->id) {
 
             case KILL_10_MONSTERS:
-                if(player->nbKill == 10) finish_quest(player, current);
+                if(player->nbKill == 1) finish_quest(player, current);
                 break;
 
             case REACH_SECOND_LEVEL:
