@@ -12,66 +12,25 @@
 
 void check_quests(Player *player) {
 
-    int pass;
     Quest *current = player->questList;
 
     while(current != NULL) {
         switch(current->id) {
 
-            case KILL_10_MONSTERS:      // si le joueur a tué 10 monstres
-                if(player->nbKill == 1) {
-                    current->finished = true;
-                    if(!current->displayedAlert) {
-                        system("cls");
-                        printf(GREEN"Vous avez termine une quete : %s ! Allez recuperer vos recompenses !\n\n"RESET, current->description);
-                        printf("Entrez n'importe quelle touche pour continuer.\n-> ");
-                        pass = getch();
-                        current->displayedAlert = true;
-                        player->nbQuestDone++;
-                    }
-                }
+            case KILL_10_MONSTERS:
+                if(player->nbKill == 10) finish_quest(player, current);
                 break;
 
-            case REACH_SECOND_LEVEL:        // si le joueur a atteint le second niveau
-                if(player->current_level->id == 2) {
-                    current->finished = true;
-                    if(!current->displayedAlert) {
-                        system("cls");
-                        printf(GREEN"Vous avez termine la quete : %s ! Allez recuperer vos recompenses !\n\n"RESET, current->description);
-                        printf("Entrez n'importe quelle touche pour continuer.\n-> ");
-                        pass = getch();
-                        current->displayedAlert = true;
-                        player->nbQuestDone++;
-                    }
-                }
+            case REACH_SECOND_LEVEL:
+                if(player->current_level->id == 2) finish_quest(player, current);
                 break;
 
             case FINISH_TWO_QUESTS:
-                if(player->nbQuestDone == 2) {
-                    current->finished = true;
-                    if(!current->displayedAlert) {
-                        system("cls");
-                        printf(GREEN"Vous avez termine la quete : %s ! Allez recuperer vos recompenses !\n\n"RESET, current->description);
-                        printf("Entrez n'importe quelle touche pour continuer.\n-> ");
-                        pass = getch();
-                        current->displayedAlert = true;
-                        player->nbQuestDone++;
-                    }
-                }
+                if(player->nbQuestDone == 2) finish_quest(player, current);
                 break;
 
             case FINISH_5_LEVELS:
-                if(player->nbLevelFinished == 5) {
-                    current->finished = true;
-                    if(!current->displayedAlert) {
-                        system("cls");
-                        printf(GREEN"Vous avez termine la quete : %s ! Allez recuperer vos recompenses !\n\n"RESET, current->description);
-                        printf("Entrez n'importe quelle touche pour continuer.\n-> ");
-                        pass = getch();
-                        current->displayedAlert = true;
-                        player->nbQuestDone++;
-                    }
-                }
+                if(player->nbLevelFinished == 5) finish_quest(player, current);
                 break;
 
             default:
@@ -79,5 +38,19 @@ void check_quests(Player *player) {
         }
 
         current = current->next;
+    }
+}
+
+
+void finish_quest(Player *player, Quest *q) {
+
+    q->finished = true;
+    if(!q->displayedAlert) {
+        system("cls");
+        printf(GREEN"Vous avez termine la quete : %s ! Allez recuperer vos recompenses !\n\n"RESET, q->description);
+        printf("Entrez n'importe quelle touche pour continuer.\n-> ");
+        int pass = getch();
+        q->displayedAlert = true;
+        player->nbQuestDone++;
     }
 }

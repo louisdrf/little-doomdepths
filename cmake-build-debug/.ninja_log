@@ -152,3 +152,6 @@
 27	202	7211650509419234	CMakeFiles/doom.dir/cfiles/player/display_player_stats.c.obj	7bec0bbd1e6156e2
 10	207	7211650509459143	CMakeFiles/doom.dir/cfiles/saves/create-save/save_player.c.obj	76cdbd108e6d9a6a
 208	571	7211650513029572	doom.exe	c4b8825f4fa0c7d0
+24	151	7211656911612737	CMakeFiles/doom.dir/cfiles/quests/check_quests.c.obj	fc5622d047f3aa17
+9	159	7211656911692535	CMakeFiles/doom.dir/cfiles/quests/display_quests.c.obj	bf4a7fddb9b68fdc
+159	430	7211656914335448	doom.exe	c4b8825f4fa0c7d0

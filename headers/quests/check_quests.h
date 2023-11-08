@@ -8,5 +8,6 @@
 #include "../includes/structs.h"
 
 void check_quests(Player *player);
+void finish_quest(Player *player, Quest *q);
 
 #endif //DOOM_CHECK_QUESTS_H

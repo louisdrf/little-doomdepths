@@ -129,7 +129,7 @@ void display_quest_rewards(Player* player, int quest_id) {
         printf(RED"Le numero saisi ne correspond a aucune quete.\n"RESET);
         printf("\nRetour (pressez n'importe quelle touche)\n->");
         int pause = getch();
-        display_done_quests(player);
+        return;
     }
 
     if (current->claimedRewards) {
