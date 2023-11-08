@@ -95,6 +95,7 @@ void display_spell_section(Player *player, int choice) {
 
             display_spell_use(player,player->book->spell_equipped[choice]);
             player->attacks_left--;
+            if(player->attacks_left == 0) player->turn = false;
             break;
 
         case 2:

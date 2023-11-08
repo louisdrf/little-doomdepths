@@ -58,7 +58,12 @@ int get_first_spell_free_space(Player *player) {
 }
 void spell_damage(Player *player,int idMonster,Spell *spell){
     Monster *target = getTargetMonster(player, idMonster);
-    target->lifepoints-=spell->value*5;
+    if((target->lifepoints)- spell->value*5 <= 0) {
+        target->lifepoints = 0;
+        target->isAlive = false;
+        player->gold += target->loot_gold;
+    }
+    else target->lifepoints-=spell->value*5;
     printf("\nVous infligez %d points de degats.\n",spell->value*5);
     player->mana-=spell->mana_cost;
 }
@@ -67,7 +72,12 @@ void spell_aoe(Player *player,Spell *spell){
     int i = 0;
     while (current != NULL && i<NBMONSTERS_MAX) {
         if(current->isAlive) {
-            current->lifepoints-=spell->value*3;
+            if((current->lifepoints)- spell->value*3 <= 0) {
+                current->lifepoints = 0;
+                current->isAlive = false;
+                player->gold += current->loot_gold;
+            }
+            else current->lifepoints-=spell->value*3;
             printf("Vous infligez %d points de degats a %s (%d/%d)\n", spell->value*5, monster_string[current->monster_type], current->lifepoints, current->lifepoints_max);
             i++;
         }
