@@ -51,8 +51,8 @@ Quest *init_quest(Quest *head, int id, char *description, bool armorReward, bool
     q->claimedRewards = false;
 
     q->goldReward = goldReward;
-    if(goldReward > 0) q->claimedGold = true;
-    else q->claimedGold = false;
+    if(goldReward > 0) q->claimedGold = false;
+    else q->claimedGold = true;
 
     if(armorReward) {
         q->claimedArmor = false;
@@ -83,7 +83,7 @@ void free_quest_list(Quest *questList) {
     Quest *next;
 
     while (current != NULL) {
-        //printf("Desallocating quest : %s\n", current->description);
+        printf("Desallocating quest : %s\n", current->description);
         next = current->next;
         free(current->description);
         free(current);

@@ -160,3 +160,9 @@
 6	257	7211706186107805	CMakeFiles/doom.dir/cfiles/player/player.c.obj	98a48f816ba24173
 21	327	7211706186790598	CMakeFiles/doom.dir/cfiles/loop.c.obj	bcf47ea57414fce5
 327	955	7211706193022817	doom.exe	c4b8825f4fa0c7d0
+6	132	7211713255764074	CMakeFiles/doom.dir/cfiles/player/player.c.obj	98a48f816ba24173
+133	395	7211713258312238	doom.exe	c4b8825f4fa0c7d0
+8	164	7211767312159534	CMakeFiles/doom.dir/cfiles/player/player_spell.c.obj	39aec7344db970d5
+164	439	7211767314839612	doom.exe	c4b8825f4fa0c7d0
+7	127	7211780995618789	CMakeFiles/doom.dir/cfiles/quests/create_quests.c.obj	c7d96a6cb05643ad
+127	376	7211780998040426	doom.exe	c4b8825f4fa0c7d0

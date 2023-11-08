@@ -37,9 +37,6 @@ Player *init_player(Game *game) {
         book->spell_stock = first_spell;
     }
 
-    Quest *questList = NULL;
-    questList = create_quests();
-
         player = malloc(sizeof(Player));
         if(player == NULL) {
     #if DEBUG
@@ -71,7 +68,7 @@ Player *init_player(Game *game) {
         player->max_strength = 12;
         player->book = book;
         player->inventory = inventory;
-        player->questList = questList;
+        player->questList = create_quests();
         player->currentX=0;
         player->currentY=0;
         player->current_zone = game->zoneList[0];
