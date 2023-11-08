@@ -15,6 +15,7 @@
 #include "../../headers/armor/init_armor.h"
 #include "../../headers/quests/create_quests.h"
 #include "../../headers/player/player_spell.h"
+#include "../../headers/inventory/potion.h"
 
 #define DEBUG false
 
@@ -231,12 +232,7 @@ void free_player(Player *player) {
     free_armor(player->current_armor);
     printf("free player equipment\n");
 
-    for(int i = 0; i < NBOBJECTS_MAX; i++) {
-            free_armor(player->inventory->armorList[i]);
-            free_weapon(player->inventory->weaponList[i]);
-    }
-    free(player->inventory);
-    printf("free inventory\n");
+    free_inventory(player);
 
     free(player->draw);
     free(player->name);

@@ -12,5 +12,6 @@ void remove_armor_inventory(Player *player, Armor *a);
 void remove_weapon_inventory(Player *player, Weapon *w);
 int get_first_weapon_free_space(Player *player);
 int get_first_armor_free_space(Player *player);
+void free_inventory(Player *player);
 
 #endif //DOOM_INVENTORY_H

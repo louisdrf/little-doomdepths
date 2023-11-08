@@ -6,6 +6,9 @@
 #include "../../headers/inventory/inventory.h"
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
+#include "../../headers/armor/init_armor.h"
+#include "../../headers/weapon/init_weapon.h"
+#include "../../headers/inventory/potion.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -104,4 +107,21 @@ int get_first_armor_free_space(Player *player) {
     }
 
     return i; // on retourne la case suivante
+}
+
+
+void free_inventory(Player *player) {
+
+    for(int i = 0; i < NBOBJECTS_MAX; i++) {
+        free_armor(player->inventory->armorList[i]);
+        free_weapon(player->inventory->weaponList[i]);
+    }
+    if(player->inventory->healthPotion != NULL) {
+        destroy_potion(player->inventory->healthPotion);
+    }
+    if(player->inventory->manaPotion != NULL) {
+        destroy_potion(player->inventory->manaPotion);
+    }
+    free(player->inventory);
+    printf("free inventory\n");
 }

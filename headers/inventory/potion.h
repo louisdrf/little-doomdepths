@@ -13,5 +13,6 @@ void give_player_potion(Player *player, unsigned short type);
 void use_potion(Player *player, unsigned short potionType);
 
 Potion *createPotion(const char* name, const char* sprite, unsigned short healthValue, unsigned short manaValue);
+void destroy_potion(Potion* potion);
 
 #endif //DOOM_POTION_H
