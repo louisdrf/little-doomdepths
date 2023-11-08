@@ -19,7 +19,7 @@
  * @param id
  * @return
  */
-Level *init_level(int id, int in_zone_id) {
+Level *init_level(int id, double multiplicator) {
 
     int randnbloot = 0;
     // create a level
@@ -30,7 +30,6 @@ Level *init_level(int id, int in_zone_id) {
     }
 
     level->id = id;
-    level->in_zone_id = in_zone_id;
     level->finished = false;
 
     // init the linked list of monsters for the level
@@ -38,7 +37,7 @@ Level *init_level(int id, int in_zone_id) {
     level->nbMonsters = random_int(NBMONSTERS_MIN , NBMONSTERS_MAX); // nombre de monstres pour le niveau
 
     for(int j = 1; j < level->nbMonsters + 1; j++) {
-        first_monster = create_monster(first_monster, j);
+        first_monster = create_monster(first_monster, j, multiplicator);
         #if DEBUG
                 printf("Monster %d in level %d correctly added.\n", j, level->id);
         #endif

@@ -14,7 +14,7 @@
 Game *load_game(int game_id) {
 
     sqlite3 *conn = connect_to_db();
-    Game *game;
+    Game *game = NULL;
     game = malloc(sizeof(Game));
 
     if(game == NULL)

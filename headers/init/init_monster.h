@@ -6,6 +6,6 @@
 #define DOOM_INIT_MONSTER_H
 #include "../includes/structs.h"
 
-Monster *create_monster(Monster *head, int index);
+Monster *create_monster(Monster *head, int index, double multiplicator);
 
 #endif //DOOM_INIT_MONSTER_H

@@ -19,7 +19,7 @@ void load_level_monsters(Level *level, int save_id, int height_index, int width_
     char query[200];
 
     for(int i = 0; i < level->nbMonsters; i++) {
-        sprintf(query, "SELECT * FROM Monster WHERE level_height_index=%d AND level_width_index=%d AND zone_id=%d AND player_id=%d;",
+        sprintf(query, "SELECT * FROM Monster WHERE level_height_index=%d AND level_width_index=%d AND zone_id=%d AND player_id=%d ORDER BY monster_id;",
                 height_index,
                 width_index,
                 zone_id,

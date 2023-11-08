@@ -51,8 +51,8 @@ Game *init_game(int save_id) {
 
 
 void launch_new_game(int save_id) {
-    Game        *game;
-    Player      *player;
+    Game        *game = NULL;
+    Player      *player = NULL;
 
     printf(GREEN"\nLancement d'une nouvelle partie...\n"RESET);
     game = init_game(save_id);                                          // init la partie et les niveaux
@@ -65,8 +65,8 @@ void launch_new_game(int save_id) {
 
 void load_saved_game(int save_id) {
 
-    Game        *game;
-    Player      *player;
+    Game        *game = NULL;
+    Player      *player = NULL;
 
     printf(GREEN"\nChargement de la partie...\n\n"RESET);
     game = load_game(save_id);                                 // charger la partie et les niveaux

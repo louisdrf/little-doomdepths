@@ -19,7 +19,7 @@
 /**
  * create a Monster * and add it to the linked list of Monster
  */
-Monster *create_monster(Monster *head, int index) {
+Monster *create_monster(Monster *head, int index, double multiplicator) {
 
     Monster *new = malloc(sizeof(Monster));
     if(new == NULL) {
@@ -31,13 +31,13 @@ Monster *create_monster(Monster *head, int index) {
 
     new->id = index;
 
-    new->lifepoints_max = random_int(MONSTER_MIN_PV, MONSTER_MAX_PV);
-    while(new->lifepoints_max % 2 != 0) new->lifepoints_max = random_int(MONSTER_MIN_PV, MONSTER_MAX_PV);
+    new->lifepoints_max = (int) (random_int(MONSTER_MIN_PV, MONSTER_MAX_PV) * multiplicator);
+    while(new->lifepoints_max % 2 != 0) new->lifepoints_max = (int) (random_int(MONSTER_MIN_PV, MONSTER_MAX_PV) * multiplicator);
 
     new->lifepoints = new->lifepoints_max;
-    new->defense = random_int(MONSTER_MIN_DEFENSE, MONSTER_MAX_DEFENSE);
-    new->min_strength = 2;
-    new->max_strength = 6;
+    new->defense = (int)(random_int(MONSTER_MIN_DEFENSE, MONSTER_MAX_DEFENSE) * multiplicator);
+    new->min_strength = (int) (2 * multiplicator);
+    new->max_strength = (int) (6 * multiplicator);
     new->attacks_by_turn = 1;
     new->attacks_left = new->attacks_by_turn;
     new->turn = false;

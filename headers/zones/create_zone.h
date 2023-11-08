@@ -7,6 +7,6 @@
 
 #include "../includes/structs.h"
 
-Zone *create_zone(Game *game);
+Zone *create_zone(Game *game, double multiplicator);
 
 #endif //DOOM_CREATE_ZONE_H

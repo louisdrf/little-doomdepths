@@ -14,10 +14,19 @@
 void init_zones(Game *game) {
 
     for(int i = 0; i < NBZONES; i++) {
-        game->zoneList[i] = create_zone(game);
+
+        double multiplicator;
+        if(i == 0) multiplicator = 1.;
+        if(i == 1) multiplicator = 1.5;
+        if(i == 2) multiplicator = 2.;
+        if(i == 3) multiplicator = 2.;
+        if(i == 4) multiplicator = 2.5;
+
+        game->zoneList[i] = create_zone(game, multiplicator);
         game->zoneList[i]->id = i;
         game->zoneList[i]->finished = false;
         attribute_zone_data(game, i);
+
         #if DEBUG
                 printf("zone %d cree\n", i);
         #endif

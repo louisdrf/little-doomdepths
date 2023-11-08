@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <conio.h>
 #include "../../headers/monsters/monster.h"
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
@@ -49,6 +50,8 @@ Monster *getTargetMonster(Player *player, int id) {
         }
         current = current->next;
     }
+    printf(RED"monster target NULL\n"RESET);
+    int pass = getch();
     return NULL;
 }
 
@@ -87,6 +90,9 @@ int monsters_attack(Player *player) {
     player->attacks_left = player->attacks_by_turn;
     return 0;
 }
+
+
+
 void monster_Drop_loot(Player *player){   // Drop les items des monstres.
     if (player->current_level->monsters->monster_weapon == NULL && player->current_level->monsters->monster_armor == NULL) {
         printf(RED"\nLe monstre n'a pas d'arme ni d'armure.\n"RESET);

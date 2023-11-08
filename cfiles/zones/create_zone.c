@@ -9,7 +9,7 @@
 #include "../../headers/init/init_level.h"
 
 
-Zone *create_zone(Game *game) {
+Zone *create_zone(Game *game, double multiplicator) {
 
     Zone *zone = malloc(sizeof(Zone));
 
@@ -28,17 +28,14 @@ Zone *create_zone(Game *game) {
             }
 
             int index = 0;
-            int in_zone_index = 0;
 
             for (int i = 0; i < map->height; i++) {
                 for (int j = 0; j < map->width; j++) {
                     if (map->map[i][j] == 1) {
-                        levelList[i][j] = init_level(index, in_zone_index);            // creer un niveau avec son id
+                        levelList[i][j] = init_level(index, multiplicator);            // creer un niveau avec son id
                         index++;
-                        in_zone_index++;
                     } else {
                         levelList[i][j] = NULL;
-                        in_zone_index++;
                     }
                 }
             }
@@ -63,7 +60,10 @@ Zone *create_zone(Game *game) {
 
 
             if(zone->levelList != NULL) return zone;
-            else return NULL;
+            else {
+                printf("Zone level list null\n");
+                return NULL;
+            }
 
 
     }
