@@ -19,7 +19,7 @@ void display_player_stats(Player *player) {
     printf(RED   "ATT  : %d-%d\n"RESET, player->min_strength, player->max_strength);
     printf(YELLOW"DEF  : %d\n\n"RESET, player->defense);
     printf(RED"Kills :           %d\n"RESET, player->nbKill);
-    printf(GREEN"Finished quests : %d\n\n"RESET, player->nbQuestDone);
+    printf(GREEN"Finished quests : %d\n"RESET, player->nbQuestDone);
     printf(GREEN"Finished levels : %d\n\n"RESET, player->nbLevelFinished);
 
     printf("Retour (q)\n");

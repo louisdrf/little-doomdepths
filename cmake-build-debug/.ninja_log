@@ -149,3 +149,6 @@
 6	141	7211648860641188	CMakeFiles/doom.dir/cfiles/saves/create-save/save_player.c.obj	76cdbd108e6d9a6a
 18	147	7211648860701042	CMakeFiles/doom.dir/cfiles/saves/load-save/load_player.c.obj	2a289634dee14c85
 147	391	7211648863084652	doom.exe	c4b8825f4fa0c7d0
+27	202	7211650509419234	CMakeFiles/doom.dir/cfiles/player/display_player_stats.c.obj	7bec0bbd1e6156e2
+10	207	7211650509459143	CMakeFiles/doom.dir/cfiles/saves/create-save/save_player.c.obj	76cdbd108e6d9a6a
+208	571	7211650513029572	doom.exe	c4b8825f4fa0c7d0
