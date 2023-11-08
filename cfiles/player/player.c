@@ -53,6 +53,7 @@ Player *init_player(Game *game) {
         get_player_name(player);
         player->nbKill = 0;
         player->nbQuestDone = 0;
+        player->nbLevelFinished = 0;
         player->isAlive = true;
         player->gold = 0;
         player->turn = true;

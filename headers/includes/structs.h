@@ -207,6 +207,7 @@ typedef struct {
     Quest*              questList;          // liste de quetes du joueur
     int                 nbKill;             // nombre de monstres tués
     int                 nbQuestDone;        // nombre de quetes terminées
+    int                 nbLevelFinished;
 
 } Player;
 

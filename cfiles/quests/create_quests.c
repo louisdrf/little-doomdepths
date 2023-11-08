@@ -69,7 +69,28 @@ Quest *create_quests() {
 
         quest3->next = quest2;
         quest3->finished = false;
-        questList = quest3;
+
+
+    Quest  *quest4 = malloc(sizeof(Quest));
+    quest4->id = FINISH_TWO_QUESTS;
+    quest4->description = malloc(strlen("Terminer 5 niveaux") + 1);
+    strcpy(quest4->description, "Terminer 5 niveaux");
+    quest4->displayedAlert = false;
+    quest4->claimedRewards = false;
+    quest4->claimedGold = false;
+    quest4->claimedArmor = true;
+    quest4->claimedWeapon = false;
+
+    quest4->goldReward = 50;
+    quest4->armorReward = randomArmor();
+    quest4->weaponReward = randomWeapon();
+
+    quest4->next = quest3;
+    quest4->finished = false;
+
+
+
+    questList = quest4;
 
 return questList;
 

@@ -42,6 +42,7 @@ void launch_loop(Game *game, Player *player) {
         {
             if(are_all_monsters_dead(player) == 1)              // retourne 1 si tous les monstres du niveau sont morts et passe le joueur au niveau supérieur
             {
+                player->nbLevelFinished++;
                 display_player_zone(player, game);
                 moveEntry = getch();
                 updateMovement(player,moveEntry, game);
