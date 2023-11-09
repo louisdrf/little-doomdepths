@@ -10,6 +10,7 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
 #include "../../headers/rand.h"
+#include "../../headers/player/player.h"
 
 #define DEBUG false
 
@@ -38,6 +39,11 @@ bool player_attack(Player *player, int idMonster) {
         player->gold += target->loot_gold;
         player->nbKill++;
         player->currentXP += target->xp;
+        if(player->currentXP >= player->nextLevelXP) {
+            if(player->levelXP != NB_PLAYER_LEVELS) {
+                next_xp_level(player);
+            }
+        }
     }
     else target->lifepoints -= current_attack_strength;
 

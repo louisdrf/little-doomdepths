@@ -7,7 +7,7 @@
 #define DOOM_DEFINES_H
 
 #define NB_MONSTER_TYPE 4
-#define NBMONSTERS_MAX 2
+#define NBMONSTERS_MAX 4
 #define NBMONSTERS_MIN 2
 #define MONSTER_MAX_PV 80
 #define MONSTER_MIN_PV 40
@@ -17,9 +17,11 @@
 #define MIN_GOLD_LOOT 5
 #define MIN_MONSTER_XP 10
 #define MAX_MONSTER_XP 50
+
 #define VALUE_SPELL_MAX 10
 #define SPELL_COST_MAX 25
 #define NB_SPELL_TYPE 4
+
 #define MAX_LEVEL_LOOT_ITEM 10
 
 #define NBOBJECTS_MAX 10
