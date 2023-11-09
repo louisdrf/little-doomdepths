@@ -56,9 +56,9 @@ Player *load_player(Game *game) {
 
         player->levelXP =  sqlite3_column_int(res, 15);
         player->totalXP =  sqlite3_column_int(res, 16);
+        player->currentXP = sqlite3_column_int(res, 17);
         init_player_xp_levels(player);
         player->nextLevelXP = player->nextLevelXP = player->levelsXP[player->levelXP + 1];
-        player->currentXP = (player->nextLevelXP - player->totalXP);
 
         player->current_level = game->zoneList[current_zone_id]->levelList[player->currentX][player->currentY];
         player->isAlive = true;
