@@ -23,5 +23,6 @@
 #define NBOBJECTS_MAX 10
 #define NBSPELL_MAX 3
 
+#define NB_PLAYER_LEVELS 50
 
 #endif //DOOM_DEFINES_H

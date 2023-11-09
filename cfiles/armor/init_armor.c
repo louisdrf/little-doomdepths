@@ -52,12 +52,10 @@ void setArmorName(Armor *armor, char *name) {
 
 void free_armor(Armor *armor) {
 
-    if(armor == NULL) return;
-    if(armor->name != NULL) free(armor->name);
-    if(armor->name == NULL) printf("armor name free\n");
-
+    printf("armor name : %s\n", armor->name);
+    free(armor->name);
     free(armor);
-    if(armor == NULL) printf("armor free\n");
+
 }
 
 Armor *randomArmor() {

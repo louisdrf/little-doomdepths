@@ -112,9 +112,17 @@ int get_first_armor_free_space(Player *player) {
 
 void free_inventory(Player *player) {
 
-    for(int i = 0; i < NBOBJECTS_MAX; i++) {
-        free_armor(player->inventory->armorList[i]);
-        free_weapon(player->inventory->weaponList[i]);
+    for (int i = 0; i < player->inventory->limObjects; i++) {
+        if (player->inventory->weaponList[i] != NULL) {
+            printf("arme %d\n", i);
+            free_weapon(player->inventory->weaponList[i]);
+        }
+    }
+    for (int i = 0; i < player->inventory->limObjects; i++) {
+        if (player->inventory->armorList[i] != NULL) {
+            printf("armure %d\n", i);
+            free_armor(player->inventory->armorList[i]);
+        }
     }
     if(player->inventory->healthPotion != NULL) {
         destroy_potion(player->inventory->healthPotion);

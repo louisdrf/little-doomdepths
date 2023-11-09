@@ -17,7 +17,7 @@
 Weapon *init_weapon(char *name, int att_by_turn, int min_strength, int max_strength, int mana_cost, int rarity) {
 
     Weapon *weapon;
-    weapon= malloc(sizeof(Weapon));
+    weapon = malloc(sizeof(Weapon));
 
     if(weapon == NULL) {
     #if DEBUG
@@ -25,7 +25,7 @@ Weapon *init_weapon(char *name, int att_by_turn, int min_strength, int max_stren
     #endif
             exit(1);
     }
-
+    
     setWeaponName(weapon, name);
 
     weapon->min_strength = min_strength;
@@ -54,12 +54,9 @@ void setWeaponName(Weapon *weapon, char *name) {
 
 void free_weapon(Weapon *weapon) {
 
-    if(weapon == NULL) return;
-    if(weapon->name != NULL) free(weapon->name);
-    if(weapon->name == NULL) printf("weapon name free\n");
-
+    printf("weapon name : %s\n", weapon->name);
+    free(weapon->name);
     free(weapon);
-    if(weapon == NULL) printf("weapon free\n");
 }
 
 

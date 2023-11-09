@@ -16,6 +16,7 @@
 #include "../../headers/quests/create_quests.h"
 #include "../../headers/player/player_spell.h"
 #include "../../headers/inventory/potion.h"
+#include "../../headers/includes/colors.h"
 
 #define DEBUG false
 
@@ -47,6 +48,11 @@ Player *init_player(Game *game) {
         }
 
         player->id = game->id;
+        player->currentXP = 0;
+        player->levelXP = 0;                                            // niveau du joueur
+        init_player_xp_levels(player);                                  // initialiser les niveaux
+        player->nextLevelXP = player->levelsXP[player->levelXP + 1];
+
         init_player_draw(player);
         get_player_name(player);
         player->nbKill = 0;
@@ -91,6 +97,38 @@ Player *init_player(Game *game) {
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
 
+void init_player_xp_levels(Player *player) {
+
+    player->levelsXP[0] = 100;
+
+    for(int i = 1; i < NB_PLAYER_LEVELS; i++) {
+        player->levelsXP[i] = (int) (player->levelsXP[i-1] + (i * 50));
+    }
+
+    for(int i = 0; i < NB_PLAYER_LEVELS; i++) {
+        printf("%d\n", player->levelsXP[i]);
+    }
+}
+
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+
+void next_xp_level(Player *player) {
+
+    printf(GREEN"Vous passez au niveau %d !\n"RESET, player->levelXP + 1);
+    int pass = getch();
+    printf(RED"PV MAX : %d + 5\n"RESET, player->lifepoints_max);
+    printf(RED"MANA MAX : %d + 5\n"RESET, player->mana_max);
+
+    player->lifepoints_max += 5;
+    player->lifepoints += 5;
+    player->mana_max += 5;
+    player->mana += 5;
+}
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
 
 void init_player_draw(Player *player) {
 
@@ -253,10 +291,10 @@ void free_player(Player *player) {
 
     printf("free player quests\n");
 
-    /*free_spell_list(player->book->spell_stock);
+    free_spell_list(player->book->spell_stock);
     free(player->book);
 
-    printf("free player book spell stock and book\n");*/
+    printf("free player book spell stock and book\n");
 
     free(player);
     printf("\nplayer correctly free\n");

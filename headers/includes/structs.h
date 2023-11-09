@@ -180,6 +180,10 @@ struct Quest {
 typedef struct {
 
     int                 id;
+    int                 levelXP;
+    int                 currentXP;
+    int                 nextLevelXP;
+    int                 levelsXP[NB_PLAYER_LEVELS];
     char*               name;               // nom du joueur
     unsigned short      lifepoints;         // pv restants
     unsigned short      lifepoints_max;     // pv max
