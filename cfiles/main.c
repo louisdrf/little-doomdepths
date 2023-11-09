@@ -6,6 +6,7 @@
 #include "../headers/display.h"
 #include "../headers/player/has_player_a_save.h"
 #include "../headers/includes/colors.h"
+#include "../headers/utils.h"
 
 #define HAS_SAVE 0
 #define LOAD_SAVE 1
@@ -47,7 +48,7 @@ int main() {
             break;
 
         default:
-            system("cls");
+            clear();
             display_init_menu();
     }
 

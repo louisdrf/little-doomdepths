@@ -21,6 +21,7 @@
 #include "../headers/quests/display_quests.h"
 #include "../headers/level/display_level_loot.h"
 #include "../headers/quests/check_quests.h"
+#include "../headers/utils.h"
 
 /**
  * manages the game loop
@@ -43,7 +44,7 @@ void launch_loop(Game *game, Player *player) {
             if(are_all_monsters_dead(player) == 1)              // retourne 1 si tous les monstres du niveau sont morts et passe le joueur au niveau supérieur
             {
                 if(!player->current_level->finished) {
-                    system("cls");
+                    clear();
                     display_next_level_menu();
                     player->current_level->finished = true;
                     player->nbLevelFinished++;
@@ -53,7 +54,7 @@ void launch_loop(Game *game, Player *player) {
                 updateMovement(player,moveEntry, game);
 
             } else {
-                system("cls");
+                clear();
                 display_all(player); // affichage
 
                 playerEntry = getch();

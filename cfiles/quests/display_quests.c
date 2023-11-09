@@ -17,7 +17,7 @@
 
 void display_quests_menu(Player *player) {
 
-    system("cls");
+    clear();
     int playerEntry;
 
     printf(GREEN"----- Quetes -----\n\n"RESET);
@@ -45,7 +45,7 @@ void display_quests_menu(Player *player) {
 }
 
 void display_quests(Player *player) {
-    system("cls");
+    clear();
     int nbQuests = 0;
 
     Quest *current = player->questList;
@@ -70,7 +70,7 @@ void display_quests(Player *player) {
 
 void display_done_quests(Player *player) {
 
-    system("cls");
+    clear();
     int playerEntry;
     int nbQuests = 0;
 
@@ -127,7 +127,7 @@ void display_quest_rewards(Player* player, int quest_id) {
     }
 
     if (!questExists) {
-        system("cls");
+        clear();
         printf(RED"Le numero saisi ne correspond a aucune quete.\n"RESET);
         printf("\nRetour (pressez n'importe quelle touche)\n->");
         int pause = getch();
@@ -135,7 +135,7 @@ void display_quest_rewards(Player* player, int quest_id) {
     }
 
     if (current->claimedRewards) {
-        system("cls");
+        clear();
         printf(RED"Les recompenses pour cette quete ont deja ete recuperees.\n"RESET);
         printf("\nRetour (pressez n'importe quelle touche)\n->");
         int pause = getch();
@@ -149,7 +149,7 @@ void display_quest_rewards(Player* player, int quest_id) {
 
 void get_quest_rewards(Quest *quest, Player *player) {
 
-    system("cls");
+    clear();
 
     printf(GREEN"Recompenses de la quete\n\n\n"RESET);
 

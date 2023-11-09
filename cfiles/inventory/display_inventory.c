@@ -11,6 +11,7 @@
 #include "../../headers/inventory/display_inventory_weapons.h"
 #include "../../headers/inventory/display_inventory_armors.h"
 #include "../../headers/includes/colors.h"
+#include "../../headers/utils.h"
 
 
 /**
@@ -19,7 +20,7 @@
  */
 void display_inventory_choice_sections(Player *player) {
 
-    system("cls");
+    clear();
 
     int choice;
     printf("\n\n    Inventaire\n\n");

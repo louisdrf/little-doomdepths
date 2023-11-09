@@ -8,6 +8,7 @@
 #include "../headers/includes/colors.h"
 #include "../headers/monsters/monster_sprite.h"
 #include "../headers/saves/destroy_save.h"
+#include "../headers/utils.h"
 
 void display_init_menu() {
     printf(RED"                     ----Doomdepths----\n\n");
@@ -57,7 +58,7 @@ int display_save_choice() {
 int display_play_or_destroy_save(int save_id) {
 
     int playerEntry;
-    system("cls");
+    clear();
 
     printf(GREEN"\nPlay (1)      "RESET);
     printf(RED"Delete save (2)\n"RESET);

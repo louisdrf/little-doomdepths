@@ -8,11 +8,12 @@
 #include "../../headers/player/display_player_equipment.h"
 #include "../../headers/includes/colors.h"
 #include "../../headers/inventory/inventory.h"
+#include "../../headers/utils.h"
 
 void display_player_equipment(Player *player) {
 
     int playerEntry;
-    system("cls");
+    clear();
 
     if(player->current_weapon != NULL) {
         printf("~~~~~~~~~~~~~~~~~~~~ARME~~~~~~~~~~~~~~~~~~~~ \n| ");

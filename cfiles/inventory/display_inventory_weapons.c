@@ -10,6 +10,7 @@
 #include "../../headers/inventory/display_inventory.h"
 #include "../../headers/includes/colors.h"
 #include "../../headers/weapon/init_weapon.h"
+#include "../../headers/utils.h"
 
 
 void display_player_weapons(Player *player) {
@@ -18,7 +19,7 @@ void display_player_weapons(Player *player) {
     int inventoryWidth = 0;
     int choice;
 
-    system("cls");
+    clear();
 
     if(player->inventory->weaponList[i] == NULL) {
         printf(RED"\nAucune arme dans l'inventaire\n\n"RESET);

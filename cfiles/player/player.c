@@ -17,6 +17,7 @@
 #include "../../headers/player/player_spell.h"
 #include "../../headers/inventory/potion.h"
 #include "../../headers/includes/colors.h"
+#include "../../headers/utils.h"
 
 #define DEBUG false
 
@@ -119,13 +120,13 @@ void init_player_xp_levels(Player *player) {
 
 void next_xp_level(Player *player) {
 
-    system("cls");
+    clear();
 
     printf(GREEN"Bien joue ! Vous passez au niveau %d !\n\n"RESET, player->levelXP + 1);
     printf("Pressez n'importe quelle touche...");
     int pass = getch();
 
-    system("cls");
+    clear();
     printf("PV MAX : %d + 5 ", player->lifepoints_max);
     printf(RED"-> %d\n"RESET, (player->lifepoints_max + 5));
     printf("MANA MAX : %d + 2 ", player->mana_max);

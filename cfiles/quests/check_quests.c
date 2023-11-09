@@ -8,6 +8,7 @@
 #include "../../headers/quests/check_quests.h"
 #include "../../headers/includes/quests_defines.h"
 #include "../../headers/includes/colors.h"
+#include "../../headers/utils.h"
 
 
 void check_quests(Player *player) {
@@ -54,7 +55,7 @@ void finish_quest(Player *player, Quest *q) {
 
     q->finished = true;
     if(!q->displayedAlert) {
-        system("cls");
+        clear();
         printf(GREEN"Vous avez termine la quete : %s ! Allez recuperer vos recompenses !\n\n"RESET, q->description);
         printf("Entrez n'importe quelle touche pour continuer.\n-> ");
         int pass = getch();

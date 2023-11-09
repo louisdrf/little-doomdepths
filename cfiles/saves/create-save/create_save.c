@@ -14,10 +14,11 @@
 #include "../../../headers/saves/create-save/save_zones.h"
 #include "../../../headers/includes/colors.h"
 #include "../../../headers/saves/create-save/save_player_quests.h"
+#include "../../../headers/utils.h"
 
 void create_save(Game *game, Player *player) {
 
-    system("cls");
+    clear();
     printf(RED"\nSaving...\n"RESET);
 
     sqlite3 *conn = connect_to_db();

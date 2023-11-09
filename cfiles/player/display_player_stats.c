@@ -7,11 +7,12 @@
 #include <stdlib.h>
 #include "../../headers/player/display_player_stats.h"
 #include "../../headers/includes/colors.h"
+#include "../../headers/utils.h"
 
 void display_player_stats(Player *player) {
 
     int playerEntry;
-    system("cls");
+    clear();
 
     printf(BLUE"     %s\n\n"RESET, player->name);
     printf("     LEVEL %d\n\n", player->levelXP);

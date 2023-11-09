@@ -10,6 +10,7 @@
 #include "../../headers/inventory/display_inventory.h"
 #include "../../headers/includes/colors.h"
 #include "../../headers/armor/init_armor.h"
+#include "../../headers/utils.h"
 
 
 void display_player_armors(Player *player) {
@@ -18,7 +19,7 @@ void display_player_armors(Player *player) {
     int inventoryWidth = 0;
     int choice;
 
-    system("cls");
+    clear();
 
     if(player->inventory->armorList[i] == NULL) {
         printf(RED"\nAucune armure dans l'inventaire\n\n"RESET);

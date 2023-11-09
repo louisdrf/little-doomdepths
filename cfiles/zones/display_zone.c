@@ -11,6 +11,7 @@
 #include "../../headers/zones/display_zone.h"
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
+#include "../../headers/utils.h"
 
 #define NBLINES 7
 
@@ -46,7 +47,7 @@ void display_player_zone(Player *player, Game *game) {
             "*-----------------*"
     };
 
-    system("cls");
+    clear();
     printf("\n");
 
     for (int i = 0; i < player->current_zone->height; i++) {
@@ -94,7 +95,7 @@ void display_player_all_zone(Player *player, Game *game) {
 
 void display_all_zones(Player *player, Game *game) {
 
-    system("cls");
+    clear();
 
     int playerEntry;
 
