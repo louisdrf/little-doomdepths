@@ -116,11 +116,15 @@ void init_player_xp_levels(Player *player) {
 
 void next_xp_level(Player *player) {
 
+    system("cls");
+
     printf(GREEN"Vous passez au niveau %d !\n"RESET, player->levelXP + 1);
     int pass = getch();
     printf(RED"PV MAX : %d + 5\n"RESET, player->lifepoints_max);
     printf(RED"MANA MAX : %d + 5\n"RESET, player->mana_max);
 
+    player->levelXP++;
+    player->nextLevelXP = player->levelsXP[player->levelXP];
     player->lifepoints_max += 5;
     player->lifepoints += 5;
     player->mana_max += 5;
