@@ -168,7 +168,8 @@ void display_player_xp(Player *player) {
     printf("Current XP level : ");
     printf(BLUE"%d "RESET, player->levelXP);
     printf("        XP to next level : ");
-    printf(BLUE"%d%%\n"RESET, (int) (player->currentXP / player->nextLevelXP) * 100);
+    printf(BLUE"%d%% "RESET, (int) (player->currentXP / player->nextLevelXP) * 100);
+    printf("( %d  /  %d )\n", player->currentXP, player->nextLevelXP);
 
 }
 

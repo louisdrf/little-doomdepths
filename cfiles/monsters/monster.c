@@ -45,13 +45,15 @@ Monster *getTargetMonster(Player *player, int id) {
     Monster *current = player->current_level->monsters;
 
     while(current != NULL) {
-        if(current->id == id) {
+        if(current->id == id && current->isAlive) {
             return current;
         }
         current = current->next;
     }
+#if DEBUG
     printf(RED"monster target NULL\n"RESET);
     int pass = getch();
+#endif
     return NULL;
 }
 

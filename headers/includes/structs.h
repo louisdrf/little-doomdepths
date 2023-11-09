@@ -75,7 +75,7 @@ struct Monster {
     Weapon*                        monster_weapon;     // arme lootable sur le monstre
     Armor*                         monster_armor;      // armure lootable sur le monstre
     unsigned int                   loot_gold;          // gold lootable sur le monstre
-    unsigned int                   xp;                 // xp donnée par le monstre à sa mort
+    int                            xp;                 // xp donnée par le monstre à sa mort
 
 };
 

@@ -37,6 +37,7 @@ bool player_attack(Player *player, int idMonster) {
         target->isAlive = false;
         player->gold += target->loot_gold;
         player->nbKill++;
+        player->currentXP += target->xp;
     }
     else target->lifepoints -= current_attack_strength;
 
