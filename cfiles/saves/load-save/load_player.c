@@ -53,12 +53,20 @@ Player *load_player(Game *game) {
         player->nbKill = sqlite3_column_int(res, 12);
         player->nbQuestDone = sqlite3_column_int(res, 13);
         player->nbLevelFinished = sqlite3_column_int(res, 14);
+
+        player->levelXP =  sqlite3_column_int(res, 15);
+        player->totalXP =  sqlite3_column_int(res, 16);
+        init_player_xp_levels(player);
+        player->nextLevelXP = player->nextLevelXP = player->levelsXP[player->levelXP + 1];
+        player->currentXP = (player->nextLevelXP - player->totalXP);
+
         player->current_level = game->zoneList[current_zone_id]->levelList[player->currentX][player->currentY];
         player->isAlive = true;
         player->min_strength = 10;
         player->max_strength = 20;
         player->attacks_by_turn = 2;
         init_player_draw(player);
+
     }
 
     sqlite3_finalize(res);

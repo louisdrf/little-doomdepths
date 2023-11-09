@@ -52,6 +52,7 @@ void load_level_monsters(Level *level, int save_id, int height_index, int width_
             monster->isAlive = sqlite3_column_int(res, 10);
             monster->loot_gold = sqlite3_column_int(res, 11);
             monster->id = sqlite3_column_int(res, 14);
+            monster->xp = sqlite3_column_int(res, 15);
 
             char *sprite = return_monster_sprite(monster->monster_type);
             monster->draw = malloc(strlen(sprite) + 1);

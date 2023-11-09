@@ -16,14 +16,8 @@ void save_player(Player *player, sqlite3** conn) {
 
     if(conn != NULL) {
 
-        /*
-         * int                 levelXP;
-    int                 totalXP;
-    int                 currentXP;
-    int                 nextLevelXP;
-         */
 
-        sprintf(query, "UPDATE Player SET name='%s', lifepoints=%d, shield=%d, mana=%d, attacks_left=%d, gold=%d, turn=%d, current_level_id=%d, current_zone_id=%d, posX=%d, posY=%d, nbKill=%d, nbQuestDone=%d, nbLevelFinished=%d, levelXP=%d, totalXP=%d, currentXP=%d WHERE id=%d;",
+        sprintf(query, "UPDATE Player SET name='%s', lifepoints=%d, shield=%d, mana=%d, attacks_left=%d, gold=%d, turn=%d, current_level_id=%d, current_zone_id=%d, posX=%d, posY=%d, nbKill=%d, nbQuestDone=%d, nbLevelFinished=%d, levelXP=%d, totalXP=%d WHERE id=%d;",
                 player->name,
                 player->lifepoints,
                 player->shield,
@@ -40,7 +34,6 @@ void save_player(Player *player, sqlite3** conn) {
                 player->nbLevelFinished,
                 player->levelXP,
                 player->totalXP,
-                player->currentXP,
                 player->id);
 #if DEBUG
         printf("\nquery : %s", query);
