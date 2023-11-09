@@ -166,6 +166,7 @@ struct Quest {
     int                    id;
     char*                  description;
     int                    goldReward;
+    int                    xpReward;
     Weapon                *weaponReward;
     Armor                 *armorReward;
     bool                   claimedRewards;
