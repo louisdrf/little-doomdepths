@@ -23,7 +23,7 @@ void save_player_quests(Player *player, sqlite3** conn) {
 
     while (current != NULL) {
 
-        sprintf(query, "insert into Quests(player_id, quest_id, description, gold_reward, claimedRewards, finished, displayedAlert, claimedGold, claimedWeapon, claimedArmor)  values (%d, %d, '%s', %d, %d, %d, %d, %d, %d, %d);",
+        sprintf(query, "insert into Quests(player_id, quest_id, description, gold_reward, claimedRewards, finished, displayedAlert, claimedGold, claimedWeapon, claimedArmor, xp)  values (%d, %d, '%s', %d, %d, %d, %d, %d, %d, %d, %d);",
                 player->id,
                 current->id,
                 current->description,
@@ -33,7 +33,8 @@ void save_player_quests(Player *player, sqlite3** conn) {
                 current->displayedAlert,
                 current->claimedGold,
                 current->claimedWeapon,
-                current->claimedArmor
+                current->claimedArmor,
+                current->xpReward
                 );
 
         if(!prepare_and_exec_query(conn, query)) {

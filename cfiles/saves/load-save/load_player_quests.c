@@ -41,6 +41,7 @@ void load_player_quests(Player *player, sqlite3 **conn) {
         quest->claimedGold = sqlite3_column_int(res, 8);
         quest->claimedWeapon = sqlite3_column_int(res, 9);
         quest->claimedArmor = sqlite3_column_int(res, 10);
+        quest->xpReward = sqlite3_column_int(res, 11);
 
         load_quest_weapon(quest, player->id, conn);
         load_quest_armor(quest, player->id, conn);

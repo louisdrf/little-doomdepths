@@ -115,3 +115,6 @@
 1620	1758	7212708743266297	CMakeFiles/doom.dir/cfiles/saves/load-save/load_player_quests.c.obj	febde2fa2b85025a
 1633	1761	7212708743445817	CMakeFiles/doom.dir/cfiles/saves/create-save/save_player_quests.c.obj	93bb64549d86e132
 1761	2033	7212708746068797	doom.exe	e09d2f97f49cb5f0
+6	128	7212710731224306	CMakeFiles/doom.dir/cfiles/saves/create-save/save_player_quests.c.obj	93bb64549d86e132
+17	129	7212710731224306	CMakeFiles/doom.dir/cfiles/saves/load-save/load_player_quests.c.obj	febde2fa2b85025a
+129	367	7212710733558045	doom.exe	e09d2f97f49cb5f0
