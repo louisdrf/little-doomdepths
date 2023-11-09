@@ -13,14 +13,16 @@ void display_player_stats(Player *player) {
     int playerEntry;
     system("cls");
 
-    printf(BLUE"     %s     \n\n"RESET, player->name);
+    printf(BLUE"     %s\n\n"RESET, player->name);
+    printf("     LEVEL %d\n\n", player->levelXP);
     printf(RED   "PV   : %d / %d\n"RESET, player->lifepoints, player->lifepoints_max);
     printf(BLUE  "MANA : %d / %d\n"RESET, player->mana, player->mana_max);
     printf(RED   "ATT  : %d-%d\n"RESET, player->min_strength, player->max_strength);
     printf(YELLOW"DEF  : %d\n\n"RESET, player->defense);
-    printf(RED"Kills :           %d\n"RESET, player->nbKill);
-    printf(GREEN"Finished quests : %d\n"RESET, player->nbQuestDone);
-    printf(GREEN"Finished levels : %d\n\n"RESET, player->nbLevelFinished);
+    printf(RED   "Kills           : %d\n"RESET, player->nbKill);
+    printf(      BLUE"Total XP        : %d\n"RESET, player->totalXP);
+    printf(GREEN "Finished quests : %d\n"RESET, player->nbQuestDone);
+    printf(GREEN "Finished levels : %d\n\n"RESET, player->nbLevelFinished);
 
     printf("Retour (q)\n");
     printf("-> ");
