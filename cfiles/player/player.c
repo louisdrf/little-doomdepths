@@ -49,6 +49,7 @@ Player *init_player(Game *game) {
 
         player->id = game->id;
         player->currentXP = 0;
+        player->totalXP = 0;
         player->levelXP = 0;                                            // niveau du joueur
         init_player_xp_levels(player);                                  // initialiser les niveaux
         player->nextLevelXP = player->levelsXP[player->levelXP + 1];
@@ -120,13 +121,19 @@ void next_xp_level(Player *player) {
 
     system("cls");
 
-    printf(GREEN"Vous passez au niveau %d !\n"RESET, player->levelXP + 1);
+    printf(GREEN"Bien joue ! Vous passez au niveau %d !\n\n"RESET, player->levelXP + 1);
+    printf("Pressez n'importe quelle touche...");
     int pass = getch();
-    printf(RED"PV MAX : %d + 5 -> %d\n"RESET, player->lifepoints_max, (player->lifepoints_max + 5));
-    printf(RED"MANA MAX : %d + 2 -> %d\n"RESET, player->mana_max, (player->mana_max + 2));
+
+    system("cls");
+    printf("PV MAX : %d + 5 ", player->lifepoints_max);
+    printf(RED"-> %d\n"RESET, (player->lifepoints_max + 5));
+    printf("MANA MAX : %d + 2 ", player->mana_max);
+    printf(BLUE"-> %d\n"RESET, (player->mana_max + 2));
 
     player->levelXP++;
     player->nextLevelXP = player->levelsXP[player->levelXP];
+    player->currentXP = 0;
     player->lifepoints_max += 5;
     player->lifepoints += 5;
     player->mana_max += 2;

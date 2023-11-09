@@ -39,6 +39,7 @@ bool player_attack(Player *player, int idMonster) {
         player->gold += target->loot_gold;
         player->nbKill++;
         player->currentXP += target->xp;
+        player->totalXP += target->xp;
         if(player->currentXP >= player->nextLevelXP) {
             if(player->levelXP != NB_PLAYER_LEVELS) {
                 next_xp_level(player);

@@ -124,7 +124,8 @@ void display_player_health(Player *player) {
         printf(YELLOW "#");
         j++;
     }
-    printf( RESET "  %d/100", player->lifepoints);
+    printf( RESET "  %d/%d", player->lifepoints, player->lifepoints_max);
+
     if(player->shield>0){
         printf( YELLOW "  + %d "RESET, player->shield);
     }
@@ -142,7 +143,7 @@ void display_player_mana(Player *player) {
             printf("-");
             i++;
         }
-        printf( RESET "  %d/100", player->mana);
+        printf( RESET "  %d/%d", player->mana, player->mana_max);
         printf("\n");
         return;
     }
@@ -157,7 +158,7 @@ void display_player_mana(Player *player) {
         }
 
 
-    printf( RESET "  %d/100", player->mana);
+    printf( RESET "  %d/%d", player->mana, player->mana_max);
         printf("\n");
 }
 
