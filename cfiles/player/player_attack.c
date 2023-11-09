@@ -9,7 +9,7 @@
 #include "../../headers/monsters/monster.h"
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
-#include "../../headers/rand.h"
+#include "../../headers/utils.h"
 #include "../../headers/player/player.h"
 
 #define DEBUG false

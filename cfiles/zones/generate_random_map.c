@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "../../headers/zones/generate_random_map.h"
-#include "../../headers/rand.h"
+#include "../../headers/utils.h"
 
 #define DEBUG false
 

@@ -4,7 +4,7 @@
 
 #include "../../headers/armor/init_random_armor_name.h"
 #include "../../headers/armor/init_armor.h"
-#include "../../headers/rand.h"
+#include "../../headers/utils.h"
 
 
 void set_random_armor_name(Armor *a) {

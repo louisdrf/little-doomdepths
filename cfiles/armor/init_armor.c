@@ -12,7 +12,7 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
 #include "../../headers/weapon/init_weapon.h"
-#include "../../headers/rand.h"
+#include "../../headers/utils.h"
 #include "../../headers/armor/init_random_armor_name.h"
 
 #define DEBUG false

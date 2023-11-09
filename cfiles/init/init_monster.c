@@ -11,7 +11,7 @@
 #include "../../headers/monsters/monster_sprite.h"
 #include "../../headers/weapon/init_weapon.h"
 #include "../../headers/armor/init_armor.h"
-#include "../../headers/rand.h"
+#include "../../headers/utils.h"
 
 #define DEBUG false
 

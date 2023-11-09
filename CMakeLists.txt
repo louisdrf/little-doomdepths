@@ -114,8 +114,8 @@ add_executable(doom cfiles/main.c
         cfiles/quests/check_quests.c
         headers/quests/check_quests.h
         headers/includes/quests_defines.h
-        cfiles/rand.c
-        headers/rand.h
+        cfiles/utils.c
+        headers/utils.h
         cfiles/armor/init_random_armor_name.c
         headers/armor/init_random_armor_name.h
         cfiles/weapon/init_random_weapon_name.c

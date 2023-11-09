@@ -11,6 +11,8 @@
 #include "../../headers/weapon/init_weapon.h"
 #include "../../headers/armor/init_armor.h"
 #include "../../headers/inventory/inventory.h"
+#include "../../headers/player/player.h"
+#include "../../headers/utils.h"
 
 
 void display_quests_menu(Player *player) {
@@ -180,8 +182,22 @@ void get_quest_rewards(Quest *quest, Player *player) {
                 player->gold += quest->goldReward;
                 quest->claimedGold = true;
                 int pass = getch();
+                clear();
             }
+                printf(BLUE"Vous recuperez %d d'xp !\n\n"RESET, quest->xpReward);
+                player->gold += quest->xpReward;
+                int pass = getch();
+                clear();
+                player->currentXP += quest->xpReward;
+                player->totalXP += quest->xpReward;
+                if(player->currentXP >= player->nextLevelXP) {
+                    if(player->levelXP != NB_PLAYER_LEVELS) {
+                        next_xp_level(player);
+                    }
+                }
+
             get_weapon_quest_reward(quest, player);
+            clear();
             printf("\n");
             get_armor_quest_reward(quest, player);
             printf("\n");

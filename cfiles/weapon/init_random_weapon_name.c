@@ -4,7 +4,7 @@
 
 #include "../../headers/weapon/init_random_weapon_name.h"
 #include "../../headers/weapon/init_weapon.h"
-#include "../../headers/rand.h"
+#include "../../headers/utils.h"
 
 void set_random_weapon_name(Weapon *w) {
 

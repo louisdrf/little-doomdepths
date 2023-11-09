@@ -8,7 +8,7 @@
 #include "../includes/structs.h"
 
 Quest *create_quests();
-Quest *init_quest(Quest *head, int id, char *description, bool armorReward, bool weaponReward, int goldReward);
+Quest *init_quest(Quest *head, int id, char *description, bool armorReward, bool weaponReward, int goldReward, int xp);
 void free_quest_list(Quest *questList);
 
 #endif //DOOM_CREATE_QUESTS_H

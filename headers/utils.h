@@ -2,10 +2,11 @@
 // Created by louis on 07/11/2023.
 //
 
-#ifndef DOOM_RAND_H
-#define DOOM_RAND_H
+#ifndef DOOM_UTILS_H
+#define DOOM_UTILS_H
 #include <stdlib.h>
 
 int random_int(int min, int max);
+void clear();
 
-#endif //DOOM_RAND_H
+#endif //DOOM_UTILS_H
