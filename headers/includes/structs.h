@@ -83,7 +83,6 @@ struct Monster {
 typedef struct {
 
     unsigned short           id;                                        // niveau 1, 2, 3...
-    bool                     winMessage;                                // message YOU WON
     Monster*                 monsters;                                  // liste chainée de monstres
     unsigned short           nbMonsters;                                // nb de monstres de la partie
     Weapon*                  loot_weapon[MAX_LEVEL_LOOT_ITEM];          // arme lootable sur le niveau

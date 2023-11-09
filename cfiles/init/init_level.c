@@ -31,7 +31,6 @@ Level *init_level(int id, double multiplicator) {
 
     level->id = id;
     level->finished = false;
-    level->winMessage = false;
 
     // init the linked list of monsters for the level
     Monster *first_monster = NULL;
