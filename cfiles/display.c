@@ -95,6 +95,8 @@ void display_player_ath(Player *player) {
 
     display_player_health(player);
     display_player_mana(player);
+    printf("\n");
+    display_player_xp(player);
     printf("Gold:     ");
     printf(YELLOW "%d\n" RESET, player->gold);
     printf("Attacks left this turn:   %d\n\n", player->attacks_left);
@@ -130,7 +132,6 @@ void display_player_health(Player *player) {
 
 }
 
-
 void display_player_mana(Player *player) {
 
     int i = 0;
@@ -158,6 +159,17 @@ void display_player_mana(Player *player) {
 
     printf( RESET "  %d/100", player->mana);
         printf("\n");
+}
+
+
+
+void display_player_xp(Player *player) {
+
+    printf("Current XP level : ");
+    printf(BLUE"%d "RESET, player->levelXP);
+    printf("        XP to next level : ");
+    printf(BLUE"%d%%\n"RESET, (int) (player->currentXP / player->nextLevelXP) * 100);
+
 }
 
 

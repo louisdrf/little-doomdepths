@@ -105,9 +105,11 @@ void init_player_xp_levels(Player *player) {
         player->levelsXP[i] = (int) (player->levelsXP[i-1] + (i * 50));
     }
 
+#if DEBUG
     for(int i = 0; i < NB_PLAYER_LEVELS; i++) {
         printf("%d\n", player->levelsXP[i]);
     }
+#endif
 }
 
 //-------------------------------------------------------------------------------------------------

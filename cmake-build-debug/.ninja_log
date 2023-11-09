@@ -119,3 +119,11 @@
 120	353	7212566036292439	doom.exe	c4b8825f4fa0c7d0
 5	117	7212567094913634	CMakeFiles/doom.dir/cfiles/player/player.c.obj	98a48f816ba24173
 117	355	7212567097237414	doom.exe	c4b8825f4fa0c7d0
+6	354	7212577083676444	CMakeFiles/doom.dir/cfiles/main.c.obj	d0995440ae458e26
+51	389	7212577084035485	CMakeFiles/doom.dir/cfiles/loop.c.obj	bcf47ea57414fce5
+18	390	7212577083845991	CMakeFiles/doom.dir/cfiles/game.c.obj	12e7c8e0922024d2
+29	396	7212577083935750	CMakeFiles/doom.dir/cfiles/display.c.obj	bd9a8766fd1c7864
+39	406	7212577084264871	CMakeFiles/doom.dir/cfiles/player/player.c.obj	98a48f816ba24173
+68	427	7212577084564065	CMakeFiles/doom.dir/cfiles/zones/display_zone.c.obj	971560ce7c3fcfc9
+355	502	7212577085322036	CMakeFiles/doom.dir/cfiles/saves/load-save/load_player.c.obj	2a289634dee14c85
+502	736	7212577087595947	doom.exe	c4b8825f4fa0c7d0

@@ -15,6 +15,7 @@ int display_play_or_destroy_save(int save_id);
 void display_player_ath(Player *player);
 void display_player_health(Player *player);
 void display_player_mana(Player *player);
+void display_player_xp(Player *player);
 void display_monsters_alive(Monster *head);
 
 
