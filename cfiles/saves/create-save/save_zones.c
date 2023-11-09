@@ -94,7 +94,7 @@ void save_zones(Game *game, sqlite3** conn) {
 #if DEBUG
                         printf("\ninsert monster %d", current->id);
 #endif
-                        sprintf(query, "INSERT INTO Monster(level_height_index, level_width_index, monster_type, lifepoints, lifepoints_max, min_strength, max_strength, defense, attacks_by_turn, attacks_left, turn, isAlive, loot_gold, player_id, zone_id, xp, monster_id) "
+                        sprintf(query, "INSERT INTO Monster(level_height_index, level_width_index, monster_type, lifepoints, lifepoints_max, min_strength, max_strength, defense, attacks_by_turn, attacks_left, turn, isAlive, loot_gold, player_id, zone_id, monster_id, xp) "
                                        "values(%d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d);",
                                 j , k,
                                 current->monster_type,
@@ -113,6 +113,7 @@ void save_zones(Game *game, sqlite3** conn) {
                                 current->id,
                                 current->xp
                         );
+
                         if(!prepare_and_exec_query(conn, query)) {
                             printf("\nFailed to prepare/execute query to add monsters in level %d.\n", level_id);
                             exit(1);
