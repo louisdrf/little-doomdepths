@@ -18,19 +18,27 @@ void check_quests(Player *player) {
         switch(current->id) {
 
             case KILL_10_MONSTERS:
-                if(player->nbKill == 1) finish_quest(player, current);
+                if(!current->finished) {
+                    if (player->nbKill == 10) finish_quest(player, current);
+                }
                 break;
 
             case REACH_SECOND_LEVEL:
-                if(player->current_level->id == 2) finish_quest(player, current);
+                if(!current->finished) {
+                    if (player->current_level->id == 2) finish_quest(player, current);
+                }
                 break;
 
             case FINISH_TWO_QUESTS:
-                if(player->nbQuestDone == 2) finish_quest(player, current);
+                if(!current->finished) {
+                    if(player->nbQuestDone == 2) finish_quest(player, current);
+                }
                 break;
 
             case FINISH_5_LEVELS:
-                if(player->nbLevelFinished == 5) finish_quest(player, current);
+                if(!current->finished) {
+                    if (player->nbLevelFinished == 5) finish_quest(player, current);
+                }
                 break;
 
             default:
@@ -51,6 +59,6 @@ void finish_quest(Player *player, Quest *q) {
         printf("Entrez n'importe quelle touche pour continuer.\n-> ");
         int pass = getch();
         q->displayedAlert = true;
-        player->nbQuestDone++;
     }
+    player->nbQuestDone++;
 }
