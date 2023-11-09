@@ -53,6 +53,7 @@ Monster *create_monster(Monster *head, int index, double multiplicator) {
     char *sprite = return_monster_sprite(new->monster_type);
     new->draw = malloc(strlen(sprite) + 1);
     strcpy(new->draw, sprite);
+    new->xp = (int)(random_int(MIN_MONSTER_XP, MAX_MONSTER_XP) * multiplicator);
 
 
 #if DEBUG
