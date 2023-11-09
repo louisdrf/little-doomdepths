@@ -168,8 +168,8 @@ void display_player_xp(Player *player) {
     printf("Current XP level : ");
     printf(BLUE"%d "RESET, player->levelXP);
     printf("        XP to next level : ");
-    printf(BLUE"%d%% "RESET, (int) (player->currentXP / player->nextLevelXP) * 100);
-    printf("( %d  /  %d )\n", player->currentXP, player->nextLevelXP);
+    printf(BLUE"%.1f%% "RESET, (((float)player->currentXP / (float)player->nextLevelXP) * 100));
+    printf("    ( %d / %d )\n", player->currentXP, player->nextLevelXP);
 
 }
 
@@ -189,9 +189,8 @@ void display_monsters_alive(Monster *head) {
 
 
 
-int display_next_level_menu() {
+void display_next_level_menu() {
 
-    int playerEntry;
 
     printf("\n\n");
     printf(GREEN"____    ____  ______    __    __     ____    __    ____  ______   .__   __.     __  \n"
@@ -202,15 +201,8 @@ int display_next_level_menu() {
            "    |__|     \\______/   \\______/         \\__/  \\__/     \\______/  |__| \\__|    (__) \n"
            "                                                                                    "RESET);
     printf("\n\n");
-    printf("Niveau suivant (1)        Quitter (0)\n\n-->  ");
-    playerEntry = getch();
-    playerEntry -= 48;                                  // décalage ASCII de la saisie pour obtenir la valeur numérique
-    while(playerEntry != 1 && playerEntry != 0) {
-        playerEntry = getch();
-        playerEntry -= 48;
-    }
-
-    return playerEntry;
+    printf("Pressez n'importe quelle touche...\n-> ");
+    int pass = getch();
 }
 
 void display_lose() {

@@ -11,6 +11,8 @@
 #include "../../headers/monsters/display_monster_loot.h"
 #include "../../headers/rand.h"
 
+#define DEBUG false
+
 /**
  * return 1 if all monsters are dead, else return 0
  * @param player

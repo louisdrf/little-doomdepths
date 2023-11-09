@@ -20,6 +20,6 @@ void display_monsters_alive(Monster *head);
 
 
 void display_lose();
-int display_next_level_menu();
+void display_next_level_menu();
 
 #endif //DOOM_DISPLAY_H
