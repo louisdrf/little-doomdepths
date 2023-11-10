@@ -4,10 +4,10 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "../headers/free.h"
+#include "../headers/free_player.h"
 #include "../headers/inventory/potion.h"
 
-#define DEBUG true
+#define DEBUG false
 
 ////////////////////////////////////////// FREE PLAYER ///////////////////////////////////////
 

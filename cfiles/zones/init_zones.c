@@ -78,11 +78,3 @@ void attribute_zone_data(Game *game, int id) {
 
 }
 
-void free_zones(Game *game) {
-    for(int i = 0; i < NBZONES; i++) {
-        free(game->zoneList[i]);
-#if DEBUG
-        printf("zone %d correctly free\n", i);
-#endif
-    }
-}

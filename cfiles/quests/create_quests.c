@@ -55,6 +55,7 @@ Quest *init_quest(Quest *head, int id, char *description, bool armorReward, bool
     if(goldReward > 0) q->claimedGold = false;
     else q->claimedGold = true;
 
+
     if(armorReward) {
         q->claimedArmor = false;
         q->armorReward = randomArmor();
@@ -63,6 +64,7 @@ Quest *init_quest(Quest *head, int id, char *description, bool armorReward, bool
         q->claimedArmor = true;
         q->armorReward = NULL;
     }
+
 
     if(weaponReward) {
         q->claimedWeapon = false;

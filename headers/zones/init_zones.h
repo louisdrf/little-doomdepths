@@ -9,6 +9,5 @@
 
 void init_zones(Game *game);
 void attribute_zone_data(Game *game, int id);
-void free_zones(Game *game);
 
 #endif //DOOM_INIT_ZONES_H

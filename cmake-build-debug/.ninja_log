@@ -2,10 +2,10 @@
 6	116	7211045877944351	CMakeFiles/doom.dir/cfiles/db_connexion.c.obj	8b8577300abc21b1
 583	796	7213518701388755	CMakeFiles/doom.dir/cfiles/player/display_player_equipment.c.obj	fdaeb685da6e5fbb
 935	6446	7208972481850489	CMakeFiles/doom.dir/sqlite3/sqlite3.c.obj	58f9b2d15eb3cca3
-125	372	7213549255650161	doom.exe	6ec21ac120413689
+124	350	7213552753750725	doom.exe	6ec21ac120413689
 193	423	7213518698007811	CMakeFiles/doom.dir/cfiles/saves/create-save/create_save.c.obj	d6ecdbbc3c923ff9
 218	372	7213518697489188	CMakeFiles/doom.dir/cfiles/init/init_spell.c.obj	a4ec550eff964a10
-1	193	7213493623681680	build.ninja	1c0d9a92d8a84135
+1	193	7213556507675404	build.ninja	1c0d9a92d8a84135
 840	1015	7194458170137701	CMakeFiles/doom.dir/cfiles/sqlite_test.c.obj	ecb11939cc39ec78
 423	639	7213518700201933	CMakeFiles/doom.dir/cfiles/saves/load-save/load_game.c.obj	e62c9cb8d0f5980f
 26	211	7213519532097650	CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.obj	56ac3ace4326b016
@@ -27,13 +27,13 @@
 397	550	7213517810896987	CMakeFiles/doom.dir/cfiles/inventory/display_inventory_potions.c.obj	c70d2965095ec686
 416	549	7213517810896987	CMakeFiles/doom.dir/cfiles/inventory/display_inventory_weapons.c.obj	3ea3e87a3e185562
 55	231	7213517807476142	CMakeFiles/doom.dir/cfiles/init/init_inventory.c.obj	4f266edf0b682842
-6	91	7213543614146138	CMakeFiles/doom.dir/cfiles/quests/check_quests.c.obj	fc5622d047f3aa17
+18	123	7213552751536636	CMakeFiles/doom.dir/cfiles/quests/check_quests.c.obj	fc5622d047f3aa17
 19	140	7213541097884918	CMakeFiles/doom.dir/cfiles/player/player.c.obj	98a48f816ba24173
 5	193	7213518695434692	CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj	346da82170a2bfab
 45	220	7213517807226814	CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj	ba4a0d04f1163003
 315	506	7213517810388353	CMakeFiles/doom.dir/cfiles/inventory/display_inventory.c.obj	5925d3d48ece1b5a
 28	136	7213541097835397	CMakeFiles/doom.dir/cfiles/player/player_attack.c.obj	b9aade89dbf4ccda
-7	117	7213547483044840	CMakeFiles/doom.dir/cfiles/inventory/inventory.c.obj	cfcd6ce51a5af8dd
+6	124	7213552751546625	CMakeFiles/doom.dir/cfiles/inventory/inventory.c.obj	cfcd6ce51a5af8dd
 18	134	7213519531299786	CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj	b644fe631a452c24
 330	504	7213517810388353	CMakeFiles/doom.dir/cfiles/inventory/potion.c.obj	bdc8c73cfe7bfae5
 655	811	7213518701797658	CMakeFiles/doom.dir/cfiles/quests/create_quests.c.obj	c7d96a6cb05643ad
@@ -62,8 +62,3 @@
 134	277	7213519532765863	CMakeFiles/doom.dir/cfiles/saves/load-save/load_player_quests.c.obj	febde2fa2b85025a
 1531	1657	7212708742418566	CMakeFiles/doom.dir/cfiles/utils.c.obj	2224675440440f31
 9	124	7213549253236621	CMakeFiles/doom.dir/cfiles/free.c.obj	622fd8df7c066a4d
-6	104	7213550312073462	CMakeFiles/doom.dir/cfiles/quests/check_quests.c.obj	fc5622d047f3aa17
-105	329	7213550314247645	doom.exe	6ec21ac120413689
-18	123	7213552751536636	CMakeFiles/doom.dir/cfiles/quests/check_quests.c.obj	fc5622d047f3aa17
-6	124	7213552751546625	CMakeFiles/doom.dir/cfiles/inventory/inventory.c.obj	cfcd6ce51a5af8dd
-124	350	7213552753750725	doom.exe	6ec21ac120413689

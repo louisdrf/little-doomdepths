@@ -16,7 +16,7 @@
 #include "../headers/loop.h"
 #include "../headers/saves/load-save/load_game.h"
 #include "../headers/saves/load-save/load_player.h"
-#include "../headers/free.h"
+#include "../headers/free_player.h"
 
 #define DEBUG false
 
