@@ -16,12 +16,11 @@ void init_zones(Game *game) {
 
         game->zoneList[i] = create_zone(game,i);
         game->zoneList[i]->id = i;
-        printf("test1");
         #if DEBUG
                 printf("zone %d cree\n", i);
         #endif
     }
-    printf("test");
+
 }
 
 

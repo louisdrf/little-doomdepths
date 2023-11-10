@@ -17,8 +17,7 @@
 Game *init_game() {
 
     srand(time(NULL));
-
-Game *game;
+    Game *game;
 
     game = malloc(sizeof(Game));
     if(game == NULL) {
@@ -29,7 +28,11 @@ Game *game;
     game->display_zones_index = 0;
 // INIT THE GAME ZONES
 
-   init_zones(game);
+       init_zones(game);
+
+       /////////////////
+
+
 #if DEBUG
     if(game->zoneList[0] == NULL) printf("Error while creating zone in game.");
 #endif
@@ -53,7 +56,8 @@ int end_game(Game *game) {
 
 void free_game(Game *game) {
     if(game != NULL) {
-        free(game->zoneList);
+        free_zones(game);
+        free(game->player_name);
         free(game);
     }
 

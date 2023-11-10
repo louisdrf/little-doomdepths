@@ -15,7 +15,10 @@
 #include "../headers/inventory/potion.h"
 #include "../headers/monsters/monster_sprite.h"
 #include "../headers/inventory/display_inventory.h"
+#include "../headers/player/player_spell.h"
 #include "../headers/zones/display_zone.h"
+#include "../headers/spell/display_spell.h"
+
 /**
  * manages the game loop
  * @param game
@@ -35,6 +38,8 @@ void launch_loop(Game *game, Player *player) {
 
             if(are_all_monsters_dead(player) == 1)              // retourne 1 si tous les monstres du niveau sont morts et passe le joueur au niveau supérieur
             {
+                getPotion(player);
+                player->shield = 0;
                 if(player->current_zone->map[player->currentX][player->currentY]==2){
                     player->current_zone->map[player->currentX][player->currentY]=3;
                     player->current_zone=game->zoneList[player->current_zone->id+1];
@@ -59,10 +64,17 @@ void launch_loop(Game *game, Player *player) {
                         game->isRunning = false;                        // cas de fin de partie
                         break;
 
-                    case 'i':
-                        display_inventory_choice_sections(player);
-                        break;
-                }
+                        case 'i':
+                            display_inventory_choice_sections(player);
+                            break;
+
+                        case 'm':
+                            display_player_zone(player, game);
+
+                        case 's':
+                            display_spell_choice_sections(player);
+                            break;
+                    }
 
                 playerEntry -= 48;
 
@@ -74,7 +86,6 @@ void launch_loop(Game *game, Player *player) {
         }
         else {
             if(monsters_attack(player) == 1) {                      // retourne 1 si le joueur se fait tuer
-                printf("\n test \n");
                 display_lose();
                 break;
             }

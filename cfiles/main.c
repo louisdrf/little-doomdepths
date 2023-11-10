@@ -5,7 +5,8 @@
 #include "../headers/display.h"
 #include "../headers/loop.h"
 #include "../headers/zones/display_zone.h"
-
+#include "sqlite_test.h"
+#include "../headers/player/player_spell.h"
 
 int main() {
 
@@ -20,7 +21,7 @@ int main() {
 
     switch(choice) {
         case 1: // play from last save
-            printf("Load last game ?\n");
+            printf("Load last save ?\n");
             break;
 
         case 2: // new game
@@ -41,7 +42,8 @@ int main() {
             break;
 
         default:
-            break;
+            system("cls");
+            display_init_menu();
     }
 
     return EXIT_SUCCESS;

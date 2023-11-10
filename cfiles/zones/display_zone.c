@@ -54,8 +54,6 @@ void display_player_zone(Player *player, Game *game) {
             "*-----------------*"
     };
 
-
-    int playerEntry;
     int j = 0;
     int i = 0;
 
@@ -67,15 +65,10 @@ void display_player_zone(Player *player, Game *game) {
             for (j = 0; j < player->current_zone->width; j++) {
                 if (player->current_zone->map[i][j] != 0) {
 
-                    if(player->current_level == player->current_zone->levelList[i][j]) {        // afficher en rouge le niveau où se situe le joueur
-                        printf(BLUE"%s"RESET, player_cell[line]);
-                    }
-                    else if(player->current_zone->map[i][j]==2){
-                        printf(GREEN"%s"RESET, strais_cell[line]);
-                    }
-                    else{
-                        printf(RED"%s"RESET, level_cell[line]);
-                    }
+                        if(player->current_zone->levelList[i][j] == player->current_level) {        // afficher en rouge le niveau où se situe le joueur
+                            printf(RED"%s"RESET, level_cell[line]);
+                        }
+                        else printf("%s", level_cell[line]);
 
                 } else {
                     printf("%s", void_cell[line]);

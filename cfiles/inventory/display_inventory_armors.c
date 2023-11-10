@@ -16,6 +16,11 @@ void display_player_armors(Player *player) {
     int inventoryWidth = 0;
     int choice;
 
+    if(player->inventory->armorList[i] == NULL) {
+        printf(RED"\nAucune armure dans l'inventaire\n\n"RESET);
+        return;
+    }
+
     while(player->inventory->armorList[i] != NULL)
     {
 

@@ -18,6 +18,13 @@ enum rarity {
 static const char *monster_string[] = {
         "GRIM", "SKELETON", "GHOST", "DRAGON","MINOTAURE",
 };
+enum spell_type {
+    HEAL,
+    DAMAGE,
+    SHIELD,
+    AOE,
+    BUFF_SPEED,
+};
 enum monster_type {
     GRIM,
     SKELETON,
@@ -29,15 +36,17 @@ enum monster_type {
 
 typedef struct {
 
-    unsigned int        defense;
-    char*               name;
-    unsigned short      rarity;
+    unsigned short          id;
+    unsigned int            defense;
+    char*                   name;
+    unsigned short          rarity;
 
 } Armor;
 
 
 typedef struct {
 
+    unsigned short          id;
     char*                   name;
     unsigned short          min_strength;
     unsigned short          max_strength;
@@ -76,8 +85,8 @@ struct Monster {
 
 typedef struct {
 
-    Monster*                 monsters;            // liste chainée de monstres
     unsigned short           id;                  // niveau 1, 2, 3...
+    Monster*                 monsters;            // liste chainée de monstres
     unsigned short           nbMonsters;          // nb de monstres de la partie
     struct Weapon*           loot_weapon;         // arme lootable sur le niveau
     struct Armor*            loot_armor;          // armure lootable sur le niveau
@@ -130,8 +139,31 @@ typedef struct {
 
 } Inventory;
 
+typedef struct Spell Spell;
+struct Spell{
+
+    int                    id;
+    char*                  name;                            // nom du sort
+    int                    value;                          // puissance du sort
+    int                    mana_cost;                       // cout du sort
+    unsigned short         spell_type;                      //  type de sort
+    struct Spell*          next;
+
+} ;
+
+
 typedef struct {
 
+    Spell*                 spell_equipped[NBSPELL_MAX];                            // liste des sort équipé
+    Spell*                 spell_stock;                                            // liste chainé de sort
+
+
+} Book;
+
+
+typedef struct {
+
+    char*               name;               // nom du joueur
     unsigned short      lifepoints;         // pv restants
     unsigned short      lifepoints_max;     // pv max
     unsigned short      shield;             // bouclier
@@ -153,6 +185,7 @@ typedef struct {
     Level*              current_level;      // niveau actuel dans lequel se situe le joueur
     Zone*               current_zone;       // zone dans laquelle se situe le joueur
     Inventory*          inventory;          // inventaire du joueur
+    Book*               book;               // livre de sorts du joueur
 
 } Player;
 

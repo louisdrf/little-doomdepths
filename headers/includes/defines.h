@@ -23,8 +23,12 @@
 #define BOSS_MIN_DEFENSE 10
 #define MAX_BOSS_GOLD_LOOT 20
 #define MIN_BOSS_GOLD_LOOT 5
+#define VALUE_SPELL_MAX 10
+#define SPELL_COST_MAX 25
+#define NB_SPELL_TYPE 4
 #define NBLEVELS 5
 
 #define NBOBJECTS_MAX 10
+#define NBSPELL_MAX 3
 
 #endif //DOOM_DEFINES_H

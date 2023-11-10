@@ -54,4 +54,14 @@ add_executable(doom cfiles/main.c
         headers/zones/display_zone.h
         cfiles/init/init_boss.c
         headers/init/init_boss.h
+        cfiles/sqlite_test.c
+        sqlite3/sqlite3.c
+        cfiles/sqlite_test.h
+        sqlite3/sqlite3.h
+        cfiles/spell/display_spell.c
+        headers/spell/display_spell.h
+        cfiles/init/init_spell.c
+        headers/init/init_spell.h
+        cfiles/player/player_spell.c
+        headers/player/player_spell.h
 )

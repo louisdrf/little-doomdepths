@@ -16,6 +16,11 @@ void display_player_weapons(Player *player) {
     int inventoryWidth = 0;
     int choice;
 
+    if(player->inventory->weaponList[i] == NULL) {
+        printf(RED"\nAucune arme dans l'inventaire\n\n"RESET);
+        return;
+    }
+
     while(player->inventory->weaponList[i] != NULL)
     {
 
