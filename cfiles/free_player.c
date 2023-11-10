@@ -21,10 +21,6 @@ void free_player(Player *player) {
     printf("free name & draw\n");
 #endif
 
-    player->current_zone = NULL;
-    player->current_level = NULL;
-    printf("free player level and zone\n");
-
     for(int i = 0; i < NBSPELL_MAX; i++) {
         if(player->book->spell_equipped[i] != NULL) {
             free(player->book->spell_equipped[i]);
@@ -39,9 +35,6 @@ void free_player(Player *player) {
     free(player->book);
     free(player);
 
-#if DEBUG
-    printf("\nplayer correctly free\n");
-#endif
 }
 
 ////////////////////////////////////////// FREE INVENTORY ///////////////////////////////////////
@@ -96,7 +89,9 @@ void free_quest_list(Quest *questList) {
     Quest *next;
 
     while (current != NULL) {
+#if DEBUG
         printf("Desallocating quest : %s\n", current->description);
+#endif
         next = current->next;
         free(current->description);
         free(current);
@@ -116,7 +111,9 @@ void free_spell_list(Spell *spellList) {
     Spell *next;
 
     while (current != NULL) {
+#if DEBUG
         printf("Desallocating spell : %s\n", current->name);
+#endif
         next = current->next;
         free(current->name);
         free(current);

@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <conio.h>
 
 #include "../headers/game.h"
 #include "../headers/includes/structs.h"
@@ -17,8 +18,9 @@
 #include "../headers/saves/load-save/load_game.h"
 #include "../headers/saves/load-save/load_player.h"
 #include "../headers/free_player.h"
+#include "free_zones.h"
 
-#define DEBUG false
+#define DEBUG true
 
 Game *init_game(int save_id) {
 
@@ -60,8 +62,18 @@ void launch_new_game(int save_id) {
     player = init_player(game);
 
     launch_loop(game, player);
+
     free_player(player);
+#if DEBUG
+    printf(GREEN"\nPlayer correctly free.\n"RESET);
+    getch();
+#endif
+
     free_game(game);
+#if DEBUG
+    printf(GREEN"\nGame correctly free.\n"RESET);
+    getch();
+#endif
 }
 
 void load_saved_game(int save_id) {
@@ -76,21 +88,27 @@ void load_saved_game(int save_id) {
     if(game != NULL && player != NULL) {
         launch_loop(game, player);
     }
+
     free_player(player);
+#if DEBUG
+    printf(GREEN"\nPlayer correctly free.\n"RESET);
+    getch();
+#endif
+
     free_game(game);
+#if DEBUG
+    printf(GREEN"\nGame correctly free.\n"RESET);
+    getch();
+#endif
 }
 
 
 void free_game(Game *game) {
     if(game != NULL) {
-        free_zones(game);
+        free_all_zones(game);
         free(game->player_name);
         free(game);
     }
-
-#if DEBUG
-    if(game == NULL) printf("\nGame correctly free.\n");
-#endif
 }
 
 

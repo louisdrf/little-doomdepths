@@ -8,7 +8,7 @@
 #include "../headers/game.h"
 
 void free_all_zones(Game *game);
-void free_zone(Game* game, int index);
-void free_levels(Game *game, int i, int j);
+void free_zone(Game* game, int zone_id);
+void free_level(Game *game, int zone_id, int i, int j);
 
 #endif //DOOM_FREE_ZONES_H

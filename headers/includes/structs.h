@@ -137,6 +137,7 @@ typedef struct {
 
 } Inventory;
 
+
 typedef struct Spell Spell;
 struct Spell{
 
