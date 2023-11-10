@@ -37,7 +37,6 @@ void free_player(Player *player) {
     free_quest_list(player->questList);
     free_spell_list(player->book->spell_stock);
     free(player->book);
-
     free(player);
 
 #if DEBUG

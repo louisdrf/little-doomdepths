@@ -16,6 +16,7 @@
 #include "../headers/loop.h"
 #include "../headers/saves/load-save/load_game.h"
 #include "../headers/saves/load-save/load_player.h"
+#include "../headers/free.h"
 
 #define DEBUG false
 
@@ -54,7 +55,7 @@ void launch_new_game(int save_id) {
     Game        *game = NULL;
     Player      *player = NULL;
 
-    printf(GREEN"\nLancement d'une nouvelle partie...\n"RESET);
+    printf(GREEN"\nLancement d'une nouvelle partie...\n\n"RESET);
     game = init_game(save_id);                                          // init la partie et les niveaux
     player = init_player(game);
 

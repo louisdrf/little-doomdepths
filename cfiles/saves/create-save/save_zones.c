@@ -21,6 +21,20 @@ void save_zones(Game *game, sqlite3** conn) {
         exit(1);
     }
 
+    // supprimer les niveaux avant de tout recréer
+    sprintf(query, "DELETE FROM Level player_id=%d;", game->id);
+    if(!prepare_and_exec_query(conn, query)) {
+        printf("\nFailed to prepare/execute query to delete all levels.\n");
+        exit(1);
+    }
+
+    // supprimer les monstres avant de tout recréer
+    sprintf(query, "DELETE FROM Monster WHERE player_id=%d;", game->id);
+    if(!prepare_and_exec_query(conn, query)) {
+        printf("\nFailed to prepare/execute query to delete all monsters.\n");
+        exit(1);
+    }
+
     for(int i = 0; i < NBZONES; i++) {
 #if DEBUG
         printf("\ninsert zone %d", game->zoneList[i]->id);
@@ -42,14 +56,6 @@ void save_zones(Game *game, sqlite3** conn) {
                 exit(1);
             }
             /////////////////////////////////////////////////////
-
-
-        // supprimer les niveaux de la zone avant de tout recréer
-        sprintf(query, "DELETE FROM Level WHERE zone_id=%d AND player_id=%d;", game->zoneList[i]->id, game->id);
-        if(!prepare_and_exec_query(conn, query)) {
-            printf("\nFailed to prepare/execute query to delete all levels in zone %d.\n", game->zoneList[i]->id);
-            exit(1);
-        }
 
             /////////// INSERT ZONE LEVELS //////////////
         for(int j = 0; j < game->zoneList[i]->height; j++) {
@@ -75,14 +81,6 @@ void save_zones(Game *game, sqlite3** conn) {
 #if DEBUG
                     printf("\nInsert level done.");
 #endif
-
-                    // supprimer les monstres du niveau avant de tout recréer
-                    sprintf(query, "DELETE FROM Monster WHERE level_height_index=%d AND level_width_index=%d AND player_id=%d AND zone_id=%d;", j, k, game->id, game->zoneList[i]->id);
-                    if(!prepare_and_exec_query(conn, query)) {
-                        printf("\nFailed to prepare/execute query to delete all monsters in level %d.\n", level_id);
-                        exit(1);
-                    }
-
                     /////////// INSERT LEVEL MONSTERS //////////////
 #if DEBUG
                     printf("\nNb monsters level %d : %d", game->zoneList[i]->levelList[j][k]->id, game->zoneList[i]->levelList[j][k]->nbMonsters);
