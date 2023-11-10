@@ -3,9 +3,8 @@
 //
 
 #include <stdlib.h>
-#include <stdio.h>
-#include "../headers/free_player.h"
-#include "../headers/inventory/potion.h"
+#include "../../headers/free/free_player.h"
+#include "../../headers/inventory/potion.h"
 
 #define DEBUG false
 

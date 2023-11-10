@@ -6,7 +6,6 @@
 #include "../../headers/spell/display_spell.h"
 #include <stdlib.h>
 #include <conio.h>
-#include <stdio.h>
 
 #define DEBUG false
 

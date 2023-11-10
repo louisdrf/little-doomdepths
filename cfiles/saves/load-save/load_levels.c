@@ -4,10 +4,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 #include "../../../headers/saves/load-save/load_levels.h"
 #include "../../../sqlite3/sqlite3.h"
-#include "../../../headers/db_connexion.h"
+#include "../../../headers/saves/db_connexion.h"
 #include "../../../headers/saves/load-save/load_level_monsters.h"
 
 #define DEBUG false

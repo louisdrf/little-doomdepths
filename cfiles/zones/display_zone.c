@@ -3,13 +3,9 @@
 //
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <conio.h>
 #include "../../headers/display.h"
-
 #include "../../headers/zones/display_zone.h"
-#include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
 #include "../../headers/utils.h"
 

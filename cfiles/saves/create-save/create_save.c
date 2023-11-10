@@ -3,14 +3,12 @@
 //
 
 #include <stdio.h>
-#include <stdlib.h>
 #include "../../../headers/saves/create-save/create_save.h"
-#include "../../../headers/includes/structs.h"
 #include "../../../sqlite3/sqlite3.h"
 #include "../../../headers/saves/create-save/save_inventory.h"
 #include "../../../headers/saves/create-save/save_player.h"
 #include "../../../headers/saves/create-save/save_player_spells.h"
-#include "../../../headers/db_connexion.h"
+#include "../../../headers/saves/db_connexion.h"
 #include "../../../headers/saves/create-save/save_zones.h"
 #include "../../../headers/includes/colors.h"
 #include "../../../headers/saves/create-save/save_player_quests.h"

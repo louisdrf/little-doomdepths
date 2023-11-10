@@ -5,7 +5,6 @@
 #include <string.h>
 #include <stdio.h>
 #include <conio.h>
-#include <stdlib.h>
 #include "../../headers/inventory/display_inventory_armors.h"
 #include "../../headers/inventory/display_inventory.h"
 #include "../../headers/includes/colors.h"

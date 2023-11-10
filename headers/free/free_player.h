@@ -5,7 +5,7 @@
 #ifndef DOOM_FREE_PLAYER_H
 #define DOOM_FREE_PLAYER_H
 
-#include "includes/structs.h"
+#include "../includes/structs.h"
 
 void free_player(Player *player);
 void free_inventory(Player *player);

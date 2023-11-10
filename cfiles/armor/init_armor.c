@@ -8,8 +8,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <time.h>
-#include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
 #include "../../headers/weapon/init_weapon.h"
 #include "../../headers/utils.h"

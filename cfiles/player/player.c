@@ -124,7 +124,7 @@ void next_xp_level(Player *player) {
 
     printf(GREEN"Bien joue ! Vous passez au niveau %d !\n\n"RESET, player->levelXP + 1);
     printf("Pressez n'importe quelle touche...");
-    int pass = getch();
+    getch();
 
     clear();
     printf("PV MAX : %d + 5 ", player->lifepoints_max);

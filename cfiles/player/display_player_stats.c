@@ -4,7 +4,6 @@
 
 #include <stdio.h>
 #include <conio.h>
-#include <stdlib.h>
 #include "../../headers/player/display_player_stats.h"
 #include "../../headers/includes/colors.h"
 #include "../../headers/utils.h"

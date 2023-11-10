@@ -3,11 +3,8 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include <string.h>
 #include "../../headers/init/init_monster.h"
-#include "../../headers/includes/structs.h"
-#include "../../headers/includes/defines.h"
 #include "../../headers/monsters/monster_sprite.h"
 #include "../../headers/weapon/init_weapon.h"
 #include "../../headers/armor/init_armor.h"

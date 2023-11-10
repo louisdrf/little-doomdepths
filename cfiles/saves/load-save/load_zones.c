@@ -6,9 +6,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "../../../headers/saves/load-save/load_zones.h"
-#include "../../../headers/includes/structs.h"
 #include "../../../sqlite3/sqlite3.h"
-#include "../../../headers/db_connexion.h"
+#include "../../../headers/saves/db_connexion.h"
 #include "../../../headers/saves/load-save/load_levels.h"
 
 #define DEBUG false

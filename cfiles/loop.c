@@ -2,7 +2,6 @@
 // Created by louis on 24/09/2023.
 //
 #include <stdio.h>
-#include <stdlib.h>
 #include <conio.h>
 #include "../headers/includes/structs.h"
 #include "../headers/loop.h"
@@ -19,7 +18,6 @@
 #include "../headers/player/display_player_equipment.h"
 #include "../headers/player/display_player_stats.h"
 #include "../headers/quests/display_quests.h"
-#include "../headers/level/display_level_loot.h"
 #include "../headers/quests/check_quests.h"
 #include "../headers/utils.h"
 

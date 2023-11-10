@@ -1,11 +1,10 @@
 //
 // Created by mokrane on 25/09/2023.
+// modified by Louis
 //
 #include <stdlib.h>
-#include <stdio.h>
 #include "../../headers/init/init_inventory.h"
-#include "../../headers/includes/structs.h"
-#include "../../headers/includes/defines.h"
+
 
 #define DEBUG false
 

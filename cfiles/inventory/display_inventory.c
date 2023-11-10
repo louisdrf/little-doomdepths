@@ -4,8 +4,6 @@
 
 #include <conio.h>
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include "../../headers/inventory/display_inventory.h"
 #include "../../headers/inventory/display_inventory_potions.h"
 #include "../../headers/inventory/display_inventory_weapons.h"

@@ -3,11 +3,9 @@
 //
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <conio.h>
 #include "../../headers/quests/display_quests.h"
 #include "../../headers/includes/colors.h"
-#include "../../headers/includes/structs.h"
 #include "../../headers/weapon/init_weapon.h"
 #include "../../headers/armor/init_armor.h"
 #include "../../headers/inventory/inventory.h"

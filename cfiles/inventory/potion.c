@@ -9,7 +9,7 @@
 #include "../../headers/inventory/potion.h"
 #include "../../headers/includes/colors.h"
 
-#define DEBUG true
+#define DEBUG false
 
 void getPotion(Player *player) {
 

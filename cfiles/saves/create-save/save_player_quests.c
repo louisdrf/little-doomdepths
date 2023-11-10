@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include "../../../headers/saves/create-save/save_player_quests.h"
 #include "../../../sqlite3/sqlite3.h"
-#include "../../../headers/db_connexion.h"
+#include "../../../headers/saves/db_connexion.h"
 
 
 void save_player_quests(Player *player, sqlite3** conn) {

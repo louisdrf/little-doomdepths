@@ -4,10 +4,8 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/player/player_spell.h"
 #include "../../headers/monsters/monster.h"
-#include <stdlib.h>
 #include <conio.h>
 #include <stdio.h>
-#include <string.h>
 
 Spell *get_spell_stocked(Player *player,int choice) {
 

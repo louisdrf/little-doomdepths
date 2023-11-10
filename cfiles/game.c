@@ -4,21 +4,17 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include <conio.h>
 
 #include "../headers/game.h"
-#include "../headers/includes/structs.h"
-#include "../headers/includes/defines.h"
-#include "../headers/init/init_level.h"
 #include "../headers/zones/init_zones.h"
 #include "../headers/includes/colors.h"
 #include "../headers/player/player.h"
 #include "../headers/loop.h"
 #include "../headers/saves/load-save/load_game.h"
 #include "../headers/saves/load-save/load_player.h"
-#include "../headers/free_player.h"
-#include "free_zones.h"
+#include "../headers/free/free_player.h"
+#include "../headers/free/free_zones.h"
 
 #define DEBUG true
 
@@ -34,12 +30,9 @@ Game *init_game(int save_id) {
     game->id = save_id;
     game->display_zones_index = 0;
 
-        // INIT THE GAME ZONES
-
+        // INIT ALL THE GAME ZONES
        init_zones(game);
-
        /////////////////
-
 
 #if DEBUG
     if(game->zoneList[0] == NULL) printf("Error while creating zone in game.");

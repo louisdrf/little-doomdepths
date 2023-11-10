@@ -3,7 +3,6 @@
 //
 
 #include <stdlib.h>
-#include <stdio.h>
 #include <string.h>
 #include "../../headers/zones/init_zones.h"
 #include "../../headers/zones/create_zone.h"

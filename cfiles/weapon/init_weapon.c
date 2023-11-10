@@ -6,8 +6,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <time.h>
-#include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
 #include "../../headers/utils.h"
 #include "../../headers/weapon/init_random_weapon_name.h"

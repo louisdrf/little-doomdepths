@@ -2,14 +2,9 @@
 // Created by louis on 24/09/2023.
 //
 
-#include <time.h>
-#include <stdlib.h>
-#include <stdio.h>
 #include <conio.h>
 #include "../../headers/player/player_attack.h"
 #include "../../headers/monsters/monster.h"
-#include "../../headers/includes/structs.h"
-#include "../../headers/includes/colors.h"
 #include "../../headers/utils.h"
 #include "../../headers/player/player.h"
 

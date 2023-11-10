@@ -3,9 +3,7 @@
 //
 
 #include <stdlib.h>
-#include <stdio.h>
-#include "free_zones.h"
-#include "../headers/includes/colors.h"
+#include "../../headers/free/free_zones.h"
 
 #define DEBUG false
 

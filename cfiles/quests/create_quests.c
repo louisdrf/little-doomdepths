@@ -3,10 +3,8 @@
 //
 
 #include <stdlib.h>
-#include <stdio.h>
 #include <string.h>
 #include "../../headers/quests/create_quests.h"
-#include "../../headers/includes/structs.h"
 #include "../../headers/armor/init_armor.h"
 #include "../../headers/weapon/init_weapon.h"
 #include "../../headers/includes/quests_defines.h"

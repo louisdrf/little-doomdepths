@@ -5,7 +5,7 @@
 #ifndef DOOM_FREE_ZONES_H
 #define DOOM_FREE_ZONES_H
 
-#include "../headers/game.h"
+#include "../game.h"
 
 void free_all_zones(Game *game);
 void free_zone(Game* game, int zone_id);

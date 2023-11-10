@@ -2,7 +2,6 @@
 // Created by louis on 05/11/2023.
 //
 
-#include <stdlib.h>
 #include <stdio.h>
 #include <conio.h>
 #include "../../headers/quests/check_quests.h"

@@ -5,8 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../../headers/monsters/monster_sprite.h"
-#include "../../headers/includes/structs.h"
-#include "../../headers/includes/defines.h"
 #include "../../headers/includes/colors.h"
 
 #define NBMAX_MONSTER_PRINT 3

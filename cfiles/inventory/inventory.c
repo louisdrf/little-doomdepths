@@ -4,12 +4,6 @@
 
 #include <conio.h>
 #include "../../headers/inventory/inventory.h"
-#include "../../headers/includes/structs.h"
-#include "../../headers/includes/colors.h"
-#include "../../headers/armor/init_armor.h"
-#include "../../headers/weapon/init_weapon.h"
-#include "../../headers/inventory/potion.h"
-#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 

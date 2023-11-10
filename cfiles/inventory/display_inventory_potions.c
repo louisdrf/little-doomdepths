@@ -4,9 +4,7 @@
 
 #include <conio.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include "../../headers/inventory/display_inventory_potions.h"
-#include "../../headers/includes/structs.h"
 #include "../../headers/inventory/potion.h"
 #include "../../headers/includes/colors.h"
 

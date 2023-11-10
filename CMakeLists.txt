@@ -71,8 +71,8 @@ add_executable(doom cfiles/main.c
         headers/saves/create-save/save_player_spells.h
         cfiles/player/has_player_a_save.c
         headers/player/has_player_a_save.h
-        cfiles/db_connexion.c
-        headers/db_connexion.h
+        cfiles/saves/db_connexion.c
+        headers/saves/db_connexion.h
         cfiles/saves/create-save/save_zones.c
         headers/saves/create-save/save_zones.h
         cfiles/saves/load-save/load_game.c
@@ -124,9 +124,9 @@ add_executable(doom cfiles/main.c
         headers/saves/create-save/save_player_quests.h
         cfiles/saves/load-save/load_player_quests.c
         headers/saves/load-save/load_player_quests.h
-        cfiles/free_player.c
-        headers/free_player.h
-        cfiles/free_zones.c
-        cfiles/free_zones.h
+        cfiles/free/free_player.c
+        headers/free/free_player.h
+        cfiles/free/free_zones.c
+        headers/free/free_zones.h
 )
 

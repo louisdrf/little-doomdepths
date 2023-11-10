@@ -2,11 +2,9 @@
 // Created by louis on 24/09/2023.
 //
 
-#include <stdlib.h>
 #include <stdio.h>
 #include <conio.h>
 #include "../../headers/monsters/monster.h"
-#include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
 #include "../../headers/monsters/display_monster_loot.h"
 #include "../../headers/utils.h"
