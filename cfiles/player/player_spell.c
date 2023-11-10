@@ -110,18 +110,3 @@ void spell_shield(Player *player,Spell *spell) {
 }
 
 
-
-void free_spell_list(Spell *spellList) {
-
-    Spell *current = spellList;
-    Spell *next;
-
-    while (current != NULL) {
-        printf("Desallocating spell : %s\n", current->name);
-        next = current->next;
-        free(current->name);
-        free(current);
-        current = next;
-    }
-
-}

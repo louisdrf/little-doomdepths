@@ -56,7 +56,7 @@ void add_item(Player *player, Weapon *weapon, Armor *armor) {
 void remove_weapon_inventory(Player *player, Weapon *w) {
 
     for(int i = 0; i < NBOBJECTS_MAX; i++) {
-        if(player->inventory->armorList[i] != NULL) {
+        if(player->inventory->weaponList[i] != NULL) {
             if (strcmp(player->inventory->weaponList[i]->name, w->name) == 0) {
                 player->inventory->weaponList[i] = NULL;
                 return;
@@ -109,27 +109,3 @@ int get_first_armor_free_space(Player *player) {
     return i; // on retourne la case suivante
 }
 
-
-void free_inventory(Player *player) {
-
-    for (int i = 0; i < player->inventory->limObjects; i++) {
-        if (player->inventory->weaponList[i] != NULL) {
-            printf("arme %d\n", i);
-            free_weapon(player->inventory->weaponList[i]);
-        }
-    }
-    for (int i = 0; i < player->inventory->limObjects; i++) {
-        if (player->inventory->armorList[i] != NULL) {
-            printf("armure %d\n", i);
-            free_armor(player->inventory->armorList[i]);
-        }
-    }
-    if(player->inventory->healthPotion != NULL) {
-        destroy_potion(player->inventory->healthPotion);
-    }
-    if(player->inventory->manaPotion != NULL) {
-        destroy_potion(player->inventory->manaPotion);
-    }
-    free(player->inventory);
-    printf("free inventory\n");
-}

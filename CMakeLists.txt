@@ -124,5 +124,7 @@ add_executable(doom cfiles/main.c
         headers/saves/create-save/save_player_quests.h
         cfiles/saves/load-save/load_player_quests.c
         headers/saves/load-save/load_player_quests.h
+        cfiles/free.c
+        headers/free.h
 )
 

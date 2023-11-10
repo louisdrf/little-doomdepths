@@ -6,9 +6,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <string.h>
-#include <time.h>
 #include "../../headers/inventory/potion.h"
-#include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
 
 #define DEBUG true
@@ -169,10 +167,3 @@ Potion *createPotion(const char* name, const char* sprite, unsigned short health
 }
 
 
-void destroy_potion(Potion* potion) {
-    if (potion != NULL) {
-        free(potion->name);
-        free(potion->sprite);
-        free(potion);
-    }
-}

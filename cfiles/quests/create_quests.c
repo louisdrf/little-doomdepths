@@ -79,15 +79,3 @@ Quest *init_quest(Quest *head, int id, char *description, bool armorReward, bool
 }
 
 
-void free_quest_list(Quest *questList) {
-    Quest *current = questList;
-    Quest *next;
-
-    while (current != NULL) {
-        printf("Desallocating quest : %s\n", current->description);
-        next = current->next;
-        free(current->description);
-        free(current);
-        current = next;
-    }
-}

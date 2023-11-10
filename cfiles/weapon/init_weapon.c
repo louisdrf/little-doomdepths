@@ -52,14 +52,6 @@ void setWeaponName(Weapon *weapon, char *name) {
 
 
 
-void free_weapon(Weapon *weapon) {
-
-    printf("weapon name : %s\n", weapon->name);
-    free(weapon->name);
-    free(weapon);
-}
-
-
 void add_loot_item(Level *level, Weapon *weapon, Armor *armor) {
 
     int index = 0;

@@ -276,41 +276,4 @@ void updateMovement(Player *player, char command, Game* game) {
 //-------------------------------------------------------------------------------------------------
 
 
-void free_player(Player *player) {
-
-    printf("free player\n");
-
-    free_weapon(player->current_weapon);
-    free_armor(player->current_armor);
-    printf("free player equipment\n");
-
-    free_inventory(player);
-
-    free(player->draw);
-    free(player->name);
-    printf("free name & draw\n");
-
-    free(player->current_zone);
-    free(player->current_level);
-    printf("free player level and zone\n");
-
-    for(int i = 0; i < NBSPELL_MAX; i++) {
-        if(player->book->spell_equipped[i] != NULL) {
-            free(player->book->spell_equipped[i]);
-        }
-    }
-    printf("free spell equipped\n");
-
-    free_quest_list(player->questList);
-
-    printf("free player quests\n");
-
-    free_spell_list(player->book->spell_stock);
-    free(player->book);
-
-    printf("free player book spell stock and book\n");
-
-    free(player);
-    printf("\nplayer correctly free\n");
-}
 

@@ -9,7 +9,6 @@
 
 Armor *init_armor(char *name, int defense, int rarity);
 void setArmorName(Armor *armor, char *name);
-void free_armor(Armor *armor);
 Armor *randomArmor();
 void display_armor_stats(Armor *armor);
 

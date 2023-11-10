@@ -50,13 +50,8 @@ void setArmorName(Armor *armor, char *name) {
     strcpy(armor->name, name);
 }
 
-void free_armor(Armor *armor) {
 
-    printf("armor name : %s\n", armor->name);
-    free(armor->name);
-    free(armor);
 
-}
 
 Armor *randomArmor() {
     Armor *armor = malloc(sizeof(Armor));
