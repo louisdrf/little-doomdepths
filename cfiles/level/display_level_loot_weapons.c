@@ -10,7 +10,7 @@
 #include "../../headers/inventory/inventory.h"
 #include "../../headers/level/display_level_loot.h"
 
-
+/*
 void display_level_loot_weapons(Level *level,Player *player) {
 
     int k=0;
@@ -140,4 +140,4 @@ void display_level_loot_weapons(Level *level,Player *player) {
 
     }
 
-}
+}*/

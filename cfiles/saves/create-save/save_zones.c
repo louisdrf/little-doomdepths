@@ -22,7 +22,7 @@ void save_zones(Game *game, sqlite3** conn) {
     }
 
     // supprimer les niveaux avant de tout recréer
-    sprintf(query, "DELETE FROM Level player_id=%d;", game->id);
+    sprintf(query, "DELETE FROM Level WHERE player_id=%d;", game->id);
     if(!prepare_and_exec_query(conn, query)) {
         printf("\nFailed to prepare/execute query to delete all levels.\n");
         exit(1);

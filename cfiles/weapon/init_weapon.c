@@ -52,7 +52,7 @@ void setWeaponName(Weapon *weapon, char *name) {
 
 
 
-void add_loot_item(Level *level, Weapon *weapon, Armor *armor) {
+/*void add_loot_item(Level *level, Weapon *weapon, Armor *armor) {
 
     int index = 0;
     int place_in_weaponloot = MAX_LEVEL_LOOT_ITEM - get_first_level_loot_weapon_free_space(level);       // nombre de case libres dans le tableau d'armes
@@ -87,11 +87,7 @@ void add_loot_item(Level *level, Weapon *weapon, Armor *armor) {
 }
 
 
-/**
- * get the index of the first free space in the weapon level loot to add the item
- * @param level
- * @return
- */
+
 int get_first_level_loot_weapon_free_space(Level *level) {
 
     int i = 0;
@@ -101,11 +97,7 @@ int get_first_level_loot_weapon_free_space(Level *level) {
     return i; // on retourne la case suivante
 }
 
-/**
- * get the index of the first free space in the weapon level loot to add the item
- * @param level
- * @return
- */
+
 int get_first_level_loot_armor_free_space(Level *level) {
 
     int i = 0;
@@ -114,7 +106,7 @@ int get_first_level_loot_armor_free_space(Level *level) {
     }
 
     return i;
-}
+}*/
 
 Weapon *randomWeapon() {
     Weapon *weapon = malloc(sizeof(Weapon));

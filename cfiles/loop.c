@@ -105,7 +105,7 @@ void launch_loop(Game *game, Player *player) {
                         continue;
 
                     case 'l':
-                       display_level_loot_choice_sections(player->current_level,player);
+                      // display_level_loot_choice_sections(player->current_level,player);
                         continue;
 
                     case 's':

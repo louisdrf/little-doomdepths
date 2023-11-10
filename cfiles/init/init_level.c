@@ -48,7 +48,7 @@ Level *init_level(int id, double multiplicator) {
 
     // Initialise le tableau loot_weapon avec des pointeurs NULL
 
-    for(int i =0; i<MAX_LEVEL_LOOT_ITEM;i++){
+    /*for(int i =0; i<MAX_LEVEL_LOOT_ITEM;i++){
         level->loot_weapon[i] = NULL;
         level->loot_armor[i] = NULL;
     }
@@ -61,7 +61,7 @@ for(int l = randnbloot; l > 0; l--){
     }else{
         add_loot_item(level, NULL,  randomArmor());
     }
-}
+}*/
 #if DEBUG
 printf("Level %d correctly initialized.\n", level->id);
 #endif

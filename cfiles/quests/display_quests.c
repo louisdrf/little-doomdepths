@@ -23,7 +23,7 @@ void display_quests_menu(Player *player) {
     printf(GREEN"----- Quetes -----\n\n"RESET);
     printf(BLUE "Liste des quetes  (1)\n"RESET);
     printf(GREEN"Quetes terminees  (2)\n\n\n"RESET);
-    printf(     "Retour            (3)\n");
+    printf(     "Retour            (n'importe quelle touche)\n");
     printf("-> ");
 
     playerEntry = getch() - 48;
@@ -36,11 +36,8 @@ void display_quests_menu(Player *player) {
             display_done_quests(player);
             break;
 
-        case 3:
-            return;
-
         default:
-            display_quests_menu(player);
+            return;
     }
 }
 

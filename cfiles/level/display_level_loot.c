@@ -17,7 +17,7 @@
 
 
 
-void display_level_loot_choice_sections(Level *level,Player *player) {
+/*void display_level_loot_choice_sections(Level *level,Player *player) {
     int choice;
     printf("\n\n   Level Loot\n\n");
     printf("Armes          (1)\n");
@@ -29,7 +29,7 @@ void display_level_loot_choice_sections(Level *level,Player *player) {
     choice -= 48;
 
     display_level_loot_section(level,player, choice);
-}
+}*/
 
 /**
  * display the selected section
@@ -37,7 +37,7 @@ void display_level_loot_choice_sections(Level *level,Player *player) {
  * @param player
  * @param choice
 */
-
+/*
 void display_level_loot_section(Level *level,Player *player, int choice) {
 
     switch(choice) {
@@ -51,13 +51,14 @@ void display_level_loot_section(Level *level,Player *player, int choice) {
         case 2:
             display_level_loot_armors(level,player);
             break;
-    /*
+
         case 3:
             //display_player_potions(player);       //pas de potion dans le level loot
             break;
-    */
+
 
         default:
             display_level_loot_choice_sections(level,player);
     }
 }
+*/
