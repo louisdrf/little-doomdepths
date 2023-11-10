@@ -18,7 +18,11 @@ CREATE TABLE Player (
                         posX INTEGER,
                         posY INTEGER,
                         nbKill INTEGER,
-                        nbQuestDone INTEGER
+                        nbQuestDone INTEGER,
+                        nbLevelFinished INTEGER,
+                        levelXP INTEGER,
+                        totalXO INTEGER,
+                        currentXP INTEGER
 );
 
 
@@ -110,7 +114,8 @@ CREATE TABLE Monster (
                          zone_id INTEGER,
                          monster_id INTEGER,
                          level_height_index INTEGER,
-                         level_width_index INTEGER
+                         level_width_index INTEGER,
+                         xp INTEGER
 );
 
 CREATE TABLE Quests (
@@ -124,7 +129,8 @@ CREATE TABLE Quests (
                         displayedAlert INTEGER,
                         claimedGold INTEGER,
                         claimedWeapon INTEGER,
-                        claimedArmor INTEGER
+                        claimedArmor INTEGER,
+                        xp INTEGER
 );
 
 
