@@ -35,7 +35,7 @@ void free_player(Player *player) {
 #endif
 
     free_quest_list(player->questList);
-    free_spell_list(player->book->spell_stock);
+   // free_spell_list(player->book->spell_stock);
     free(player->book);
     free(player);
 
@@ -50,23 +50,8 @@ void free_player(Player *player) {
 void free_inventory(Player *player) {
 
     for (int i = 0; i < player->inventory->limObjects; i++) {
-        if (player->inventory->weaponList[i] != NULL) {
-            printf("arme %p\n", player->inventory->weaponList[i]);
             free_weapon(player->inventory->weaponList[i]);
-            free(player->inventory->weaponList[i]);
-        }
-        else {
-            printf("null arme %p\n", player->inventory->armorList[i]);
-        }
-
-        if (player->inventory->armorList[i] != NULL) {
-            printf("armure %p\n", player->inventory->armorList[i]);
             free_armor(player->inventory->armorList[i]);
-            free(player->inventory->armorList[i]);
-        }
-        else {
-            printf("null armure %p\n", player->inventory->armorList[i]);
-        }
     }
 
         destroy_potion(player->inventory->healthPotion);

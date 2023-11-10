@@ -113,11 +113,11 @@ void display_player_health(Player *player) {
     int j = 0;
 
     printf("Health:   ");
-    while(i < (player->lifepoints)/2) {
+    while(i < (player->lifepoints)/5) {
         printf(RED "#");
         i++;
     }
-    while(i < 50) {
+    while(i < (player->lifepoints_max/5)) {
         printf("-");
         i++;
     }
@@ -140,7 +140,7 @@ void display_player_mana(Player *player) {
 
     printf("Mana:     ");
     if(player->mana == 0) {
-        while(i < 50) {
+        while(i < (player->mana_max/5)) {
             printf("-");
             i++;
         }
@@ -149,11 +149,11 @@ void display_player_mana(Player *player) {
         return;
     }
 
-        while(i < (player->mana)/2) {
+        while(i < (int)(player->mana)/5) {
             printf(BLUE "#");
             i++;
         }
-        while(i < 50) {
+        while(i < (player->mana_max/5)) {
                 printf("-");
                 i++;
         }

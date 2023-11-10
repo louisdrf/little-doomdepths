@@ -129,16 +129,16 @@ void next_xp_level(Player *player) {
     clear();
     printf("PV MAX : %d + 5 ", player->lifepoints_max);
     printf(RED"-> %d\n"RESET, (player->lifepoints_max + 5));
-    printf("MANA MAX : %d + 2 ", player->mana_max);
-    printf(BLUE"-> %d\n"RESET, (player->mana_max + 2));
+    printf("MANA MAX : %d + 5 ", player->mana_max);
+    printf(BLUE"-> %d\n"RESET, (player->mana_max + 5));
 
     player->levelXP++;
     player->nextLevelXP = player->levelsXP[player->levelXP];
     player->currentXP = 0;
     player->lifepoints_max += 5;
     player->lifepoints += 5;
-    player->mana_max += 2;
-    player->mana += 2;
+    player->mana_max += 5;
+    player->mana += 5;
 }
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
