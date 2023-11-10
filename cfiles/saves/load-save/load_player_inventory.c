@@ -17,6 +17,8 @@ void load_player_inventory(Player *player, sqlite3 **conn) {
     char query[50];
 
     player->inventory = init_inventory();
+    player->current_armor = NULL;
+    player->current_weapon = NULL;
 
     sprintf(query, "SELECT * FROM Inventory WHERE player_id=%d;", player->id);
 
@@ -72,9 +74,7 @@ void load_player_inventory_weapons(Player *player, sqlite3 **conn) {
         if(isEquipped) {
             equip_weapon(player, player->inventory->weaponList[i]);
         }
-        else {
-            player->current_weapon = NULL;
-        }
+
         i++;
     }
     sqlite3_finalize(res);
@@ -107,9 +107,7 @@ void load_player_inventory_armors(Player *player, sqlite3 **conn) {
             player->current_armor = player->inventory->armorList[i];
             player->defense = player->current_armor->defense;
         }
-        else {
-            player->current_armor = NULL;
-        }
+
         i++;
     }
     sqlite3_finalize(res);

@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <conio.h>
 #include "../../../headers/saves/load-save/load_player.h"
 #include "../../../headers/includes/structs.h"
 #include "../../../headers/db_connexion.h"
@@ -12,6 +13,7 @@
 #include "../../../headers/saves/load-save/load_player_spells.h"
 #include "../../../headers/saves/load-save/load_player_quests.h"
 
+#define DEBUG true
 
 Player *load_player(Game *game) {
 

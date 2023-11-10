@@ -82,7 +82,9 @@ void display_player_all_zone(Player *player, Game *game) {
             break;
 
         case 'q':
-            display_all(player);
+
+            clear();
+            //display_all(player);
             break;
             //return;
 
@@ -129,6 +131,7 @@ void display_all_zones(Player *player, Game *game) {
             break;
 
         case 'q':
+            clear();
             game->display_zones_index = 0;
             return;
 

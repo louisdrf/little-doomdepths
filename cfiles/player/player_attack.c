@@ -5,6 +5,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <conio.h>
 #include "../../headers/player/player_attack.h"
 #include "../../headers/monsters/monster.h"
 #include "../../headers/includes/structs.h"
@@ -26,12 +27,14 @@ bool player_attack(Player *player, int idMonster) {
         return false;
     }
 
+
     if(player->current_weapon != NULL && (player->mana - player->current_weapon->mana_cost) >= 0) {
         current_attack_strength = random_int((player->current_weapon->min_strength) , (player->current_weapon->max_strength));     // si le joueur a une arme équipée et suffisamment de mana pour attaquer
     }
     else {
         current_attack_strength = random_int((player->min_strength) , (player->max_strength));                                     // sinon le joueur attaque à mains nues
     }
+
 
     if((target->lifepoints) - current_attack_strength <= 0) {
         target->lifepoints = 0;
@@ -48,6 +51,7 @@ bool player_attack(Player *player, int idMonster) {
     }
     else target->lifepoints -= current_attack_strength;
 
+
     player->attacks_left--;
     if(player->current_weapon != NULL) {
         if(player->mana - player->current_weapon->mana_cost >= 0) player->mana -= player->current_weapon->mana_cost;
@@ -55,6 +59,7 @@ bool player_attack(Player *player, int idMonster) {
     }
 
     if(player->attacks_left == 0) player->turn = false;
+
 
     return true;
 }

@@ -8,7 +8,7 @@
 #include "../../../sqlite3/sqlite3.h"
 #include "../../../headers/db_connexion.h"
 
-#define DEBUG false
+#define DEBUG true
 
 void save_player(Player *player, sqlite3** conn) {
 
