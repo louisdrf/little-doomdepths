@@ -87,9 +87,11 @@ void display_all(Player *player) {
                         "quests     (j)      map       (m)      save  (x)      exit  (q)\n"RESET);
 }
 
+
 void display_player(Player *player) {
     printf(RED"%s\n"RESET, player->draw);
 }
+
 
 void display_player_ath(Player *player) {
 
@@ -99,8 +101,8 @@ void display_player_ath(Player *player) {
     display_player_xp(player);
     printf("Gold:     ");
     printf(YELLOW "%d\n" RESET, player->gold);
-    printf("Attacks left this turn:   %d\n\n", player->attacks_left);
-    printf(MAGENTA"Zone:  %s\n", player->current_zone->name);
+    printf("Attacks  (%d/%d)\n\n", player->attacks_left, player->attacks_by_turn);
+    printf(MAGENTA"Zone:  %s   |   ", player->current_zone->name);
     printf("Level: %d"RESET, player->current_level->id);
     printf("\n");
 

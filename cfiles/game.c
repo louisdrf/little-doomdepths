@@ -16,7 +16,7 @@
 #include "../headers/free/free_player.h"
 #include "../headers/free/free_zones.h"
 
-#define DEBUG true
+#define DEBUG false
 
 Game *init_game(int save_id) {
 

@@ -182,3 +182,7 @@
 1643	1755	7214149524899910	CMakeFiles/doom.dir/cfiles/free/free_zones.c.obj	b099e7edb2260174
 1627	1779	7214149525164348	CMakeFiles/doom.dir/cfiles/saves/load-save/load_player_quests.c.obj	febde2fa2b85025a
 1779	2009	7214149527416285	doom.exe	effed438e12f5180
+8	190	7214282468846234	CMakeFiles/doom.dir/cfiles/display.c.obj	bd9a8766fd1c7864
+191	465	7214282471539033	doom.exe	effed438e12f5180
+8	128	7214283560292764	CMakeFiles/doom.dir/cfiles/display.c.obj	bd9a8766fd1c7864
+129	373	7214283562693066	doom.exe	effed438e12f5180
