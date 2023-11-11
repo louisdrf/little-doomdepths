@@ -26,6 +26,9 @@ Spell *get_spell_stocked(Player *player,int choice) {
         return NULL;
     }
 }
+
+
+
 void add_spell(Player *player, Spell *spell) {
 
     int index = 0;

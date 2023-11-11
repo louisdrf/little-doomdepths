@@ -22,7 +22,8 @@ CREATE TABLE Player (
                         nbLevelFinished INTEGER,
                         levelXP INTEGER,
                         totalXO INTEGER,
-                        currentXP INTEGER
+                        currentXP INTEGER,
+                        nbSpells INTEGER
 );
 
 

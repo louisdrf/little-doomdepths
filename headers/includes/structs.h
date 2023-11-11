@@ -211,6 +211,7 @@ typedef struct {
     Zone*               current_zone;       // zone dans laquelle se situe le joueur
     Inventory*          inventory;          // inventaire du joueur
     Book*               book;               // livre de sorts du joueur
+    unsigned short      nbSpells;           // nombre de sorts accumulés
     Quest*              questList;          // liste de quetes du joueur
     int                 nbKill;             // nombre de monstres tués
     int                 nbQuestDone;        // nombre de quetes terminées

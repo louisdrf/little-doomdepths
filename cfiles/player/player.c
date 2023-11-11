@@ -33,12 +33,8 @@ Player *init_player(Game *game) {
 
         Book *book= NULL;
         book = init_book();
-        Spell *first_spell = NULL;
+        book->spell_stock = NULL;
 
-    for(int j = 0; j < 2 ; j++) {
-        first_spell = create_spell(first_spell, j);
-        book->spell_stock = first_spell;
-    }
 
         player = malloc(sizeof(Player));
         if(player == NULL) {
@@ -75,6 +71,7 @@ Player *init_player(Game *game) {
         player->attacks_left = player->attacks_by_turn;
         player->min_strength = 6;
         player->max_strength = 12;
+        player->nbSpells = 0;
         player->book = book;
         player->inventory = inventory;
         player->questList = create_quests();
@@ -131,6 +128,8 @@ void next_xp_level(Player *player) {
     printf(RED"-> %d\n"RESET, (player->lifepoints_max + 5));
     printf("MANA MAX : %d + 5 ", player->mana_max);
     printf(BLUE"-> %d\n"RESET, (player->mana_max + 5));
+    getch();
+    clear();
 
     player->levelXP++;
     player->nextLevelXP = player->levelsXP[player->levelXP];
@@ -139,6 +138,12 @@ void next_xp_level(Player *player) {
     player->lifepoints += 5;
     player->mana_max += 5;
     player->mana += 5;
+
+    if(player->levelXP % 5 == 0 && player->levelXP != 0) {
+
+            Spell *new = create_random_spell(player->book->spell_stock, (player->nbSpells + 1));
+            player->book->spell_stock = new;
+    }
 }
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------

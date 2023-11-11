@@ -5,7 +5,10 @@
 #ifndef DOOM_INIT_SPELL_H
 #define DOOM_INIT_SPELL_H
 #include "../includes/structs.h"
-Spell *create_spell(Spell *head, int index);
+
+Spell *create_random_spell(Spell *head, int index);
+Spell *create_spell(Spell *head, int index, int power, int mana_cost, int spell_type, char *name);
 
 Book *init_book();
+
 #endif //DOOM_INIT_SPELL_H

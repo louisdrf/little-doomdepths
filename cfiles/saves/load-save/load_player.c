@@ -61,6 +61,8 @@ Player *load_player(Game *game) {
         init_player_xp_levels(player);
         player->nextLevelXP = player->nextLevelXP = player->levelsXP[player->levelXP + 1];
 
+        player->nbSpells = sqlite3_column_int(res, 18);
+
         player->current_level = game->zoneList[current_zone_id]->levelList[player->currentX][player->currentY];
         player->isAlive = true;
         player->min_strength = 10;

@@ -6,10 +6,11 @@
 #include "../../headers/spell/display_spell.h"
 #include <stdlib.h>
 #include <conio.h>
+#include <string.h>
 
 #define DEBUG false
 
-Spell *create_spell(Spell *head, int index) {
+Spell *create_random_spell(Spell *head, int index) {
 
     Spell *new = malloc(sizeof(Spell));
     if(new == NULL) {
@@ -24,7 +25,7 @@ Spell *create_spell(Spell *head, int index) {
     new->mana_cost=rand() % SPELL_COST_MAX + 1;
     new->spell_type=rand() % NB_SPELL_TYPE;
     new->name= name_spell(new->spell_type);
-    new->next= head;
+    new->next = head;
 
 #if DEBUG
     printf("Spell %d initialized.\n", new->id);
@@ -33,6 +34,33 @@ Spell *create_spell(Spell *head, int index) {
     return new;
 
 }
+
+Spell *create_spell(Spell *head, int index, int power, int mana_cost, int spell_type, char *name) {
+
+    Spell *new = malloc(sizeof(Spell));
+    if(new == NULL) {
+#if DEBUG
+        printf("Error while allocating memory for spell.\n");
+        exit(1);
+#endif
+    }
+    new->id = index;
+    new->value = power;
+    new->mana_cost = mana_cost;
+    new->spell_type = spell_type;
+    new->name = malloc(strlen(name) + 1);
+    strcpy(new->name , name);
+    new->next = head;
+
+#if DEBUG
+    printf("Spell %d initialized.\n", new->id);
+#endif
+
+    return new;
+}
+
+
+
 Book *init_book()
 {
     Book *book = malloc( sizeof(Book));
