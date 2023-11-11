@@ -17,11 +17,13 @@ void save_player(Player *player, sqlite3** conn) {
     if(conn != NULL) {
 
 
-        sprintf(query, "UPDATE Player SET name='%s', lifepoints=%d, shield=%d, mana=%d, attacks_left=%d, gold=%d, turn=%d, current_level_id=%d, current_zone_id=%d, posX=%d, posY=%d, nbKill=%d, nbQuestDone=%d, nbLevelFinished=%d, levelXP=%d, totalXP=%d, currentXP=%d, nbSpells=%d WHERE id=%d;",
+        sprintf(query, "UPDATE Player SET name='%s', lifepoints=%d, lifepoints_max=%d, shield=%d, mana=%d, mana_max=%d, attacks_left=%d, gold=%d, turn=%d, current_level_id=%d, current_zone_id=%d, posX=%d, posY=%d, nbKill=%d, nbQuestDone=%d, nbLevelFinished=%d, levelXP=%d, totalXP=%d, currentXP=%d, nbSpells=%d WHERE id=%d;",
                 player->name,
                 player->lifepoints,
+                player->lifepoints_max,
                 player->shield,
                 player->mana,
+                player->mana_max,
                 player->attacks_left,
                 player->gold,
                 player->turn,

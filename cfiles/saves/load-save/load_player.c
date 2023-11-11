@@ -39,10 +39,8 @@ Player *load_player(Game *game) {
         strcpy(player->name, sqlite3_column_text(res, 1));
 
         player->id = game->id;
-        player->lifepoints_max = 100;
         player->lifepoints = sqlite3_column_int(res, 2);
         player->shield = sqlite3_column_int(res, 3);
-        player->mana_max = 100;
         player->mana = sqlite3_column_int(res, 4);
         player->attacks_left = sqlite3_column_int(res, 5);
         player->gold = sqlite3_column_int(res, 6);
@@ -62,11 +60,13 @@ Player *load_player(Game *game) {
         player->nextLevelXP = player->nextLevelXP = player->levelsXP[player->levelXP + 1];
 
         player->nbSpells = sqlite3_column_int(res, 18);
+        player->lifepoints_max = sqlite3_column_int(res, 19);
+        player->mana_max = sqlite3_column_int(res, 20);
 
         player->current_level = game->zoneList[current_zone_id]->levelList[player->currentX][player->currentY];
         player->isAlive = true;
-        player->min_strength = 10;
-        player->max_strength = 20;
+        player->min_strength = 6;
+        player->max_strength = 12;
         player->attacks_by_turn = 2;
         init_player_draw(player);
 

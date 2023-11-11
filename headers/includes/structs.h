@@ -225,7 +225,6 @@ typedef struct {
 typedef struct {
 
     int                     id;
-    char*                   player_name;                    // nom du joueur
     Zone*                   zoneList[NBZONES];              // tableaux des zones de la partie
     bool                    isRunning;                      // bool d'état de la partie
     int                     display_zones_index;            // id de la zone actuelle en affichage

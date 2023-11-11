@@ -67,7 +67,10 @@ void spell_damage(Player *player, int idMonster, Spell *spell) {
         player->gold += target->loot_gold;
     }
     else target->lifepoints -= (spell->value * 5);
+
     player->mana -= spell->mana_cost;
+    player->attacks_left--;
+    if(player->attacks_left == 0) player->turn = false;
 }
 
 
@@ -88,6 +91,8 @@ void spell_aoe(Player *player,Spell *spell){
         current = current->next;
     }
     player->mana-=spell->mana_cost;
+    player->attacks_left--;
+    if(player->attacks_left == 0) player->turn = false;
 }
 
 
@@ -95,7 +100,10 @@ void spell_heal(Player *player,Spell *spell){
     if((player->lifepoints + spell->value*5) >= player->lifepoints_max) player->lifepoints = 100;
     else player->lifepoints += spell->value*5;
     printf("\nVous recuperez %d points de vie.\n",spell->value*5);
+
     player->mana-=spell->mana_cost;
+    player->attacks_left--;
+    if(player->attacks_left == 0) player->turn = false;
 }
 
 
@@ -108,6 +116,8 @@ void spell_shield(Player *player,Spell *spell) {
     }
 
     player->mana-=spell->mana_cost;
+    player->attacks_left--;
+    if(player->attacks_left == 0) player->turn = false;
 }
 
 

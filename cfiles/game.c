@@ -99,7 +99,6 @@ void load_saved_game(int save_id) {
 void free_game(Game *game) {
     if(game != NULL) {
         free_all_zones(game);
-        free(game->player_name);
         free(game);
     }
 }

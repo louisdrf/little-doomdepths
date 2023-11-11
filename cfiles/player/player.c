@@ -31,9 +31,7 @@ Player *init_player(Game *game) {
         Inventory *inventory = NULL;
         inventory = init_inventory();
 
-        Book *book= NULL;
-        book = init_book();
-        book->spell_stock = NULL;
+        Book *book = init_book();
 
 
         player = malloc(sizeof(Player));

@@ -7,8 +7,9 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <string.h>
+#include <stdio.h>
 
-#define DEBUG false
+#define DEBUG true
 
 Spell *create_random_spell(Spell *head, int index) {
 
@@ -136,6 +137,8 @@ Book *init_book()
     for(int i = 0; i < NBSPELL_MAX; i++) {
         book->spell_equipped[i] = NULL;
     }
+
+    book->spell_stock = NULL;
 
     if(book == NULL)
     {
