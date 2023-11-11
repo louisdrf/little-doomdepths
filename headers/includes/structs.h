@@ -61,6 +61,14 @@ typedef struct {
 
 } Weapon;
 
+typedef struct {
+    unsigned short                 manaValue;
+    unsigned short                 healthValue;
+    char*                          name;
+    char*                          sprite;
+
+} Potion;
+
 
 typedef struct Monster Monster;
 
@@ -83,7 +91,8 @@ struct Monster {
     Weapon*                        monster_weapon;        // arme lootable sur le monstre
     Armor*                         monster_armor;         // armure lootable sur le monstre
     unsigned int                   loot_gold;          // gold lootable sur le monstre
-
+    Potion*                        monster_manaPotion;   // manaPostion lootable sur le monstre
+    Potion*                        monster_healthPotion; // HealthPotion lootable sur le monstre
 };
 
 
@@ -96,7 +105,7 @@ typedef struct {
     Armor*                   loot_armor[MAX_LEVEL_LOOT_ITEM];          // armure lootable sur le niveau
     unsigned int             loot_gold;                                // gold lootable sur le niveau
     bool                     finished;                                 // true si le niveau a été fini
-
+    Monster*                 dead_monsters;                            // liste chainée de monstres
 } Level;
 
 
@@ -124,13 +133,6 @@ typedef struct {
 } Map;
 
 
-typedef struct {
-    unsigned short                 manaValue;
-    unsigned short                 healthValue;
-    char*                          name;
-    char*                          sprite;
-
-} Potion;
 
 
 typedef struct {

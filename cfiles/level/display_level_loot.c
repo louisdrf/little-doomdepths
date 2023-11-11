@@ -7,7 +7,7 @@
 #include "../../headers/level/display_level_loot.h"
 #include "../../headers/level/display_level_loot_armors.h"
 
-
+#include "../../headers/monsters/display_dead_monster.h"
 
 /**
  * display choice menu for inventory sections (weapons, armors, potions)
@@ -22,6 +22,7 @@ void display_level_loot_choice_sections(Level *level,Player *player) {
     printf("\n\n   Level Loot\n\n");
     printf("Armes          (1)\n");
     printf("Armures        (2)\n");
+    printf("Monster        (3)\n");
     //printf("Potions        (3)\n");
     printf("\n");
     printf("Quitter        (0)\n");
@@ -51,11 +52,12 @@ void display_level_loot_section(Level *level,Player *player, int choice) {
         case 2:
             display_level_loot_armors(level,player);
             break;
-    /*
+
         case 3:
+            displayDeadMonstersItems(player);
             //display_player_potions(player);       //pas de potion dans le level loot
             break;
-    */
+
 
         default:
             display_level_loot_choice_sections(level,player);

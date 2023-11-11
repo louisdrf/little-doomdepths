@@ -608,6 +608,54 @@ cfiles/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/main.c.s
 .PHONY : cfiles/main.c.s
 
+cfiles/monsters/dead_monster.obj: cfiles/monsters/dead_monster.c.obj
+.PHONY : cfiles/monsters/dead_monster.obj
+
+# target to build an object file
+cfiles/monsters/dead_monster.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/monsters/dead_monster.c.obj
+.PHONY : cfiles/monsters/dead_monster.c.obj
+
+cfiles/monsters/dead_monster.i: cfiles/monsters/dead_monster.c.i
+.PHONY : cfiles/monsters/dead_monster.i
+
+# target to preprocess a source file
+cfiles/monsters/dead_monster.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/monsters/dead_monster.c.i
+.PHONY : cfiles/monsters/dead_monster.c.i
+
+cfiles/monsters/dead_monster.s: cfiles/monsters/dead_monster.c.s
+.PHONY : cfiles/monsters/dead_monster.s
+
+# target to generate assembly for a file
+cfiles/monsters/dead_monster.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/monsters/dead_monster.c.s
+.PHONY : cfiles/monsters/dead_monster.c.s
+
+cfiles/monsters/display_dead_monster.obj: cfiles/monsters/display_dead_monster.c.obj
+.PHONY : cfiles/monsters/display_dead_monster.obj
+
+# target to build an object file
+cfiles/monsters/display_dead_monster.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/monsters/display_dead_monster.c.obj
+.PHONY : cfiles/monsters/display_dead_monster.c.obj
+
+cfiles/monsters/display_dead_monster.i: cfiles/monsters/display_dead_monster.c.i
+.PHONY : cfiles/monsters/display_dead_monster.i
+
+# target to preprocess a source file
+cfiles/monsters/display_dead_monster.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/monsters/display_dead_monster.c.i
+.PHONY : cfiles/monsters/display_dead_monster.c.i
+
+cfiles/monsters/display_dead_monster.s: cfiles/monsters/display_dead_monster.c.s
+.PHONY : cfiles/monsters/display_dead_monster.s
+
+# target to generate assembly for a file
+cfiles/monsters/display_dead_monster.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\doom.dir\build.make CMakeFiles/doom.dir/cfiles/monsters/display_dead_monster.c.s
+.PHONY : cfiles/monsters/display_dead_monster.c.s
+
 cfiles/monsters/display_monster_loot.obj: cfiles/monsters/display_monster_loot.c.obj
 .PHONY : cfiles/monsters/display_monster_loot.obj
 
@@ -1061,6 +1109,12 @@ help:
 	@echo ... cfiles/main.obj
 	@echo ... cfiles/main.i
 	@echo ... cfiles/main.s
+	@echo ... cfiles/monsters/dead_monster.obj
+	@echo ... cfiles/monsters/dead_monster.i
+	@echo ... cfiles/monsters/dead_monster.s
+	@echo ... cfiles/monsters/display_dead_monster.obj
+	@echo ... cfiles/monsters/display_dead_monster.i
+	@echo ... cfiles/monsters/display_dead_monster.s
 	@echo ... cfiles/monsters/display_monster_loot.obj
 	@echo ... cfiles/monsters/display_monster_loot.i
 	@echo ... cfiles/monsters/display_monster_loot.s

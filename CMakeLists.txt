@@ -79,5 +79,9 @@ add_executable(doom cfiles/main.c
         headers/init/init_store.h
         cfiles/store/display_store.c
         headers/store/display_store.h
+        cfiles/monsters/dead_monster.c
+        headers/monsters/dead_monster.h
+        cfiles/monsters/display_dead_monster.c
+        headers/monsters/display_dead_monster.h
 )
 

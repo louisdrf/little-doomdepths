@@ -18,7 +18,6 @@ void get_Monster_loot(Player *player){
     unsigned short dropType =  rand() % 3 + 1;
     //rand() % 3 + 1;
     unsigned short choice;
-    printf("\ndropType : %d\n",dropType);//debug
     choice = display_monster_loot_choice(dropType, player);
     if(choice == 1){
         use_item(player,dropType);
@@ -66,7 +65,7 @@ int display_monster_loot_choice(unsigned short dropType, Player *player){
     }
         return playerEntry;
     }else{
-        return 4; // // Aucune arme ni armure disponible, retourne 4.
+        return 4;  // Aucune arme ni armure disponible, retourne 4.
     }
 }
 

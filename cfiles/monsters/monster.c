@@ -8,7 +8,7 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
 #include "../../headers/monsters/display_monster_loot.h"
-
+#include "../../headers/monsters/dead_monster.h"
 /**
  * return 1 if all monsters are dead, else return 0
  * @param player
@@ -78,8 +78,13 @@ int monsters_attack(Player *player) {
                 current->turn = false;                                                          // fin du tour du monstre
                 current->attacks_left = current->attacks_by_turn;
                 current = current->next;
+        }else{
+            if (!isMonsterInDeadList(player->current_level, current)) {
+                addMonsterToDeadList(player->current_level,current);
+            }
+            current = current->next;
         }
-        else current = current->next;
+
     }
     player->turn = true;                                                                        // le joueur peut rejouer ensuite
     player->attacks_left = player->attacks_by_turn;

@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/store/display_store.c" "CMakeFiles/doom.dir/cfiles/Store/display_store.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/Store/display_store.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/armor/draw_armor.c" "CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/armor/draw_armor.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/armor/init_armor.c" "CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/armor/init_armor.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/display.c" "CMakeFiles/doom.dir/cfiles/display.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/display.c.obj.d"
@@ -29,6 +28,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/level/display_level_loot_weapons.c" "CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/level/display_level_loot_weapons.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/loop.c" "CMakeFiles/doom.dir/cfiles/loop.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/loop.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/main.c" "CMakeFiles/doom.dir/cfiles/main.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/main.c.obj.d"
+  "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/dead_monster.c" "CMakeFiles/doom.dir/cfiles/monsters/dead_monster.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/monsters/dead_monster.c.obj.d"
+  "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/display_dead_monster.c" "CMakeFiles/doom.dir/cfiles/monsters/display_dead_monster.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/monsters/display_dead_monster.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/display_monster_loot.c" "CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/monsters/display_monster_loot.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/monster.c" "CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/monsters/monster.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/monster_sprite.c" "CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/monsters/monster_sprite.c.obj.d"
@@ -37,6 +38,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/player/player_spell.c" "CMakeFiles/doom.dir/cfiles/player/player_spell.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/player/player_spell.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/spell/display_spell.c" "CMakeFiles/doom.dir/cfiles/spell/display_spell.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/spell/display_spell.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/sqlite_test.c" "CMakeFiles/doom.dir/cfiles/sqlite_test.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/sqlite_test.c.obj.d"
+  "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/store/display_store.c" "CMakeFiles/doom.dir/cfiles/store/display_store.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/store/display_store.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/weapon/draw_weapon.c" "CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/weapon/draw_weapon.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/weapon/init_weapon.c" "CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/weapon/init_weapon.c.obj.d"
   "C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/zones/create_zone.c" "CMakeFiles/doom.dir/cfiles/zones/create_zone.c.obj" "gcc" "CMakeFiles/doom.dir/cfiles/zones/create_zone.c.obj.d"

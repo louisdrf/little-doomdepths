@@ -78,7 +78,6 @@ void launch_loop(Game *game, Player *player) {
                         printf("all monsters dead");
                         if(display_next_level_menu() == 1) {
                             getPotion(player);
-                            monster_Drop_loot(player);
                             next_level(game, player);
 
                             player->shield = 0;

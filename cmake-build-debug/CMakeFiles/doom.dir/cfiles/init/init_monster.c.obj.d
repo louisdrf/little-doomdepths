@@ -38,4 +38,6 @@ CMakeFiles/doom.dir/cfiles/init/init_monster.c.obj: \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\weapon\init_weapon.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\armor\init_armor.h \
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h \
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\inventory\potion.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h

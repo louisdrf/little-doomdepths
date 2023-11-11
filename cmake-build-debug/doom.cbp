@@ -136,6 +136,12 @@
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/main.c">
 			<Option target="doom"/>
 		</Unit>
+		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/dead_monster.c">
+			<Option target="doom"/>
+		</Unit>
+		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/display_dead_monster.c">
+			<Option target="doom"/>
+		</Unit>
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/cfiles/monsters/display_monster_loot.c">
 			<Option target="doom"/>
 		</Unit>
@@ -248,6 +254,12 @@
 			<Option target="doom"/>
 		</Unit>
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/loop.h">
+			<Option target="doom"/>
+		</Unit>
+		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/monsters/dead_monster.h">
+			<Option target="doom"/>
+		</Unit>
+		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/monsters/display_dead_monster.h">
 			<Option target="doom"/>
 		</Unit>
 		<Unit filename="C:/Users/mokra/OneDrive/Documents/GitHub/little-doomdepths/headers/monsters/display_monster_loot.h">

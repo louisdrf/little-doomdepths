@@ -53,13 +53,15 @@ Level *init_level(int id) {
     }
     // random weapon/armor generation by level
 randnbloot= rand() % (id + 1); // Generate a random number between 0 and 'id'.
-for(int l = randnbloot; l > 0; l--){
+for(int l = randnbloot; l >= 0; l--){
     if(l % 2 == 0){
         add_loot_item(level, randomWeapon(), NULL);
-    }else{
+    }
+    if(l % 2 == 1){
         add_loot_item(level, NULL,  randomArmor());
     }
 }
+    level->dead_monsters = NULL;
 #if DEBUG
 printf("Level %d correctly initialized.\n", level->id);
 #endif

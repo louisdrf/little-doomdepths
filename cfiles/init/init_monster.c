@@ -11,7 +11,7 @@
 #include "../../headers/monsters/monster_sprite.h"
 #include "../../headers/weapon/init_weapon.h"
 #include "../../headers/armor/init_armor.h"
-
+#include "../../headers/inventory/potion.h"
 #define DEBUG false
 
 
@@ -20,6 +20,8 @@
  */
 Monster *create_monster(Monster *head, int index) {
     srand(time(NULL));
+    int mRandPotion = -1;
+    int mRandWoA = -1;
     Monster *new = malloc(sizeof(Monster));
     if(new == NULL) {
         #if DEBUG
@@ -47,8 +49,76 @@ Monster *create_monster(Monster *head, int index) {
     new->drawIndex = 0;
     new->monster_weapon = NULL;
     new->monster_armor = NULL;
-    new->monster_weapon = randomWeapon(); // rand() weapon generate by rarity.
-    new->monster_armor = randomArmor();  // rand() armor generate by rarity.
+    mRandWoA = rand() % 3+ 1;
+    if(mRandWoA != -1 ) {
+        if(mRandWoA == 1 ){
+            new->monster_weapon = randomWeapon(); // rand() weapon generate by rarity.
+            if(new->monster_weapon == NULL){
+#if DEBUG
+                printf("Erreur lors de la création de l'arme du monstre\n");
+#endif
+            }
+        }
+        if(mRandWoA == 2 ){
+            new->monster_armor = randomArmor();  // rand() armor generate by rarity.
+            if(new->monster_armor == NULL){
+#if DEBUG
+                printf("Erreur lors de la création de l'armure du monstre\n");
+#endif
+            }
+        }
+        if (mRandWoA != 1 && mRandWoA != 2 ){
+            new->monster_weapon = NULL;
+            new->monster_armor = NULL;
+        }
+
+    }else{
+#if DEBUG
+        printf("Erreur lors de l'operation rand() pour cree l'arme et l'armure d'un monstre'.\n");
+#endif
+    }
+
+    new->monster_healthPotion = NULL;
+    new->monster_manaPotion = NULL;
+    mRandPotion = rand() % 3 + 1;
+    if(mRandPotion != -1){
+        char* sprite = " mmm\n"
+                       " |-|\n"
+                       "(   )\n"
+                       "|   |\n"
+                       "|   |\n"
+                       "|___|";
+
+        if(mRandPotion == 1) {
+            Potion *healthPotion = createPotion("Potion de vie", sprite, 30, 0);
+            if (healthPotion != NULL) {
+                new->monster_healthPotion = healthPotion;
+            } else {
+#if DEBUG
+                printf("Erreur lors de la création de la potion de vie d'un monstre.\n");
+#endif
+
+            }
+        }
+        if(mRandPotion == 2){
+            Potion *manaPotion = createPotion("Potion de mana", sprite, 0, 30);
+            if (manaPotion != NULL){
+                new->monster_manaPotion = manaPotion;
+            }else{
+#if DEBUG
+                printf("Erreur lors de la création de la potion de mana d'un monstre.\n");
+#endif
+            }
+        }
+        if(mRandPotion != 1 && mRandPotion != 2){
+            new->monster_healthPotion = NULL;
+            new->monster_manaPotion = NULL;
+        }
+    }else {
+#if DEBUG
+        printf("Erreur lors de l'operation rand() pour cree la Potion d'un monstre'.\n");
+#endif
+    }
     char *sprite = return_monster_sprite(new->monster_type);
     new->draw = malloc(strlen(sprite) + 1);
     strcpy(new->draw, sprite);

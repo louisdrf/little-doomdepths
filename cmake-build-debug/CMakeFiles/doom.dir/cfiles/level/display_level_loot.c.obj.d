@@ -22,4 +22,6 @@ CMakeFiles/doom.dir/cfiles/level/display_level_loot.c.obj: \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\defines.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\zones\define_zones.h \
  c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\level\display_level_loot.h \
- c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\level\display_level_loot_armors.h
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\level\display_level_loot_armors.h \
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\monsters\display_dead_monster.h \
+ c\:\users\mokra\onedrive\documents\github\little-doomdepths\headers\includes\structs.h
