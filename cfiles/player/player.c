@@ -141,8 +141,13 @@ void next_xp_level(Player *player) {
 
     if(player->levelXP % 5 == 0 && player->levelXP != 0) {
 
-            Spell *new = create_random_spell(player->book->spell_stock, (player->nbSpells + 1));
-            player->book->spell_stock = new;
+        player_new_spell(player);
+        printf(GREEN"Vous debloquez un nouveau sort !   |  "RESET);
+        printf(MAGENTA"%s"RESET, player->book->spell_stock->name);
+        printf("  |\n\n");
+        printf("Le sort a ete rajoute a votre liste de sorts.\n\n");
+        printf("Pressez n'importe quelle touche...\n");
+        getch();
     }
 }
 //-------------------------------------------------------------------------------------------------

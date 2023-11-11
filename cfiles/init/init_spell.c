@@ -38,12 +38,14 @@ Spell *create_random_spell(Spell *head, int index) {
 Spell *create_spell(Spell *head, int index, int power, int mana_cost, int spell_type, char *name) {
 
     Spell *new = malloc(sizeof(Spell));
+
     if(new == NULL) {
 #if DEBUG
         printf("Error while allocating memory for spell.\n");
         exit(1);
 #endif
     }
+
     new->id = index;
     new->value = power;
     new->mana_cost = mana_cost;
@@ -59,6 +61,73 @@ Spell *create_spell(Spell *head, int index, int power, int mana_cost, int spell_
     return new;
 }
 
+
+void player_new_spell(Player *player) {
+
+    Spell *new = NULL;
+
+    switch(player->levelXP) {
+        case 5:
+            new = create_spell(player->book->spell_stock, (player->nbSpells + 1), 4, 5, HEAL, "Vague curative");
+            player->book->spell_stock = new;
+            player->nbSpells++;
+            break;
+
+        case 10:
+            new = create_spell(player->book->spell_stock, (player->nbSpells + 1), 8, 6, DAMAGE, "Eclair fulgurant");
+            player->book->spell_stock = new;
+            player->nbSpells++;
+            break;
+
+        case 15:
+            new = create_spell(player->book->spell_stock, (player->nbSpells + 1), 10, 7, SHIELD, "Barriere protectrice");
+            player->book->spell_stock = new;
+            player->nbSpells++;
+            break;
+
+        case 20:
+            new = create_spell(player->book->spell_stock, (player->nbSpells + 1), 10, 9, DAMAGE, "Flammes devorantes");
+            player->book->spell_stock = new;
+            player->nbSpells++;
+            break;
+
+        case 25:
+            new = create_spell(player->book->spell_stock, (player->nbSpells + 1), 10, 10, AOE, "Explosion sismique");
+            player->book->spell_stock = new;
+            player->nbSpells++;
+            break;
+
+        case 30:
+            new = create_spell(player->book->spell_stock, (player->nbSpells + 1), 10, 12, HEAL, "Eclat de guerison");
+            player->book->spell_stock = new;
+            player->nbSpells++;
+            break;
+
+        case 35:
+            new = create_spell(player->book->spell_stock, (player->nbSpells + 1), 12, 10, SHIELD, "Rempart magique");
+            player->book->spell_stock = new;
+            player->nbSpells++;
+            break;
+
+        case 40:
+            new = create_spell(player->book->spell_stock, (player->nbSpells + 1), 15, 10, AOE, "Trou noir du destructeur de mondes");
+            player->book->spell_stock = new;
+            player->nbSpells++;
+            break;
+
+        case 45:
+            new = create_spell(player->book->spell_stock, (player->nbSpells + 1), 12, 8, DAMAGE, "Tempete de lames");
+            player->book->spell_stock = new;
+            player->nbSpells++;
+            break;
+
+        case 50:
+            new = create_spell(player->book->spell_stock, (player->nbSpells + 1), 15, 10, SHIELD, "Bouclier de guerrier de la destinee");
+            player->book->spell_stock = new;
+            player->nbSpells++;
+            break;
+    }
+}
 
 
 Book *init_book()

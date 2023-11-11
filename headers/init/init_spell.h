@@ -8,6 +8,7 @@
 
 Spell *create_random_spell(Spell *head, int index);
 Spell *create_spell(Spell *head, int index, int power, int mana_cost, int spell_type, char *name);
+void player_new_spell(Player *player);
 
 Book *init_book();
 
