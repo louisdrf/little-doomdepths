@@ -7,18 +7,17 @@
 #include "../../headers/zones/create_zone.h"
 #include "../../headers/zones/generate_random_map.h"
 #include "../../headers/init/init_level.h"
-#include "../../headers/zones/display_zone.h"
+
 
 Zone *create_zone(Game *game,int i) {
-    printf("test2");
-    Map *map= init_random_map_dimensions(0,0);
+
     Zone *zone = malloc(sizeof(Zone));
 
+    Map *map = init_random_map_dimensions(0,0);
     int **tab = calloc(map->height, sizeof(int *));
     for (int a = 0; a < map->height; a++) {
         tab[a] = calloc(map->width, sizeof(int));
     }
-
     if(i==0){
 
         map = init_random_map_dimensions(0,0);
@@ -51,13 +50,12 @@ Zone *create_zone(Game *game,int i) {
                     if (map->map[i][j] == 1) {
                         levelList[i][j] = init_level(index);            // creer un niveau avec son id
                         index++;
-                    } else if(map->map[i][j] == 2){
+                    }  else if(map->map[i][j] == 2){
 
-                        levelList[i][j] = init_level_boss(index);            // creer un niveau avec son id
+                    levelList[i][j] = init_level_boss(index);            // creer un niveau avec son id
 
-                        index++;
-                    }
-                    else {
+                    index++;
+                    }else {
                         levelList[i][j] = NULL;
                     }
                 }
@@ -74,31 +72,13 @@ Zone *create_zone(Game *game,int i) {
                     zone->height = map->height;
                     zone->width = map->width;
                 }
-
-            zone->map=tab;
-        printf("\n");
-        for(int i = 0; i < zone->height; i++) {
-
-            for(int j = 0; j < zone->width; j++) {
-
-                printf("%d ",zone->map[i][j]);
-
-
-            }
-            printf("\n");
-        }
-
-/*
-            for (i = 0; i < map->height; i++) {
-
+                zone->map=tab;
+            for (int i = 0; i < map->height; i++) {
                 free(map->map[i]);
-                printf("test3");
             }
             free(map->map);
-
             free(map);
 
-        printf("test4");*/
 
             if(zone->levelList != NULL) return zone;
             else return NULL;

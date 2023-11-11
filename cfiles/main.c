@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <conio.h>
 #include "../headers/game.h"
+#include "../headers/includes/structs.h"
 #include "../headers/display.h"
+#include "../headers/player/player.h"
 #include "../headers/loop.h"
 #include "../headers/zones/display_zone.h"
 #include "sqlite_test.h"
@@ -26,10 +28,8 @@ int main() {
 
         case 2: // new game
             printf("Launching new game...\n\n");
-
-            game = init_game();                             // init la partie et les niveaux
-
-            player = init_player(game->zoneList[0]);       // passer le niveau 0 en argument au joueur
+            game = init_game();                                 // init la partie et les niveaux
+            player = init_player(game);
 
             launch_loop(game, player);
 

@@ -64,4 +64,6 @@ add_executable(doom cfiles/main.c
         headers/init/init_spell.h
         cfiles/player/player_spell.c
         headers/player/player_spell.h
+        cfiles/init/init_boss.c
+        headers/init/init_boss.h
 )

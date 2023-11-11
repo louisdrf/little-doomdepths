@@ -34,15 +34,15 @@ Level *init_level(int id) {
 
     for(int j = 1; j < level->nbMonsters + 1; j++) {
         first_monster = create_monster(first_monster, j);
-        #if DEBUG
-                printf("Monster %d in level %d correctly added.\n", j, level->id);
-        #endif
+#if DEBUG
+        printf("Monster %d in level %d correctly added.\n", j, level->id);
+#endif
     }
 
     level->monsters = first_monster; // ajoute la tete de liste de monstres au niveau
 
 #if DEBUG
-printf("Level %d correctly initialized.\n", level->id);
+    printf("Level %d correctly initialized.\n", level->id);
 #endif
 
     return level;
@@ -83,6 +83,7 @@ Level *init_level_boss(int id) {
 
     return level;
 }
+
 
 void next_level(Game *game, Player *player) {
 

@@ -8,6 +8,7 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/includes/defines.h"
 #include "../../headers/includes/colors.h"
+
 #include "../../headers/display.h"
 #define NBMAX_MONSTER_PRINT 3
 
@@ -16,35 +17,35 @@ Monster* little_print_monster(Monster* current) {
     int entityWidth = 40;
     int printIndex = 0;
     if (current != NULL) {
-    if (current != NULL) {
-        if (current->isAlive == true) {
+        if (current != NULL) {
+            if (current->isAlive == true) {
 
-            while (current->draw[current->drawIndex] != '\n' && current->draw[current->drawIndex] != '\0') {
-                printf( RED"%c"RESET, current->draw[current->drawIndex]);
-                current->drawIndex++;
-                printIndex++;
-            }
+        while (current->draw[current->drawIndex] != '\n' && current->draw[current->drawIndex] != '\0') {
+            printf( RED"%c"RESET, current->draw[current->drawIndex]);
+            current->drawIndex++;
+            printIndex++;
+        }
 
-            if (current->draw[current->drawIndex] == '\n') {
-                current->drawIndex++; // Passer à la ligne suivante
-            } else if (current->draw[current->drawIndex] == '\0') {
-                while (printIndex < entityWidth) {
-                    printf(" "); // Ajouter des espaces jusqu'à la largeur de l'entité
-                    printIndex++;
-                }
-            }
-
-
+        if (current->draw[current->drawIndex] == '\n') {
+            current->drawIndex++; // Passer à la ligne suivante
+        } else if (current->draw[current->drawIndex] == '\0') {
             while (printIndex < entityWidth) {
-                printf(" ");
+                printf(" "); // Ajouter des espaces jusqu'à la largeur de l'entité
                 printIndex++;
             }
+        }
 
-            printIndex = 0;
-            return  current->next;
-        } else little_print_monster( current->next);
+
+        while (printIndex < entityWidth) {
+            printf(" ");
+            printIndex++;
+        }
+
+                printIndex = 0;
+                return  current->next;
+            } else little_print_monster( current->next);
+        }
     }
-}
 }
 
 
@@ -59,60 +60,60 @@ void print_monsters(Player *player) {
     if(player->current_zone->map[player->currentX][player->currentY]==2){//Verifie si la zone est une zone de boss
         for (int j = 0; j < NBMAX_MONSTER_PRINT; j++) {
             if (current != NULL) {
-        if(current->monster_type>=NB_MONSTER_TYPE){//affiche les pinfo et pv du boss
-        printf("                                  ");
-        printf("%d - %s (%d/%d)", current->id, monster_string[current->monster_type], current->lifepoints, current->lifepoints_max);
-            printf("\n");
-            display_boss_health(current);
-        }
-            current = current->next;
+                if(current->monster_type>=NB_MONSTER_TYPE){//affiche les pinfo et pv du boss
+                    printf("                                  ");
+                    printf("%d - %s (%d/%d)", current->id, monster_string[current->monster_type], current->lifepoints, current->lifepoints_max);
+                    printf("\n");
+                    display_boss_health(current);
+                }
+                current = current->next;
             }
         }
         current = player->current_level->monsters;
         printf("\n");
         for (int i = 0; i < 18; i++) {
 
-        for (int j = 0; j < NBMAX_MONSTER_PRINT; j++) {
-            printf("                                           ");
-            if (current != NULL) {
-                if (current->isAlive == true) {
-                    if(current->monster_type>=NB_MONSTER_TYPE){
+            for (int j = 0; j < NBMAX_MONSTER_PRINT; j++) {
+                printf("                                           ");
+                if (current != NULL) {
+                    if (current->isAlive == true) {
+                        if(current->monster_type>=NB_MONSTER_TYPE){
 
 
-                    while (current->draw[current->drawIndex] != '\n' && current->draw[current->drawIndex] != '\0') {
-                        printf( RED"%c"RESET, current->draw[current->drawIndex]);
-                        current->drawIndex++;
-                        printIndex++;
-                    }
+                            while (current->draw[current->drawIndex] != '\n' && current->draw[current->drawIndex] != '\0') {
+                                printf( RED"%c"RESET, current->draw[current->drawIndex]);
+                                current->drawIndex++;
+                                printIndex++;
+                            }
 
-                    if (current->draw[current->drawIndex] == '\n') {
-                        current->drawIndex++; // Passer à la ligne suivante
-                    } else if (current->draw[current->drawIndex] == '\0') {
-                        while (printIndex < entityWidth) {
-                            printf(" "); // Ajouter des espaces jusqu'à la largeur de l'entité
-                            printIndex++;
+                            if (current->draw[current->drawIndex] == '\n') {
+                                current->drawIndex++; // Passer à la ligne suivante
+                            } else if (current->draw[current->drawIndex] == '\0') {
+                                while (printIndex < entityWidth) {
+                                    printf(" "); // Ajouter des espaces jusqu'à la largeur de l'entité
+                                    printIndex++;
+                                }
+                            }
+
+                            current = current->next;
+                            while (printIndex < entityWidth) {
+                                printf(" ");
+                                printIndex++;
+                            }
+                            printIndex = 0;
                         }
-                    }
+                        else{
 
-                    current = current->next;
-                    while (printIndex < entityWidth) {
-                        printf(" ");
-                        printIndex++;
-                    }
-                    printIndex = 0;
-                    }
-                    else{
+                            current = current->next;
+                        }
 
-                        current = current->next;
                     }
-
+                    else current =little_print_monster( current->next);
                 }
-                else current =little_print_monster( current->next);
             }
-        }
             printf("\n");
             current = player->current_level->monsters;
-    }
+        }
     }
     current = player->current_level->monsters;
 
@@ -298,6 +299,7 @@ char *return_monster_sprite(int type) {
 
         case BOSS_MINOTAURE:                            // retourne le char* du dragon
             return monster_sprites[BOSS_MINOTAURE];
+
         default:
             return NULL;
     }
@@ -308,7 +310,7 @@ char *return_monster_sprite(int type) {
 char **init_monster_sprites()
 {
 
-    char **monster_sprites_list = malloc(NB_MONSTER_TYPE+NB_BOSS_TYPE * sizeof(char *));
+    char **monster_sprites_list = malloc((NB_MONSTER_TYPE+NB_BOSS_TYPE) * sizeof(char *));
 
     char *grim = "                /\\\n"
                  "                 ||\n"
@@ -360,6 +362,7 @@ char **init_monster_sprites()
                    "   \\;'   /  ,' /  _  \\  /  _  \\   ,'/\n"
                    "         \\   `'  / \\  `'  / \\  `.' /\n"
                    "          `.___,'   `.__,'   `.__,'    ";
+
 
     char *boss_minotaure="         ,     .\n"
                          "        /(     )\\               A\n"

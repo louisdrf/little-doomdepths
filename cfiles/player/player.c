@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
 #include <conio.h>
 #include "../../headers/player/player.h"
 #include "../../headers/includes/structs.h"
@@ -19,8 +18,7 @@
 #include "../../headers/armor/init_armor.h"
 #include "../../headers/player/player_spell.h"
 
-
-#define DEBUG false
+#define DEBUG true
 
 /**
  * init the player
@@ -145,47 +143,6 @@ void print_player_stats(Player *player) {
            "defense : %d\n", player->lifepoints, player->mana, player->defense);
 }
 
-
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
-
-void get_player_name(Player *player) {
-
-    char name[40];
-
-    printf("\nVotre nom de joueur : ");
-    fgets(name, sizeof(name), stdin);
-
-    if(strchr(name, '\n') != NULL && strlen(name) == 1) {
-        printf("\nVeuillez saisir un nom valide.\n");
-        get_player_name(player);
-    }
-
-    player->name = malloc(strlen(name) + 1);
-    strcpy(player->name, name);
-
-    //printf("Nom du joueur : %s\n", player->name);
-}
-
-
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
-
-void add_player_name_to_game(Game *game, Player *player) {
-
-    game->player_name = malloc(strlen(player->name) + 1);
-    strcpy(game->player_name, player->name);
-
-    //printf("Nom de la sauvegarde : %s\n", game->player_name);
-}
-
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
-
-
 /**
  * free inventory, draw and player itself
  * @param player
@@ -245,9 +202,51 @@ void updateMovement(Player *player, char command,Game* game){
         command=getch();
         updateMovement(player,command,game);
     }
-
-
 }
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+
+void get_player_name(Player *player) {
+
+    char name[40];
+
+    printf("\nVotre nom de joueur : ");
+    fgets(name, sizeof(name), stdin);
+
+    if(strchr(name, '\n') != NULL && strlen(name) == 1) {
+        printf("\nVeuillez saisir un nom valide.\n");
+        get_player_name(player);
+    }
+
+    player->name = malloc(strlen(name) + 1);
+    strcpy(player->name, name);
+
+    //printf("Nom du joueur : %s\n", player->name);
+}
+
+
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+
+void add_player_name_to_game(Game *game, Player *player) {
+
+    game->player_name = malloc(strlen(player->name) + 1);
+    strcpy(game->player_name, player->name);
+
+    //printf("Nom de la sauvegarde : %s\n", game->player_name);
+}
+
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------
+
+
+/**
+ * free inventory, draw and player itself
+ * @param player
+ */
 void free_player(Player *player) {
 
     for(int i = 0; i < NBOBJECTS_MAX; i++) {
@@ -255,7 +254,9 @@ void free_player(Player *player) {
         free(player->inventory->weaponList[i]);
     }
     free(player->draw);
+    free(player->name);
     if(player->current_weapon != NULL) free(player->current_weapon);
+    if(player->current_armor != NULL) free(player->current_armor);
     free(player);
 
 #if DEBUG

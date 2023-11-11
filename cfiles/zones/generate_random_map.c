@@ -72,8 +72,8 @@ Map *init_random_map_dimensions(int x, int y) {
 
             if (attempts > max_attempts) {
                 // Si le nombre de tentatives dépasse le seuil, réinitialiser les coordonnées
-                    x = 0;
-                    y = 0;
+                x = 0;
+                y = 0;
                 attempts = 0; // Réinitialiser le compteur de tentatives
             }
             continue;
