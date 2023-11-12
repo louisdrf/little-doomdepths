@@ -62,6 +62,7 @@ Level *init_level_boss(int id, double multiplicator) {
     }
 
     level->id = id;
+    level->finished = 0;
 
     // init the linked list of monsters for the level
     Monster *first_monster = NULL;

@@ -14,6 +14,8 @@
 #include "../../../headers/saves/create-save/save_player_quests.h"
 #include "../../../headers/utils.h"
 
+#define DEBUG true
+
 void create_save(Game *game, Player *player) {
 
     clear();
@@ -26,10 +28,25 @@ void create_save(Game *game, Player *player) {
     prepare_and_exec_query(&conn, query);
 
     save_player(player, &conn);
+#if DEBUG
+    printf("player saved\n");
+#endif
     save_inventory(player, &conn);
+#if DEBUG
+    printf("player inventory saved\n");
+#endif
     save_player_quests(player, &conn);
+#if DEBUG
+    printf("player quests saved\n");
+#endif
     save_player_spells_book(player, &conn);
+#if DEBUG
+    printf("player spells saved\n");
+#endif
     save_zones(game, &conn);
+#if DEBUG
+    printf("player zones saved\n");
+#endif
 
     sqlite3_close(conn);
 

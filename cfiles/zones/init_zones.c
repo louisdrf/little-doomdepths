@@ -7,6 +7,7 @@
 #include <string.h>
 #include "../../headers/zones/init_zones.h"
 #include "../../headers/zones/create_zone.h"
+#include "../../headers/includes/colors.h"
 
 #define DEBUG false
 
@@ -16,6 +17,7 @@ void init_zones(Game *game) {
     for(int i = 0; i < NBZONES; i++) {
 
         double multiplicator;
+
         if(i == 0) multiplicator = 1.;
         if(i == 1) multiplicator = 1.5;
         if(i == 2) multiplicator = 2.;

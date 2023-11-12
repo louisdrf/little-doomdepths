@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include "../../../headers/saves/create-save/save_zones.h"
 #include "../../../headers/saves/db_connexion.h"
+#include "../../../headers/includes/colors.h"
 
 #define DEBUG false
 
@@ -55,6 +56,8 @@ void save_zones(Game *game, sqlite3** conn) {
                 printf("\nFailed to prepare/execute query to insert zone %d.\n", i);
                 exit(1);
             }
+
+            //printf(GREEN"%s\n"RESET, query);
             /////////////////////////////////////////////////////
 
             /////////// INSERT ZONE LEVELS //////////////
@@ -73,8 +76,11 @@ void save_zones(Game *game, sqlite3** conn) {
                             game->zoneList[i]->levelList[j][k]->nbMonsters,
                             game->zoneList[i]->levelList[j][k]->finished,
                             j, k,
-                            game->zoneList[i]->map[i][j]
+                            game->zoneList[i]->map[j][k]
                     );
+
+                    //printf(BLUE"%s\n"RESET, query);
+
                     if(!prepare_and_exec_query(conn, query)) {
                         printf("\nFailed to prepare/execute query to insert all levels in zone %d.\n", game->zoneList[i]->id);
                         exit(1);
@@ -118,6 +124,8 @@ void save_zones(Game *game, sqlite3** conn) {
                             printf("\nFailed to prepare/execute query to add monsters in level %d.\n", level_id);
                             exit(1);
                         }
+
+                        //printf(RED"%s\n"RESET, query);
 
                         current = current->next;
                     }

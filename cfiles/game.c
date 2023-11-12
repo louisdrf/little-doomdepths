@@ -20,7 +20,7 @@
 #include "../headers/free/free_player.h"
 #include "../headers/free/free_zones.h"
 
-#define DEBUG false
+#define DEBUG true
 
 Game *init_game(int save_id) {
 
@@ -33,6 +33,7 @@ Game *init_game(int save_id) {
     }
     game->id = save_id;
     game->display_zones_index = 0;
+    game->isRunning = true;
 
         // INIT ALL THE GAME ZONES
        init_zones(game);
@@ -60,6 +61,7 @@ void launch_new_game(int save_id) {
     game = init_game(save_id);                                          // init la partie et les niveaux
     player = init_player(game);
 
+    printf("init player\n");
     launch_loop(game, player);
 
     free_player(player);

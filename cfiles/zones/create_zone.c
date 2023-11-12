@@ -9,25 +9,27 @@
 #include "../../headers/init/init_level.h"
 
 
-Zone *create_zone(Game *game,int i, double multiplicator) {
+Zone *create_zone(Game *game, int id, double multiplicator) {
 
     Zone *zone = malloc(sizeof(Zone));
-
     Map *map = init_random_map_dimensions(0,0);
+
     int **tab = calloc(map->height, sizeof(int *));
-    for (int a = 0; a < map->height; a++) {
+    for (int a = 0; a < map->height; a++)
+    {
         tab[a] = calloc(map->width, sizeof(int));
     }
-    if(i==0){
+
+    if(id == 0) {
 
         map = init_random_map_dimensions(0,0);
 
-    } else{
-        Zone *log_zone=game->zoneList[i-1];
+    } else {
+        Zone *log_zone=game->zoneList[id-1];
         for(int i = 0; i < log_zone->height; i++) {
             for(int j = 0; j < log_zone->width; j++) {
 
-                if(log_zone->map[i][j]==2){
+                if(log_zone->map[i][j] == 2){
                     map = init_random_map_dimensions(i,j);
                 }
             }
@@ -55,6 +57,7 @@ Zone *create_zone(Game *game,int i, double multiplicator) {
                     levelList[i][j] = init_level_boss(index,multiplicator);            // creer un niveau avec son id
 
                     index++;
+
                     }else {
                         levelList[i][j] = NULL;
                     }
@@ -63,16 +66,22 @@ Zone *create_zone(Game *game,int i, double multiplicator) {
 
             for(int i = 0; i < map->height; i++) {
                 for(int j = 0; j < map->width; j++) {
-                    tab[i][j]=map->map[i][j];
-
+                    tab[i][j] = map->map[i][j];
+                    printf("%d ", tab[i][j]);
                 }
+                printf("\n");
             }
+        printf("\n");
+
+
                 if (levelList != NULL) {
                     zone->levelList = levelList;
                     zone->height = map->height;
                     zone->width = map->width;
                 }
+
                 zone->map=tab;
+
             for (int i = 0; i < map->height; i++) {
                 free(map->map[i]);
             }
