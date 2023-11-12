@@ -37,8 +37,10 @@ void launch_loop(Game *game, Player *player) {
         check_quests(player);
 
 
-        if(player->turn)
+        if(player->turn && player->attacks_left != 0)
         {
+            if((player->mana + 2) <= player->mana_max) player->mana += 2;
+
             if(are_all_monsters_dead(player) == 1)              // retourne 1 si tous les monstres du niveau sont morts et passe le joueur au niveau supérieur
             {
                 if(!player->current_level->finished) {
@@ -46,6 +48,7 @@ void launch_loop(Game *game, Player *player) {
                     display_next_level_menu();
                     player->current_level->finished = true;
                     player->nbLevelFinished++;
+                    player->attacks_left = player->attacks_by_turn;
                 }
                 display_player_zone(player, game);
                 moveEntry = getch();

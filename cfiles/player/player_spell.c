@@ -4,6 +4,8 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/player/player_spell.h"
 #include "../../headers/monsters/monster.h"
+#include "../../headers/includes/colors.h"
+#include "../../headers/utils.h"
 #include <conio.h>
 #include <stdio.h>
 
@@ -60,6 +62,15 @@ int get_first_spell_free_space(Player *player) {
 
 
 void spell_damage(Player *player, int idMonster, Spell *spell) {
+
+    if((player->mana - spell->mana_cost) < 0) {
+        clear();
+        printf(RED"Vous n'avez pas assez de mana pour utiliser ce sort.\n\n"RESET);
+        printf("Pressez n'importe quelle touche...\n");
+        getch();
+        return;
+    }
+
     Monster *target = getTargetMonster(player, idMonster);
     if((target->lifepoints) - (spell->value * 5) <= 0) {
         target->lifepoints = 0;
@@ -74,34 +85,58 @@ void spell_damage(Player *player, int idMonster, Spell *spell) {
 }
 
 
-void spell_aoe(Player *player,Spell *spell){
+void spell_aoe(Player *player,Spell *spell) {
+
+    if((player->mana - spell->mana_cost) < 0) {
+        clear();
+        printf(RED"Vous n'avez pas assez de mana pour utiliser ce sort.\n\n"RESET);
+        printf("Pressez n'importe quelle touche...\n");
+        getch();
+        return;
+    }
+
     Monster *current = player->current_level->monsters;
     int i = 0;
     while (current != NULL && i<NBMONSTERS_MAX) {
         if(current->isAlive) {
-            if((current->lifepoints)- spell->value*3 <= 0) {
+            if((current->lifepoints) - (spell->value * 3) <= 0) {
                 current->lifepoints = 0;
                 current->isAlive = false;
                 player->gold += current->loot_gold;
             }
-            else current->lifepoints-=spell->value*3;
-            printf("Vous infligez %d points de degats a %s (%d/%d)\n", spell->value*5, monster_string[current->monster_type], current->lifepoints, current->lifepoints_max);
+            else current->lifepoints -= (spell->value * 3);
+            //printf("Vous infligez %d points de degats a %s (%d/%d)\n", spell->value*5, monster_string[current->monster_type], current->lifepoints, current->lifepoints_max);
             i++;
         }
         current = current->next;
     }
-    player->mana-=spell->mana_cost;
+    player->mana -= spell->mana_cost;
     player->attacks_left--;
     if(player->attacks_left == 0) player->turn = false;
 }
 
 
-void spell_heal(Player *player,Spell *spell){
-    if((player->lifepoints + spell->value*5) >= player->lifepoints_max) player->lifepoints = 100;
-    else player->lifepoints += spell->value*5;
-    printf("\nVous recuperez %d points de vie.\n",spell->value*5);
+void spell_heal(Player *player, Spell *spell) {
 
-    player->mana-=spell->mana_cost;
+    if(player->lifepoints == player->lifepoints_max) {
+        clear();
+        printf(RED"Vos points de vie sont deja au maximum.\n\n"RESET);
+        printf("Pressez n'importe quelle touche...\n");
+        getch();
+        return;
+    }
+    if((player->mana - spell->mana_cost) < 0) {
+        clear();
+        printf(RED"Vous n'avez pas assez de mana pour utiliser ce sort.\n\n"RESET);
+        printf("Pressez n'importe quelle touche...\n");
+        getch();
+        return;
+    }
+
+    if((player->lifepoints + (spell->value * 5)) > player->lifepoints_max) player->lifepoints = player->lifepoints_max;
+    else player->lifepoints += (spell->value * 5);
+
+    player->mana -= spell->mana_cost;
     player->attacks_left--;
     if(player->attacks_left == 0) player->turn = false;
 }
