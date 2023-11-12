@@ -51,8 +51,7 @@ void load_levels(Game *game, int zone_id, sqlite3 **conn) {
                 game->zoneList[zone_id]->levelList[i][j]->nbMonsters = sqlite3_column_int(res, 2);   // nombre de monstres dans le niveau
                 game->zoneList[zone_id]->levelList[i][j]->finished = sqlite3_column_int(res, 3);     // niveau terminé ou non
                 game->zoneList[zone_id]->levelList[i][j]->id = level_id;
-
-                game->zoneList[zone_id]->map[i][j] = 1;
+                game->zoneList[zone_id]->map[i][j] = sqlite3_column_int(res, 7);
 
                 load_level_monsters(game->zoneList[zone_id]->levelList[i][j], game->id, i, j, zone_id, conn);
                 level_id++;

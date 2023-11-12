@@ -51,7 +51,9 @@ Zone *create_zone(Game *game, double multiplicator) {
                     zone->height = map->height;
                     zone->width = map->width;
                 }
+
             zone->map=tab;
+
             for (int i = 0; i < map->height; i++) {
                 free(map->map[i]);
             }
