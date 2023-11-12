@@ -225,11 +225,21 @@ int legendary_weapon_passive(Player *player, Monster *target, int current_attack
             current_attack_strength = current_attack_strength * 2;
         }
     }
+
     if(strcmp(player->current_weapon->name,"Lame du conquerant immortel") == 0) {
-        player->lifepoints += (current_attack_strength / 2);
+        if((player->lifepoints + (current_attack_strength / 2)) > player->lifepoints_max) {
+            player->lifepoints = player->lifepoints_max;
+        }
+        else player->lifepoints += (current_attack_strength / 2);
     }
+
     if(strcmp(player->current_weapon->name,"Furie cosmique") == 0) {
-        player->mana += current_attack_strength;
+
+        if((player->mana + (current_attack_strength / 2)) > player->mana_max) {
+            player->mana = player->mana_max;
+        }
+        else player->mana += (current_attack_strength / 2);
+
     }
     if(strcmp(player->current_weapon->name,"Frappe du champion legendaire") == 0) {
         if(target->next != NULL) {
