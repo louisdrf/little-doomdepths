@@ -38,8 +38,7 @@ void launch_loop(Game *game, Player *player) {
 
             if(are_all_monsters_dead(player) == 1)              // retourne 1 si tous les monstres du niveau sont morts et passe le joueur au niveau supérieur
             {
-                getPotion(player);
-                player->shield = 0;
+
                 if(player->current_zone->map[player->currentX][player->currentY]==2){
                     player->current_zone->map[player->currentX][player->currentY]=3;
                     player->current_zone=game->zoneList[player->current_zone->id+1];
@@ -52,6 +51,7 @@ void launch_loop(Game *game, Player *player) {
                     moveEntry = getch();
                     printf("move %c",moveEntry);
                     updateMovement(player,moveEntry,game);
+
                 }
             } else{
                 display_all(player); // affichage
@@ -81,6 +81,10 @@ void launch_loop(Game *game, Player *player) {
                 if(playerEntry > 9 || playerEntry < 1) continue;
 
                 player_attack(player, playerEntry);        // le joueur attaque le monstre dont l'id est passé en argument
+                if(are_all_monsters_dead(player) == 1){
+                    getPotion(player);
+                    player->shield = 0;
+                }
             }
 
         }
