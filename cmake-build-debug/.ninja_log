@@ -93,3 +93,6 @@
 144	413	7214953320007431	doom.exe	effed438e12f5180
 7	124	7214954837406559	CMakeFiles/doom.dir/cfiles/saves/create-save/save_player_quests.c.obj	93bb64549d86e132
 125	371	7214954839803706	doom.exe	effed438e12f5180
+28	197	7214959617960669	CMakeFiles/doom.dir/cfiles/saves/create-save/save_player_quests.c.obj	93bb64549d86e132
+10	199	7214959617980617	CMakeFiles/doom.dir/cfiles/saves/create-save/save_inventory.c.obj	2036494d88a7754f
+200	457	7214959620509201	doom.exe	effed438e12f5180
