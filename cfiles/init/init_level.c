@@ -80,8 +80,8 @@ Level *init_level_boss(int id, double multiplicator) {
         printf("Monster %d in level %d correctly added.\n", j, level->id);
 #endif
     }
-
     level->monsters = first_monster; // ajoute la tete de liste de monstres au niveau
+    reverseMonsterList(level->monsters);
 
 
     // Initialise le tableau loot_weapon avec des pointeurs NULL

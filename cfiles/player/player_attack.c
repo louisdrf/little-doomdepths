@@ -3,10 +3,12 @@
 //
 
 #include <conio.h>
+#include <string.h>
 #include "../../headers/player/player_attack.h"
 #include "../../headers/monsters/monster.h"
 #include "../../headers/utils.h"
 #include "../../headers/player/player.h"
+#include "../../headers/weapon/init_weapon.h"
 
 #define DEBUG false
 
@@ -24,13 +26,17 @@ bool player_attack(Player *player, int idMonster) {
 
 
     if(player->current_weapon != NULL && (player->mana - player->current_weapon->mana_cost) >= 0) {
+
         current_attack_strength = random_int((player->current_weapon->min_strength) , (player->current_weapon->max_strength));     // si le joueur a une arme équipée et suffisamment de mana pour attaquer
+        if(player->current_weapon->rarity == LEGENDARY) {
+            current_attack_strength = legendary_weapon_passive(player, target, current_attack_strength);
+        }
     }
     else {
         current_attack_strength = random_int((player->min_strength) , (player->max_strength));                                     // sinon le joueur attaque à mains nues
     }
 
-    if(target->monster_type!=4) {//passif berserker du boss minotaure
+    if(target->monster_type!=4) { //passif berserker du boss minotaure
         if((target->lifepoints) - current_attack_strength <= 0) {
             target->lifepoints = 0;
             target->isAlive = false;

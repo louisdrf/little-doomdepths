@@ -9,6 +9,7 @@
 #include "../../headers/includes/colors.h"
 #include "../../headers/utils.h"
 #include "../../headers/weapon/init_random_weapon_name.h"
+#include "../../headers/player/player_attack.h"
 
 #define DEBUG false
 
@@ -213,4 +214,35 @@ void display_rarity(int rarity) {
             printf(YELLOW"*legendaire*"RESET);
             break;
     }
+}
+
+
+
+int legendary_weapon_passive(Player *player, Monster *target, int current_attack_strength) {
+
+    if(strcmp(player->current_weapon->name,"Epee du seigneur divin") == 0) {
+        if(target->monster_type == 0 || target->monster_type == 1 || target->monster_type == 2 || target->monster_type == 5) {
+            current_attack_strength = current_attack_strength * 2;
+        }
+    }
+    if(strcmp(player->current_weapon->name,"Lame du conquerant immortel") == 0) {
+        player->lifepoints += (current_attack_strength / 2);
+    }
+    if(strcmp(player->current_weapon->name,"Furie cosmique") == 0) {
+        player->mana += current_attack_strength;
+    }
+    if(strcmp(player->current_weapon->name,"Frappe du champion legendaire") == 0) {
+        if(target->next != NULL) {
+            player_attack(player,target->next->id);
+        }
+    }
+    if(strcmp(player->current_weapon->name,"Lame de la destinee") == 0) {
+        int rand = (int)(random_int(0, 10));
+        if(rand == 10) {
+            current_attack_strength *= 50;
+        }
+    }
+
+    return current_attack_strength;
+
 }

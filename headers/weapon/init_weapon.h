@@ -15,5 +15,6 @@ Weapon *randomWeapon();
 void display_weapon_stats(Weapon *weapon);
 void display_rarity(int rarity);
 void equip_weapon(Player *player, Weapon *w);
+int legendary_weapon_passive(Player *player, Monster *target, int current_attack_strength);
 
 #endif //DOOM_CREATE_WEAPON_H

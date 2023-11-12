@@ -5,6 +5,7 @@
 #ifndef DOOM_UTILS_H
 #define DOOM_UTILS_H
 #include <stdlib.h>
+#include "includes/structs.h"
 
 int random_int(int min, int max);
 void clear();
