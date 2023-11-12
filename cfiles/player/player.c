@@ -6,12 +6,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+
 #include <conio.h>
 #include "../../headers/player/player.h"
+#include "../../headers/includes/structs.h"
 #include "../../headers/init/init_inventory.h"
 #include "../../headers/init/init_spell.h"
 #include "../../headers/inventory/inventory.h"
 #include "../../headers/weapon/init_weapon.h"
+#include "../../headers/inventory/potion.h"
+#include "../../headers/monsters/monster_sprite.h"
 #include "../../headers/armor/init_armor.h"
 #include "../../headers/quests/create_quests.h"
 #include "../../headers/player/player_spell.h"
@@ -78,6 +82,10 @@ Player *init_player(Game *game) {
         player->current_zone = game->zoneList[0];
         player->current_level = game->zoneList[0]->levelList[player->currentX][player->currentY];      // joueur initialisé au premier niveau de la premiere zone
 
+
+    #if DEBUG
+        print_player_stats(player);
+    #endif
 
     if(player == NULL) {
         #if DEBUG
@@ -264,8 +272,9 @@ void updateMovement(Player *player, char command, Game* game) {
     }
 
 
-    if(zone->map[player->currentX][player->currentY]==1  ){
+    if(zone->map[player->currentX][player->currentY]==1 || zone->map[player->currentX][player->currentY]==2 ){
         player->current_level=zone->levelList[player->currentX][player->currentY];
+
     }
     else if(zone->map[player->currentX][player->currentY]==3 ){
         player->current_zone=game->zoneList[player->current_zone->id+1];

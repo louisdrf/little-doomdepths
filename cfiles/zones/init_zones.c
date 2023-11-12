@@ -3,6 +3,7 @@
 //
 
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 #include "../../headers/zones/init_zones.h"
 #include "../../headers/zones/create_zone.h"
@@ -21,7 +22,7 @@ void init_zones(Game *game) {
         if(i == 3) multiplicator = 2.;
         if(i == 4) multiplicator = 2.5;
 
-        game->zoneList[i] = create_zone(game, multiplicator);
+        game->zoneList[i] = create_zone(game,i, multiplicator);
         game->zoneList[i]->id = i;
         game->zoneList[i]->finished = false;
         attribute_zone_data(game, i);

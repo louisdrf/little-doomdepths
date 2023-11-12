@@ -13,7 +13,7 @@
 /**
  * return a random dimensions tab full of 0
  */
-Map *init_random_map_dimensions() {
+Map *init_random_map_dimensions(int x, int y) {
 
     Map *map = malloc(sizeof(Map));
 
@@ -28,8 +28,7 @@ Map *init_random_map_dimensions() {
     }
 
 
-    int x = 0;
-    int y = 0;
+
     map->map[x][y] = 1;
     int k = 1;
 
@@ -74,13 +73,15 @@ Map *init_random_map_dimensions() {
 
             if (attempts > max_attempts) {
                 // Si le nombre de tentatives dépasse le seuil, réinitialiser les coordonnées
-                    x = 0;
-                    y = 0;
+                x = 0;
+                y = 0;
                 attempts = 0; // Réinitialiser le compteur de tentatives
             }
             continue;
         }
-
+        if(k == path_length){
+            map->map[x][y] = 2;
+        }
     } while (k != path_length);
 
 

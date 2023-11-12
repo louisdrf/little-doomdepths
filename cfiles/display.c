@@ -134,7 +134,51 @@ void display_player_health(Player *player) {
     printf("\n");
 
 }
+void display_monster_health(Monster *monster) {
+    double lifepoints=monster->lifepoints;
+    double lifepoints_max=monster->lifepoints_max;
+    int i = 0;
+    double hp=lifepoints/lifepoints_max;
+    double result=hp*20;
+    while(i < (hp*20)) {
+        printf(RED "#");
+        i++;
+    }
+    while(i < 20) {
+        printf("-");
+        i++;
+    }
 
+    printf(RESET);
+
+}
+void display_boss_health(Monster *monster) {
+    double lifepoints=monster->lifepoints;
+    double lifepoints_max=monster->lifepoints_max;
+    int i = 0;
+    int j = 0;
+    double hp=lifepoints/lifepoints_max;
+    double result=hp*20;
+    while(i < (hp*100)) {
+        printf(RED "#");
+        i++;
+    }
+    while(i < 100) {
+        printf("-");
+        i++;
+    }
+    printf("\n");
+    while(j < (hp*100)) {
+        printf(RED "#");
+        j++;
+    }
+    while(j < 100) {
+        printf("-");
+        j++;
+    }
+    printf(RESET);
+
+}
 void display_player_mana(Player *player) {
 
     int i = 0;
@@ -194,6 +238,7 @@ void display_monsters_alive(Monster *head) {
 
 void display_next_level_menu() {
 
+    int playerEntry;
 
     printf("\n\n");
     printf(GREEN"____    ____  ______    __    __     ____    __    ____  ______   .__   __.     __  \n"

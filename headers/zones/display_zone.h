@@ -9,6 +9,7 @@
 
 void display_player_zone(Player *player, Game *game);
 void display_player_all_zone(Player *player, Game *game);
+void display_map_zone(Zone* zone, Player* player);
 void display_all_zones(Player *player, Game *game);
 void display_zone(Zone *zone);
 

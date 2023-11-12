@@ -3,9 +3,12 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <conio.h>
 #include "../../headers/display.h"
 #include "../../headers/zones/display_zone.h"
+#include "../../headers/includes/structs.h"
 #include "../../headers/includes/colors.h"
 #include "../../headers/utils.h"
 
@@ -21,6 +24,15 @@ void display_player_zone(Player *player, Game *game) {
             "                  ",
             "                  ",
             "                  "
+    };
+    char *strais_cell[NBLINES] = {
+            "*-----------------*",
+            "|     |_________||",
+            "|    |_________| |",
+            "|   |_________|  |",
+            "|  |_________|   |",
+            "| |_________|____|",
+            "*----------------*"
     };
 
     char *level_cell[NBLINES] = {
@@ -42,20 +54,27 @@ void display_player_zone(Player *player, Game *game) {
             "|    \\__| |__/    |",
             "*-----------------*"
     };
-
+    int playerEntry;
+    int j = 0;
+    int i = 0;
     clear();
     printf("\n");
 
-    for (int i = 0; i < player->current_zone->height; i++) {
+    for (i = 0; i < player->current_zone->height; i++) {
 
         for (int line = 0; line < NBLINES; line++) { // 7 lignes dans level_cell ou void_cell
-            for (int j = 0; j < player->current_zone->width; j++) {
-                if (player->current_zone->levelList[i][j] != NULL) {
+            for (j = 0; j < player->current_zone->width; j++) {
+                if (player->current_zone->map[i][j] != 0) {
 
-                        if(player->current_level == player->current_zone->levelList[i][j]) {        // afficher en rouge le niveau où se situe le joueur
-                            printf(BLUE"%s"RESET, player_cell[line]);
-                        }
-                        else printf(RED"%s"RESET, level_cell[line]);
+                    if(player->current_level == player->current_zone->levelList[i][j]) {        // afficher en rouge le niveau où se situe le joueur
+                        printf(BLUE"%s"RESET, player_cell[line]);
+                    }
+                    else if(player->current_zone->map[i][j]==2){
+                        printf(GREEN"%s"RESET, strais_cell[line]);
+                    }
+                    else{
+                        printf(RED"%s"RESET, level_cell[line]);
+                    }
 
                 } else {
                     printf("%s", void_cell[line]);
@@ -87,6 +106,7 @@ void display_player_all_zone(Player *player, Game *game) {
         default:
             display_player_all_zone(player, game);
     }
+
 }
 
 

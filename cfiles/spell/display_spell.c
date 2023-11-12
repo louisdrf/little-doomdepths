@@ -4,6 +4,7 @@
 #include "../../headers/includes/structs.h"
 #include "../../headers/player/player_spell.h"
 #include "../../headers/spell/display_spell.h"
+#include "../../headers/monsters/monster.h"
 #include "../../headers/includes/colors.h"
 #include <stdlib.h>
 #include <conio.h>

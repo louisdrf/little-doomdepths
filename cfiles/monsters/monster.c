@@ -2,14 +2,17 @@
 // Created by louis on 24/09/2023.
 //
 
+#include <stdlib.h>
 #include <stdio.h>
 #include <conio.h>
 #include "../../headers/monsters/monster.h"
 #include "../../headers/includes/colors.h"
 #include "../../headers/monsters/display_monster_loot.h"
 #include "../../headers/utils.h"
-
+#include "../../headers/includes/structs.h"
+#include "../../headers/init/init_monster.h"
 #define DEBUG false
+
 
 /**
  * return 1 if all monsters are dead, else return 0
@@ -67,6 +70,18 @@ int monsters_attack(Player *player) {
 
         if(current->isAlive)
         {
+                if(current->monster_type==5){
+                    Monster *first = player->current_level->monsters;
+                    for(int j = 1; j < player->current_level->nbMonsters + 1; j++) {
+                        if(j!=1) {
+                            if(first->isAlive){
+                            first->lifepoints = first->lifepoints_max;
+                            }
+
+                        }
+                        first=first->next;
+                    }
+                }
                 while(current->attacks_left > 0)                                                // tant que le monstre peut jouer il attaque
                 {
                     damages = random_int(current->min_strength, current->max_strength);           // degats du monstre au joueur

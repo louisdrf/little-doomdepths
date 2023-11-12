@@ -9,14 +9,30 @@
 #include "../../headers/init/init_level.h"
 
 
-Zone *create_zone(Game *game, double multiplicator) {
+Zone *create_zone(Game *game,int i, double multiplicator) {
 
     Zone *zone = malloc(sizeof(Zone));
 
-    Map *map = init_random_map_dimensions();
+    Map *map = init_random_map_dimensions(0,0);
     int **tab = calloc(map->height, sizeof(int *));
-    for (int i = 0; i < map->height; i++) {
-        tab[i] = calloc(map->width, sizeof(int));
+    for (int a = 0; a < map->height; a++) {
+        tab[a] = calloc(map->width, sizeof(int));
+    }
+    if(i==0){
+
+        map = init_random_map_dimensions(0,0);
+
+    } else{
+        Zone *log_zone=game->zoneList[i-1];
+        for(int i = 0; i < log_zone->height; i++) {
+            for(int j = 0; j < log_zone->width; j++) {
+
+                if(log_zone->map[i][j]==2){
+                    map = init_random_map_dimensions(i,j);
+                }
+            }
+        }
+
     }
     if(map != NULL) {
 
@@ -34,7 +50,12 @@ Zone *create_zone(Game *game, double multiplicator) {
                     if (map->map[i][j] == 1) {
                         levelList[i][j] = init_level(index, multiplicator);            // creer un niveau avec son id
                         index++;
-                    } else {
+                    }  else if(map->map[i][j] == 2){
+
+                    levelList[i][j] = init_level_boss(index);            // creer un niveau avec son id
+
+                    index++;
+                    }else {
                         levelList[i][j] = NULL;
                     }
                 }
@@ -51,7 +72,7 @@ Zone *create_zone(Game *game, double multiplicator) {
                     zone->height = map->height;
                     zone->width = map->width;
                 }
-            zone->map=tab;
+                zone->map=tab;
             for (int i = 0; i < map->height; i++) {
                 free(map->map[i]);
             }

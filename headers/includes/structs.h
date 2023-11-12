@@ -15,6 +15,9 @@ enum rarity {
     EPIC,
     LEGENDARY
 };
+static const char *monster_string[] = {
+        "GRIM", "SKELETON", "GHOST", "DRAGON","MINOTAURE","LICH"
+};
 enum spell_type {
     HEAL,
     DAMAGE,
@@ -26,11 +29,12 @@ enum monster_type {
     GRIM,
     SKELETON,
     GHOST,
-    DRAGON
+    DRAGON,
+    BOSS_MINOTAURE,
+    BOSS_LICH,
+
 };
-static const char *monster_string[] = {
-        "GRIM", "SKELETON", "GHOST", "DRAGON",
-};
+
 typedef struct {
 
     unsigned short          id;
@@ -129,7 +133,7 @@ typedef struct {
 
 typedef struct {
 
-    int                    limObjects;                                  // limite d'armes ou d'armures que le joueur peut transporter
+    int                    limObjects;                                  // limite d'objets que le joueur peut transporter
     Weapon*                weaponList[NBOBJECTS_MAX];                   // tableaux de ses armes
     Armor*                 armorList[NBOBJECTS_MAX];                    // tableaux de ses Armures
     Potion*                healthPotion;
@@ -191,7 +195,7 @@ typedef struct {
     char*               name;               // nom du joueur
     unsigned short      lifepoints;         // pv restants
     unsigned short      lifepoints_max;     // pv max
-    unsigned short      shield;
+    unsigned short      shield;             // bouclier
     unsigned short      mana;               // mana restant
     unsigned short      mana_max;           // mana max
     unsigned short      min_strength;

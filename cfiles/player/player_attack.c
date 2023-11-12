@@ -30,22 +30,38 @@ bool player_attack(Player *player, int idMonster) {
         current_attack_strength = random_int((player->min_strength) , (player->max_strength));                                     // sinon le joueur attaque à mains nues
     }
 
-
-    if((target->lifepoints) - current_attack_strength <= 0) {
-        target->lifepoints = 0;
-        target->isAlive = false;
-        player->gold += target->loot_gold;
-        player->nbKill++;
-        player->currentXP += target->xp;
-        player->totalXP += target->xp;
-        if(player->currentXP >= player->nextLevelXP) {
-            if(player->levelXP != NB_PLAYER_LEVELS) {
-                next_xp_level(player);
+    if(target->monster_type!=4) {//passif berserker du boss minotaure
+        if((target->lifepoints) - current_attack_strength <= 0) {
+            target->lifepoints = 0;
+            target->isAlive = false;
+            player->gold += target->loot_gold;
+            player->nbKill++;
+            player->currentXP += target->xp;
+            player->totalXP += target->xp;
+            if(player->currentXP >= player->nextLevelXP) {
+                if(player->levelXP != NB_PLAYER_LEVELS) {
+                    next_xp_level(player);
+                }
             }
         }
+        else target->lifepoints -= current_attack_strength;
     }
-    else target->lifepoints -= current_attack_strength;
-
+    else{
+        if ((target->lifepoints) - current_attack_strength <= 0) {
+            if(target->defense>0){
+                target->lifepoints = 1;
+                if ((target->defense) - 5 <= 0) {
+                    target->defense=0;
+                }
+                else target->defense-=5;
+                target->min_strength=target->max_strength;
+            } else{
+                target->lifepoints = 0;
+                target->isAlive = false;
+                player->gold += target->loot_gold;
+            }
+        } else target->lifepoints -= current_attack_strength;
+    }
 
     player->attacks_left--;
     if(player->current_weapon != NULL) {
