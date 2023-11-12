@@ -18,6 +18,9 @@
 #define MIN_MONSTER_XP 20
 #define MAX_MONSTER_XP 50
 
+#define MIN_MONSTER_XP 20
+#define MAX_MONSTER_XP 50
+
 #define NB_BOSS_TYPE 2
 #define BOSS_MAX_PV 80
 #define BOSS_MIN_PV 40

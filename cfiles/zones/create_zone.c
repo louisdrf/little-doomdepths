@@ -52,7 +52,7 @@ Zone *create_zone(Game *game,int i, double multiplicator) {
                         index++;
                     }  else if(map->map[i][j] == 2){
 
-                    levelList[i][j] = init_level_boss(index);            // creer un niveau avec son id
+                    levelList[i][j] = init_level_boss(index,multiplicator);            // creer un niveau avec son id
 
                     index++;
                     }else {

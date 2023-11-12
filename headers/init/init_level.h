@@ -8,7 +8,7 @@
 #include "../includes/structs.h"
 
 Level *init_level(int id, double multiplicator);
-Level *init_level_boss(int id);
+Level *init_level_boss(int id, double multiplicator);
 void next_level(Game *game, Player *player);
 
 #endif //DOOM_INIT_LEVEL_H
