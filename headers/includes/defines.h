@@ -15,6 +15,8 @@
 #define MONSTER_MIN_DEFENSE 4
 #define MAX_GOLD_LOOT 20
 #define MIN_GOLD_LOOT 5
+#define MIN_MONSTER_XP 20
+#define MAX_MONSTER_XP 50
 
 #define NB_BOSS_TYPE 2
 #define BOSS_MAX_PV 80

@@ -95,7 +95,8 @@ CREATE TABLE Level (
                        finished BOOLEAN,
                        player_id INTEGER,
                        height_index INTEGER,
-                       width_index INTEGER
+                       width_index INTEGER,
+                       level_type INTEGER
 );
 
 CREATE TABLE Monster (

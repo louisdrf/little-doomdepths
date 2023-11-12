@@ -148,7 +148,6 @@ void display_spell_section(Player *player, int choice) {
                 printf("\nID du sort\n-> ");
                 choice = getch() - 48;
                 display_spell_use(player,player->book->spell_equipped[choice]);
-                player->attacks_left--;
                 break;
             }
             else {

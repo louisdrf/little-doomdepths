@@ -32,20 +32,20 @@ void save_inventory(Player *player, sqlite3** conn) {
             ///////////////////////////////////////////////////////
 
     // vider l'inventaire du joueur avant de le remplir avec les nouveaux équipements
-    sprintf(query, "DELETE FROM Weapon WHERE inventory_id=%d;", player->id);
+    sprintf(query, "DELETE FROM Weapon WHERE inventory_id=%d and isEquipped IS NOT NULL and quest_id IS NULL;", player->id);
     if(!prepare_and_exec_query(conn, query)) {
         printf("\nFailed to prepare/execute query to delete all weapons in player inventory.\n");
         exit(1);
     }
-    sprintf(query, "DELETE FROM Armor WHERE inventory_id=%d;", player->id);
+    sprintf(query, "DELETE FROM Armor WHERE inventory_id=%d and isEquipped IS NOT NULL and quest_id IS NULL;", player->id);
     if(!prepare_and_exec_query(conn, query)) {
         printf("\nFailed to prepare/execute query to delete all armors in player inventory.\n");
         exit(1);
     }
 
-    int isWeaponEquipped = 0;
-    int isArmorEquipped = 0;
 
+    int isWeaponEquipped;
+    int isArmorEquipped;
 
     /////////////////////////////////////////////////////////////////
     /////////// INSERT ARMORS AND WEAPONS IN INVENTORY //////////////
@@ -53,14 +53,15 @@ void save_inventory(Player *player, sqlite3** conn) {
 
     for(int i = 0; i < NBOBJECTS_MAX; i++)      // insérer les armes/armures dans l'inventaire du joueur
     {
+        isWeaponEquipped = 0;
+        isArmorEquipped = 0;
 
                 if(player->inventory->weaponList[i] != NULL) {
                     if (player->inventory->weaponList[i] == player->current_weapon) isWeaponEquipped = 1;
-
                     /////////// INSERT WEAPONS IN INVENTORY //////////////
 
                         sprintf(query,
-                                "insert into Weapon(inventory_id, weapon_name, min_strength, max_strength, attacks_by_turn, mana_cost, rarity, isEquipped, quest_id)  values (%d, '%s', %d, %d, %d, %d, %d, %d, NULL);",
+                                "insert into Weapon(inventory_id, weapon_name, min_strength, max_strength, attacks_by_turn, mana_cost, rarity, isEquipped)  values (%d, '%s', %d, %d, %d, %d, %d, %d);",
                                 player->id,
                                 player->inventory->weaponList[i]->name,
                                 player->inventory->weaponList[i]->min_strength,
@@ -70,11 +71,12 @@ void save_inventory(Player *player, sqlite3** conn) {
                                 player->inventory->weaponList[i]->rarity,
                                 isWeaponEquipped);
 
+                        //printf("%s\n", query);
+
                     if(!prepare_and_exec_query(conn, query)) {
                         printf("\nFailed to prepare/execute query to insert weapon in player inventory.\n");
                         exit(1);
                     }
-                    isWeaponEquipped = 0;
                 }
 
                 /////////////////////////////////////////////////////////////////
@@ -85,18 +87,19 @@ void save_inventory(Player *player, sqlite3** conn) {
                     /////////// INSERT ARMORS IN INVENTORY //////////////
 
                             sprintf(query,
-                                    "insert into Armor(inventory_id, armor_name, defense, rarity, isEquipped, quest_id)  values (%d, '%s', %d, %d, %d, NULL);",
+                                    "insert into Armor(inventory_id, armor_name, defense, rarity, isEquipped)  values (%d, '%s', %d, %d, %d);",
                                     player->id,
                                     player->inventory->armorList[i]->name,
                                     player->inventory->armorList[i]->defense,
                                     player->inventory->armorList[i]->rarity,
                                     isArmorEquipped);
 
+                   // printf("%s\n", query);
+
                     if(!prepare_and_exec_query(conn, query)) {
                         printf("\nFailed to prepare/execute query to insert armor in player inventory.\n");
                         exit(1);
                     }
-                        isArmorEquipped = 0;
                 }
                 /////////////////////////////////////////////////////////////////
 
