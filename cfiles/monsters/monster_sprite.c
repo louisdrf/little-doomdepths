@@ -300,6 +300,8 @@ char *return_monster_sprite(int type) {
         case BOSS_MINOTAURE:                            // retourne le char* du dragon
             return monster_sprites[BOSS_MINOTAURE];
 
+        case BOSS_LICH:                            // retourne le char* du dragon
+            return monster_sprites[BOSS_LICH];
         default:
             return NULL;
     }
@@ -400,7 +402,43 @@ char **init_monster_sprites()
                          "     /#$# /   \\ %$%\\\n"
                          "    ooooO'     `Ooooo";
 
-
+    char *boss_lich="                                       .\n"
+                    "                                      | |\n"
+                    "                                    | [-] |\n"
+                    "                                      | |\n"
+                    "                                      /|/\n"
+                    "              .'` `'.                /////}\n"
+                    "             /    ,-.\\              //{///\n"
+                    "            /    /:::\\\\            // `||\n"
+                    "            |    |:::||          _//   ||\n"
+                    "            |    |:::||        _///\\   ||\n"
+                    "            |    |:::||       / |/ |   ||\n"
+                    "           /     |:::|/     .'`  \\  |  ||\n"
+                    "          /     |:::| |_.-`    |  \\    ||\n"
+                    "         /|   `\\:::| |        \\   |    ||\n"
+                    "       /` `|   /   | |          |   /  ||\n"
+                    "     |`    \\   |   / /          \\  |   ||\n"
+                    "    |       `\\_|   |/      ,.__. \\ |   ||\n"
+                    "    /                    /`     `\\ ||  ||\n"
+                    "   |           .        /        \\||  ||\n"
+                    "   |                    |         |/  ||\n"
+                    "   /         /          |         (   ||\n"
+                    "  /          .          /          )  ||\n"
+                    " |            \\         |             ||\n"
+                    "/             |         /             ||\n"
+                    "\\            /         |              ||\n"
+                    " `-._       |          /              ||\n"
+                    "  ,//`\\    /`          |              ||\n"
+                    " ///\\  \\  |            \\              ||\n"
+                    "|||| ) |__/            |              ||\n"
+                    "|||| `.(               |              ||\n"
+                    "`\\\\` /`                /              ||\n"
+                    "   /`                  /              ||\n"
+                    "  /                    |              ||\n"
+                    " |                      \\             ||\n"
+                    "/                       |             ||\n"
+                    "__,-.      .-.       ___,'            ||\n"
+                    "     `---'`   `'----'`";
 
 
     monster_sprites_list[GRIM] = malloc(strlen(grim) + 1);
@@ -418,5 +456,7 @@ char **init_monster_sprites()
     monster_sprites_list[BOSS_MINOTAURE] = malloc(strlen(boss_minotaure) + 1);
     strcpy(monster_sprites_list[BOSS_MINOTAURE], boss_minotaure);
 
+    monster_sprites_list[BOSS_LICH] = malloc(strlen(boss_lich) + 1);
+    strcpy(monster_sprites_list[BOSS_LICH], boss_lich);
     return monster_sprites_list;
 }

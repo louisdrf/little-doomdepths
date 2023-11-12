@@ -16,7 +16,7 @@ enum rarity {
     LEGENDARY
 };
 static const char *monster_string[] = {
-        "GRIM", "SKELETON", "GHOST", "DRAGON","MINOTAURE",
+        "GRIM", "SKELETON", "GHOST", "DRAGON","MINOTAURE","LICH"
 };
 enum spell_type {
     HEAL,
@@ -31,6 +31,7 @@ enum monster_type {
     GHOST,
     DRAGON,
     BOSS_MINOTAURE,
+    BOSS_LICH,
 
 };
 

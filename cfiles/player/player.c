@@ -193,6 +193,7 @@ void updateMovement(Player *player, char command,Game* game){
 
     if(zone->map[player->currentX][player->currentY]==1 || zone->map[player->currentX][player->currentY]==2 ){
         player->current_level=zone->levelList[player->currentX][player->currentY];
+
     }
     else if(zone->map[player->currentX][player->currentY]==3 ){
         player->current_zone=game->zoneList[player->current_zone->id+1];

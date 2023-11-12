@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include "../../headers/monsters/monster.h"
 #include "../../headers/includes/structs.h"
-
+#include "../../headers/init/init_monster.h"
 /**
  * return 1 if all monsters are dead, else return 0
  * @param player
@@ -74,6 +74,18 @@ int monsters_attack(Player *player) {
 
         if(current->isAlive)
         {
+                if(current->monster_type==5){
+                    Monster *first = player->current_level->monsters;
+                    for(int j = 1; j < player->current_level->nbMonsters + 1; j++) {
+                        if(j!=1) {
+                            if(first->isAlive){
+                            first->lifepoints = first->lifepoints_max;
+                            }
+
+                        }
+                        first=first->next;
+                    }
+                }
                 while(current->attacks_left > 0)                                                // tant que le monstre peut jouer il attaque
                 {
                     damages = rand() % current->max_strength + current->min_strength;           // degats du monstre au joueur
