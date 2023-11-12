@@ -63,7 +63,7 @@ void save_quest_weapon(int player_id, Quest *quest, sqlite3** conn) {
 
     char query[200];
 
-    sprintf(query, "delete from Weapon where inventory_id=%d and quest_id=%d;", player_id, quest->id);
+    sprintf(query, "delete from Weapon where inventory_id=%d and quest_id=%d and isEquipped IS NULL;", player_id, quest->id);
     if(!prepare_and_exec_query(conn, query)) {
         printf("\nFailed to prepare/execute query to delete quest %d weapon.\n", quest->id);
         exit(1);
@@ -81,6 +81,8 @@ void save_quest_weapon(int player_id, Quest *quest, sqlite3** conn) {
             quest->id
             );
 
+    //printf("%s\n", query);
+
         if(!prepare_and_exec_query(conn, query)) {
             printf("\nFailed to prepare/execute query to insert quest %d weapon.\n", quest->id);
             exit(1);
@@ -93,7 +95,7 @@ void save_quest_armor(int player_id, Quest *quest, sqlite3** conn) {
 
     char query[200];
 
-    sprintf(query, "delete from Armor where inventory_id=%d and quest_id=%d;", player_id, quest->id);
+    sprintf(query, "delete from Armor where inventory_id=%d and quest_id=%d and isEquipped IS NULL;", player_id, quest->id);
     if(!prepare_and_exec_query(conn, query)) {
         printf("\nFailed to prepare/execute query to delete quest %d armor.\n", quest->id);
         exit(1);
@@ -106,6 +108,8 @@ void save_quest_armor(int player_id, Quest *quest, sqlite3** conn) {
             quest->armorReward->defense,
             quest->armorReward->rarity,
             quest->id);
+
+    //printf("%s\n", query);
 
     if(!prepare_and_exec_query(conn, query)) {
         printf("\nFailed to prepare/execute query to insert quest %d armor.\n", quest->id);
