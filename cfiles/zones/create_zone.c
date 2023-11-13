@@ -67,11 +67,17 @@ Zone *create_zone(Game *game, int id, double multiplicator) {
             for(int i = 0; i < map->height; i++) {
                 for(int j = 0; j < map->width; j++) {
                     tab[i][j] = map->map[i][j];
+#if DEBUG
                     printf("%d ", tab[i][j]);
+#endif
                 }
+#if DEBUG
                 printf("\n");
+#endif
             }
+#if DEBUG
         printf("\n");
+#endif
 
 
                 if (levelList != NULL) {

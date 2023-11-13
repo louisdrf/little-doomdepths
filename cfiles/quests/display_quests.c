@@ -230,6 +230,8 @@ void get_weapon_quest_reward(Quest *quest, Player *player) {
                     remove_weapon_inventory(player, player->current_weapon);
                     add_item(player, player->current_weapon, NULL);
                 }
+                else add_item(player, quest->weaponReward, NULL);
+
                 equip_weapon(player, quest->weaponReward);
                 quest->claimedWeapon = true;
                 break;
@@ -263,6 +265,8 @@ void get_armor_quest_reward(Quest *quest, Player *player) {
                     remove_armor_inventory(player, player->current_armor);
                     add_item(player, NULL, player->current_armor);
                 }
+                else add_item(player, NULL, quest->armorReward);
+
                 player->current_armor = quest->armorReward;
                 player->defense = quest->armorReward->defense;
 

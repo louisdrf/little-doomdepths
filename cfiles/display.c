@@ -82,8 +82,8 @@ int display_play_or_destroy_save(int save_id) {
 void display_all(Player *player) {
     display_player_ath(player);
     print_monsters(player);
-    display_monsters_alive(player->current_level->monsters);
-    printf(CYAN"\nequipments (e)      inventory (i)      spell (s)      stats (c)     loot(l)\n"
+    //display_monsters_alive(player->current_level->monsters);
+    printf(CYAN"\n\nequipments (e)      inventory (i)      spell (s)      stats (c)     loot(l)\n"
                         "quests     (j)      map       (m)      save  (x)      exit  (q)\n"RESET);
 }
 

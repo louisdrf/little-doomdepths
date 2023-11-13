@@ -9,7 +9,7 @@
 #include <string.h>
 #include <stdio.h>
 
-#define DEBUG true
+#define DEBUG false
 
 Spell *create_random_spell(Spell *head, int index) {
 

@@ -94,7 +94,7 @@ void save_inventory(Player *player, sqlite3** conn) {
                                     player->inventory->armorList[i]->rarity,
                                     isArmorEquipped);
 
-                   // printf("%s\n", query);
+                    //printf("%s\n", query);
 
                     if(!prepare_and_exec_query(conn, query)) {
                         printf("\nFailed to prepare/execute query to insert armor in player inventory.\n");

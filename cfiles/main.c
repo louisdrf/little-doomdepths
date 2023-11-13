@@ -21,8 +21,7 @@ int main() {
 
     display_init_menu();
 
-    choice = getch();
-    choice -= 48;
+    choice = getch() - 48;
 
     switch(choice) {
 
