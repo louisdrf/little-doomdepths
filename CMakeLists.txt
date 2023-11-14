@@ -132,5 +132,7 @@ add_executable(doom cfiles/main.c
         headers/free/free_player.h
         cfiles/free/free_zones.c
         headers/free/free_zones.h
+        cfiles/zones/generate_chests.c
+        headers/zones/generate_chests.h
 )
 

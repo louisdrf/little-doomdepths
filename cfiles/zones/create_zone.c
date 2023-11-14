@@ -51,12 +51,18 @@ Zone *create_zone(Game *game, int id, double multiplicator) {
                 for (int j = 0; j < map->width; j++) {
 
                     switch(map->map[i][j]) {
-                        case 1:
+                        case LEVEL:
                             levelList[i][j] = init_level(index, multiplicator);            // creer un niveau avec son id
                             break;
 
-                        case 2:
+                        case BOSS:
                             levelList[i][j] = init_level_boss(index,multiplicator);            // creer un niveau avec son id
+                            break;
+
+                        case CHEST:
+                            break;
+
+                        case SHOP:
                             break;
 
                         default:

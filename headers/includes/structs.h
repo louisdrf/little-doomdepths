@@ -15,9 +15,11 @@ enum rarity {
     EPIC,
     LEGENDARY
 };
+
 static const char *monster_string[] = {
         "GRIM", "SKELETON", "GHOST", "DRAGON","MINOTAURE","LICH"
 };
+
 enum spell_type {
     HEAL,
     DAMAGE,
@@ -25,6 +27,7 @@ enum spell_type {
     AOE,
     BUFF_SPEED,
 };
+
 enum monster_type {
     GRIM,
     SKELETON,
@@ -33,6 +36,14 @@ enum monster_type {
     BOSS_MINOTAURE,
     BOSS_LICH,
 
+};
+
+enum level_type {
+    VOID,
+    LEVEL,
+    BOSS,
+    CHEST,
+    SHOP
 };
 
 typedef struct {
@@ -87,10 +98,9 @@ struct Monster {
 typedef struct {
 
     unsigned short           id;                                        // niveau 1, 2, 3...
+    unsigned short           level_type;                                // chest, level, boss...
     Monster*                 monsters;                                  // liste chainée de monstres
     unsigned short           nbMonsters;                                // nb de monstres de la partie
-    //Weapon*                  loot_weapon[MAX_LEVEL_LOOT_ITEM];          // arme lootable sur le niveau
-    //Armor*                   loot_armor[MAX_LEVEL_LOOT_ITEM];
     unsigned int             loot_gold;                                 // gold lootable sur le niveau
     bool                     finished;                                  // true si le niveau a été fini
 

@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include "../../headers/zones/generate_random_map.h"
 #include "../../headers/utils.h"
+#include "../../headers/zones/generate_chests.h"
 
 #define DEBUG false
 
@@ -83,6 +84,9 @@ Map *init_random_map_dimensions(int x, int y) {
             map->map[x][y] = 2;
         }
     } while (k != path_length);
+
+
+    generate_chests(map);
 
 
 #if DEBUG
