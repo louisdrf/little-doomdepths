@@ -11,6 +11,12 @@
 
 #define DEBUG false
 
+#define UP 0
+#define DOWN 1
+#define LEFT 2
+#define RIGHT 3
+
+
 /**
  * return a random dimensions tab full of 0
  */
@@ -21,72 +27,53 @@ Map *init_random_map_dimensions(int x, int y) {
     map->height = random_int(NBLEVELX_MIN, NBLEVELX_MAX);
     map->width = random_int(NBLEVELX_MIN, NBLEVELX_MAX);;
 
-    int path_length = (int)((map->height * map->width) * 0.8);
-
     map->map = calloc(map->height, sizeof(int*));
     for (int i = 0; i < map->height; i++) {
         map->map[i] = calloc(map->width, sizeof(int));
     }
 
 
+    int path_length = (int)((map->height * map->width) * 0.8);
 
-    map->map[x][y] = 1;
+    map->map[x][y] = LEVEL;
     int k = 1;
 
-    int attempts = 0;
-    int max_attempts = 20;
-
-
     do {
-        // Choisir une direction aléatoire (0: haut, 1: bas, 2: gauche, 3: droite)
-        int direction = rand() % 4;
+            int direction = random_int(0, 3);
 
-        if (direction == 0 && y > 0) {
-            y--;
-            if(map->map[x][y] == 0) {
-                map->map[x][y] = 1;
-                k++;
-            }
-        }
-        else if (direction == 1 && y < (map->width - 1)) {
-            y++;
-            if(map->map[x][y] == 0) {
-                map->map[x][y] = 1;
-                k++;
-            }
-        }
-        else if (direction == 2 && x > 0) {
-            x--;
-            if(map->map[x][y] == 0) {
-                map->map[x][y] = 1;
-                k++;
-            }
-        }
-        else if (direction == 3 && x < (map->height - 1)) {
-            x++;
-            if(map->map[x][y] == 0) {
-                map->map[x][y] = 1;
-                k++;
-            }
-        }
-        else {
-            attempts++; // Incrémenter le compteur de tentatives infructueuses
+            switch(direction) {
+                case UP:
+                    if(y > 0)
+                        y--;
+                    break;
 
-            if (attempts > max_attempts) {
-                // Si le nombre de tentatives dépasse le seuil, réinitialiser les coordonnées
-                x = 0;
-                y = 0;
-                attempts = 0; // Réinitialiser le compteur de tentatives
+                case DOWN:
+                    if(y < (map->width - 1))
+                        y++;
+                    break;
+
+                case LEFT:
+                    if(x > 0)
+                        x--;
+                    break;
+
+                case RIGHT:
+                    if(x < (map->height - 1))
+                        x++;
+                    break;
             }
-            continue;
-        }
-        if(k == path_length){
-            map->map[x][y] = 2;
-        }
+
+            if(map->map[x][y] == VOID) {
+                map->map[x][y] = LEVEL;
+                k++;
+            }
+
+            if(k == path_length)
+                map->map[x][y] = BOSS;
+
     } while (k != path_length);
 
-
-    generate_chests(map);
+    //generate_chests(map);
 
 
 #if DEBUG
