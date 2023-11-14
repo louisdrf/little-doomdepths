@@ -8,7 +8,7 @@
 #include "../../headers/zones/generate_random_map.h"
 #include "../../headers/init/init_level.h"
 
-#define DEBUG true
+#define DEBUG false
 
 Zone *create_zone(Game *game, int id, double multiplicator) {
 

@@ -9,7 +9,7 @@
 #include "../../headers/utils.h"
 #include "../../headers/zones/generate_chests.h"
 
-#define DEBUG false
+#define DEBUG true
 
 #define UP 0
 #define DOWN 1
@@ -17,9 +17,6 @@
 #define RIGHT 3
 
 
-/**
- * return a random dimensions tab full of 0
- */
 Map *init_random_map_dimensions(int x, int y) {
 
     Map *map = init_map();
@@ -27,9 +24,10 @@ Map *init_random_map_dimensions(int x, int y) {
 
     int path_length = (int)((map->height * map->width) * 0.8);
     int level_count = 1;
+    int direction;
 
     do {
-            int direction = random_int(0, 3);
+            direction = random_int(0, 3);
 
             switch(direction) {
                 case UP:
@@ -63,8 +61,8 @@ Map *init_random_map_dimensions(int x, int y) {
 
     } while (level_count != path_length);
 
-    //generate_chests(map);
 
+    generate_chests(map);
 
 #if DEBUG
     for(int i = 0; i < map->height; i++) {
