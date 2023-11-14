@@ -24,7 +24,7 @@ Map *init_random_map_dimensions(int x, int y) {
 
     map->map = calloc(map->height, sizeof(int*));
     for (int i = 0; i < map->height; i++) {
-        map->map[i] = calloc(map->width, sizeof(int*));
+        map->map[i] = calloc(map->width, sizeof(int));
     }
 
 

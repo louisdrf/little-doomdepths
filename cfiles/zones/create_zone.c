@@ -49,18 +49,22 @@ Zone *create_zone(Game *game, int id, double multiplicator) {
 
             for (int i = 0; i < map->height; i++) {
                 for (int j = 0; j < map->width; j++) {
-                    if (map->map[i][j] == 1) {
-                        levelList[i][j] = init_level(index, multiplicator);            // creer un niveau avec son id
-                        index++;
-                    }  else if(map->map[i][j] == 2){
 
-                    levelList[i][j] = init_level_boss(index,multiplicator);            // creer un niveau avec son id
+                    switch(map->map[i][j]) {
+                        case 1:
+                            levelList[i][j] = init_level(index, multiplicator);            // creer un niveau avec son id
+                            break;
+
+                        case 2:
+                            levelList[i][j] = init_level_boss(index,multiplicator);            // creer un niveau avec son id
+                            break;
+
+                        default:
+                            levelList[i][j] = NULL;
+                            break;
+                    }
 
                     index++;
-
-                    }else {
-                        levelList[i][j] = NULL;
-                    }
                 }
             }
 
@@ -79,14 +83,13 @@ Zone *create_zone(Game *game, int id, double multiplicator) {
         printf("\n");
 #endif
 
-
                 if (levelList != NULL) {
                     zone->levelList = levelList;
                     zone->height = map->height;
                     zone->width = map->width;
                 }
 
-                zone->map=tab;
+                zone->map = tab;
 
             for (int i = 0; i < map->height; i++) {
                 free(map->map[i]);
