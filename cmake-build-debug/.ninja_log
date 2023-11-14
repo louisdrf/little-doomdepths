@@ -79,3 +79,6 @@
 93	328	7217053285644367	doom.exe	c37c4c5cb1c2e817
 6	101	7217056053727028	CMakeFiles/doom.dir/cfiles/zones/generate_random_map.c.obj	dec1dceef5358954
 101	332	7217056055961419	doom.exe	c37c4c5cb1c2e817
+6	121	7217059560558533	CMakeFiles/doom.dir/cfiles/zones/generate_random_map.c.obj	dec1dceef5358954
+17	123	7217059560558533	CMakeFiles/doom.dir/cfiles/zones/create_zone.c.obj	b999a40c3dd307c9
+123	372	7217059562998906	doom.exe	c37c4c5cb1c2e817

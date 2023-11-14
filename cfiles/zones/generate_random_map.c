@@ -22,21 +22,11 @@
  */
 Map *init_random_map_dimensions(int x, int y) {
 
-    Map *map = malloc(sizeof(Map));
-
-    map->height = random_int(NBLEVELX_MIN, NBLEVELX_MAX);
-    map->width = random_int(NBLEVELX_MIN, NBLEVELX_MAX);;
-
-    map->map = calloc(map->height, sizeof(int*));
-    for (int i = 0; i < map->height; i++) {
-        map->map[i] = calloc(map->width, sizeof(int));
-    }
-
+    Map *map = init_map();
+    map->map[x][y] = LEVEL;
 
     int path_length = (int)((map->height * map->width) * 0.8);
-
-    map->map[x][y] = LEVEL;
-    int k = 1;
+    int level_count = 1;
 
     do {
             int direction = random_int(0, 3);
@@ -65,13 +55,13 @@ Map *init_random_map_dimensions(int x, int y) {
 
             if(map->map[x][y] == VOID) {
                 map->map[x][y] = LEVEL;
-                k++;
+                level_count++;
             }
 
-            if(k == path_length)
+            if(level_count == path_length)
                 map->map[x][y] = BOSS;
 
-    } while (k != path_length);
+    } while (level_count != path_length);
 
     //generate_chests(map);
 
@@ -93,4 +83,24 @@ Map *init_random_map_dimensions(int x, int y) {
         return NULL;
     }
 
+}
+
+
+Map *init_map() {
+
+    Map *map = malloc(sizeof(Map));
+
+    map->height = random_int(NBLEVELX_MIN, NBLEVELX_MAX);
+    map->width = random_int(NBLEVELX_MIN, NBLEVELX_MAX);;
+
+    map->map = calloc(map->height, sizeof(int*));
+    for (int i = 0; i < map->height; i++) {
+        map->map[i] = calloc(map->width, sizeof(int));
+    }
+
+    if(map != NULL) return map;
+    else {
+        fprintf(stderr, "Allocating and init map dimensions failed\n");
+        exit(1);
+    }
 }

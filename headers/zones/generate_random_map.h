@@ -8,5 +8,6 @@
 #include "../includes/structs.h"
 
 Map *init_random_map_dimensions(int x, int y);
+Map *init_map();
 
 #endif //DOOM_GENERATE_RANDOM_MAP_H
