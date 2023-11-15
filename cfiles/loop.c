@@ -62,9 +62,9 @@ void launch_loop(Game *game, Player *player) {
                     next_zone_updates(player, game);
 
                 else {
-                    display_player_zone(player,game);
+                    display_player_zone(player, game);
                     moveEntry = getch();
-                    updateMovement(player,moveEntry,game);
+                    updateMovement(player,moveEntry, game);
                 }
 
             } else {

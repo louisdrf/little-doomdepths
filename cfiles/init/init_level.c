@@ -34,6 +34,10 @@ Level *init_level(int id, double multiplicator, int type) {
     level->finished = false;
     level->level_type = type;
 
+    level->loot_weapon = NULL;
+    level->loot_armor = NULL;
+    level->loot_gold = 0;
+
     // init the linked list of monsters for the level
     Monster *first_monster = NULL;
     level->nbMonsters = random_int(NBMONSTERS_MIN , NBMONSTERS_MAX); // nombre de monstres pour le niveau
@@ -68,6 +72,9 @@ Level *init_level_boss(int id, double multiplicator, int type) {
     level->finished = 0;
     level->level_type = type;
 
+    level->loot_weapon = NULL;
+    level->loot_armor = NULL;
+    level->loot_gold = 0;
 
     level->nbMonsters = 0;
     level->monsters = NULL;

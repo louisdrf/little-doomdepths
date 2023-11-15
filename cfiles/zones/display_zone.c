@@ -25,13 +25,14 @@ void display_player_zone(Player *player, Game *game) {
             "                  ",
             "                  "
     };
-    char *strais_cell[NBLINES] = {
-            "*-----------------*",
-            "|     |_________||",
-            "|    |_________| |",
-            "|   |_________|  |",
-            "|  |_________|   |",
-            "| |_________|____|",
+
+    char *stairs_cell[NBLINES] = {
+            "*----------------*",
+            "|    |________|| |",
+            "|   |________| | |",
+            "|  |________|  | |",
+            "| |________|   | |",
+            "||________|____| |",
             "*----------------*"
     };
 
@@ -46,13 +47,13 @@ void display_player_zone(Player *player, Game *game) {
     };
 
     char *player_cell[NBLINES] = {
-            "*-----------------*",
-            "|  ('_/-\\\\-._     |",
-            "| /,|`--._,-^ |   |",
-            "| \\_| |     | |   |",
-            "|   |  `\\ /   |   |",
-            "|    \\__| |__/    |",
-            "*-----------------*"
+            "*----------------*",
+            "|  ('_/-\\\\-._    |",
+            "| /,|`--._,-^ |  |",
+            "| \\_| |     | |  |",
+            "|   |  `\\ /   |  |",
+            "|    \\__| |__/   |",
+            "*----------------*"
     };
     int playerEntry;
     int j = 0;
@@ -64,16 +65,24 @@ void display_player_zone(Player *player, Game *game) {
 
         for (int line = 0; line < NBLINES; line++) { // 7 lignes dans level_cell ou void_cell
             for (j = 0; j < player->current_zone->width; j++) {
-                if (player->current_zone->map[i][j] != 0) {
+                if (player->current_zone->map[i][j] != VOID) {
 
-                    if(player->current_level == player->current_zone->levelList[i][j]) {        // afficher en rouge le niveau où se situe le joueur
-                        printf(BLUE"%s"RESET, player_cell[line]);
-                    }
-                    else if(player->current_zone->map[i][j]==2){
-                        printf(GREEN"%s"RESET, strais_cell[line]);
-                    }
-                    else{
-                        printf(RED"%s"RESET, level_cell[line]);
+                    if(player->current_level == player->current_zone->levelList[i][j])
+
+                        printf("%s""%s""%s", BLUE, player_cell[line], RESET);
+
+                    else if(player->current_zone->map[i][j] == BOSS)
+
+                        printf("%s""%s""%s", GREEN, stairs_cell[line], RESET);
+
+                    else {
+
+                        if(player->current_zone->levelList[i][j]->finished == true)
+
+                            printf( "%s""%s""%s", GREEN, level_cell[line], RESET);
+
+                        else
+                            printf("%s""%s""%s", RED, level_cell[line], RESET);
                     }
 
                 } else {
