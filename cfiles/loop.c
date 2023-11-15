@@ -27,6 +27,8 @@
 #include "../headers/quests/display_quests.h"
 #include "../headers/quests/check_quests.h"
 #include "../headers/utils.h"
+#include "../headers/level/next_level.h"
+#include "zones/next_zone.h"
 
 /**
  * manages the game loop
@@ -37,41 +39,35 @@
 void launch_loop(Game *game, Player *player) {
 
     int playerEntry;
-    char moveEntry;
-    Zone * zone=game->zoneList[player->current_level->id];
+    int moveEntry;
+
     while(game->isRunning)
     {
         check_quests(player);
 
         if(player->turn && player->attacks_left != 0)
         {
-            if((player->mana + 2) <= player->mana_max) player->mana += 2;
+            if((player->mana + 2) <= player->mana_max)
+                player->mana += 2;
 
             if(are_all_monsters_dead(player) == 1)              // retourne 1 si tous les monstres du niveau sont morts et passe le joueur au niveau supérieur
             {
                 if(!player->current_level->finished) {
+                    next_level_updates(player);
                     clear();
                     display_next_level_menu();
-                    player->current_level->finished = true;
-                    player->nbLevelFinished++;
-                    player->attacks_left = player->attacks_by_turn;
                 }
 
-                if(player->current_zone->map[player->currentX][player->currentY]==2){
-                    player->current_zone->map[player->currentX][player->currentY]=3;
-                    player->current_zone=game->zoneList[player->current_zone->id+1];
-                    player->current_level=player->current_zone->levelList[player->currentX][player->currentY];
-                }
-                else{
-                    printf("map :\n");
+                if(player->current_zone->map[player->currentX][player->currentY] == BOSS)
+                    next_zone_updates(player, game);
+
+                else {
                     display_player_zone(player,game);
-                    /*display_map_zone(zone, player);*/
                     moveEntry = getch();
-                    printf("move %c",moveEntry);
                     updateMovement(player,moveEntry,game);
-
                 }
-            } else{
+
+            } else {
                 clear();
                 display_all(player); // affichage
 
@@ -92,7 +88,7 @@ void launch_loop(Game *game, Player *player) {
                                 return;
 
                             case 'q':
-                                printf("\nEnd of game.\n");
+                                printf(RED"\nEnd of game.\n"RESET);
                                 game->isRunning = false;
                                 return;
 
@@ -137,9 +133,6 @@ void launch_loop(Game *game, Player *player) {
 
                 playerEntry -= 48;
                 if(!player_attack(player, playerEntry)) continue;        // le joueur attaque le monstre dont l'id est passé en argument
-                if(are_all_monsters_dead(player) == 1){
-                    player->shield = 0;
-                }
             }
 
         }

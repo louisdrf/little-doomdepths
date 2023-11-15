@@ -80,6 +80,8 @@ Level *init_level_boss(int id, double multiplicator, int type) {
     return level;
 }
 
+
+
 Level *init_level_chest(int id, double multiplicator, int type) {
     //
     Level *level = malloc(sizeof(Level));

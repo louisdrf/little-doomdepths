@@ -43,7 +43,8 @@ enum level_type {
     LEVEL,
     BOSS,
     CHEST,
-    SHOP
+    SHOP,
+    FINISHED
 };
 
 typedef struct {
