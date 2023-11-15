@@ -88,14 +88,25 @@ Level *init_level_chest(int id, double multiplicator, int type) {
         exit(1);
     }
 
+    int hasWeapon = random_int(0, 1);
+    int hasArmor = random_int(0, 1);
+
     level->id = id;
     level->finished = 0;
     level->level_type = type;
 
     level->loot_gold = (int)(random_int(50, 100) * multiplicator);
-    level->loot_armor = NULL;
-    level->loot_weapon = NULL;
 
+    if(hasArmor == 0)
+        level->loot_armor = randomArmor();
+    else level->loot_armor = NULL;
+
+    if(hasWeapon == 0)
+        level->loot_weapon = randomWeapon();
+    else level->loot_weapon = NULL;
+
+    if(level == NULL)
+        return NULL;
 
     return level;
 }
