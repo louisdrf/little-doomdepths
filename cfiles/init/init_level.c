@@ -20,10 +20,10 @@
  * @param id
  * @return
  */
-Level *init_level(int id, double multiplicator) {
+Level *init_level(int id, double multiplicator, int type) {
 
     int randnbloot = 0;
-    // create a level
+
     Level *level = malloc(sizeof(Level));
     if(level == NULL) {
         printf("Allocating memory for level failed.\n");
@@ -32,6 +32,7 @@ Level *init_level(int id, double multiplicator) {
 
     level->id = id;
     level->finished = false;
+    level->level_type = type;
 
     // init the linked list of monsters for the level
     Monster *first_monster = NULL;
@@ -52,7 +53,9 @@ Level *init_level(int id, double multiplicator) {
 
     return level;
 }
-Level *init_level_boss(int id, double multiplicator) {
+
+
+Level *init_level_boss(int id, double multiplicator, int type) {
 
     // create a level
     Level *level = malloc(sizeof(Level));
@@ -63,66 +66,38 @@ Level *init_level_boss(int id, double multiplicator) {
 
     level->id = id;
     level->finished = 0;
+    level->level_type = type;
 
-    // init the linked list of monsters for the level
-    Monster *first_monster = NULL;
-    level->nbMonsters = rand() % NBMONSTERS_MAX + NBMONSTERS_MIN; // nombre de monstres pour le niveau
 
-    for(int j = 1; j < level->nbMonsters + 1; j++) {
-        if(j==level->nbMonsters){
-            first_monster = create_boss(first_monster, j);
+    level->nbMonsters = 0;
+    level->monsters = NULL;
 
-        }
-        else{
-            first_monster = create_monster(first_monster, j, multiplicator);
-        }
+
 #if DEBUG
-        printf("Monster %d in level %d correctly added.\n", j, level->id);
-#endif
-    }
-    level->monsters = first_monster; // ajoute la tete de liste de monstres au niveau
-
-    // Initialise le tableau loot_weapon avec des pointeurs NULL
-
-    /*for(int i =0; i<MAX_LEVEL_LOOT_ITEM;i++){
-        level->loot_weapon[i] = NULL;
-        level->loot_armor[i] = NULL;
-    }
-    // random weapon/armor generation by level
-randnbloot= rand() % (id + 1); // Generate a random number between 0 and 'id'.
-//printf("level id : %d | randnbloot : %d\n",level->id, randnbloot);
-for(int l = randnbloot; l > 0; l--){
-    if(l % 2 == 0){
-        add_loot_item(level, randomWeapon(), NULL);
-    }else{
-        add_loot_item(level, NULL,  randomArmor());
-    }
-}*/
-#if DEBUG
-    printf("Level %d correctly initialized.\n", level->id);
+    printf("Level chest %d correctly initialized.\n", level->id);
 #endif
 
     return level;
 }
 
-
-void next_level(Game *game, Player *player) {
-
-    int next_level;
-    int i = 0;
-
-    while(game->zoneList[i]->levelList[0][player->current_level->id] == NULL) {
-        player->current_level->id++;
+Level *init_level_chest(int id, double multiplicator, int type) {
+    //
+    Level *level = malloc(sizeof(Level));
+    if(level == NULL) {
+        printf("Allocating memory for level failed.\n");
+        exit(1);
     }
 
-    next_level = player->current_level->id;
+    level->id = id;
+    level->finished = 0;
+    level->level_type = type;
 
-    player->current_level = game->zoneList[player->current_zone->id]->levelList[0][next_level];
-    printf("\nVous passez au niveau %d !\n", next_level);
+    level->loot_gold = (int)(random_int(50, 100) * multiplicator);
+    level->loot_armor = NULL;
+    level->loot_weapon = NULL;
 
-    player->turn = true;
-    player->attacks_left = player->attacks_by_turn;
-    player->lifepoints = player->lifepoints_max;
+
+    return level;
 }
 
 

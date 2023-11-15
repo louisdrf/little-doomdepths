@@ -102,6 +102,8 @@ typedef struct {
     Monster*                 monsters;                                  // liste chainée de monstres
     unsigned short           nbMonsters;                                // nb de monstres de la partie
     unsigned int             loot_gold;                                 // gold lootable sur le niveau
+    Weapon*                  loot_weapon;
+    Armor*                   loot_armor;
     bool                     finished;                                  // true si le niveau a été fini
 
 } Level;

@@ -9,7 +9,7 @@
 #include "../../headers/utils.h"
 #include "../../headers/zones/generate_chests.h"
 
-#define DEBUG true
+#define DEBUG false
 
 #define UP 0
 #define DOWN 1
