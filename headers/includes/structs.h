@@ -47,7 +47,7 @@ enum level_type {
 };
 
 enum random_level_types {
-    CHEST,
+    CHEST = 5,
     SHOP
 };
 

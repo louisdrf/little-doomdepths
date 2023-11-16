@@ -4,6 +4,7 @@
 
 #include "../../headers/zones/generate_random_cell.h"
 #include "../../headers/utils.h"
+#include "../../headers/init/init_level.h"
 
 void generate_random_cell(Map *map) {
 
@@ -20,9 +21,26 @@ void generate_random_cell(Map *map) {
 }
 
 
-Level *generate_random_level_type() {
+Level *generate_random_level_type(int id, double multiplicator) {
 
     Level *level = malloc(sizeof(Level));
+    int level_type = random_int(CHEST, SHOP);
+
+    switch(level_type) {
+
+        case CHEST:
+            init_level_chest(id, multiplicator, CHEST);
+            break;
+
+        case SHOP:
+            //init_level_shop();
+            break;
+
+        default:
+            free(level);
+            generate_random_level_type(id, multiplicator);
+    }
+
     return level;
 }
 
