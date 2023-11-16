@@ -23,17 +23,17 @@ void generate_random_cell(Map *map) {
 
 Level *generate_random_level_type(int id, double multiplicator) {
 
-    Level *level = malloc(sizeof(Level));
+    Level *level = NULL;
     int level_type = random_int(CHEST, SHOP);
 
     switch(level_type) {
 
         case CHEST:
-            init_level_chest(id, multiplicator, CHEST);
+            level = init_level_chest(id, multiplicator, CHEST);
             break;
 
         case SHOP:
-            //init_level_shop();
+            //level = init_level_shop();
             break;
 
         default:
