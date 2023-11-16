@@ -13,7 +13,7 @@
 Zone *create_zone(Game *game, int id, double multiplicator) {
 
     Zone *zone = malloc(sizeof(Zone));
-    Map *map = init_random_map_dimensions(0,0);
+    Map *map = init_random_map_dimensions(0, 0);
 
     int **tab = calloc(map->height, sizeof(int *));
     for (int a = 0; a < map->height; a++)
@@ -23,15 +23,15 @@ Zone *create_zone(Game *game, int id, double multiplicator) {
 
     if(id == 0) {
 
-        map = init_random_map_dimensions(0,0);
+        map = init_random_map_dimensions(0, 0);
 
     } else {
         Zone *log_zone=game->zoneList[id-1];
         for(int i = 0; i < log_zone->height; i++) {
             for(int j = 0; j < log_zone->width; j++) {
 
-                if(log_zone->map[i][j] == 2){
-                    map = init_random_map_dimensions(i,j);
+                if(log_zone->map[i][j] == BOSS){
+                    map = init_random_map_dimensions(i, j);
                 }
             }
         }
@@ -60,11 +60,8 @@ Zone *create_zone(Game *game, int id, double multiplicator) {
                             levelList[i][j] = init_level_boss(index, multiplicator, BOSS);            // creer un niveau avec son id
                             break;
 
-                        case CHEST:
-                            levelList[i][j] = init_level_chest(index, multiplicator, CHEST);
-                            break;
-
-                        case SHOP:
+                        case RANDOM:
+                            levelList[i][j] = generate_random_level_type();
                             break;
 
                         default:

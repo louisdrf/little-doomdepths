@@ -42,9 +42,13 @@ enum level_type {
     VOID,
     LEVEL,
     BOSS,
-    CHEST,
-    SHOP,
+    RANDOM,
     FINISHED
+};
+
+enum random_level_types {
+    CHEST,
+    SHOP
 };
 
 typedef struct {
@@ -136,6 +140,7 @@ typedef struct {
 
 
 typedef struct {
+
     unsigned short                 manaValue;
     unsigned short                 healthValue;
     char*                          name;

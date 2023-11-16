@@ -55,9 +55,19 @@ void display_player_zone(Player *player, Game *game) {
             "|    \\__| |__/   |",
             "*----------------*"
     };
+
+    char *random_cell[NBLINES] = {
+            "*----------------*"
+            "|                |"
+            "|                |"
+            "|       ???      |"
+            "|                |"
+            "|                |"
+            "*----------------*"
+    };
+
     int playerEntry;
-    int j = 0;
-    int i = 0;
+    int i, j;
     clear();
     printf("\n");
 
@@ -68,12 +78,13 @@ void display_player_zone(Player *player, Game *game) {
                 if (player->current_zone->map[i][j] != VOID) {
 
                     if(player->current_level == player->current_zone->levelList[i][j])
-
                         printf("%s""%s""%s", BLUE, player_cell[line], RESET);
 
                     else if(player->current_zone->map[i][j] == BOSS)
-
                         printf("%s""%s""%s", GREEN, stairs_cell[line], RESET);
+
+                    else if(player->current_zone->map[i][j] == RANDOM)
+                        printf("%s""%s""%s", MAGENTA, random_cell[line], RESET);
 
                     else {
 
@@ -106,11 +117,8 @@ void display_player_all_zone(Player *player, Game *game) {
             break;
 
         case 'q':
-
             clear();
-            //display_all(player);
             break;
-            //return;
 
         default:
             display_player_all_zone(player, game);

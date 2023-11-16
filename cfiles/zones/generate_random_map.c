@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include "../../headers/zones/generate_random_map.h"
 #include "../../headers/utils.h"
-#include "../../headers/zones/generate_chests.h"
+#include "../../headers/zones/generate_random_cell.h"
 
 #define DEBUG false
 
@@ -62,7 +62,7 @@ Map *init_random_map_dimensions(int x, int y) {
     } while (level_count != path_length);
 
 
-    generate_chests(map);
+    generate_random_cell(map);
 
 #if DEBUG
     for(int i = 0; i < map->height; i++) {
