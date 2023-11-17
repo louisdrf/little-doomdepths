@@ -16,6 +16,7 @@
 #define LEFT 2
 #define RIGHT 3
 
+#define NB_RANDOM_CELLS_MAX 2
 
 Map *init_random_map_dimensions(int x, int y) {
 
@@ -24,6 +25,7 @@ Map *init_random_map_dimensions(int x, int y) {
 
     int path_length = (int)((map->height * map->width) * 0.8);
     int level_count = 1;
+    int nb_random_cells = 0;
     int direction;
 
     do {
@@ -53,6 +55,13 @@ Map *init_random_map_dimensions(int x, int y) {
 
             if(map->map[x][y] == VOID) {
                 map->map[x][y] = LEVEL;
+
+                if(nb_random_cells != NB_RANDOM_CELLS_MAX) {
+                    int random_cell = random_int(1, 3);
+                    if(random_cell == 2) map->map[x][y] = RANDOM;       // 1 chance sur 3 de générer une case random
+                    nb_random_cells++;
+                }
+
                 level_count++;
             }
 
@@ -61,8 +70,6 @@ Map *init_random_map_dimensions(int x, int y) {
 
     } while (level_count != path_length);
 
-
-    generate_random_cell(map);
 
 #if DEBUG
     for(int i = 0; i < map->height; i++) {
