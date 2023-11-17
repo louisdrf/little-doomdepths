@@ -28,7 +28,7 @@
 #include "../headers/quests/check_quests.h"
 #include "../headers/utils.h"
 #include "../headers/level/next_level.h"
-#include "zones/next_zone.h"
+#include "../headers/zones/next_zone.h"
 
 /**
  * manages the game loop
@@ -64,7 +64,7 @@ void launch_loop(Game *game, Player *player) {
                 else {
                     display_player_zone(player, game);
                     moveEntry = getch();
-                    updateMovement(player,moveEntry, game);
+                    updateMovement(player, moveEntry, game);
                 }
 
             } else {

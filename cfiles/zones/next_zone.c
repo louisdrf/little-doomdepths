@@ -2,7 +2,7 @@
 // Created by louis on 15/11/2023.
 //
 
-#include "next_zone.h"
+#include "../../headers/zones/next_zone.h"
 
 void next_zone_updates(Player *player, Game *game) {
 

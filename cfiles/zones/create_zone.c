@@ -7,6 +7,7 @@
 #include "../../headers/zones/create_zone.h"
 #include "../../headers/zones/generate_random_map.h"
 #include "../../headers/init/init_level.h"
+#include "../../headers/zones/generate_random_cell.h"
 
 #define DEBUG false
 
@@ -61,7 +62,7 @@ Zone *create_zone(Game *game, int id, double multiplicator) {
                             break;
 
                         case RANDOM:
-                            levelList[i][j] = generate_random_level_type();
+                            levelList[i][j] = generate_random_level_type(index, multiplicator);
                             break;
 
                         default:

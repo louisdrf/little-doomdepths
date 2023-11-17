@@ -137,6 +137,6 @@ add_executable(doom cfiles/main.c
         cfiles/level/next_level.c
         headers/level/next_level.h
         cfiles/zones/next_zone.c
-        cfiles/zones/next_zone.h
+        headers/zones/next_zone.h
 )
 
